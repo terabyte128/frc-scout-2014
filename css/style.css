@@ -1,0 +1,22 @@
+/* 
+    Document   : style
+    Created on : Oct 25, 2013, 2:42:41 PM
+    Author     : Sam
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.container {
+    margin: 10px auto 10px auto;
+    background: #dcdcdc;
+    text-align: center;
+}
+
+.align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
