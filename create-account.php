@@ -4,7 +4,25 @@
         <?php include 'includes/headers.php'; ?>
     </head>
     <body>
+        <?php
+        if (isset($_POST['teamNumber'])) {
+
+            require_once 'includes/db-connect.php';
+
+            $teamNumber = $_POST['teamNumber'];
+            $adminEmail = $_POST['adminEmail'];
+            $teamPassword = $_POST['teamPassword'];
+
+            $stmt = $db->prepare('INSERT INTO `?` (team_number, team_password, admin_email) VALUES (?, md5(?), ?)');
+            $success = $stmt->execute(array($teamNumber, $teamPassword, $adminEmail));
+
+            if ($success) {
+                
+            }
+        }
+        ?>
         <div class="container">
+            <?php include 'includes/messages.php'; ?>
             <div class="title">
                 <h2>Create An Account</h2>
                 <p style='max-width: 500px; margin: 5px auto 5px auto'>
@@ -41,7 +59,7 @@
 
                     <button type="submit" class="btn btn-default btn-success">Create Account</button>
                 </form>
-
+                <br />
             </div>
         </div>
     </body>

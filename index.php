@@ -5,6 +5,7 @@
     </head>
     <body>
         <div class="container">
+            <?php include 'includes/messages.php'; ?>
             <div class="title">
                 <img style='margin-bottom: 2px;' src="/images/logo.png" alt="header logo" />
                 <h2 style='margin-top: 2px;'>FRC Scout: Login</h2>
