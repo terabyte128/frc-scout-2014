@@ -14,6 +14,8 @@ root {
     margin: 10px auto 10px auto;
     background: #dcdcdc;
     text-align: center;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 
 .align-center {

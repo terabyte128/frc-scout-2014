@@ -1,13 +1,12 @@
 <html>
     <head>
-        <title>FRC Scout: Login</title>
+        <title>Password Reset</title>
         <?php include 'includes/headers.php'; ?>
     </head>
     <body>
         <div class="container">
             <div class="title">
-                <img style='margin-bottom: 2px;' src="/images/logo.png" alt="header logo" />
-                <h2 style='margin-top: 2px;'>FRC Scout: Login</h2>
+                <h2>Forgot Your Password?</h2>
             </div>
             <div class='login-form align-center' style='width: 250px;'>
                 <form role="form">
@@ -19,17 +18,18 @@
                         <label for="scoutName">Your Name</label>
                         <input type="text" class="form-control" id="scoutName" placeholder="Your Name" required>
                     </div>
+                      <div class="form-group">
+                        <label for="adminEmail">FRC Scout Administrator Email</label>
+                        <input type="email" class="form-control" id="adminEmail" placeholder="Admin Email" required>
+                    </div>
                     <div class="form-group">
-                        <label for="teamPassword">Password</label>
-                        <input type="password" class="form-control" id="teamPassword" placeholder="Team Password" required>
+                        <label for="teamPassword">Desired Password</label>
+                        <input type="password" class="form-control" id="teamPassword" placeholder="New Password" required>
                     </div>
 
-                    <button type="submit" class="btn btn-default btn-success">Login</button>
+                    <button type="submit" class="btn btn-default btn-success">Request Reset</button>
                 </form>
-                <a href="create-account.php">Create an account</a>
-                <br />
-                <a href="password-reset.php">Recover your password</a>
-                <br /><br />
+
             </div>
         </div>
     </body>
