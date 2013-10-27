@@ -30,7 +30,7 @@
 
                         <button type="submit" class="btn btn-default btn-success">Request Reset</button>
                     </form>
-
+                    <br />
                 </div>
             </div>
         </div>
