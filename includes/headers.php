@@ -10,4 +10,4 @@
 <!-- styles 'n fonts -->
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" type='text/css' />
 <link rel="stylesheet" href="/css/style.css" type='text/css' />
-<!-- <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cabin' type='text/css' /> -->
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cabin' type='text/css' />
