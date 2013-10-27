@@ -33,3 +33,7 @@ input::-webkit-outer-spin-butter {
     -webkit-appearance: none;
     margin: 0;
 }
+
+*, h1, h2, h3 {
+    font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
