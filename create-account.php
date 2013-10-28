@@ -19,6 +19,8 @@ if (isset($_POST['teamNumber'])) {
     }
 }
 ?>
+<!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
     <head>
         <title>Create An Account</title>
