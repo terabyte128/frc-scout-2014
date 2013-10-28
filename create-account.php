@@ -8,17 +8,31 @@ if (isset($_POST['teamNumber'])) {
     $teamNumber = $_POST['teamNumber'];
     $adminEmail = $_POST['adminEmail'];
     $teamPassword = $_POST['teamPassword'];
+    $checkPassword = $_POST['checkPassword'];
 
-    //try and add account
-    $stmt = $db->prepare('INSERT INTO `team_accounts` (team_number, team_password, admin_email) VALUES (?, md5(?), ?)');
-    try {
-        $stmt->execute(array($teamNumber, $teamPassword, $adminEmail));
-        header('location:index.php?message=' . urlencode("Account created sucessfully! You may now log in.") . "&type=success");
-    } catch (PDOException $e) {
-        header('location:create-account.php?message=' . urlencode("Account creation failed for some reason! Please try again. Perhaps you forgot to fill out some fields, or maybe someone accidentally took your team's number. If so, <a href='mailto:terabyte128@gmail.com'>talk to the FRC Scout admin</a> and we'll get it sorted out.") . "&type=danger");
+    //make sure passwords match
+    if (strcmp($teamPassword, $checkPassword) != 0) {
+        header('location:create-account.php?message=' . urlencode("Your passwords did not match, please try again.") . "&type=danger");
+    } else {
+
+        //try and add account
+        $stmt = $db->prepare('INSERT INTO `team_accounts` (team_number, team_password, admin_email) VALUES (?, md5(?), ?)');
+        try {
+            $stmt->execute(array($teamNumber, $teamPassword, $adminEmail));
+            header('location:index.php?message=' . urlencode("Account created sucessfully! You may now log in.") . "&type=success");
+        } catch (PDOException $e) {
+            $message = $e->getMessage();
+            //check if error means team number already exists
+            if (strpos($message, "Duplicate entry") !== false) {
+                header('location:create-account.php?message=' . urlencode("That team number has been taken! If you believe this is in error, please <a href='mailto:sam@ingrahamrobotics.org'>contact me</a> and we'll get it sorted out.") . "&type=danger");
+            } else {
+                header('location:create-account.php?message=' . urlencode("Something went wrong, but we're unsure of what it is. Please try again.") . "&type=danger");
+            }
+        }
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -61,6 +75,10 @@ if (isset($_POST['teamNumber'])) {
                         <div class="form-group">
                             <label for="teamPassword">Team Password</label>
                             <input type="password" class="form-control" id="teamPassword" name="teamPassword" placeholder="Team Password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkPassword">Re-enter Password</label>
+                            <input type="password" class="form-control" id="teamPassword" name="checkPassword" placeholder="Re-enter Password" required>
                         </div>
                         <button type="submit" class="btn btn-default btn-success">Create Account</button>
                     </form>
