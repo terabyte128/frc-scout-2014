@@ -78,7 +78,7 @@ if (isset($_POST['teamNumber'])) {
                         </div>
                         <div class="form-group">
                             <label for="checkPassword">Re-enter Password</label>
-                            <input type="password" class="form-control" id="teamPassword" name="checkPassword" placeholder="Re-enter Password" required>
+                            <input type="password" class="form-control" id="checkPassword" name="checkPassword" placeholder="Re-enter Password" required>
                         </div>
                         <button type="submit" class="btn btn-default btn-success">Create Account</button>
                     </form>
