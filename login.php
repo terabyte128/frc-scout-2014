@@ -8,7 +8,7 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['teamNumber']);
     unset($_SESSION['scoutName']);
     unset($_SESSION['location']);
-    header('location: /index.php?error=' . urlencode("Successfully logged out!"));
+    header('location: /index.php?message=' . urlencode("Successfully logged out!") . "&type=success");
     exit();
 }
 
@@ -39,7 +39,7 @@ if (key_exists('team_number', $teams)) {
     $_SESSION['location'] = $location;
 
     # Redirect to the post-login page
-    header('location: options');
+    header('location: home');
 } else {
     unset($_SESSION['TeamNumber']);
     unset($_SESSION['UserID']);

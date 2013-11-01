@@ -13,18 +13,18 @@
                     <h2 style='margin-top: 2px;'>FRC Scout: Login</h2>
                 </div>
                 <div class='login-form align-center' style='width: 250px;'>
-                    <form role="form">
+                    <form role="form" method="post" action="login.php">
                         <div class="form-group">
                             <label for="teamNumber">Team Number</label>
-                            <input type="number" class="form-control" id="teamNumber" placeholder="Team Number" required>
+                            <input type="number" class="form-control" id="teamNumber" name="teamNumber" placeholder="Team Number" required>
                         </div>
                         <div class="form-group">
                             <label for="scoutName">Your Name</label>
-                            <input type="text" class="form-control" id="scoutName" placeholder="Your Name" required>
+                            <input type="text" class="form-control" id="scoutName" name="scoutName" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
                             <label for="teamPassword">Password</label>
-                            <input type="password" class="form-control" id="teamPassword" placeholder="Team Password" required>
+                            <input type="password" class="form-control" id="teamPassword" name="teamPassword" placeholder="Team Password" required>
                         </div>
 
                         <button type="submit" class="btn btn-default btn-success">Login</button>

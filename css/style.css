@@ -37,3 +37,7 @@ input::-webkit-outer-spin-butter {
 *, h1, h2, h3 {
     font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+btn-home-selections {
+    max-width: 600px;
+}
