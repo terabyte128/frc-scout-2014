@@ -1,3 +1,6 @@
+<!-- declare character encoding -->
+<meta charset="UTF-8">
+
 <!-- ensure mobile-friendliness -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,4 +13,4 @@
 <!-- styles 'n fonts -->
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" type='text/css' />
 <link rel="stylesheet" href="/css/style.css" type='text/css' />
-<!-- <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cabin' type='text/css' /> -->
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cabin' type='text/css' />

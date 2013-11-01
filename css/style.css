@@ -8,8 +8,6 @@
 
 root { 
     display: block;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
 .container {
@@ -28,4 +26,14 @@ root {
 
 .wrapper {
     margin: 5px 5px 5px 5px;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-butter {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+*, h1, h2, h3 {
+    font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
