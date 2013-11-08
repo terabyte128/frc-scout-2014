@@ -46,20 +46,12 @@ if (isset($_POST['teamNumber'])) {
                 <div class="title">
                     <h2>Create An Account</h2>
                     <p style='max-width: 500px; margin: 5px auto 5px auto'>
-                        FIRST Scout accounts are shared, team-wide. Each team has a 
-                        shared team password. Scouts log in using their team number 
-                        and shared password.
-                        <br /><br />
-                        When logging in, a scout will enter a User ID in addition 
-                        to the Team ID and team password. The User ID is not stored 
-                        as part of your team's information - it is simply used so 
-                        that you can track who scouted what match.
-                        <br /><br />
-                        The account's admin email should be the email address of 
-                        whoever is head of scouting for your team. It would only be 
-                        used in case we need to contact you about something, it is 
-                        never shared. 
-                        <br /><br />
+                        <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();'><span class="glyphicon glyphicon-question-sign"></span> How does FRC Scout work?</a>
+                    </p>
+                    <p>
+                        <span id="step1">FRC Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").hide(); $("#step2").show();'>Learn more.</a></span>
+                        <span id="step2">When logging in, a scout will enter their name in addition to their team number, to help track who scouted what teams. <a href='#' onclick='$("#step2").hide(); $("#step3").show();'>Learn even more!</a></span>
+                        <span id='step3'>The team's admin email is just the email of whoever makes the account, in case they need a password reset or other support. <a href='#' onclick='$("#step3").hide(); $("#learnHow").hide();'>Let's get started!</a></span>
                     </p>
                 </div>
                 <div class='login-form align-center' style='width: 250px;'>
@@ -86,5 +78,12 @@ if (isset($_POST['teamNumber'])) {
                 </div>
             </div>
         </div>
+        <script type='text/javascript'>
+        $(function() {
+           $("#step1").hide(); 
+           $("#step2").hide(); 
+           $("#step3").hide(); 
+        });
+        </script>
     </body>
 </html>

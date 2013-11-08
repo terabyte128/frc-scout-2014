@@ -9,7 +9,7 @@
             <div class="container">
                 <?php include 'includes/messages.php'; ?>
                 <div class="title">
-                    <img style='margin-bottom: 2px;' src="/images/logo.png" alt="header logo" />
+                    <img style='margin: 20px 2px 2px 2px; max-width: 300px' src="/images/logo_earfuzz_hat.png" alt="header logo" />
                     <h2 style='margin-top: 2px;'>FRC Scout: Login</h2>
                 </div>
                 <div class='login-form align-center' style='width: 250px;'>
@@ -32,7 +32,7 @@
                     <br />
                     <a href="create-account.php">Create an account</a>
                     <br />
-                    <a href="password-reset.php">Recover your password</a>
+                    <a href="forgot-password.php">Recover your password</a>
                     <br /><br />
                 </div>
             </div>

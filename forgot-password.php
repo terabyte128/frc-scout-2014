@@ -8,6 +8,7 @@
         <div class="wrapper">
             <div class="container">
                 <div class="title">
+                    <?php include 'includes/messages.php' ?>
                     <h2>Forgot Your Password?</h2>
                 </div>
                 <div class='login-form align-center' style='width: 250px;'>
