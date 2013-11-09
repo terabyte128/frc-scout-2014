@@ -1,43 +1,4 @@
-<?php
-include 'includes/redirect-if-session-exists.php';
-if (isset($_POST['teamNumber'])) {
-
-    //create db or die
-    require_once 'includes/db-connect.php';
-
-    //grab values from POST
-    $teamNumber = $_POST['teamNumber'];
-    $adminEmail = $_POST['adminEmail'];
-    $teamPassword = $_POST['teamPassword'];
-    $checkPassword = $_POST['checkPassword'];
-    $adminPassword = $_POST['adminPassword'];
-    $checkAdminPassword = $_POST['checkAdminPassword'];
-
-    //make sure passwords match
-    if (strcmp($teamPassword, $checkPassword) != 0) {
-        header('location:create-account.php?message=' . urlencode("Your passwords did not match, please try again.") . "&type=danger");
-    } else if (strcmp ($adminPassword, $checkAdminPassword) != 0){
-        header('location:create-account.php?message=' . urlencode("Your admin passwords did not match, please try again.") . "&type=danger");
-    } else {
-
-        //try and add account
-        $stmt = $db->prepare('INSERT INTO `team_accounts` (team_number, team_password, admin_email, admin_password) VALUES (?, md5(?), ?, md5(?))');
-        try {
-            $stmt->execute(array($teamNumber, $teamPassword, $adminEmail, $adminPassword));
-            header('location:index.php?message=' . urlencode("Account created sucessfully! You may now log in.") . "&type=success");
-        } catch (PDOException $e) {
-            $message = $e->getMessage();
-            //check if error means team number already exists
-            if (strpos($message, "Duplicate entry") !== false) {
-                header('location:create-account.php?message=' . urlencode("That team number has been taken! If you believe this is in error, please <a href='mailto:sam@ingrahamrobotics.org'>contact me</a> and we'll get it sorted out.") . "&type=danger");
-            } else {
-                header('location:create-account.php?message=' . urlencode("Something went wrong, but we're unsure of what it is. Please try again.") . "&type=danger");
-            }
-        }
-    }
-}
-?>
-
+<?php require 'includes/redirect-if-session-exists.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -54,13 +15,18 @@ if (isset($_POST['teamNumber'])) {
                         <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();'><span class="glyphicon glyphicon-question-sign"></span> How does FRC Scout work?</a>
                     </p>
                     <p style='max-width: 500px; margin: 5px auto 5px auto'>
-                        <span style="display: none;" id="step1">FRC Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").hide(); $("#step2").show();'>Learn more.</a></span>
-                        <span style="display: none;" id="step2">When logging in, a scout will enter their name in addition to their team number, to help track who scouted what teams. <a href='#' onclick='$("#step2").hide(); $("#step3").show();'>Learn even more!</a></span>
-                        <span style="display: none;" id='step3'>The team's admin email is just the email of whoever makes the account, in case they need a password reset or other support. The admin password will need to be entered to change the team password or edit scouting data. <br> <a href='#' onclick='$("#step3").hide();'>Let's get started!</a> <a href="https://github.com/terabyte128/frc-scout-2013/blob/master/create-account.php" target="_blank">Learn even more!</a></span>
+                        <span style="display: none;" id="step1">FRC Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").slideUp(250);
+                                $("#step2").slideDown(250);'>Learn more.</a></span>
+                        <span style="display: none;" id="step2">When logging in, a scout will enter their name in addition to their team number, to help track who scouted what teams. <a href='#' onclick='$("#step2").slideUp(250);
+                                ;
+                                $("#step3").slideDown(250);'>Learn even more!</a></span>
+                        <span style="display: none;" id='step3'>The team's admin email is just the email of whoever makes the account, in case they need a password reset or other support. 
+                            The admin password will need to be entered to change the team password or edit scouting data. <br> <a href='#' onclick='$("#step3").slideUp(250);'>Let's get started!</a> <a href="https://github.com/terabyte128/frc-scout-2013/blob/master/create-account.php" target="_blank">Learn even more!</a></span>
                     </p>
                 </div>
                 <div class='login-form align-center' style='width: 250px;'>
-                    <form role="form" method="post" action="create-account.php">
+                    <form role="form" onsubmit="createAccount();
+                                return false;">
                         <div class="form-group">
                             <label for="teamNumber">FRC Team Number</label>
                             <input type="number" class="form-control" id="teamNumber" name="teamNumber" placeholder="FRC Team Number" required>
@@ -75,9 +41,9 @@ if (isset($_POST['teamNumber'])) {
                         </div>
                         <div class="form-group">
                             <label for="checkPassword">Re-enter Password</label>
-                            <input type="password" class="form-control" id="checkPassword" name="checkPassword" placeholder="Re-enter Password" required>
+                            <input type="password" class="form-control" id="checkTeamPassword" name="checkPassword" placeholder="Re-enter Password" required>
                         </div>
-                         <div class="form-group">
+                        <div class="form-group">
                             <label for="adminPassword">Admin Password</label>
                             <input type="password" class="form-control" id="adminPassword" name="adminPassword" placeholder="Admin Password" required>
                         </div>
@@ -85,11 +51,57 @@ if (isset($_POST['teamNumber'])) {
                             <label for="checkAdminPassword">Re-enter Admin Password</label>
                             <input type="password" class="form-control" id="checkAdminPassword" name="checkAdminPassword" placeholder="Re-enter Admin Password" required>
                         </div>
-                        <button type="submit" class="btn btn-default btn-success">Create Account</button>
+                        <button type="submit" id="submitCreateRequest" class="btn btn-default btn-success">Create Account</button>
                     </form>
                     <br />
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+                            function createAccount() {
+                                hideMessage();
+                                $("#submitCreateRequest").button('loading');
+                                var teamNumber = $("#teamNumber").val();
+                                var adminEmail = $("#adminEmail").val();
+                                var teamPassword = $("#teamPassword").val();
+                                var checkTeamPassword = $("#checkTeamPassword").val();
+                                var adminPassword = $("#adminPassword").val();
+                                var checkAdminPassword = $("#checkAdminPassword").val();
+
+                                var errors = "";
+
+                                if (teamPassword !== checkTeamPassword) {
+                                    errors += "<br />&bull;Your team passwords did not match.";
+                                }
+                                if (adminPassword !== checkAdminPassword) {
+                                    errors += "<br />&bull;Your admin passwords did not match.";
+                                }
+
+                                if (errors !== "") {
+                                    errors = "Errors occured while creating account:" + errors;
+                                    showMessage(errors, 'danger');
+                                    return;
+                                }
+
+                                $.ajax({
+                                    url: 'ajax-handlers/create-account-ajax-submit.php',
+                                    type: "POST",
+                                    data: {
+                                        'teamNumber': teamNumber,
+                                        'adminEmail': adminEmail,
+                                        'teamPassword': teamPassword,
+                                        'adminPassword': adminPassword
+                                    },
+                                    success: function(response, textStatus, jqXHR) {
+                                        if (response !== "") {
+                                            $("#submitCreateRequest").button('reset');
+                                            showMessage(response, 'danger');
+                                        } else {
+                                            window.location = "index.php";
+                                        }
+                                    }
+                                });
+                            }
+        </script>
     </body>
 </html>
