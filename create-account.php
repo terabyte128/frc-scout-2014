@@ -24,7 +24,7 @@ if (isset($_POST['teamNumber'])) {
             $message = $e->getMessage();
             //check if error means team number already exists
             if (strpos($message, "Duplicate entry") !== false) {
-                header('location:create-account.php?message=' . urlencode("That team number has been taken! If you believe this is in error, please <a href='mailto:sam@ingrahamrobotics.org'>contact me</a> and we'll get it sorted out.") . "&type=danger");
+                header('location:create-account.php?message=' . urlencode("That team number has been taken! If you believe this is in error, please <?php href='mailto:sam@ingrahamrobotics.org'>contact me</a> and we'll get it sorted out.") . "&type=danger");
             } else {
                 header('location:create-account.php?message=' . urlencode("Something went wrong, but we're unsure of what it is. Please try again.") . "&type=danger");
             }
@@ -45,7 +45,7 @@ if (isset($_POST['teamNumber'])) {
                 <?php include 'includes/messages.php'; ?>
                 <div class="title">
                     <h2>Create An Account</h2>
-                    <p style='max-width: 500px; margin: 5px auto 5px auto'>
+                    <form style='max-width: 500px; margin: 5px auto 5px auto'>
                         <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();'><span class="glyphicon glyphicon-question-sign"></span> How does FRC Scout work?</a>
                     </p>
                     <p>
