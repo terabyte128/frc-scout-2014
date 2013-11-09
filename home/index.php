@@ -19,4 +19,8 @@ require '../includes/setup-session.php';
                 <br />
             </div>
     </body>
+    <script type="text/javascript">
+                    var overlay = jQuery('<div id="overlay"> </div>');
+                    overlay.appendTo(document.body);
+    </script>
 </html>
