@@ -8,6 +8,7 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['teamNumber']);
     unset($_SESSION['scoutName']);
     unset($_SESSION['location']);
+    unset($_SESSION['isAdmin']);
     header('location: /index.php?message=' . urlencode("Successfully logged out!") . "&type=success");
     exit();
 }

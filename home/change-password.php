@@ -1,5 +1,6 @@
 <?php
 require '../includes/setup-session.php';
+require '../includes/admin-required.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,9 +30,9 @@ require '../includes/setup-session.php';
                             <input type="password" class="form-control" id="newPasswordRepeat" placeholder="Re-enter New Password" required>
                         </div>
 
-                        <button type="submit" id="submitButton" class="btn btn-default btn-success">Change Password</button>
+                            <button type="submit" id="submitButton" class="btn btn-default btn-success">Change Password</button>
+                            <button type="button" onclick="document.location='index.php'" class ="btn btn-default btn-danger">Return</button>
                     </form>
-                        <button onclick="document.location='index.php'" class ="btn btn-default btn-danger">Return</button>
                     <br />
                 </div>
             </div>
@@ -67,13 +68,14 @@ require '../includes/setup-session.php';
                                 'newPassword': newPassword
                             },
                             success: function(response, textStatus, jqXHR) {
-                                $("#inputError").show();
                                 $("#submitButton").button('reset');
-                                $("#alertError").text(response);
-                                if (response.indexOf("successfully") !== -1)
-                                    $("#inputError").addClass("alert-success");
-                                else
+                                if (response.indexOf("successfully") !== -1) {
+                                    window.location = "index.php?message=" + response + "&type=success";
+                                } else {
+                                    $("#inputError").show();
+                                    $("#alertError").text(response);
                                     $("#inputError").addClass("alert-danger");
+                                }
                             }
                         });
                     }

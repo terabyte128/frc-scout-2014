@@ -13,12 +13,19 @@ require '../includes/setup-session.php';
                 <?php include '../includes/messages.php' ?>
                 <h2>FRC Scout: Home</h2>
                 <p>You are logged in as <?php echo $scoutName ?> for team <?php echo $teamNumber ?> in <?php echo $location ?>.</p>
+                
+                <?php if ($_SESSION['isAdmin'] == true) { ?>
                 <button onclick="window.location = 'change-password.php';" class="btn btn-lg btn-warning btn-home-selections">Change Team Password</button>
                 <button onclick="window.location = 'change-admin-password.php';" class="btn btn-lg btn-warning btn-home-selections">Change Admin Password</button>
+                <?php } ?>
+                
                 <button onclick="window.location = '../login.php?logout';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>
                 <br />
-
+                
+                <?php if ($_SESSION['isAdmin'] == false) { ?>
                 <a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').show(200);">Authenticate as administrator</a>
+                <?php } ?>
+                
                 <br />
 
                 <div class='login-form align-center' id="authAsAdmin" onsubmit="loginAdmin();
@@ -51,9 +58,7 @@ require '../includes/setup-session.php';
                                 $("#submitButton").button('reset');
                                 $("#alertError").text(response);
                                 if (response.indexOf("Successfully") !== -1) {
-                                    $("#inputError").addClass("alert-success");
-                                    $("#authAsAdmin").hide();
-                                    $("#optionAuthAsAdmin").hide();
+                                    window.location = "index.php?message=" + response + "&type=success";
                                 } else {
                                     $("#inputError").addClass("alert-danger");
                                 }
