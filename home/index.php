@@ -27,7 +27,7 @@ require '../includes/setup-session.php';
                 <br />
 
                 <?php if ($_SESSION['isAdmin'] == false) { ?>
-                    <a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').toggle(200); $('#adminPassword').focus()" style="float: right; margin-bottom: 8px;">Authenticate as administrator</a>
+                    <a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').toggle(150); $('#adminPassword').focus()" style="float: right; margin-bottom: 8px;">Authenticate as administrator</a>
                 <?php } ?>
 
                 <br />
@@ -61,10 +61,10 @@ require '../includes/setup-session.php';
                                 if (response.indexOf("Successfully") !== -1) {
                                     window.location = "index.php?message=" + response + "&type=success";
                                 } else {
-                                $("#inputError").addClass("alert-danger");
-                                $("#inputError").show();
-                                $("#submitButton").button('reset');
-                                $("#alertError").text(response);
+                                    $("#inputError").addClass("alert-danger");
+                                    $("#inputError").slideDown(250);
+                                    $("#submitButton").button('reset');
+                                    $("#alertError").text(response);
                                 }
                             }
                         });

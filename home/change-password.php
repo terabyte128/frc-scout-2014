@@ -72,7 +72,7 @@ require '../includes/admin-required.php';
                                 if (response.indexOf("successfully") !== -1) {
                                     window.location = "index.php?message=" + response + "&type=success";
                                 } else {
-                                    $("#inputError").show();
+                                    $("#inputError").slideDown(250);
                                     $("#alertError").text(response);
                                     $("#inputError").addClass("alert-danger");
                                 }
