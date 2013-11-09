@@ -14,7 +14,7 @@ require '../includes/setup-session.php';
                     <?php include '../includes/messages.php' ?>
                     <h2>Change Password</h2>
                 </div>
-                <p style="color: red;"><span class="glyphicon glyphicon-exclamation-sign"></span> <b>Warning: </b> this will change the password for <strong>all scouts on this team!</strong> <span class="glyphicon glyphicon-exclamation-sign"></span></p>
+                <p style="color: red;"><img src="/images/alert.gif"><img src="/images/alert.gif"><img src="/images/alert.gif"> <b>Warning: </b> this will change the password for <strong>all scouts on this team!</strong> <img src="/images/alert.gif"><img src="/images/alert.gif"><img src="/images/alert.gif">         </p>
                 <div class='login-form align-center' onsubmit="confirmReset();
                         return false;" style='width: 250px;'>
                     <form role="form">
