@@ -10,3 +10,8 @@ function hideMessage() {
     $("#alertError").html("message");
     $("#inputError").slideUp(250);
 }
+function loadPageWithMessage(url, message, type) {
+    localStorage.message = message;
+    localStorage.type = type;
+    window.location = url;
+}

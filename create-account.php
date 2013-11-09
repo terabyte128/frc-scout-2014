@@ -93,11 +93,11 @@
                                         'adminPassword': adminPassword
                                     },
                                     success: function(response, textStatus, jqXHR) {
-                                        if (response !== "") {
+                                        if (response.indexOf("successfully") === -1) {
                                             $("#submitCreateRequest").button('reset');
                                             showMessage(response, 'danger');
                                         } else {
-                                            window.location = "index.php";
+                                            loadPageWithMessage("index.php",response,"success");
                                         }
                                     }
                                 });

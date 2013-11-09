@@ -4,15 +4,6 @@ session_start();
 //connect to the database
 require '../includes/db-connect.php';
 
-if (isset($_GET['logout'])) {
-    unset($_SESSION['teamNumber']);
-    unset($_SESSION['scoutName']);
-    unset($_SESSION['location']);
-    unset($_SESSION['isAdmin']);
-    header('location: /index.php');
-    exit();
-}
-
 $teamNumber = $_POST['teamNumber'];
 $teamPassword = $_POST['teamPassword'];
 $scoutName = $_POST['scoutName'];

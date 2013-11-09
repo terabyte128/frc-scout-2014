@@ -1,8 +1,11 @@
 <?php
 session_start();
+include 'headers.php';
 
 if (!isset($_SESSION['teamNumber'])) {
-    header('location: ../index.php?message=' . urlencode("Your session timed out or you forgot to log in, please try again.") . "&type=danger");
+    echo '<script type="text/javascript">',
+         'loadPageWithMessage("/", "Your session timed out or you forgot to log in, please try again.", "danger");',
+         '</script>';
 }
 
 $teamNumber = $_SESSION['teamNumber'];

@@ -16,7 +16,7 @@ if (isset($_POST['teamNumber'])) {
     $stmt = $db->prepare('INSERT INTO `team_accounts` (team_number, team_password, admin_email, admin_password) VALUES (?, md5(?), ?, md5(?))');
     try {
         $stmt->execute(array($teamNumber, $teamPassword, $adminEmail, $adminPassword));
-        header('location:../index.php?message=' . urlencode("Account created sucessfully! You may now log in.") . "&type=success");
+        echo "Account created successfully! You may now log in.";
     } catch (PDOException $e) {
         $message = $e->getMessage();
         //check if error means team number already exists

@@ -68,7 +68,7 @@ require '../includes/admin-required.php';
                             success: function(response, textStatus, jqXHR) {
                                 $("#submitButton").button('reset');
                                 if (response.indexOf("successfully") !== -1) {
-                                    window.location = "index.php?message=" + response + "&type=success";
+                                    loadPageWithMessage("index.php",response,"success");
                                 } else {
                                     showMessage(response, 'danger');
                                 }

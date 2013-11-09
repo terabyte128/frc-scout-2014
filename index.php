@@ -57,6 +57,7 @@
                                 success: function(response, textStatus, jqXHR) {
                                     if (response !== "") {
                                         showMessage(response, 'danger');
+                                        $("#loginButton").button('reset');
                                     } else {
                                         location.reload();
                                     }
