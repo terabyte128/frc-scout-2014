@@ -67,9 +67,12 @@ require '../includes/setup-session.php';
                             },
                             success: function(response, textStatus, jqXHR) {
                                 $("#inputError").show();
-                                $("#inputError").addClass("alert-danger");
                                 $("#submitButton").button('reset');
                                 $("#alertError").text(response);
+                                if (response.indexOf("successfully") !== -1)
+                                    $("#inputError").addClass("alert-success");
+                                else
+                                    $("#inputError").addClass("alert-danger");
                             }
                         });
                     }
