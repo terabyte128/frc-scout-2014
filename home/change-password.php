@@ -30,8 +30,8 @@ require '../includes/setup-session.php';
                         </div>
 
                         <button type="submit" id="submitButton" class="btn btn-default btn-success">Change Password</button>
-                        <button onclick="document.location='index.php'" class ="btn btn-default btn-danger">Return</button>
                     </form>
+                        <button onclick="document.location='index.php'" class ="btn btn-default btn-danger">Return</button>
                     <br />
                 </div>
             </div>
