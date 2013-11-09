@@ -23,7 +23,7 @@ require '../includes/setup-session.php';
                 <br />
                 
                 <?php if ($_SESSION['isAdmin'] == false) { ?>
-                <a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').show(200);">Authenticate as administrator</a>
+                <a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').toggle(200);">Authenticate as administrator</a>
                 <?php } ?>
                 
                 <br />
