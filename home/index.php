@@ -59,7 +59,7 @@ require '../includes/setup-session.php';
                             success: function(response, textStatus, jqXHR) {
                                 $("#authButton").button('reset');
                                 if (response.indexOf("Successfully") !== -1) {
-                                    window.location = "index.php";
+                                    window.reload();
                                 } else {
                                     showMessage(response, 'danger');
                                 }

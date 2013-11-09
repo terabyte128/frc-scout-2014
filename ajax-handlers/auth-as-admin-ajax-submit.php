@@ -1,9 +1,9 @@
 <?php
 require '../includes/setup-session.php';
+require '../includes/db-connect.php';
 
 $adminPassword = $_POST['adminPassword'];
 
-require '../includes/db-connect.php';
 
 try {
     $authenticate = $db->prepare('SELECT team_number FROM team_accounts WHERE team_number = ? AND admin_password = md5(?)');
