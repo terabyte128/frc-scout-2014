@@ -15,7 +15,7 @@ require '../includes/setup-session.php';
                 <p>You are logged in as <?php echo $scoutName ?> for team <?php echo $teamNumber ?> in <?php echo $location ?>.</p>
 
                 <button onclick="window.location = '../login.php?logout';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>
-                
+
                 <?php if ($_SESSION['isAdmin'] == true) { ?>
                     <br>
                     <font style="color: #bbb; float: right; font-size: 10pt;">Admin Tools</font>
@@ -27,8 +27,9 @@ require '../includes/setup-session.php';
                 <br />
 
                 <?php if ($_SESSION['isAdmin'] == false) { ?>
-                    <a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').toggle(200); $('#adminPassword').focus()" style="float: right; margin-bottom: 8px;">Authenticate as administrator</a>
-                <?php } ?>
+                    <a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').toggle(200);
+                            $('#adminPassword').focus()" style="float: right; margin-bottom: 8px;">Authenticate as administrator</a>
+                   <?php } ?>
 
                 <br />
 
@@ -58,13 +59,13 @@ require '../includes/setup-session.php';
                             },
                             success: function(response, textStatus, jqXHR) {
                                 $("#authButton").button('reset');
-                                $("#inputError").show();
-                                
+
                                 if (response.indexOf("Successfully") !== -1) {
                                     window.location = "index.php?message=" + response + "&type=success";
                                 } else {
+                                    $("#inputError").show();
                                     $("#submitButton").button('reset');
-                                $("#alertError").text(response);
+                                    $("#alertError").text(response);
                                     $("#inputError").addClass("alert-danger");
                                 }
                             }
