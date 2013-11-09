@@ -40,11 +40,12 @@ if (key_exists('team_number', $teams)) {
     $_SESSION['location'] = $location;
 
     # Redirect to the post-login page
-    header('location: home');
+    //header('location: home');
 } else {
-    unset($_SESSION['TeamNumber']);
-    unset($_SESSION['UserID']);
-    unset($_SESSION['TeamID']);
-    header('location: index.php?message=' . urlencode("Your username or password are incorrect.") . "&type=danger");
+    unset($_SESSION['teamNumber']);
+    unset($_SESSION['scoutName']);
+    unset($_SESSION['location']);
+    unset($_SESSION['isAdmin']);
+    echo 'Your username or password are incorrect.';
 }
-?>s
+?>

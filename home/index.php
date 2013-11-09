@@ -61,13 +61,10 @@ require '../includes/setup-session.php';
                                 if (response.indexOf("Successfully") !== -1) {
                                     window.location = "index.php?message=" + response + "&type=success";
                                 } else {
-                                    $("#inputError").show();
                                     $("#submitButton").button('reset');
                                     $("#alertError").text(response);
                                     $("#inputError").addClass("alert-danger");
                                     $("#inputError").slideDown(250);
-                                    $("#submitButton").button('reset');
-                                    $("#alertError").text(response);
                                 }
                             }
                         });
