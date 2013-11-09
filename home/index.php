@@ -15,7 +15,7 @@ require '../includes/setup-session.php';
                 <p>You are logged in as <?php echo $scoutName ?> for team <?php echo $teamNumber ?> in <?php echo $location ?>.</p>
 
                 <button onclick="window.location = '../login.php?logout';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>
-                
+
                 <?php if ($_SESSION['isAdmin'] == true) { ?>
                     <br>
                     <font style="color: #bbb; float: right; font-size: 10pt;">Admin Tools</font>
@@ -61,6 +61,9 @@ require '../includes/setup-session.php';
                                 if (response.indexOf("Successfully") !== -1) {
                                     window.location = "index.php?message=" + response + "&type=success";
                                 } else {
+                                    $("#inputError").show();
+                                    $("#submitButton").button('reset');
+                                    $("#alertError").text(response);
                                     $("#inputError").addClass("alert-danger");
                                     $("#inputError").slideDown(250);
                                     $("#submitButton").button('reset');
