@@ -1,3 +1,6 @@
+<?php
+require '../includes/setup-session.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
