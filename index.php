@@ -47,7 +47,7 @@
                             var teamPassword = $("#teamPassword").val();
 
                             $.ajax({
-                                url: 'login.php',
+                                url: 'ajax-handlers/login.php',
                                 type: "POST",
                                 data: {
                                     'teamNumber': teamNumber,
@@ -56,10 +56,7 @@
                                 },
                                 success: function(response, textStatus, jqXHR) {
                                     if (response !== "") {
-                                        $("#loginButton").button('reset');
-                                        $("#alertError").text(response);
-                                        $("#inputError").addClass("alert-danger");
-                                        $("#inputError").slideDown(250);
+                                        showMessage(response, 'danger');
                                     } else {
                                         location.reload();
                                     }

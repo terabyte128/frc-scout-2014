@@ -53,15 +53,13 @@ require '../includes/admin-required.php';
                         var newPasswordRepeat = $("#newPasswordRepeat").val();
                         $("#submitButton").button('loading');
                         if (newPassword !== newPasswordRepeat) {
-                            $("#inputError").show();
-                            $("#inputError").addClass("alert-danger");
-                            $("#alertError").text("Your passwords do not match, please try again.");
+                            showMessage("Your passwords do not match, please try again.", 'danger');
                             $("#submitButton").button('reset');
                             return;
                         }
 
                         $.ajax({
-                            url: '../includes/change-password-ajax-submit.php',
+                            url: '../ajax-handlers/change-password-ajax-submit.php',
                             type: "POST",
                             data: {
                                 'adminPassword': adminPassword,
@@ -72,9 +70,7 @@ require '../includes/admin-required.php';
                                 if (response.indexOf("successfully") !== -1) {
                                     window.location = "index.php?message=" + response + "&type=success";
                                 } else {
-                                    $("#inputError").slideDown(250);
-                                    $("#alertError").text(response);
-                                    $("#inputError").addClass("alert-danger");
+                                    showMessage(response, 'danger');
                                 }
                             }
                         });

@@ -51,7 +51,7 @@ require '../includes/setup-session.php';
                         $("#authButton").button('loading');
                         var adminPassword = $("#adminPassword").val();
                         $.ajax({
-                            url: 'auth-as-admin.php',
+                            url: '../ajax-handlers/auth-as-admin-ajax-submit.php',
                             type: "POST",
                             data: {
                                 'adminPassword': adminPassword
@@ -61,10 +61,7 @@ require '../includes/setup-session.php';
                                 if (response.indexOf("Successfully") !== -1) {
                                     window.location = "index.php";
                                 } else {
-                                    $("#submitButton").button('reset');
-                                    $("#alertError").text(response);
-                                    $("#inputError").addClass("alert-danger");
-                                    $("#inputError").slideDown(250);
+                                    showMessage(response, 'danger');
                                 }
                             }
                         });

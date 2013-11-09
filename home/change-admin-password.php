@@ -52,7 +52,7 @@ require '../includes/admin-required.php';
                         }
 
                         $.ajax({
-                            url: '../includes/change-admin-password-ajax-submit.php',
+                            url: '../ajax-handlers/change-admin-password-ajax-submit.php',
                             type: "POST",
                             data: {
                                 'adminPassword': adminPassword,
@@ -63,9 +63,7 @@ require '../includes/admin-required.php';
                                 if (response.indexOf("successfully") !== -1) {
                                     window.location = "index.php?message=" + response + "&type=success";
                                 } else {
-                                    $("#inputError").slideDown(250);
-                                    $("#alertError").text(response);
-                                    $("#inputError").addClass("alert-danger");
+                                    showMessage(reponse, 'danger');
                                 }
                             }
                         });
