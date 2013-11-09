@@ -47,7 +47,7 @@
                             var teamPassword = $("#teamPassword").val();
 
                             $.ajax({
-                                url: 'ajax-handlers/login.php',
+                                url: 'ajax-handlers/login-ajax-submit.php',
                                 type: "POST",
                                 data: {
                                     'teamNumber': teamNumber,
