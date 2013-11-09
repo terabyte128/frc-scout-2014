@@ -1,3 +1,5 @@
+<?php include 'includes/redirect-if-session-exists.php'; ?>
+
 <!DOCTYPE html>
 <html>
     <head>
