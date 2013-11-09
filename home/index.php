@@ -58,13 +58,13 @@ require '../includes/setup-session.php';
                             },
                             success: function(response, textStatus, jqXHR) {
                                 $("#authButton").button('reset');
-                                $("#inputError").show();
-                                $("#submitButton").button('reset');
-                                $("#alertError").text(response);
                                 if (response.indexOf("Successfully") !== -1) {
                                     window.location = "index.php?message=" + response + "&type=success";
                                 } else {
-                                    $("#inputError").addClass("alert-danger");
+                                $("#inputError").addClass("alert-danger");
+                                $("#inputError").show();
+                                $("#submitButton").button('reset');
+                                $("#alertError").text(response);
                                 }
                             }
                         });
