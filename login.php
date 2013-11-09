@@ -46,6 +46,6 @@ if (key_exists('team_number', $teams)) {
     unset($_SESSION['scoutName']);
     unset($_SESSION['location']);
     unset($_SESSION['isAdmin']);
-    echo 'Your username or password are incorrect.';
+    echo 'Your username password, or team number are incorrect.';
 }
 ?>
