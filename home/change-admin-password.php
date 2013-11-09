@@ -21,7 +21,7 @@ require '../includes/setup-session.php';
                             <label for="teamPassword">Admin Password</label>
                             <input type="password" class="form-control" id="adminPassword" placeholder="Current Admin Password" required>
                         </div>                        <div class="form-group">
-                            <label for="teamPassword">Desired New Password</label>
+                            <label for="teamPassword">New Admin Password</label>
                             <input type="password" class="form-control" id="newPassword" placeholder="New Admin Password" required>
                         </div>                        <div class="form-group">
                             <label for="teamPassword">Re-enter Password</label>
@@ -29,8 +29,8 @@ require '../includes/setup-session.php';
                         </div>
 
                         <button type="submit" id="submitButton" class="btn btn-default btn-success">Change Admin Password</button>
-                        <button onclick="document.location='index.php'" class ="btn btn-default btn-danger">Return</button>
                     </form>
+                        <button onclick="document.location='index.php'" class ="btn btn-default btn-danger">Return</button>
                     <br />
                 </div>
             </div>
