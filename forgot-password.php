@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Password Reset</title>
+        <title>Forgot Your Password?</title>
         <?php include 'includes/headers.php'; ?>
     </head>
     <body>

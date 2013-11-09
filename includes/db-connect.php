@@ -1,7 +1,6 @@
 <?php
 
 //connects you to the database as defined by constants.php
-
 require 'constants.php';
 try {
     $db = new PDO(DSN, DB_USER, DB_PASS);
