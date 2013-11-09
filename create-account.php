@@ -24,7 +24,7 @@ if (isset($_POST['teamNumber'])) {
             $message = $e->getMessage();
             //check if error means team number already exists
             if (strpos($message, "Duplicate entry") !== false) {
-                header('location:create-account.php?message=' . urlencode("That team number has been taken! If you believe this is in error, please <?php href='mailto:sam@ingrahamrobotics.org'>contact me</a> and we'll get it sorted out.") . "&type=danger");
+                header('location:create-account.php?message=' . urlencode("That team number has been taken! If you believe this is in error, please <a href='mailto:sam@ingrahamrobotics.org'>contact me</a> and we'll get it sorted out.") . "&type=danger");
             } else {
                 header('location:create-account.php?message=' . urlencode("Something went wrong, but we're unsure of what it is. Please try again.") . "&type=danger");
             }
@@ -45,10 +45,10 @@ if (isset($_POST['teamNumber'])) {
                 <?php include 'includes/messages.php'; ?>
                 <div class="title">
                     <h2>Create An Account</h2>
-                    <form style='max-width: 500px; margin: 5px auto 5px auto'>
+                    <p style='max-width: 500px; margin: 5px auto 5px auto'>
                         <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();'><span class="glyphicon glyphicon-question-sign"></span> How does FRC Scout work?</a>
                     </p>
-                    <p>
+                    <p style='max-width: 500px; margin: 5px auto 5px auto'>
                         <span id="step1">FRC Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").hide(); $("#step2").show();'>Learn more.</a></span>
                         <span id="step2">When logging in, a scout will enter their name in addition to their team number, to help track who scouted what teams. <a href='#' onclick='$("#step2").hide(); $("#step3").show();'>Learn even more!</a></span>
                         <span id='step3'>The team's admin email is just the email of whoever makes the account, in case they need a password reset or other support. <a href='#' onclick='$("#step3").hide(); $("#learnHow").hide();'>Let's get started!</a> <a href="https://github.com/terabyte128/frc-scout-2013/blob/master/create-account.php" target="_blank">Learn even more!</a></span>
@@ -74,7 +74,6 @@ if (isset($_POST['teamNumber'])) {
                         </div>
                         <button type="submit" class="btn btn-default btn-success">Create Account</button>
                     </form>
-                    <br />
                     <br />
                 </div>
             </div>
