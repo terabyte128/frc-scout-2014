@@ -2,7 +2,7 @@
 session_start();
 
 //connect to the database
-require 'includes/db-connect.php';
+require '../includes/db-connect.php';
 
 if (isset($_GET['logout'])) {
     unset($_SESSION['teamNumber']);
