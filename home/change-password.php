@@ -12,24 +12,25 @@ require '../includes/setup-session.php';
             <div class="container">
                 <div class="title">
                     <?php include '../includes/messages.php' ?>
-                    <h2>Change Password</h2>
+                    <h2>Change Team Password</h2>
                 </div>
-                <p style="color: red;"><img src="/images/alert.gif"><img src="/images/alert.gif"><img src="/images/alert.gif"> <b>Warning: </b> this will change the password for <strong>all scouts on this team!</strong> <img src="/images/alert.gif"><img src="/images/alert.gif"><img src="/images/alert.gif">         </p>
+                <p style="color: red;">This will change the password for <strong>all scouts on this team!</strong></p>
                 <div class='login-form align-center' onsubmit="confirmReset();
                         return false;" style='width: 250px;'>
                     <form role="form">
                         <div class="form-group">
-                            <label for="teamPassword">Current Password</label>
-                            <input type="password" class="form-control" id="currentPassword" placeholder="Current Password" required>
+                            <label for="teamPassword">Admin Password</label>
+                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
                         </div>                        <div class="form-group">
-                            <label for="teamPassword">Desired New Password</label>
-                            <input type="password" class="form-control" id="newPassword" placeholder="New Password" required>
+                            <label for="teamPassword">New Team Password</label>
+                            <input type="password" class="form-control" id="newPassword" placeholder="New Team Password" required>
                         </div>                        <div class="form-group">
-                            <label for="teamPassword">Retype Password</label>
-                            <input type="password" class="form-control" id="newPasswordRepeat" placeholder="Retype" required>
+                            <label for="teamPassword">Re-enter New Password</label>
+                            <input type="password" class="form-control" id="newPasswordRepeat" placeholder="Re-enter New Password" required>
                         </div>
 
-                        <button type="submit" id="submitButton" class="btn btn-default btn-success">Request Reset</button>
+                        <button type="submit" id="submitButton" class="btn btn-default btn-success">Change Password</button>
+                        <button onclick="document.location='index.php'" class ="btn btn-default btn-danger">Return</button>
                     </form>
                     <br />
                 </div>
@@ -46,7 +47,7 @@ require '../includes/setup-session.php';
                     }
 
                     function requestReset() {
-                        var currentPassword = $("#currentPassword").val();
+                        var adminPassword = $("#adminPassword").val();
                         var newPassword = $("#newPassword").val();
                         var newPasswordRepeat = $("#newPasswordRepeat").val();
                         $("#submitButton").button('loading');
@@ -62,7 +63,7 @@ require '../includes/setup-session.php';
                             url: '../includes/change-password-ajax-submit.php',
                             type: "POST",
                             data: {
-                                'currentPassword': currentPassword,
+                                'adminPassword': adminPassword,
                                 'newPassword': newPassword
                             },
                             success: function(response, textStatus, jqXHR) {
