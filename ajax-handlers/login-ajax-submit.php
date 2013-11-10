@@ -10,7 +10,7 @@ $scoutName = $_POST['scoutName'];
 //$location = $_POST['location'];
 
 //TODO: integrate actual locations
-$location = "TEST LOCATION";
+$location = "test location";
 
 try {
     $authenticate = $db->prepare('SELECT team_number FROM team_accounts WHERE team_number = ? AND team_password = md5(?)');
