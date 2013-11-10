@@ -21,7 +21,7 @@ if (isset($_POST['teamNumber'])) {
         $message = $e->getMessage();
         //check if error means team number already exists
         if (strpos($message, "Duplicate entry") !== false) {
-            echo "That team number has been taken! If you believe this is in error, please <a href='mailto:sam@ingrahamrobotics.org'>contact me</a> and we'll get it sorted out.";
+            echo "That team number has been taken! If you believe this is in error, please <a href='mailto:sam@ingrahamrobotics.org'>contact Sam</a> and we'll get it sorted out.";
         } else {
             echo "Something went wrong, but we're unsure of what it is. Please try again.";
         }

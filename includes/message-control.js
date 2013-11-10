@@ -7,7 +7,6 @@ function showMessage(message, type) {
     $("#inputError").slideDown(250);
 }
 function hideMessage() {
-    $("#alertError").html("message");
     $("#inputError").slideUp(250);
 }
 function loadPageWithMessage(url, message, type) {
