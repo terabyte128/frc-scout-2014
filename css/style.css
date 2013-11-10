@@ -39,6 +39,11 @@ input::-webkit-outer-spin-butter {
 }
 
 .btn-home-selections {
-    max-width: 600px;
+    width: 240px;
     margin: 4px 2px 4px 2px;
+}
+
+.footer {
+    bottom: 0;
+    text-align: right;
 }

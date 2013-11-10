@@ -12,39 +12,41 @@ require '../includes/setup-session.php';
             <div class="container">
                 <?php include '../includes/messages.php' ?>
                 <h2>FRC Scout: Home</h2>
-                <p>You are logged in as <?php echo $scoutName ?> for team <?php echo $teamNumber ?> in <?php echo $location ?>.</p>
 
                 <button onclick="window.location = 'logout.php';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>
 
-                <?php if ($_SESSION['isAdmin'] == true) { ?>
-                    <br>
-                    <font style="color: #bbb; float: right; font-size: 10pt;">Admin Tools</font>
-                    <hr style="border-top: 1px solid #bbb">
+                <?php if ($isAdmin) { ?>
+                    <br />
+                    <font style="color: #868686; float: right; font-size: 10pt;">Admin Tools</font>
+                    <hr style="border-top: 1px solid #868686">
                     <button onclick="window.location = 'change-password.php';" class="btn btn-lg btn-warning btn-home-selections">Change Team Password</button>
                     <button onclick="window.location = 'change-admin-password.php';" class="btn btn-lg btn-warning btn-home-selections">Change Admin Password</button>
-                    
+                    <br />
+
                 <?php } ?>
 
-                <br />
 
-                <?php if ($_SESSION['isAdmin'] == false) { ?>
-                    <a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').toggle(150);
+                <?php if (!$isAdmin) { ?>
+                    <p><a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').toggle(150);
                             $('#adminPassword').focus()" style="float: right; margin-bottom: 8px;">Authenticate as administrator</a>
-                   <?php } ?>
-
-                <br />
-
-                <div class='login-form align-center' id="authAsAdmin" onsubmit="loginAdmin();
-                        return false;" style='width: 250px; display: none;'>
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="adminPassword">Admin Password</label>
-                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
-                        </div>                        
-                        <button type="submit" id="authButton" class="btn btn-default btn-success">Authenticate</button>
-                    </form>
+                    </p>
                     <br />
-                </div>
+                <?php } ?>
+
+                <?php if (!$isAdmin) { ?>
+                    <div class='login-form align-center' id="authAsAdmin" onsubmit="loginAdmin();
+                            return false;" style='width: 250px; display: none;'>
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="adminPassword">Admin Password</label>
+                                <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
+                            </div>                        
+                            <button type="submit" id="authButton" class="btn btn-default btn-success">Authenticate</button>
+                        </form>
+                        <br />
+                    </div>
+                <?php } ?>
+                <?php include '../includes/footer.php' ?>
             </div>
         </div>
 
@@ -68,6 +70,6 @@ require '../includes/setup-session.php';
                             }
                         });
                     }
-        </script>    
+        </script>  
     </body>
 </html>

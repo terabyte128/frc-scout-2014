@@ -11,4 +11,5 @@ if (!isset($_SESSION['teamNumber'])) {
 $teamNumber = $_SESSION['teamNumber'];
 $scoutName = $_SESSION['scoutName'];
 $location = $_SESSION['location'];
+$isAdmin = $_SESSION['isAdmin'];
 ?>

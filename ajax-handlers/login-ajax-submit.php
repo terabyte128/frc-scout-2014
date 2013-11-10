@@ -29,6 +29,7 @@ if (key_exists('team_number', $teams)) {
     $_SESSION['teamNumber'] = $teamNumber;
     $_SESSION['scoutName'] = $scoutName;
     $_SESSION['location'] = $location;
+    $_SESSION['isAdmin'] = false;
 
     # Redirect to the post-login page
     //header('location: home');
