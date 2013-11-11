@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
     unset($_SESSION['teamNumber']);
     unset($_SESSION['scoutName']);
     unset($_SESSION['location']);

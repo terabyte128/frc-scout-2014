@@ -38,7 +38,7 @@ $response = $request->fetch(PDO::FETCH_ASSOC);
                     pk: '<?php echo $teamNumber ?>',
                     url: "../ajax-handlers/change-profile-ajax-submit.php",
                     success: function(response, newVal) {
-                        if (response != "success") {
+                        if (response.indexOf("success") === -1) {
                             showMessage(response, 'warning');
                         }
                     }

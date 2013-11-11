@@ -1,10 +1,9 @@
-<?php
-require '../includes/setup-session.php';
-?>
+<?php require '../includes/setup-session.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include '../includes/headers.php' ?>
+        <?php include '../includes/headers.php'; ?>
+        ?>
         <title>FRC Scout: Home</title>
     </head>
     <body>
@@ -17,8 +16,9 @@ require '../includes/setup-session.php';
                 <hr style="border-top: 1px solid #bbb">
                 <button onclick="window.location = 'team-profile.php';" class="btn btn-lg btn-info btn-home-selections">Team Profile</button>
                 <button onclick="window.location = 'logout.php';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>
-                <form onsubmit="goToTeamProfile(); return false;" style="display: inline;">
-                <input type="number" class="form-control btn btn-lg btn-home-selections" style="display: inline; height: 45px; border-radius: 6px;" placeholder="find team profile..." id="searchForTeam">
+                <form onsubmit="goToTeamProfile();
+                        return false;" style="display: inline;">
+                    <input type="number" class="form-control btn btn-lg btn-home-selections" style="display: inline; height: 45px; border-radius: 6px;" placeholder="find team profile..." id="searchForTeam">
                 </form>
                 <?php if ($isAdmin) { ?>
                     <br /><br />
@@ -71,10 +71,10 @@ require '../includes/setup-session.php';
 
                     function goToTeamProfile() {
                         var otherTeamNumber = $("#searchForTeam").val();
-                        if(otherTeamNumber == <?php echo $teamNumber ?>) {
+                        if (otherTeamNumber == <?php echo $teamNumber ?>) {
                             window.location = 'team-profile.php';
                         } else
-                        window.location = 'other-team-profile.php?team=' + otherTeamNumber;
+                            window.location = 'other-team-profile.php?team=' + otherTeamNumber;
                     }
         </script>  
     </body>
