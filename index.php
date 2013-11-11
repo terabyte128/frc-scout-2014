@@ -10,7 +10,7 @@
             <div class="container">
                 <?php include 'includes/messages.php'; ?>
                 <div class="title">
-                    <img style='margin: 20px 2px 2px 2px; max-width: 300px' src="images/logo_earfuzz_hat.png" alt="header logo" />
+                    <img style='margin: 20px auto 2px auto; max-width: 300px' src="images/logo_earfuzz_hat.png" alt="header logo" id="main-title-image" />
                     <h2 style='margin-top: 2px;'>FRC Scout: Login</h2>
                 </div>
                 <div class='login-form align-center' style='width: 250px;'>
@@ -25,7 +25,7 @@
                             <input type="text" class="form-control" id="scoutName" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="teamPassword">Password</label>
+                            <label for="teamPassword">Team Password</label>
                             <input type="password" class="form-control" id="teamPassword" placeholder="Team Password" required>
                         </div>
 

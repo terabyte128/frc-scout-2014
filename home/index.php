@@ -28,12 +28,10 @@ require '../includes/setup-session.php';
 
                 <?php } ?>
 
-
-
-
                 <?php if (!$isAdmin) { ?>
+                <br />
                     <div class='login-form align-center' id="authAsAdmin" onsubmit="loginAdmin();
-                            return false;" style='width: 250px; display: none;'>
+                            return false;" style='width: 250px; display: none; margin-top: 20px;'>
                         <br />
                         <form role="form">
                             <div class="form-group">

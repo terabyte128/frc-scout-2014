@@ -15,13 +15,13 @@
                         <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();'><span class="glyphicon glyphicon-question-sign"></span> How does FRC Scout work?</a>
                     </p>
                     <p style='max-width: 500px; margin: 5px auto 5px auto'>
-                        <span style="display: none;" id="step1">FRC Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").slideUp(250);
-                                $("#step2").slideDown(250);'>Learn more.</a></span>
-                        <span style="display: none;" id="step2">When logging in, a scout will enter their name in addition to their team number, to help track who scouted what teams. <a href='#' onclick='$("#step2").slideUp(250);
+                        <span style="display: none;" id="step1">FRC Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").hide();
+                                $("#step2").show();'>Learn more.</a></span>
+                        <span style="display: none;" id="step2">When logging in, a scout will enter their name in addition to their team number, to help track who scouted what teams. <a href='#' onclick='$("#step2").hide();
                                 ;
-                                $("#step3").slideDown(250);'>Learn even more!</a></span>
+                                $("#step3").show();'>Learn even more!</a></span>
                         <span style="display: none;" id='step3'>The team's admin email is just the email of whoever makes the account, in case they need a password reset or other support. 
-                            The admin password will need to be entered to change the team password or edit scouting data. <br> <a href='#' onclick='$("#step3").slideUp(250);'>Let's get started!</a> <a href="https://github.com/terabyte128/frc-scout-2013/blob/master/create-account.php" target="_blank">Learn even more!</a></span>
+                            The admin password will need to be entered to change the team password or edit scouting data. <br> <a href='#' onclick='$("#step3").hide(); $("#learnHow").hide();'>Let's get started!</a> <a href="https://github.com/terabyte128/frc-scout-2013/blob/master/create-account.php" target="_blank">Learn even more!</a></span>
                     </p>
                 </div>
                 <div class='login-form align-center' style='width: 250px;'>

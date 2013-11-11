@@ -1,6 +1,7 @@
 <div>
+    <br />
     <?php if (!$isAdmin && $_SERVER['PHP_SELF'] === "/home/index.php") { ?>
-        <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').toggle(150);
+        <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authAsAdmin').slideToggle(250);
                                 $('#adminPassword').focus()" style="float: right; font-size: 10pt">Authenticate as administrator</a>
         </span>
     <?php } ?>
