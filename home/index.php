@@ -3,7 +3,6 @@
 <html>
     <head>
         <?php include '../includes/headers.php'; ?>
-        ?>
         <title>FRC Scout: Home</title>
     </head>
     <body>
@@ -16,10 +15,13 @@
                 <hr style="border-top: 1px solid #bbb">
                 <button onclick="window.location = 'team-profile.php';" class="btn btn-lg btn-info btn-home-selections">Team Profile</button>
                 <button onclick="window.location = 'logout.php';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>
+                <div style="display: inline;">
                 <form onsubmit="goToTeamProfile();
                         return false;" style="display: inline;">
-                    <input type="number" class="form-control btn btn-lg btn-home-selections" style="display: inline; height: 45px; border-radius: 6px;" placeholder="find team profile..." id="searchForTeam">
+                    <input type="number" class="form-control btn btn-lg btn-home-selections" style="display: inline; height: 45px; border-radius: 6px; width: 185px;" placeholder="find team profile..." id="searchForTeam">
+                    <button class="btn btn-lg btn-success btn-home-selections" style="width: 50px; text-align: center; display: inline">Go</button>
                 </form>
+                </div>
                 <?php if ($isAdmin) { ?>
                     <br /><br />
                     <font style="color: #868686; float: right; font-size: 10pt;">Admin Tools</font>
@@ -73,8 +75,11 @@
                         var otherTeamNumber = $("#searchForTeam").val();
                         if (otherTeamNumber == <?php echo $teamNumber ?>) {
                             window.location = 'team-profile.php';
-                        } else
+                        } else if (otherTeamNumber === "") {
+                            showMessage("Please enter a team number.", 'warning');
+                        } else {
                             window.location = 'other-team-profile.php?team=' + otherTeamNumber;
+                        }
                     }
         </script>  
     </body>
