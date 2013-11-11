@@ -3,7 +3,7 @@
 $whitelist = array('team_name', 'description');
 require '../includes/setup-session.php';
 $colName = $_POST['name'];
-$value = $_POST['value'];
+$value = strip_tags($_POST['value']);
 if ($isAdmin) {
     if (!in_array($colName, $whitelist)) {
         die('hacker!!');
