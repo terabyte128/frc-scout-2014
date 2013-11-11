@@ -1,5 +1,4 @@
 <?php
-
 $adminPassword = $_POST['adminPassword'];
 $newPassword = $_POST['newPassword'];
 

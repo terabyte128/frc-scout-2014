@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'headers.php';
 
 if (!isset($_SESSION['teamNumber'])) {
     echo '<script type="text/javascript">',

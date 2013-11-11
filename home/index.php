@@ -17,7 +17,9 @@ require '../includes/setup-session.php';
                 <hr style="border-top: 1px solid #bbb">
                 <button onclick="window.location = 'team-profile.php';" class="btn btn-lg btn-info btn-home-selections">Team Profile</button>
                 <button onclick="window.location = 'logout.php';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>
-
+                <form onsubmit="goToTeamProfile(); return false;" style="display: inline;">
+                <input type="number" class="form-control btn-home-selections btn-lg" style="display: inline; height: 48px; border-radius: 6px;" placeholder="search for team..." id="searchForTeam">
+                </form>
                 <?php if ($isAdmin) { ?>
                     <br /><br />
                     <font style="color: #868686; float: right; font-size: 10pt;">Admin Tools</font>
@@ -29,7 +31,7 @@ require '../includes/setup-session.php';
                 <?php } ?>
 
                 <?php if (!$isAdmin) { ?>
-                <br />
+                    <br />
                     <div class='login-form align-center' id="authAsAdmin" onsubmit="loginAdmin();
                             return false;" style='width: 250px; display: none; margin-top: 20px;'>
                         <br />
@@ -65,6 +67,11 @@ require '../includes/setup-session.php';
                                 }
                             }
                         });
+                    }
+
+                    function goToTeamProfile() {
+                        var teamNumber = $("#searchForTeam").val();
+                        console.log("going to " + teamNumber + "'s profile.");
                     }
         </script>  
     </body>
