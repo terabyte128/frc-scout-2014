@@ -47,3 +47,7 @@ input::-webkit-outer-spin-butter {
     bottom: 0;
     text-align: right;
 }
+
+body.modal-open {
+    margin-right: 0px;
+}

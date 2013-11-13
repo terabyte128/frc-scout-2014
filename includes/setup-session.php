@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+require 'constants.php';
 require 'message-control.php';
 
 if (!isset($_SESSION['teamNumber'])) {
@@ -9,9 +10,12 @@ if (!isset($_SESSION['teamNumber'])) {
     '</script>';
     
 } else {
+    $tablesToTypes = array(FTC_TEAM_ACCOUNTS => 'FTC', FRC_TEAM_ACCOUNTS => 'FRC');
     $teamNumber = $_SESSION['teamNumber'];
     $scoutName = $_SESSION['scoutName'];
     $location = $_SESSION['location'];
     $isAdmin = $_SESSION['isAdmin'];
+    $teamTable = $_SESSION['teamTable'];
+    $teamType = $tablesToTypes[$teamTable];
 }
 ?>

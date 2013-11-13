@@ -44,9 +44,7 @@ require '../includes/admin-required.php';
                         var newPasswordRepeat = $("#newPasswordRepeat").val();
                         $("#submitButton").button('loading');
                         if (newPassword !== newPasswordRepeat) {
-                            $("#inputError").show();
-                            $("#inputError").addClass("alert-danger");
-                            $("#alertError").text("Your passwords do not match, please try again.");
+                            showMessage('Your passwords do not match, please try again.', 'danger');
                             $("#submitButton").button('reset');
                             return;
                         }

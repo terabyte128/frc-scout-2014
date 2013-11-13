@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FRC Scout: Login</title>
+        <title>FIRST Scout: Login</title>
         <?php include 'includes/headers.php'; ?>
     </head>
     <body>
@@ -11,7 +11,7 @@
                 <?php include 'includes/messages.php'; ?>
                 <div class="title">
                     <img style='margin: 20px auto 2px auto; max-width: 300px' src="images/logo_earfuzz_hat.png" alt="header logo" id="main-title-image" />
-                    <h2 style='margin-top: 2px;'>FRC Scout: Login</h2>
+                    <h2 style='margin-top: 2px;'>FIRST Scout: Login</h2>
                 </div>
                 <div class='login-form align-center' style='width: 250px;'>
                     <form role="form" onsubmit="login();
@@ -28,7 +28,13 @@
                             <label for="teamPassword">Team Password</label>
                             <input type="password" class="form-control" id="teamPassword" placeholder="Team Password" required>
                         </div>
-
+                        <div class="form-group">
+                            <label for="teamType">Team Type</label>
+                            <select multiple class="form-control" id="teamType" style="height: 52px;">
+                                <option selected id="frc">FRC (big robots)</option>
+                                <option id="ftc">FTC (small robots)</option>                           
+                            </select>
+                        </div>
                         <button type="submit" id="loginButton" class="btn btn-default btn-success">Login</button>
                     </form>
                     <br />
@@ -45,6 +51,7 @@
                             var teamNumber = $("#teamNumber").val();
                             var scoutName = $("#scoutName").val();
                             var teamPassword = $("#teamPassword").val();
+                            var teamType = $('#teamType').find('option:selected').attr('id');
 
                             $.ajax({
                                 url: 'ajax-handlers/login-ajax-submit.php',
@@ -52,7 +59,8 @@
                                 data: {
                                     'teamNumber': teamNumber,
                                     'scoutName': scoutName,
-                                    'teamPassword': teamPassword
+                                    'teamPassword': teamPassword,
+                                    'teamType' : teamType
                                 },
                                 success: function(response, textStatus, jqXHR) {
                                     if (response !== "") {

@@ -11,7 +11,7 @@ if ($isAdmin) {
 
     require '../includes/db-connect.php';
     try {
-        $request = $db->prepare("UPDATE team_accounts SET $colName=? WHERE team_number=?");
+        $request = $db->prepare("UPDATE $teamTable SET $colName=? WHERE team_number=?");
         $request->execute(array($value, $teamNumber));
     } catch (PDOException $e) {
         echo $e->getMessage();

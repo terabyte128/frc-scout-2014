@@ -3,24 +3,32 @@
 <html>
     <head>
         <?php include '../includes/headers.php'; ?>
-        <title>FRC Scout: Home</title>
+        <title>FIRST Scout: Home</title>
     </head>
     <body>
         <div class="wrapper">
             <div class="container">
                 <?php include '../includes/messages.php' ?>
-                <h2>FRC Scout: Home</h2>
+                <h2>FIRST Scout: Home</h2>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Scouting Tools</font>
                 <hr style="border-top: 1px solid #bbb">
                 <button onclick="window.location = 'team-profile.php';" class="btn btn-lg btn-info btn-home-selections">Team Profile</button>
                 <button onclick="window.location = 'logout.php';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>
                 <div style="display: inline;">
-                <form onsubmit="goToTeamProfile();
+                    <div style="display: inline-table;">
+                        <div style="display: table-row">
+                            <form onsubmit="goToTeamProfile();
                         return false;" style="display: inline;">
-                    <input type="number" class="form-control btn btn-lg btn-home-selections" style="display: inline; height: 45px; border-radius: 6px; width: 185px;" placeholder="find team profile..." id="searchForTeam">
-                    <button class="btn btn-lg btn-success btn-home-selections" style="width: 50px; text-align: center; display: inline">Go</button>
-                </form>
+                                <div style="display: table-cell">
+                                    <input type="number" class="form-control btn btn-lg btn-home-selections" style="display: inline; height: 45px; border-radius: 6px; width: 175px;" placeholder="find team profile..." id="searchForTeam">
+                                </div>
+                                <div style="display: table-cell">
+                                    <button class="btn btn-lg btn-success btn-home-selections" style="width: 60px; display: inline; text-align: center;" id="searchButton">Go</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <?php if ($isAdmin) { ?>
                     <br /><br />
@@ -33,17 +41,32 @@
                 <?php } ?>
 
                 <?php if (!$isAdmin) { ?>
-                    <br />
+
+                    <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="authTitle">Authenticate as administrator</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form role="form" id="authAsAdmin" onsubmit="loginAdmin();
+                            return false;">
+                                        <div class="form-group">
+                                            <label for="adminPassword">Admin Password</label>
+                                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
+                                        </div>                        
+                                        <button type="submit" id="authButton" class="btn btn-default btn-success">Authenticate</button>
+                                    </form>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
                     <div class='login-form align-center' id="authAsAdmin" onsubmit="loginAdmin();
                             return false;" style='width: 250px; display: none; margin-top: 20px;'>
                         <br />
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="adminPassword">Admin Password</label>
-                                <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
-                            </div>                        
-                            <button type="submit" id="authButton" class="btn btn-default btn-success">Authenticate</button>
-                        </form>
+
                     </div>
                 <?php } ?>
                 <?php include '../includes/footer.php' ?>
@@ -51,6 +74,10 @@
         </div>
 
         <script type="text/javascript">
+                    $('#authModal').on('shown.bs.modal', function() {
+                        $('#adminPassword').focus();
+                    })
+                    
                     function loginAdmin() {
                         $("#authButton").button('loading');
                         var adminPassword = $("#adminPassword").val();
@@ -64,8 +91,9 @@
                                 $("#authButton").button('reset');
                                 if (response.indexOf("Successfully") !== -1) {
                                     location.reload();
+                                    $('#authModal').modal('dismiss');
                                 } else {
-                                    showMessage(response, 'danger');
+                                    $("#authTitle").html("<font style='color: firebrick;'>Incorrect password, please try again.</font>");
                                 }
                             }
                         });

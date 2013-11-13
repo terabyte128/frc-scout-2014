@@ -12,7 +12,7 @@ require '../includes/constants.php';
 
 
 try {
-    $changePassRequest = $db->prepare('UPDATE team_accounts SET reset_id=?, reset_time=?, pending_password=md5(?), password_type=? WHERE admin_email=? AND team_number=?');
+    $changePassRequest = $db->prepare('UPDATE ' . $teamTable . ' SET reset_id=?, reset_time=?, pending_password=md5(?), password_type=? WHERE admin_email=? AND team_number=?');
     $changePassRequest->execute(array($resetID, $time, $newPassword, $passwordType, $adminEmail, $teamNumber));
 } catch (PDOException $ex) {
     die("Unable to connect to DB\n " . $ex->getMessage());

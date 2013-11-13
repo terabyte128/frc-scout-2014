@@ -11,9 +11,13 @@ if (isset($_POST['teamNumber'])) {
     $adminEmail = $_POST['adminEmail'];
     $teamPassword = $_POST['teamPassword'];
     $adminPassword = $_POST['adminPassword'];
+    $teamType = $_POST['teamType'];
+
+    $typesToTableNames = array("ftc" => FTC_TEAM_ACCOUNTS, 'frc' => FRC_TEAM_ACCOUNTS);
+    $teamTable = $typesToTableNames[$teamType];
 
     //try and add account
-    $stmt = $db->prepare('INSERT INTO `team_accounts` (team_number, team_password, admin_email, admin_password) VALUES (?, md5(?), ?, md5(?))');
+    $stmt = $db->prepare('INSERT INTO ' . $teamTable . ' (team_number, team_password, admin_email, admin_password) VALUES (?, md5(?), ?, md5(?))');
     try {
         $stmt->execute(array($teamNumber, $teamPassword, $adminEmail, $adminPassword));
         echo "Account created successfully! You may now log in.";

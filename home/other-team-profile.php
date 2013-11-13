@@ -2,7 +2,7 @@
 $otherTeamNumber = $_GET['team'];
 require '../includes/setup-session.php';
 require '../includes/db-connect.php';
-$request = $db->prepare('SELECT team_name, description FROM team_accounts WHERE team_number=?');
+$request = $db->prepare('SELECT team_name, description FROM ' . $teamTable . ' WHERE team_number=?');
 $request->execute(array($otherTeamNumber));
 $response = $request->fetch(PDO::FETCH_ASSOC);
 if (empty($response)) {

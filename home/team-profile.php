@@ -1,9 +1,13 @@
 <?php
 require '../includes/setup-session.php';
 require '../includes/db-connect.php';
-$request = $db->prepare('SELECT team_name, description FROM team_accounts WHERE team_number=?');
+try {
+$request = $db->prepare('SELECT team_name, description FROM ' . $teamTable . ' WHERE team_number=?');
 $request->execute(array($teamNumber));
 $response = $request->fetch(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die($e->getMessage());
+}
 ?>
 <!DOCTYPE html>
 <html>

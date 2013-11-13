@@ -7,13 +7,25 @@ require '../includes/db-connect.php';
 $teamNumber = $_POST['teamNumber'];
 $teamPassword = $_POST['teamPassword'];
 $scoutName = $_POST['scoutName'];
+$teamType = $_POST['teamType'];
 //$location = $_POST['location'];
 
 //TODO: integrate actual locations
 $location = "test location";
 
+$typesToTableNames = array("ftc" => FTC_TEAM_ACCOUNTS, 'frc' => FRC_TEAM_ACCOUNTS);
+
+$teamTable = $typesToTableNames[$teamType];
+
+//this checks tables against a whitelist to circumvent HACKERS!
+$tableWhitelist = array(FRC_TEAM_ACCOUNTS, FTC_TEAM_ACCOUNTS);
+
+if(!in_array($teamTable, $tableWhitelist)) {
+    die("Hacker!!! " . $teamTable);
+}
+
 try {
-    $authenticate = $db->prepare('SELECT team_number FROM team_accounts WHERE team_number = ? AND team_password = md5(?)');
+    $authenticate = $db->prepare('SELECT team_number FROM ' . $teamTable . ' WHERE team_number = ? AND team_password = md5(?)');
     $authenticate->execute(array($teamNumber, $teamPassword));
     $teams = $authenticate->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {
@@ -30,6 +42,7 @@ if (key_exists('team_number', $teams)) {
     $_SESSION['scoutName'] = $scoutName;
     $_SESSION['location'] = $location;
     $_SESSION['isAdmin'] = false;
+    $_SESSION['teamTable'] = $teamTable;
 
     # Redirect to the post-login page
     //header('location: home');
@@ -38,6 +51,7 @@ if (key_exists('team_number', $teams)) {
     unset($_SESSION['scoutName']);
     unset($_SESSION['location']);
     unset($_SESSION['isAdmin']);
+    unset($_SESSION['teamTable']);
     echo "Your username, password, or team number are incorrect. Contact your team administrator for your team's password.";
 }
 ?>

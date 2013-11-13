@@ -7,13 +7,21 @@
 <!-- jquery -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-<!-- js -->
+<!-- bootstrap -->
 <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- message control -->
 <script type="text/javascript" src="/includes/message-control.js"></script>
+
+<!-- js stuff to run on page load -->
 <script type="text/javascript" src="/includes/run-on-page-load.js"></script>
+
+<!-- file upload -->
 <script type="text/javascript" src="/file-upload/js/vendor/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="/file-upload/js/jquery.iframe-transport.js"></script>
 <script type="text/javascript" src="/file-upload/js/jquery.fileupload.js"></script>
+
+<!-- bootstrap editable -->
 <script type="text/javascript" src="/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
 <!-- styles 'n fonts -->
