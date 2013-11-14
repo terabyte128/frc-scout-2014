@@ -21,7 +21,7 @@
                                 ;
                                 $("#step3").show();'>Learn even more!</a></span>
                         <span style="display: none;" id='step3'>The team's admin email is just the email of whoever makes the account, in case they need a password reset or other support. 
-                            The admin password will need to be entered to change the team password or edit scouting data. <br> <a href='#' onclick='$("#step3").hide();
+                            The admin password will need to be entered to change the team password or edit scouting data or team profiles. <br> <a href='#' onclick='$("#step3").hide();
                                 $("#learnHow").hide();'>Let's get started!</a> <a href="https://github.com/terabyte128/frc-scout-2013/blob/master/create-account.php" target="_blank">Learn even more!</a></span>
                     </p>
                 </div>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group">
                             <label for="teamType">Team Type</label>
-                            <select multiple class="form-control" id="teamType" style="height: 52px;">
+                            <select class="form-control" id="teamType">
                                 <option selected id="frc">FRC (big robots)</option>
                                 <option id="ftc">FTC (small robots)</option>                           
                             </select>

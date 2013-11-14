@@ -10,7 +10,7 @@
             <div class="container">
                 <?php include 'includes/messages.php'; ?>
                 <div class="title">
-                    <img style='margin: 20px auto 2px auto; max-width: 300px' src="images/logo_earfuzz_hat.png" alt="header logo" id="main-title-image" />
+                    <img style='margin: 20px auto 2px auto; max-width: 275px' src="images/logo_earfuzz_hat.png" alt="header logo" id="main-title-image" />
                     <h2 style='margin-top: 2px;'>FIRST Scout: Login</h2>
                 </div>
                 <div class='login-form align-center' style='width: 250px;'>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group">
                             <label for="teamType">Team Type</label>
-                            <select multiple class="form-control" id="teamType" style="height: 52px;">
+                            <select class="form-control" id="teamType">
                                 <option selected id="frc">FRC (big robots)</option>
                                 <option id="ftc">FTC (small robots)</option>                           
                             </select>

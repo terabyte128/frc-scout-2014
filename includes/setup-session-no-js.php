@@ -6,10 +6,7 @@ require 'constants.php';
 
 
 if (!isset($_SESSION['teamNumber'])) {
-    require 'message-control.php';
-    echo '<script type="text/javascript">',
-    'loadPageWithMessage("/", "Your session timed out or you forgot to log in, please try again.", "danger");',
-    '</script>';
+    die('Your session timed out or you forgot to login, please <a href="/index.php">try again.</a>');
 } else {
     $tablesToTypes = array(FTC_TEAM_ACCOUNTS => 'FTC', FRC_TEAM_ACCOUNTS => 'FRC');
     $teamNumber = $_SESSION['teamNumber'];

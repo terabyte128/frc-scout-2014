@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 
 <!-- ensure mobile-friendliness -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
 <!-- jquery -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -15,11 +15,7 @@
 
 <!-- js stuff to run on page load -->
 <script type="text/javascript" src="/includes/run-on-page-load.js"></script>
-
-<!-- file upload -->
-<script type="text/javascript" src="/file-upload/js/vendor/jquery.ui.widget.js"></script>
-<script type="text/javascript" src="/file-upload/js/jquery.iframe-transport.js"></script>
-<script type="text/javascript" src="/file-upload/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="http://malsup.github.com/jquery.form.js"></script>
 
 <!-- bootstrap editable -->
 <script type="text/javascript" src="/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
@@ -29,4 +25,3 @@
 <link rel="stylesheet" href="/css/style.css" type='text/css' />
 <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cabin' type='text/css' />
 <link rel="stylesheet" href="/bootstrap3-editable/css/bootstrap-editable.css" />
-<link rel="stylesheet" href="/file-upload/css/jquery.fileupload.css" />

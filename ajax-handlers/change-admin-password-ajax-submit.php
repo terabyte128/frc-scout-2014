@@ -4,6 +4,7 @@ $adminPassword = $_POST['adminPassword'];
 $newPassword = $_POST['newPassword'];
 
 require '../includes/setup-session.php';
+require '../includes/admin-required.php';
 require '../includes/db-connect.php';
 
 try {
