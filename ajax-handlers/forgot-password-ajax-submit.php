@@ -6,6 +6,7 @@ $adminEmail = $_POST['adminEmail'];
 $teamNumber = $_POST['teamNumber'];
 $newPassword = $_POST['newPassword'];
 $passwordType = $_POST['passwordType'];
+$teamTable = $_POST['teamType'];
 
 require '../includes/db-connect.php';
 require '../includes/constants.php';
@@ -23,7 +24,7 @@ if ($changePassRequest->rowCount() === 0) {
 } 
 
 try {
-    $message = 'Please click the following link to reset the team password. This link will only work for 30 minutes. http://' . $_SERVER['HTTP_HOST'] . "/reset-password.php?id=" . $resetID;
+    $message = 'Please click the following link to reset the team password. This link will only work for 30 minutes. http://' . $_SERVER['HTTP_HOST'] . "/reset-password.php?id=" . $resetID . "&teamType=" . $teamType;
     mail($adminEmail, "FRC Scout password reset", $message, "From: do-not-reply@" . $_SERVER['HTTP_HOST']);
 } catch (Exception $ex) {
     die("Unable to send reset email!\r\n" . $ex->getMessage());

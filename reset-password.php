@@ -4,7 +4,7 @@ require 'includes/headers.php';
 require_once 'includes/db-connect.php';
 
 $resetID = $_GET['id'];
-$teamType = $_POST['teamType'];
+$teamType = $_GET['teamType'];
 
 $typesToTableNames = array("ftc" => FTC_TEAM_ACCOUNTS, 'frc' => FRC_TEAM_ACCOUNTS);
 $teamTable = $typesToTableNames[$teamType];
