@@ -16,21 +16,21 @@
                 <div class='login-form align-center' style='width: 250px;'>
                     <div class="form-group">
                         <label for="teamNumber">Team Number</label>
-                        <input type="number" class="form-control" id="teamNumber" name="teamNumber" placeholder="Team Number" require_onced>
+                        <input type="number" class="form-control" id="teamNumber" name="teamNumber" placeholder="Team Number" required>
                     </div>
                     <div class="form-group">
                         <label for="adminEmail">Administrator Email</label>
-                        <input type="email" class="form-control" id="adminEmail" name="adminEmail" placeholder="Admin Email" require_onced>
+                        <input type="email" class="form-control" id="adminEmail" name="adminEmail" placeholder="Admin Email" required>
                     </div>
                     <div class="form-group">
                         <label for="newPassword">New Password</label>
-                        <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New Password" require_onced>
+                        <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="New Password" required>
                     </div>
                     <div class="form-group">
                         <label for="passwordType">Password Type</label>
                         <br>
-                        <label style="font-weight: normal"><input type="radio" class="form-control" style="width: 50px" name="passwordType" value="team_password" require_onced>Team</label>
-                        <label style="font-weight: normal"><input type="radio" class="form-control" style="width: 50px" name="passwordType" value="admin_password" require_onced>Admin</label>
+                        <label style="font-weight: normal"><input type="radio" class="form-control" style="width: 50px" name="passwordType" value="team_password" required>Team</label>
+                        <label style="font-weight: normal"><input type="radio" class="form-control" style="width: 50px" name="passwordType" value="admin_password" required>Admin</label>
                     </div>
                     <div class="form-group">
                         <label for="teamType">Team Type</label>

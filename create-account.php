@@ -30,27 +30,27 @@
                                 return false;">
                         <div class="form-group">
                             <label for="teamNumber">Team Number</label>
-                            <input type="number" class="form-control" id="teamNumber" name="teamNumber" placeholder="FRC Team Number" require_onced>
+                            <input type="number" class="form-control" id="teamNumber" name="teamNumber" placeholder="FRC Team Number" required>
                         </div>
                         <div class="form-group">
                             <label for="adminEmail">Administrator Email</label>
-                            <input type="email" class="form-control" id="adminEmail" name="adminEmail" placeholder="Admin Email" require_onced>
+                            <input type="email" class="form-control" id="adminEmail" name="adminEmail" placeholder="Admin Email" required>
                         </div>
                         <div class="form-group">
                             <label for="teamPassword">Team Password</label>
-                            <input type="password" class="form-control" id="teamPassword" name="teamPassword" placeholder="Team Password" require_onced>
+                            <input type="password" class="form-control" id="teamPassword" name="teamPassword" placeholder="Team Password" required>
                         </div>
                         <div class="form-group">
                             <label for="checkPassword">Re-enter Password</label>
-                            <input type="password" class="form-control" id="checkTeamPassword" name="checkPassword" placeholder="Re-enter Password" require_onced>
+                            <input type="password" class="form-control" id="checkTeamPassword" name="checkPassword" placeholder="Re-enter Password" required>
                         </div>
                         <div class="form-group">
                             <label for="adminPassword">Admin Password</label>
-                            <input type="password" class="form-control" id="adminPassword" name="adminPassword" placeholder="Admin Password" require_onced>
+                            <input type="password" class="form-control" id="adminPassword" name="adminPassword" placeholder="Admin Password" required>
                         </div>
                         <div class="form-group">
                             <label for="checkAdminPassword">Re-enter Admin Password</label>
-                            <input type="password" class="form-control" id="checkAdminPassword" name="checkAdminPassword" placeholder="Re-enter Admin Password" require_onced>
+                            <input type="password" class="form-control" id="checkAdminPassword" name="checkAdminPassword" placeholder="Re-enter Admin Password" required>
                         </div>
                         <div class="form-group">
                             <label for="teamType">Team Type</label>

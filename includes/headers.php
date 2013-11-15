@@ -16,6 +16,7 @@
 <!-- js stuff to run on page load -->
 <script type="text/javascript" src="/includes/run-on-page-load.js"></script>
 <script type="text/javascript" src="/includes/jquery.form.js"></script>
+<script type="text/javascript" src="/includes/typeahead.js"></script>
 
 <!-- bootstrap editable -->
 <script type="text/javascript" src="/bootstrap3-editable/js/bootstrap-editable.min.js"></script>

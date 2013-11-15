@@ -1,6 +1,6 @@
 <?php
 require_once '../includes/setup-session.php';
-require_once '../includes/admin-require_onced.php';
+require_once '../includes/admin-required.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,13 +21,13 @@ require_once '../includes/admin-require_onced.php';
                     <form role="form">
                         <div class="form-group">
                             <label for="teamPassword">Admin Password</label>
-                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" require_onced>
+                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
                         </div>                        <div class="form-group">
                             <label for="teamPassword">New Team Password</label>
-                            <input type="password" class="form-control" id="newPassword" placeholder="New Team Password" require_onced>
+                            <input type="password" class="form-control" id="newPassword" placeholder="New Team Password" required>
                         </div>                        <div class="form-group">
                             <label for="teamPassword">Re-enter New Password</label>
-                            <input type="password" class="form-control" id="newPasswordRepeat" placeholder="Re-enter New Password" require_onced>
+                            <input type="password" class="form-control" id="newPasswordRepeat" placeholder="Re-enter New Password" required>
                         </div>
 
                         <button type="submit" id="submitButton" class="btn btn-default btn-success">Change Password</button>

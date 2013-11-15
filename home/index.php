@@ -54,7 +54,7 @@
                             return false;">
                                         <div class="form-group">
                                             <label for="adminPassword">Admin Password</label>
-                                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" require_onced>
+                                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
                                         </div>                        
                                         <button type="submit" id="authButton" class="btn btn-default btn-success">Authenticate</button>
                                     </form>
