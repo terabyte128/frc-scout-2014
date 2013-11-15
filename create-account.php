@@ -12,11 +12,11 @@
                 <div class="title">
                     <h2>Create An Account</h2>
                     <p style='max-width: 500px; margin: 5px auto 5px auto'>
-                        <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();'><span class="glyphicon glyphicon-question-sign"></span> How does FIRST Scout work?</a>
+                        <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();$("#step2").hide();$("#step3").hide();'><span class="glyphicon glyphicon-question-sign"></span> How does FIRST Scout work?</a>
                     </p>
                     <p style='max-width: 500px; margin: 5px auto 5px auto'>
                         <span style="display: none;" id="step1">FIRST Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").hide();
-                                $("#step2").show();'>Learn more.</a></span>
+                                $("#step2").show();$("step3").hide();'>Learn more.</a></span>
                         <span style="display: none;" id="step2">When logging in, a scout will enter their name in addition to their team number, to help track who scouted what teams. <a href='#' onclick='$("#step2").hide();
                                 ;
                                 $("#step3").show();'>Learn even more!</a></span>
