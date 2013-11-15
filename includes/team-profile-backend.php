@@ -16,9 +16,10 @@
                     <h2>Your Team Profile</h2>
                 <?php } else { ?>
                     <h2>Team <?php echo $otherTeamNumber; ?>'s Profile</h2>
-                <?php } ?>                <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
-                <?php if ($isRegistered) { ?>          
-                    <?php if (!empty($response['team_picture'])) { ?>
+                <?php } ?>                
+                <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
+                    <?php if ($isRegistered) { ?>          
+                        <?php if (!empty($response['team_picture'])) { ?>
                             <img class="img-rounded img-responsive" src="../uploads/<?php echo $response['team_picture'] ?>" style="margin-left: auto; margin-right: auto;">
                         <?php } ?>
                         <?php if ($isLoggedInTeam && $isAdmin) { ?>
@@ -29,31 +30,29 @@
                             </form>
                         <?php } ?>
                         <br />
-                        <span>
-                            Team Name: 
+                        <div>
+                            <span>Team Name: </span>
                             <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 <a href="#" class="editable" data-type="text" id="team_name" title="Update team name">
                                 <?php } ?>
-                                <?php echo $response['team_name'] ?>
+                                <span><?php echo $response['team_name'] ?></span>
                                 <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 </a>
                             <?php } ?>
-                        </span>
-                        <br />
-                        <span>
-                            Team Description: 
                             <br />
+                            <span>Team Description: </span><br />
                             <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 <a href="#" class="editable" data-type="textarea" id="description" title="Update team description">
                                 <?php } ?>                           
-                                <?php echo $response['description'] ?>
+                                <span><?php echo $response['description'] ?></span>
                                 <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 </a>
                             <?php } ?>
-                        </span>
+                        </div>
                     <?php } else { ?>
                         <h3>This team has not yet registered for FIRST Scout!</h3>
                     <?php } ?>
+                        <!-- other stats will go here once they exist -->
                 </div>
                 <?php include '../includes/footer.php' ?>
             </div>
