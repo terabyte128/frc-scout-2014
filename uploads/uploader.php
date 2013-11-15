@@ -58,5 +58,5 @@ if (!empty($_FILES["teamPicture"])) {
     chmod(UPLOAD_DIR . $name, 0644);
     echo 'Success';
 } else {
-    echo 'Something went wrong.';
+    echo 'You did not submit a file.';
 }
