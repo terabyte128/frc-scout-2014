@@ -2,8 +2,7 @@
 
 session_start();
 
-require 'constants.php';
-
+require_once 'constants.php';
 
 if (!isset($_SESSION['teamNumber'])) {
     die('Your session timed out or you forgot to login, please <a href="/index.php">try again.</a>');

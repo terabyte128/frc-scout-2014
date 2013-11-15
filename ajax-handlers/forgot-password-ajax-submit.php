@@ -8,8 +8,8 @@ $newPassword = $_POST['newPassword'];
 $passwordType = $_POST['passwordType'];
 $teamTable = $_POST['teamType'];
 
-require '../includes/db-connect.php';
-require '../includes/constants.php';
+require_once '../includes/db-connect.php';
+require_once '../includes/constants.php';
 
 
 try {

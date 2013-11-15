@@ -1,6 +1,6 @@
 <?php
-require '../includes/setup-session.php';
-require '../includes/db-connect.php';
+require_once '../includes/setup-session.php';
+require_once '../includes/db-connect.php';
 
 $adminPassword = $_POST['adminPassword'];
 

@@ -1,7 +1,7 @@
 <?php
 
-require '../includes/setup-session-no-js.php';
-require '../includes/db-connect.php';
+require_once '../includes/setup-session-no-js.php';
+require_once '../includes/db-connect.php';
 
 if(!$isAdmin) {
     die("You must be an administrator to do that!");

@@ -18,15 +18,15 @@
                             return false;">
                         <div class="form-group">
                             <label for="teamNumber">Team Number</label>
-                            <input type="number" class="form-control" id="teamNumber" placeholder="Team Number" required>
+                            <input type="number" class="form-control" id="teamNumber" placeholder="Team Number" require_onced>
                         </div>
                         <div class="form-group">
                             <label for="scoutName">Your Name</label>
-                            <input type="text" class="form-control" id="scoutName" placeholder="Your Name" required>
+                            <input type="text" class="form-control" id="scoutName" placeholder="Your Name" require_onced>
                         </div>
                         <div class="form-group">
                             <label for="teamPassword">Team Password</label>
-                            <input type="password" class="form-control" id="teamPassword" placeholder="Team Password" required>
+                            <input type="password" class="form-control" id="teamPassword" placeholder="Team Password" require_onced>
                         </div>
                         <div class="form-group">
                             <label for="teamType">Team Type</label>

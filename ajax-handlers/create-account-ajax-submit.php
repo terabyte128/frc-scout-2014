@@ -1,6 +1,6 @@
 <?php
 
-require '../includes/redirect-if-session-exists.php';
+require_once '../includes/redirect-if-session-exists.php';
 if (isset($_POST['teamNumber'])) {
 
     //create db or die

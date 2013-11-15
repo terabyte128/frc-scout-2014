@@ -1,8 +1,8 @@
 <?php
 
 $otherTeamNumber = $_GET['team'];
-require '../includes/setup-session.php';
-require '../includes/db-connect.php';
+require_once '../includes/setup-session.php';
+require_once '../includes/db-connect.php';
 
 try {
     $request = $db->prepare('SELECT team_name, description, team_picture FROM ' . $teamTable . ' WHERE team_number=?');

@@ -3,9 +3,9 @@
 $adminPassword = $_POST['adminPassword'];
 $newPassword = $_POST['newPassword'];
 
-require '../includes/setup-session.php';
-require '../includes/admin-required.php';
-require '../includes/db-connect.php';
+require_once '../includes/setup-session.php';
+require_once '../includes/admin-require_onced.php';
+require_once '../includes/db-connect.php';
 
 try {
     $changePassRequest = $db->prepare('UPDATE ' . $teamTable . ' SET admin_password=md5(?) WHERE admin_password=md5(?) AND team_number=?');

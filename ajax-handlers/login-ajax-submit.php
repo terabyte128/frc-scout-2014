@@ -3,7 +3,7 @@
 session_start();
 
 //connect to the database
-require '../includes/db-connect.php';
+require_once '../includes/db-connect.php';
 
 $teamNumber = $_POST['teamNumber'];
 $teamPassword = $_POST['teamPassword'];

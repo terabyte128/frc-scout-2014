@@ -1,7 +1,7 @@
 /*!
  * jQuery Form Plugin
  * version: 3.45.0-2013.10.17
- * Requires jQuery v1.5 or later
+ * require_onces jQuery v1.5 or later
  * Copyright (c) 2013 M. Alsup
  * Examples and documentation at: http://malsup.com/jquery/form/
  * Project repository: https://github.com/malsup/form
@@ -37,7 +37,7 @@
         });
     });
 
-    You can also use ajaxForm with delegation (requires jQuery v1.7+), so the
+    You can also use ajaxForm with delegation (require_onces jQuery v1.7+), so the
     form does not have to exist when you invoke ajaxForm:
 
     $('#myForm').ajaxForm({
@@ -942,7 +942,7 @@ $.fn.formToArray = function(semantic, elements) {
         else if (v !== null && typeof v != 'undefined') {
             if (elements)
                 elements.push(el);
-            a.push({name: n, value: v, type: el.type, required: el.required});
+            a.push({name: n, value: v, type: el.type, require_onced: el.require_onced});
         }
     }
 
