@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="container">
+            <div class="container">             
                 <?php include '../includes/messages.php' ?>
                 <?php if ($isLoggedInTeam) { ?>
                     <h2>Your Team Profile</h2>
@@ -31,20 +31,20 @@
                         <?php } ?>
                         <br />
                         <div>
-                            <span>Team Name: </span>
+                            <span style="font-weight: 600;">Team Name: </span>
                             <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 <a href="#" class="editable" data-type="text" id="team_name" title="Update team name">
                                 <?php } ?>
-                                <span><?php echo $response['team_name'] ?></span>
+                                <span><?php if(!empty($response['team_name'])) echo $response['team_name']; else echo "<i>&mdash; none &mdash;</i>"; ?></span>
                                 <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 </a>
                             <?php } ?>
                             <br />
-                            <span>Team Description: </span><br />
+                            <span style="font-weight: 600;">Team Description: </span><br />
                             <?php if ($isAdmin && $isLoggedInTeam) { ?>
-                                <a href="#" class="editable" data-type="textarea" id="description" title="Update team description">
+                                <a href="#" class="editable" data-type="textarea" style="white-space: normal;" id="description" title="Update team description">
                                 <?php } ?>                           
-                                <span><?php echo $response['description'] ?></span>
+                                <span><?php if(!empty($response['description'])) echo $response['description']; else echo "<i>&mdash; none &mdash;</i>"; ?></span>
                                 <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 </a>
                             <?php } ?>
