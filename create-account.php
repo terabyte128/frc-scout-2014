@@ -15,7 +15,7 @@
                         <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();'><span class="glyphicon glyphicon-question-sign"></span> How does FRC Scout work?</a>
                     </p>
                     <p style='max-width: 500px; margin: 5px auto 5px auto'>
-                        <span style="display: none;" id="step1">FRC Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").hide();
+                        <span style="display: none;" id="step1">FIRST Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").hide();
                                 $("#step2").show();'>Learn more.</a></span>
                         <span style="display: none;" id="step2">When logging in, a scout will enter their name in addition to their team number, to help track who scouted what teams. <a href='#' onclick='$("#step2").hide();
                                 ;
@@ -29,11 +29,11 @@
                     <form role="form" onsubmit="createAccount();
                                 return false;">
                         <div class="form-group">
-                            <label for="teamNumber">FRC Team Number</label>
+                            <label for="teamNumber">Team Number</label>
                             <input type="number" class="form-control" id="teamNumber" name="teamNumber" placeholder="FRC Team Number" required>
                         </div>
                         <div class="form-group">
-                            <label for="adminEmail">FRC Scout Administrator Email</label>
+                            <label for="adminEmail">Administrator Email</label>
                             <input type="email" class="form-control" id="adminEmail" name="adminEmail" placeholder="Admin Email" required>
                         </div>
                         <div class="form-group">
