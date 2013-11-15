@@ -67,7 +67,7 @@ body.modal-open {
     font-size: 10pt;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
     .footer-left, .footer-right {
         float: none;
         display: block;
