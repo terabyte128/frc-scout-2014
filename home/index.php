@@ -110,8 +110,10 @@
                             window.location = 'team-profile.php';
                         } else if (otherTeamNumber === "") {
                             showMessage("Please enter a team number.", 'warning');
-                        } else if(isNaN(otherTeamNumber)) {
+                        } else if(isNaN(otherTeamNumber)) {	
                             showMessage("That's not a number!", 'danger');
+			} else if(otherTeamNumber < 0) {
+			    showMessage("That's not a valid team number!", 'danger');
                         } else {
                             window.location = 'other-team-profile.php?team=' + otherTeamNumber;
                         }
