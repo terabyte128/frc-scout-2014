@@ -51,3 +51,32 @@ input::-webkit-outer-spin-butter {
 body.modal-open {
     margin-right: 0px;
 }
+
+.footer {
+    font-size: 10pt;     
+    color: #868686; 
+}
+
+.footer-left {
+    float: left; 
+    margin-bottom: 5px;
+}
+
+.footer-right {
+    float: right; 
+    font-size: 10pt;
+}
+
+@media (max-width: 400px) {
+    .footer-left, .footer-right {
+        float: none;
+        display: block;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    
+    .footer {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}

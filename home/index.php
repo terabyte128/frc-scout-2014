@@ -78,6 +78,11 @@
                         $('#adminPassword').focus();
                     })
                     
+                    $('#authModal').on('hidden.bs.modal', function() {
+                       $("#authTitle").text("Authenticate as administrator"); 
+                       $("#adminPassword").val('');
+                    });
+                    
                     function loginAdmin() {
                         $("#authButton").button('loading');
                         var adminPassword = $("#adminPassword").val();

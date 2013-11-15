@@ -19,7 +19,7 @@
                 <?php } ?>                <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
                 <?php if ($isAdmin && $isLoggedInTeam) { ?>
                         <div>
-                            <img class="img-rounded img-responsive" src="../uploads/<?php echo $response['team_picture'] ?>" style="margin-left: auto; margin-right: auto;">
+                            <img class="img-rounded img-responsive" src="../uploads/<?php echo $response['team_picture'] ?>" style="margin-left: auto; margin-right: auto;" alt="Your browser doesn't appear to support pictures. Are you using Internet Explorer?">
                             <form id="submitTeamPicture" action="../uploads/uploader.php" method="post" enctype="multipart/form-data">
                                 <label for="teamPicture">Update team picture: </label>
                                 <input class="form-control" type="file" size="60" name="teamPicture">
@@ -34,7 +34,7 @@
 
                     <?php } else if($isRegistered) { ?>
                         <?php if (!empty($response['team_picture'])) { ?>
-                            <img class="img-rounded img-responsive" src="../uploads/<?php echo $response['team_picture'] ?>" style="margin-left: auto; margin-right: auto;">
+                            <img class="img-rounded img-responsive" src="../uploads/<?php echo $response['team_picture'] ?>" style="margin-left: auto; margin-right: auto;" alt="Your browser doesn't appear to support pictures. Are you using Internet Explorer?">
                         <?php } ?>
                         <br />
                         <span>Team Name: <?php echo $response['team_name'] ?></span>
