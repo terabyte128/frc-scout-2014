@@ -2,7 +2,7 @@
 
 $whitelist = array('team_name', 'description');
 require_once '../includes/setup-session.php';
-require_once '../includes/admin-require_onced.php';
+require_once '../includes/admin-required.php';
 $colName = $_POST['name'];
 $value = strip_tags($_POST['value']);
 if ($isAdmin) {

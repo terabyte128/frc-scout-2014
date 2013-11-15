@@ -4,7 +4,7 @@ $adminPassword = $_POST['adminPassword'];
 $newPassword = $_POST['newPassword'];
 
 require_once '../includes/setup-session.php';
-require_once '../includes/admin-require_onced.php';
+require_once '../includes/admin-required.php';
 require_once '../includes/db-connect.php';
 
 try {
