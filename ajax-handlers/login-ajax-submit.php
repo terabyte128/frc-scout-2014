@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 //connect to the database
@@ -9,7 +10,6 @@ $teamPassword = $_POST['teamPassword'];
 $scoutName = $_POST['scoutName'];
 $teamType = $_POST['teamType'];
 //$location = $_POST['location'];
-
 //TODO: integrate actual locations
 $location = "test location";
 
@@ -20,7 +20,7 @@ $teamTable = $typesToTableNames[$teamType];
 //this checks tables against a whitelist to circumvent HACKERS!
 $tableWhitelist = array(FRC_TEAM_ACCOUNTS, FTC_TEAM_ACCOUNTS);
 
-if(!in_array($teamTable, $tableWhitelist)) {
+if (!in_array($teamTable, $tableWhitelist)) {
     die("Hacker!!! " . $teamTable);
 }
 
@@ -29,7 +29,7 @@ try {
     $authenticate->execute(array($teamNumber, $teamPassword));
     $teams = $authenticate->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {
-    die("Unable to connect to DB\n " . $ex->getMessage());
+    die("Unable to update database.");
 }
 
 if (key_exists('team_number', $teams)) {

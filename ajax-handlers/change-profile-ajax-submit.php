@@ -15,7 +15,7 @@ if ($isAdmin) {
         $request = $db->prepare("UPDATE $teamTable SET $colName=? WHERE team_number=?");
         $request->execute(array($value, $teamNumber));
     } catch (PDOException $e) {
-        echo $e->getMessage();
+        die("Unable to update database.");
     }
     if ($request->rowCount() != 1) {
         echo 'Failed to change values.';

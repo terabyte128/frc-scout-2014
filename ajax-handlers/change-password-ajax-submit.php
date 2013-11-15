@@ -10,7 +10,7 @@ try {
     $changePassRequest = $db->prepare('UPDATE ' . $teamTable . ' SET team_password=md5(?) WHERE admin_password=md5(?) AND team_number=?');
     $changePassRequest->execute(array($newPassword, $adminPassword, $teamNumber));
 } catch (PDOException $ex) {
-    die("Unable to connect to DB\n " . $ex->getMessage());
+    die("Unable to update database.");
 }
 
 if ($changePassRequest->rowCount() !== 0) {

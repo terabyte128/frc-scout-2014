@@ -10,7 +10,7 @@ try {
     $authenticate->execute(array($teamNumber, $adminPassword));
     $teams = $authenticate->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {
-    die("Unable to connect to DB\n " . $ex->getMessage());
+    die("Unable to update database.");
 }
 
 if (key_exists('team_number', $teams)) {

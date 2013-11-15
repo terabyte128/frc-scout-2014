@@ -1,4 +1,5 @@
 <?php
+
 require '../includes/setup-session.php';
 require '../includes/db-connect.php';
 
@@ -7,7 +8,7 @@ try {
     $request->execute(array($teamNumber));
     $response = $request->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    die($e->getMessage());
+    die("Unable to get values from database.");
 }
 
 # this needs to be here to ensure correct headers in team-profile-backend.php
