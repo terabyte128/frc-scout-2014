@@ -1,6 +1,6 @@
 <?php
 
-require 'includes/headers.php';
+require_once 'includes/headers.php';
 require_once 'includes/db-connect.php';
 
 $resetID = $_GET['id'];

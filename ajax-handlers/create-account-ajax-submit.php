@@ -1,6 +1,6 @@
 <?php
 
-require '../includes/redirect-if-session-exists.php';
+require_once '../includes/redirect-if-session-exists.php';
 if (isset($_POST['teamNumber'])) {
 
     //create db or die
@@ -19,8 +19,12 @@ if (isset($_POST['teamNumber'])) {
     //try and add account
     $stmt = $db->prepare('INSERT INTO ' . $teamTable . ' (team_number, team_password, admin_email, admin_password) VALUES (?, md5(?), ?, md5(?))');
     try {
-        $stmt->execute(array($teamNumber, $teamPassword, $adminEmail, $adminPassword));
-        echo "Account created successfully! You may now log in.";
+	    if ($teamNumber > 0) {
+        	$stmt->execute(array($teamNumber, $teamPassword, $adminEmail, $adminPassword));
+	        echo "Account created successfully! You may now log in.";
+	    } else {
+		echo "Nice try, but your team number must be positive.";
+	    }
     } catch (PDOException $e) {
         $message = $e->getMessage();
         //check if error means team number already exists

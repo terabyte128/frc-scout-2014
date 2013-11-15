@@ -1,8 +1,8 @@
 <?php
 
 $whitelist = array('team_name', 'description');
-require '../includes/setup-session.php';
-require '../includes/admin-required.php';
+require_once '../includes/setup-session.php';
+require_once '../includes/admin-required.php';
 $colName = $_POST['name'];
 $value = strip_tags($_POST['value']);
 if ($isAdmin) {
@@ -10,12 +10,12 @@ if ($isAdmin) {
         die('hacker!!');
     }
 
-    require '../includes/db-connect.php';
+    require_once '../includes/db-connect.php';
     try {
         $request = $db->prepare("UPDATE $teamTable SET $colName=? WHERE team_number=?");
         $request->execute(array($value, $teamNumber));
     } catch (PDOException $e) {
-        echo $e->getMessage();
+        die("Unable to update database.");
     }
     if ($request->rowCount() != 1) {
         echo 'Failed to change values.';

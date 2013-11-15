@@ -1,4 +1,4 @@
-<?php require '../includes/setup-session.php'; ?>
+<?php require_once '../includes/setup-session.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -54,7 +54,7 @@
                             return false;">
                                         <div class="form-group">
                                             <label for="adminPassword">Admin Password</label>
-                                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
+                                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" require_onced>
                                         </div>                        
                                         <button type="submit" id="authButton" class="btn btn-default btn-success">Authenticate</button>
                                     </form>
@@ -77,6 +77,11 @@
                     $('#authModal').on('shown.bs.modal', function() {
                         $('#adminPassword').focus();
                     })
+                    
+                    $('#authModal').on('hidden.bs.modal', function() {
+                       $("#authTitle").text("Authenticate as administrator"); 
+                       $("#adminPassword").val('');
+                    });
                     
                     function loginAdmin() {
                         $("#authButton").button('loading');

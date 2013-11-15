@@ -2,11 +2,11 @@
 
 session_start();
 
-require 'constants.php';
+require_once 'constants.php';
 
 
 if (!isset($_SESSION['teamNumber'])) {
-    require 'message-control.php';
+    require_once 'message-control.php';
     echo '<script type="text/javascript">',
     'loadPageWithMessage("/", "Your session timed out or you forgot to log in, please try again.", "danger");',
     '</script>';

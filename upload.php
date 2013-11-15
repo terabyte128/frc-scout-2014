@@ -3,7 +3,7 @@
     <head>
         <?php include 'includes/headers.php'; ?>
         <?php include 'includes/setup-session.php'; ?>
-        <?php include 'includes/admin-required.php'; ?>
+        <?php include 'includes/admin-require_onced.php'; ?>
         
         <script src="http://malsup.github.com/jquery.form.js"></script>
         <title>
