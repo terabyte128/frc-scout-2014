@@ -31,7 +31,7 @@ if (isset($_POST['teamNumber'])) {
         if (strpos($message, "Duplicate entry") !== false) {
             echo "That team number has been taken! If you believe this is in error, please <a href='mailto:sam@ingrahamrobotics.org'>contact Sam</a> and we'll get it sorted out.";
         } else {
-		echo $message;
+            echo "Something went wrong, but we're unsure of what it is. Please try again.";
         }
     }
 }
