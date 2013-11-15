@@ -12,7 +12,7 @@
                 <div class="title">
                     <h2>Create An Account</h2>
                     <p style='max-width: 500px; margin: 5px auto 5px auto'>
-                        <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();'><span class="glyphicon glyphicon-question-sign"></span> How does FRC Scout work?</a>
+                        <a href='#' id='learnHow' style='margin-bottom: 16px;' onclick='$("#step1").show();'><span class="glyphicon glyphicon-question-sign"></span> How does FIRST Scout work?</a>
                     </p>
                     <p style='max-width: 500px; margin: 5px auto 5px auto'>
                         <span style="display: none;" id="step1">FIRST Scout accounts are shared, team-wide. When you create an account here, your team's entire army of scouts will use it. <a href='#' onclick='$("#step1").hide();
