@@ -27,17 +27,17 @@
                         <div class="form-group">
                             <label for="teamPassword">Team Password</label>
                             <input type="password" class="form-control" id="teamPassword" placeholder="Team Password" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="test">Location</label><br />
-                            <input type="text" id="location" placeholder="Location" class="form-control" required style="width: 100%;">
-                        </div>
+                        </div>                  
                         <div class="form-group">
                             <label for="teamType">Team Type</label>
                             <select class="form-control" id="teamType">
                                 <option selected id="frc">FRC (big robots)</option>
                                 <option id="ftc">FTC (small robots)</option>                           
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="test">Location</label><br />
+                            <input type="text" id="location" placeholder="Location" class="form-control" required style="width: 100%;">
                         </div>
                         <button type="submit" id="loginButton" class="btn btn-default btn-success">Login</button>
                     </form>
@@ -79,8 +79,9 @@
 
                         $(function() {
                             $(function() {
-                                $("#location").typeahead({
-                                    'local': ["floop", "flerp", "herp", "derp"]
+                                $("#location").typeahead({                                    
+                                    prefetch : 'includes/locations.json',
+                                    url : 'includes/locations.json'
                                 });
                             });
                         });
