@@ -60,6 +60,7 @@
                             </select>
                         </div>
                         <button type="submit" id="submitCreateRequest" class="btn btn-default btn-success">Create Account</button>
+			<button type="button" onClick="location.href='index.php'" class="btn btn-default">Go Back</button>
                     </form>
                     <br />
                 </div>
