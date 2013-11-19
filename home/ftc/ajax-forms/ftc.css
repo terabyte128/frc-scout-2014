@@ -1,0 +1,70 @@
+.full {
+    width: 240px;
+}
+.buttonGroupLeft {
+    height: 50px;
+    width: 200px;
+}
+.buttonGroupRight {
+    height: 50px;
+    width: 50px;
+}
+.blue{
+    border: 2px solid blue;
+}
+.totalSize {
+    font-size: 30px;
+    padding: 20px 0px 0px 10px;
+    display: inline-block;
+}
+.textToButton {
+    font-size: 30px;
+    padding: 20px 74px 0px 10px;
+    display: inline-block;
+}
+.fullButton {
+    height: 50px;
+    width: 300px;
+}
+.buttonGroupFull {
+    height: 50px;
+    width: 100px;
+}
+.buttonGroup2Full {
+    height: 50px;
+    width: 150px;
+}
+.textBoxes {
+    width: 285px;
+}
+.full
+{
+    width:240px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+}
+input.full {
+    height: 35px;
+}
+
+.half
+{
+    width:120px;box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+}
+
+.tablike
+{
+    width:40px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+}
+
+body
+{
+    background-color:#BAE4F0;
+}
+.textBoxColor
+{
+    background-color:#E2FAFF;
+}
