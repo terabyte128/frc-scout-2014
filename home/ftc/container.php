@@ -1,4 +1,4 @@
-<?php include 'includes/redirect-if-session-exists.php'; ?>
+<?php require_once '../../includes/setup-session.php'; ?>
 
 <!DOCTYPE html>
 <html>

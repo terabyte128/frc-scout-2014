@@ -147,3 +147,7 @@ body.modal-open {
     border-radius: 6px;
     width: 100%;
 }
+
+table, thead, th, td, .tablesorter-header-inner {
+    font-family: "Helvetica";
+}
