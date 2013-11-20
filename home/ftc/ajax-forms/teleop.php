@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="span4 offset4">
             <h3 class="text-center">Driver Controlled: 7462</h3>
