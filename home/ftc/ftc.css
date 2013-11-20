@@ -60,10 +60,6 @@ input.full {
     -moz-box-sizing:border-box; /* Firefox */
 }
 
-body
-{
-    background-color:#BAE4F0;
-}
 .textBoxColor
 {
     background-color:#E2FAFF;
