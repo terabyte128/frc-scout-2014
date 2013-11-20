@@ -9,7 +9,7 @@
     <body>
         <div class="wrapper">
             <div class="container">
-                <!-- this will be reloaded with the pages when the submit button is clicked -->
+                <!-- this will be reloaded with the pages when the submit button is clicked and stuff -->
             </div>
         </div>
     </body>
