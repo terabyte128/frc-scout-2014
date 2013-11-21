@@ -36,7 +36,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="test">Location</label><br />
+                            <label for="location">Location</label><br />
                             <input type="text" id="location" placeholder="Location" class="form-control" required style="width: 100%;">
                         </div>
                         <button type="submit" id="loginButton" class="btn btn-default btn-success">Login</button>
@@ -56,6 +56,16 @@
                             var scoutName = $("#scoutName").val();
                             var teamPassword = $("#teamPassword").val();
                             var teamType = $('#teamType').find('option:selected').attr('id');
+                            var location = $("#location").val();
+
+                            var locationsFromJSON = $.getJSON('includes/locations.json');
+
+                            if ($.inArray(locationsFromJSON.responseJSON, location) === -1) {
+                                showMessage("Invalid location, please enter a different one.", "danger");
+                                $("#loginButton").button('reset');
+                                return;
+                            }
+
 
                             $.ajax({
                                 url: 'ajax-handlers/login-ajax-submit.php',
@@ -78,11 +88,11 @@
                         }
 
                         $(function() {
-                            $(function() {
-                                $("#location").typeahead({                                    
-                                    prefetch : 'includes/locations.json',
-                                    url : 'includes/locations.json'
-                                });
+
+                            $("#location").typeahead({
+                                name: 'locations',
+                                prefetch: 'includes/locations.json',
+                                limit: 10
                             });
                         });
         </script>
