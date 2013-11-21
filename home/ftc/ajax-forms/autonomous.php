@@ -52,6 +52,23 @@
         var floorGoal = 0;
         var robotOnBridge = "No";
 
+        function submit() {
+            $.ajax({
+                url: 'ajax-submit.php',
+                type: "POST",
+                data: {
+                    'page' : 'auto',
+                    'irBeaconGoal': irBeaconGoal,
+                    'pendulumGoal': pendulumGoal,
+                    'floorGoal': floorGoal,
+                    'robotOnBridge': robotOnBridge
+                },
+                success: function(response, textStatus, jqXHR) {
+                    processResponse(response);
+                }
+            });
+        }
+
         $(function() {
             $("#addIrBeacon").click(function() {
                 irBeaconGoal++;

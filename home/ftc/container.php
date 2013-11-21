@@ -19,6 +19,16 @@
                     window.scrollTo(0, 1);
                 });
             });
+
+            function processResponse(response) {
+                if (response[0] !== "Success") {
+                    showMessage(response[0]);
+                } else {
+                    $("#container").load("ajax-forms/" + response[1], function() {
+                        window.scrollTo(0, 1);
+                    })
+                }
+            }
         </script>
     </body>
 </html>

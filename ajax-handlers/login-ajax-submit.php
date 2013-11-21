@@ -9,9 +9,7 @@ $teamNumber = $_POST['teamNumber'];
 $teamPassword = $_POST['teamPassword'];
 $scoutName = $_POST['scoutName'];
 $teamType = $_POST['teamType'];
-//$location = $_POST['location'];
-//TODO: integrate actual locations
-$location = "test location";
+$location = $_POST['location'];
 
 $typesToTableNames = array("ftc" => FTC_TEAM_ACCOUNTS, 'frc' => FRC_TEAM_ACCOUNTS);
 

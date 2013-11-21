@@ -27,44 +27,62 @@ require_once '../../includes/setup-session.php';
   misc_major_fouls int (64)
   misc_comments text
  */
-
-require_once '../../db-connect.php';
+require_once '../../includes/db-connect.php';
 
 $page = $_POST['page'];
+$response = array();
 
 if ($page === "pre") {
     $scoutedTeamNumber = $_POST['scoutedTeamNumber'];
     $matchNumber = $_POST['matchNumber'];
-    
-    $statement = "INSERT INTO " . $teamTable . " (timestamp, scouting_team, scouted_team, scout_name, location, match_number) VALUES (?, ?, ?, ?, ?, ?)";
+
+    $stmtString = "INSERT INTO " . $teamTable . " (timestamp, scouting_team, scouted_team, scout_name, location, match_number) VALUES (?, ?, ?, ?, ?, ?)";
     $params = array(time(), $teamNumber, $scoutedTeamNumber, $scoutName, $location, $matchNumber);
+    $stmt = $db->prepare($stmtString);
+    $stmt->execute();
+    $_SESSION['matchID'] = $db->lastInsertId();
+    if (!$_SESSION['matchID']) {
+        throw new PDOException();
+        array_push($response, "Unable to establish a match ID.");
+        die();
+    }
     $nextPage = "autonomous.php";
-}
-
-if ($page === "auto") {
-    
-}
-
-if ($page === "tele") {
-    
-}
-
-if ($page === "end") {
-    
-}
-
-if ($page === "post") {
-    
-}
-
-$dbRequest = $db->prepare($statement);
-$dbRequest->execute($params);
-
-if($dbRequest -> rowCount() !== 1) {
-    die("failure");
 } else {
-    echo $nextPage;
-    exit();
+    if ($page === "auto") {
+        $autoIrBeaconGoal = $_POST['irBeaconGoal'];
+        $autoPendulumGoal = $_POST['pendulumGoal'];
+        $autoFloorGoal = $_POST['floorGoal'];
+        $autoRobotOnBridge = $_POST['robotOnBridge'];
+
+        $stmtString = "UPDATE " . $teamTable . " SET auto_ir_beacon_goal=?, auto_pendulum_goal=?, auto_floor_goal=?, auto_robot_on_bridge=?";
+        $params = array($autoIrBeaconGoal, $autoPendulumGoal, $autoFloorGoal, $autoRobotOnBridge);
+    }
+
+    if ($page === "tele") {
+        
+    }
+
+    if ($page === "end") {
+        
+    }
+
+    if ($page === "post") {
+        
+    }
+
+    if ($_SESSION['matchID'] && $stmtString !== null) {
+        $dbRequest = $db->prepare($stmtString + " WHERE uid=?");
+        array_push($params, $_SESSION['matchID']);
+        $dbRequest->execute($params);
+
+        if ($dbRequest->rowCount() !== 1) {
+            array_push($response, "Failed to update database.");
+        } else {
+            array_push($response, "Success");
+        }
+    }
 }
 
+array_push($response, $nextPage);
+echo json_encode($response);
 ?>

@@ -3,7 +3,7 @@
     <span class='footer-left'>
         <?php if ($isAdmin) { ?> <span style="color: firebrick;">administrator</span> | <?php } ?> 
         <span style="color: royalblue; font-weight: 500;"><?php echo $teamType ?></span> | 
-        <?php echo $scoutName ?> | team 
+        <?php echo $scoutName ?> | Team 
         <?php echo $teamNumber ?> | 
         <?php echo $location ?>
     </span>

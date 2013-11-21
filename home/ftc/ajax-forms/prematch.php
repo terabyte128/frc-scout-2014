@@ -1,6 +1,6 @@
 <div class="container" align="center">
-	<h2 align="center"> Pre-Match Information </h2>
-	<br>
+    <h2 align="center"> Pre-Match Information </h2>
+    <br>
     <form>
         <fieldset>
             <label align="center"> Scouted Team Number: </label>
@@ -17,17 +17,34 @@
         <a class="btn btn-success full" href="#" type="button" id="toAuto"> Continue to Autonomous </a>
     </form>
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-    $(document).ready(function(){
+        var scoutedTeam, matchNumber;
+        $(document).ready(function() {
 
-    	function myValue(theButton, theValue) {
-    		return $(theButton).click(function() { $(theValue).val() });
-    	}
+            function myValue(theButton, theValue) {
+                return $(theButton).click(function() {
+                    $(theValue).val()
+                });
+            }
 
-    	var scoutedTeam = myValue('#toAuto', '#scoutedTeam');
-    	var matchNumber = myValue('#toAuto', '#matchNumber');
-    });
+            scoutedTeam = myValue('#toAuto', '#scoutedTeam');
+            matchNumber = myValue('#toAuto', '#matchNumber');
+        });
+
+        function submit() {
+            $.ajax({
+                url: 'ajax-submit.php',
+                type: "POST",
+                data: {
+                    'page' : 'pre',
+                    'scoutedTeamNumber': scoutedTeam,
+                    'matchNumber': matchNumber
+                },
+                success: function(response, textStatus, jqXHR) {
+                    processResponse(response);
+                }
+            });
+        }
 
     </script>
 </div>

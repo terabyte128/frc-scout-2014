@@ -50,17 +50,17 @@
             </div>
         </div>
         <script type="text/javascript">
+                        var locationsFromJSON;
+                        
                         function login() {
                             $("#loginButton").button('loading');
                             var teamNumber = $("#teamNumber").val();
                             var scoutName = $("#scoutName").val();
                             var teamPassword = $("#teamPassword").val();
                             var teamType = $('#teamType').find('option:selected').attr('id');
-                            var location = $("#location").val();
-
-                            var locationsFromJSON = $.getJSON('includes/locations.json');
-
-                            if ($.inArray(locationsFromJSON.responseJSON, location) === -1) {
+                            var currentLocation = $("#location").val();
+                            
+                            if ($.inArray(currentLocation, locationsFromJSON.responseJSON) === -1) {
                                 showMessage("Invalid location, please enter a different one.", "danger");
                                 $("#loginButton").button('reset');
                                 return;
@@ -74,7 +74,8 @@
                                     'teamNumber': teamNumber,
                                     'scoutName': scoutName,
                                     'teamPassword': teamPassword,
-                                    'teamType': teamType
+                                    'teamType': teamType,
+                                    'location' : currentLocation
                                 },
                                 success: function(response, textStatus, jqXHR) {
                                     if (response !== "") {
@@ -88,6 +89,7 @@
                         }
 
                         $(function() {
+                            locationsFromJSON = $.getJSON('includes/locations.json');
 
                             $("#location").typeahead({
                                 name: 'locations',
