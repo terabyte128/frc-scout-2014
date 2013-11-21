@@ -37,7 +37,7 @@
             </div>
             <p></p>
             <p class="text-center">Carrying Capacity</p>
-            <div class="btn-group">
+            <div class="btn-group" data-toggle="buttons-radio">
                 <button type="button" class="btn buttonGroupFull btn-primary" id="under4">Less Blocks</button>
                 <button type="button" class="btn buttonGroupFull btn-primary" id="exactly4">4 Blocks</button>
                 <button type="button" class="btn buttonGroupFull btn-primary" id="over4">More Blocks</button>
@@ -67,7 +67,7 @@
 	    robotSpeed = '';
 	    blockCapacity = '';
 
-	    // Function calls to attatch click listeners
+	    // Function calls to attach click listeners
 	    addScore('outerPendulum', outerPendulum, 'teleopTotal', teleopTotal, 3);
     	addScore('innerPendulum', innerPendulum, 'teleopTotal', teleopTotal, 2);
     	addScore('floorGoal', floorGoal,'teleopTotal',  teleopTotal, 1);
