@@ -40,7 +40,6 @@
                     'page': 'end',
                     'flagScore': flagScore,
                     'hangScore': hangScore,
-                    'endgameScore': endgameScore,
                     'balanced' : balanced
                 },
                 success: function(response, textStatus, jqXHR) {

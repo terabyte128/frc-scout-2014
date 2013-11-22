@@ -1,50 +1,47 @@
 <div class="container" align="center">
     <h2 align="center"> Pre-Match Information </h2>
     <br>
-    <form>
-        <fieldset>
+    <form role="form" class="align-center" style="max-width: 300px;" onsubmit="submit(); return false;">
+        <div class="form-group">
             <label align="center"> Scouted Team Number: </label>
-            <input type="text" class="full" placeholder="Team Number" id="scoutedTeam">
-            <br><br><label align="center"> Match Number: </label>
-            <input type="text" class="full" placeholder="Match Number" id="matchNumber">
-        </fieldset>
-        <br><br> 
-        <div class="btn-group">
-            <button class="btn btn-danger btn-small half" type="button"> Red Alliance </button>
-            <button class="btn btn-primary btn-small half" type="button"> Blue Alliance </button>
+            <input type="number" class="form-control" placeholder="Team Number" id="scoutedTeam" required>
         </div>
-        <br><br><br><br>
-        <a class="btn btn-success full" href="#" type="button" id="toAuto" onclick="submit()"> Continue to Autonomous </a>
+        <div class="form-group">
+            <label align="center"> Match Number: </label>
+            <input type="number" class="form-control" placeholder="Match Number" id="matchNumber" required>
+        </div>
+        <br />
+        <button id="toAuto" type='submit' class="btn btn-default btn-success">Continue to autonomous</button>
     </form>
+</div>
 
-    <script>
-        var scoutedTeam, matchNumber;
-        $(document).ready(function() {
+<script type="text/javascript">
 
-            function myValue(theButton, theValue) {
-                return $(theButton).click(function() {
-                    $(theValue).val()
-                });
-            }
-
-            scoutedTeam = myValue('#toAuto', '#scoutedTeam');
-            matchNumber = myValue('#toAuto', '#matchNumber');
+        $(".color-change").click(function() {
+            setBorderColor($("input[name='options']:checked"));
         });
 
+        var scoutedTeam, matchNumber;
+
         function submit() {
+            $("#toAuto").button('loading');
             $.ajax({
                 url: 'ajax-submit.php',
                 type: "POST",
                 data: {
-                    'page' : 'pre',
-                    'scoutedTeamNumber': scoutedTeam,
-                    'matchNumber': matchNumber
+                    'page': 'pre',
+                    'scoutedTeamNumber': $("#scoutedTeam").val(),
+                    'matchNumber': $("#matchNumber").val()
                 },
                 success: function(response, textStatus, jqXHR) {
+                    console.log(response);
+                    var foo = response;
                     processResponse(response);
+                    $("#toAuto").button('reset');
                 }
             });
         }
 
-    </script>
-</div>
+
+
+</script>
