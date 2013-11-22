@@ -14,7 +14,7 @@
             <button class="btn btn-primary btn-small half" type="button"> Blue Alliance </button>
         </div>
         <br><br><br><br>
-        <a class="btn btn-success full" href="#" type="button" id="toAuto"> Continue to Autonomous </a>
+        <a class="btn btn-success full" href="#" type="button" id="toAuto" onclick="submit()"> Continue to Autonomous </a>
     </form>
 
     <script>

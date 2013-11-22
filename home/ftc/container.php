@@ -9,13 +9,14 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="container" id='container'>
-
+            <div class="container">
+                <div id="container"></div>
+                <br /><br />
             </div>
         </div>
         <script type='text/javascript'>
             $(function() {
-                $("#container").load("ajax-forms/autonomous.php", function() {
+                $("#container").load("ajax-forms/postgame.php", function() {
                     window.scrollTo(0, 1);
                 });
             });

@@ -1,7 +1,7 @@
 <div class='footer'>
     <br />
     <span class='footer-left'>
-        <?php if ($isAdmin) { ?> <span style="color: firebrick;">administrator</span> | <?php } ?> 
+        <?php if ($isAdmin) { ?> <span style="color: firebrick;">Administrator</span> | <?php } ?> 
         <span style="color: royalblue; font-weight: 500;"><?php echo $teamType ?></span> | 
         <?php echo $scoutName ?> | Team 
         <?php echo $teamNumber ?> | 

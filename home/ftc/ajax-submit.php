@@ -54,16 +54,32 @@ if ($page === "pre") {
         $autoFloorGoal = $_POST['floorGoal'];
         $autoRobotOnBridge = $_POST['robotOnBridge'];
 
-        $stmtString = "UPDATE " . $teamTable . " SET auto_ir_beacon_goal=?, auto_pendulum_goal=?, auto_floor_goal=?, auto_robot_on_bridge=?";
+        $stmtString = "auto_ir_beacon_goal=?, auto_pendulum_goal=?, auto_floor_goal=?, auto_robot_on_bridge=?";
         $params = array($autoIrBeaconGoal, $autoPendulumGoal, $autoFloorGoal, $autoRobotOnBridge);
     }
 
     if ($page === "tele") {
+        $outerPendulum = $_POST['outerPendulum'];
+        $innerPendulum = $_POST['innerPendulum'];
+        $floorGoal = $_POST['floorGoal'];
+        $canBlock = $_POST['canBlock'];
+        $canPush = $_POST['canPush'] == 1 ? true : false;
+        $unpushable = $_POST['unpushable'] == 1 ? true : false;
+        $blockSpeed = $_POST['blockSpeed'];
+        $blockCapacity = $_POST['blockCapacity'];
         
+        $stmtString = 'tele_outer_pendulum=?, tele_inner_pendulum=?, tele_floor_goal=?, tele_can_block=?, tele_can_push=?, tele_unpushable=?, tele_block_speed=?, tele_block_capacity=?';
+        $params = array($outerPendulum, $innerPendulum, $floorGoal, $canBlock, $canPush, $unpushable, $blockSpeed, $blockCapacity);
+        $nextPage = "endgame.php";
     }
 
     if ($page === "end") {
-        
+        $flagScore = $_POST['flagScore'];
+        $endgameScore = $_POST['endgameScore'];
+        $balanced = $_POST['balanced'] == 1 ? true : false;
+        $stmtString = 'end_flag_score=?, end_game_score=?, end_balanced=?';
+        $params = array($flagScore, $endgameScore, $balanced);
+        $nextPage = 'postgame.php';
     }
 
     if ($page === "post") {
@@ -71,7 +87,7 @@ if ($page === "pre") {
     }
 
     if ($_SESSION['matchID'] && $stmtString !== null) {
-        $dbRequest = $db->prepare($stmtString + " WHERE uid=?");
+        $dbRequest = $db->prepare("UPDATE " . $teamTable .  " SET " . $stmtString + " WHERE uid=?");
         array_push($params, $_SESSION['matchID']);
         $dbRequest->execute($params);
 

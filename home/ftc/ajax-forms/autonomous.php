@@ -43,7 +43,7 @@
             <button type="checkbox" class="btn buttonGroup2Full btn-primary">Ramp Assist</button>
         </div>
         <p></p>
-        <p><button class="btn btn-large fullButton btn-success">Continue to Driver Controlled</button>
+        <p><button class="btn btn-large fullButton btn-success" onclick="submit()">Continue to Driver Controlled</button>
             <br />
     </div>
     <script type="text/javascript">
@@ -120,7 +120,6 @@
                     $("#floorTotal").text(floorGoal);
                     updateTotals();
                 }
-                sdfgds
             });
         });
 
@@ -128,21 +127,6 @@
             $("#totalPoints").text(irBeaconGoal * 40 + pendulumGoal * 20 + floorGoal * 5);
         }
 
-        function submit() {
-            $.ajax({
-                url: 'ajax-submit.php',
-                type: 'POST',
-                data: {
-                    'irBeaconGoal': irBeaconGoal,
-                    'pendulumGoal': pendulumGoal,
-                    'floorGoal': floorGoal,
-                    'robotOnBridge': $('#floorTotal[type="options"]:checked').val()
-                },
-                success: function() {
-
-                }
-            });
-        }
     </script>
 </div>
 
