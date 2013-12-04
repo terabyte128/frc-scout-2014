@@ -1,32 +1,6 @@
 <?php
 
 require_once '../../includes/setup-session.php';
-
-/**
- * timestamp
- * scouting_team int (64),
-  scout_name varchar (64),
- * location
- * match_number
-  scouted_team varchar (64),
-  auto_block_score int (64),
-  auto_ramp_score int (64),
-  auto_assist_score int (64),
-  tele_outer_pendulum int (64),
-  tele_inner_pendulum int (64),
-  tele_floor int (64),
-  tele_can_block boolean,
-  tele_speed varchar (64),
-  tele_capacity varchar (64),
-  end_flag_score int (64),
-  end_hang_score int (64),
-  end_balanced boolean,
-  misc_dead_robot boolean,
-  misc_match_outcome varchar (64),
-  misc_minor_fouls int (64),
-  misc_major_fouls int (64)
-  misc_comments text
- */
 require_once '../../includes/db-connect.php';
 
 $page = $_POST['page'];
@@ -57,57 +31,59 @@ if ($page === "pre") {
         $autoPendulumGoal = $_POST['pendulumGoal'];
         $autoFloorGoal = $_POST['floorGoal'];
         $autoRobotOnBridge = $_POST['robotOnBridge'];
-        $autoBlockScoreAssist = $_POST['blockScoreAssist'];
-        $autoRampAssist = $_POST['autoRampAssist'];
+        $autoBlockScoreAssist = $_POST['blockScoreAssist']  === "true" ? true : false;
+        $autoRampAssist = $_POST['rampAssist']  === "true" ? true : false;
 
         $stmtString = "auto_ir_beacon_goal=?, auto_pendulum_goal=?, auto_floor_goal=?, auto_robot_on_bridge=?, auto_block_score_assist=?, auto_ramp_assist=?";
         $params = array($autoIrBeaconGoal, $autoPendulumGoal, $autoFloorGoal, $autoRobotOnBridge, $autoBlockScoreAssist, $autoRampAssist);
-    }
-
-    else if ($page === "tele") {
+        $nextPage = "teleop.php";
+    } else if ($page === "tele") {
         $outerPendulum = $_POST['outerPendulum'];
         $innerPendulum = $_POST['innerPendulum'];
         $floorGoal = $_POST['floorGoal'];
-        $canBlock = $_POST['canBlock'];
-        $canPush = $_POST['canPush'] == 1 ? true : false;
-        $unpushable = $_POST['unpushable'] == 1 ? true : false;
+        $canBlock = $_POST['canBlock'] === "true" ? true : false;
+        $canPush = $_POST['canPush'] === "true" ? true : false;
+        $unpushable = $_POST['unpushable'] === "true" ? true : false;
         $blockSpeed = $_POST['robotSpeed'];
         $blockCapacity = $_POST['robotCapacity'];
-        
+
         $stmtString = 'tele_outer_pendulum=?, tele_inner_pendulum=?, tele_floor_goal=?, tele_can_block=?, tele_can_push=?, tele_unpushable=?, tele_robot_speed=?, tele_robot_capacity=?';
         $params = array($outerPendulum, $innerPendulum, $floorGoal, $canBlock, $canPush, $unpushable, $blockSpeed, $blockCapacity);
         $nextPage = "endgame.php";
-    }
+    } else if ($page === "end") {
+        $endFlagScore = intval($_POST['flagScore']);
+        $endHangScore = intval($_POST['hangScore']);
+        $endBalanced = $_POST['balanced'] === "true" ? true : false;;
 
-    else if ($page === "end") {
-        $endFlagScore = $_POST['endFlagScore'];
-        $engHangScore = $_POST['endHangScore'];
-        $endBalanced = $_POST['endBalanced'];
-        
         $stmtString = 'end_flag_score=?, end_hang_score=?, end_balanced=?';
-        $params = array($flagScore, $endgameScore, $balanced);
+        $params = array($endFlagScore, $endHangScore, $endBalanced);
         $nextPage = 'postgame.php';
-    }
-
-    else if ($page === "post") {
-        $deadRobot = $_POST['deadRobot'];
+        
+    } else if ($page === "post") { 
+        $deadRobot = $_POST['deadRobot'] === "true" ? true : false;;
         $matchOutcome = $_POST['matchOutcome'];
         $minorFouls = $_POST['minorFouls'];
         $majorFouls = $_POST['majorFouls'];
         $comments = $_POST['comments'];
-        
-        $stmtString = 'dead_robot=?, match_outcome=?, major_fouls=?, minor_fouls=?, comments=?';
-        $params = array($deadRobot, $matchOutcome, $majorFouls, $minorFouls, $comments);
-        
+
+        $stmtString = 'dead_robot=?, match_outcome=?, major_fouls=?, minor_fouls=?, comments=?, complete=?';
+        $params = array($deadRobot, $matchOutcome, $majorFouls, $minorFouls, $comments, true);
+        $nextPage = "Finished";
     }
 
     if ($_SESSION['matchID'] && $stmtString !== null) {
-        $dbRequest = $db->prepare("UPDATE " . $dataTable .  " SET " . $stmtString + " WHERE uid=?");
+        $fullStmtString = "UPDATE " . $dataTable . " SET " . $stmtString . " WHERE uid=?";
+        $dbRequest = $db->prepare($fullStmtString);
         array_push($params, $_SESSION['matchID']);
-        $dbRequest->execute($params);
+        try {
+            $dbRequest->execute($params);
+        } catch (PDOException $e) {
+            array_push($response, $e->getMessage());
+        }
 
-        if ($dbRequest->rowCount() !== 1) {
-            array_push($response, "Failed to update database.");
+        if ($dbRequest->rowCount() == 0) {
+            array_push($response, $fullStmtString);
+            array_push($response, $params);
         } else {
             array_push($response, "Success");
         }
@@ -115,5 +91,8 @@ if ($page === "pre") {
 }
 
 array_push($response, $nextPage);
+if($nextPage == null) {
+}
+
 echo json_encode($response);
 ?>

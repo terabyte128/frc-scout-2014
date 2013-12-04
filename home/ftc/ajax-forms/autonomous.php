@@ -3,38 +3,38 @@
 <div class="container">
     <div class="span4 offset4">
         <h3 class="text-center">Autonomous</h3>
-        <form role="form" onsubmit="submit();
+        <form role="form" onsubmit="submitData();
                 return false;">
             <h4 class="text-center">Record points for each goal</h4>
-            <p><button class="btn btn-large fullButton btn-primary" data-toggle="button">Can delay start?</button></p>
+<!--            <p><button class="btn btn-large fullButton btn-primary" data-toggle="button">Can delay start?</button></p>-->
             <div class="btn-group">
-                <button class="btn buttonGroupLeft btn-primary" id="addIrBeacon">IR Beacon<br>+40</button>
-                <button class="btn buttonGroupRight btn-warning" id="removeIrBeacon"><i class="icon-minus-sign icon-white"></i></button>
+                <button type="button" class="btn buttonGroupLeft btn-primary" id="addIrBeacon">IR Beacon<br>+40</button>
+                <button type="button" class="btn buttonGroupRight btn-warning" id="removeIrBeacon"><i class="icon-minus-sign icon-white"></i></button>
             </div>
             <p class="totalSize" id="irBeaconTotal">0</p>
             <br />
             <div class="btn-group">
-                <button class="btn buttonGroupLeft btn-primary" id="addPendulum">Non-Beacon Pendulum Goal<br>+20</button>
-                <button class="btn buttonGroupRight btn-warning"id="removePendulum">-</button>
+                <button type="button" class="btn buttonGroupLeft btn-primary" id="addPendulum">Non-Beacon Pendulum Goal<br>+20</button>
+                <button type="button" class="btn buttonGroupRight btn-warning"id="removePendulum">-</button>
             </div>
             <p class="totalSize" id="pendulumTotal">0</p>
             <br />
             <div class="btn-group">
-                <button class="btn buttonGroupLeft btn-primary"id="addFloor">Floor Goal<br>+5</button>
-                <button class="btn buttonGroupRight btn-warning"id="removeFloor">-</button>
+                <button type="button" class="btn buttonGroupLeft btn-primary"id="addFloor">Floor Goal<br>+5</button>
+                <button type="button" class="btn buttonGroupRight btn-warning"id="removeFloor">-</button>
             </div>
             <p class="totalSize" id="floorTotal">0</p>
             <br /><br />
             <p>Robot On Bridge</p>
             <div class="btn-group" data-toggle="buttons" id="robotOnBridge">
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="no">No
+                    <input type="radio" id="no">No
                 </label>
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="partially">Partially
+                    <input type="radio" id="partially">Partially
                 </label>
                 <label class="btn btn-primary">
-                    <input type="radio" name="options" id="completely">Completely
+                    <input type="radio" id="completely">Completely
                 </label>
             </div><br />
             <p class="textToButton">Total Points:</p>
@@ -42,14 +42,17 @@
             <p></p>
             <div class="btn-group" data-toggle="buttons">
                 <button type="checkbox" class="btn buttonGroup2Full btn-primary" id="blockScoreAssist">Block Score Assist</button>
+            </div>            
+            <div class="btn-group" data-toggle="buttons">
                 <button type="checkbox" class="btn buttonGroup2Full btn-primary" id="rampAssist">Ramp Assist</button>
             </div>
-            <p></p>
-            <p><button class="btn btn-large fullButton btn-success">Continue to Driver Controlled</button>
-                <br />
-        </form>
     </div>
-    <script type="text/javascript">
+    <p></p>
+    <p><button class="btn btn-large fullButton btn-success">Continue to Driver Controlled</button>
+        <br />
+        </form>
+</div>
+<script type="text/javascript">
             var irBeaconGoal = 0;
             var pendulumGoal = 0;
             var floorGoal = 0;
@@ -57,7 +60,7 @@
             var blockScoreAssist = false;
             var rampAssist = false;
 
-            function submit() {
+            function submitData() {
                 $.ajax({
                     url: 'ajax-submit.php',
                     type: "POST",
@@ -66,7 +69,7 @@
                         'irBeaconGoal': irBeaconGoal,
                         'pendulumGoal': pendulumGoal,
                         'floorGoal': floorGoal,
-                        'robotOnBridge': robotOnBridge,
+                        'robotOnBridge': $("#robotOnBridge .active").text().trim(),
                         'blockScoreAssist': blockScoreAssist,
                         'rampAssist': rampAssist
                     },
@@ -142,6 +145,6 @@
                 $("#totalPoints").text(irBeaconGoal * 40 + pendulumGoal * 20 + floorGoal * 5);
             }
 
-    </script>
+</script>
 </div>
 

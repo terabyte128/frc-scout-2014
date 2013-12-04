@@ -35,7 +35,12 @@
                             <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 <a href="#" class="editable" data-type="text" id="team_name" title="Update team name">
                                 <?php } ?>
-                                <span><?php if(!empty($response['team_name'])) echo $response['team_name']; else echo "<i>&mdash; none &mdash;</i>"; ?></span>
+                                <span><?php
+                                    if (!empty($response['team_name']))
+                                        echo $response['team_name'];
+                                    else
+                                        echo "<i>&mdash; none &mdash;</i>";
+                                    ?></span>
                                 <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 </a>
                             <?php } ?>
@@ -44,7 +49,12 @@
                             <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 <a href="#" class="editable" data-type="textarea" style="white-space: normal;" id="description" title="Update team description">
                                 <?php } ?>                           
-                                <span><?php if(!empty($response['description'])) echo $response['description']; else echo "<i>&mdash; none &mdash;</i>"; ?></span>
+                                <span><?php
+                                    if (!empty($response['description']))
+                                        echo $response['description'];
+                                    else
+                                        echo "<i>&mdash; none &mdash;</i>";
+                                    ?></span>
                                 <?php if ($isAdmin && $isLoggedInTeam) { ?>
                                 </a>
                             <?php } ?>
@@ -52,7 +62,10 @@
                     <?php } else { ?>
                         <h3>This team has not yet registered for FIRST Scout!</h3>
                     <?php } ?>
-                        <!-- other stats will go here once they exist -->
+                    <!-- other stats will go here once they exist -->
+                    <?php if ($teamType === "FTC") { ?>
+                    
+                    <?php } ?>
                 </div>
                 <?php include '../includes/footer.php' ?>
             </div>

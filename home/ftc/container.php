@@ -29,13 +29,19 @@
                 });
             });
 
-            function processResponse(response) {
+            function processResponse(initialResponse) {
+                var response = $.parseJSON(initialResponse);
+                console.log("called processResponse(): " + initialResponse);
                 if (response[0] !== "Success") {
                     showMessage(response[0]);
                 } else {
-                    $("#container").load("ajax-forms/" + response[1], function() {
-                        window.scrollTo(0, 1);
-                    });
+                    if (response[1] !== "Finished") {
+                        $("#container").load("ajax-forms/" + response[1], function() {
+                            window.scrollTo(0, 1);
+                        });
+                    } else {
+                        window.location = "/";
+                    }
                 }
             }
         </script>

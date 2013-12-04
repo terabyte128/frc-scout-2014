@@ -12,6 +12,9 @@ $teamType = $_POST['teamType'];
 $location = $_POST['location'];
 
 $typesToTableNames = array("ftc" => FTC_TEAM_ACCOUNTS, 'frc' => FRC_TEAM_ACCOUNTS);
+$typesToDataTableNames = array("ftc" => FTC_SCOUTING_DATA, 'frc' => FRC_SCOUTING_DATA);
+
+$dataTable = $typesToDataTableNames[$teamType];
 
 $teamTable = $typesToTableNames[$teamType];
 
@@ -41,6 +44,7 @@ if (key_exists('team_number', $teams)) {
     $_SESSION['location'] = $location;
     $_SESSION['isAdmin'] = false;
     $_SESSION['teamTable'] = $teamTable;
+    $_SESSION['dataTable'] = $dataTable;
 
     # Redirect to the post-login page
     //header('location: home');

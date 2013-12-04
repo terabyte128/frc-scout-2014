@@ -1,7 +1,7 @@
 <div class="container" align="center">
     <h2 align="center"> Pre-Match Information </h2>
     <br>
-    <form role="form" class="align-center" style="max-width: 300px;" onsubmit="submit(); return false;">
+    <form role="form" class="align-center" style="max-width: 300px;" onsubmit="submitData(); return false;">
         <div class="form-group">
             <label align="center"> Scouted Team Number: </label>
             <input type="number" class="form-control" placeholder="Team Number" id="scoutedTeam" required>
@@ -11,19 +11,12 @@
             <input type="number" class="form-control" placeholder="Match Number" id="matchNumber" required>
         </div>
         <br />
-        <button id="toAuto" type='submit' class="btn btn-default btn-success">Continue to autonomous</button>
+        <button id="toAuto" class="btn btn-default btn-success">Continue to autonomous</button>
     </form>
 </div>
 
 <script type="text/javascript">
-
-        $(".color-change").click(function() {
-            setBorderColor($("input[name='options']:checked"));
-        });
-
-        var scoutedTeam, matchNumber;
-
-        function submit() {
+        function submitData() {
             $("#toAuto").button('loading');
             $.ajax({
                 url: 'ajax-submit.php',
@@ -35,7 +28,6 @@
                 },
                 success: function(response, textStatus, jqXHR) {
                     console.log(response);
-                    var foo = response;
                     processResponse(response);
                     $("#toAuto").button('reset');
                 }

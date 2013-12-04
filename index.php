@@ -51,7 +51,7 @@
         </div>
         <script type="text/javascript">
                         var locationsFromJSON;
-                        
+
                         function login() {
                             $("#loginButton").button('loading');
                             var teamNumber = $("#teamNumber").val();
@@ -59,8 +59,8 @@
                             var teamPassword = $("#teamPassword").val();
                             var teamType = $('#teamType').find('option:selected').attr('id');
                             var currentLocation = $("#location").val();
-                            
-                            if ($.inArray(currentLocation, locationsFromJSON.responseJSON) === -1) {
+
+                            if ($.inArray(currentLocation, locationsFromJSON) === -1) {
                                 showMessage("Invalid location, please enter a different one.", "danger");
                                 $("#loginButton").button('reset');
                                 return;
@@ -75,7 +75,7 @@
                                     'scoutName': scoutName,
                                     'teamPassword': teamPassword,
                                     'teamType': teamType,
-                                    'location' : currentLocation
+                                    'location': currentLocation
                                 },
                                 success: function(response, textStatus, jqXHR) {
                                     if (response !== "") {
@@ -89,12 +89,13 @@
                         }
 
                         $(function() {
-                            locationsFromJSON = $.getJSON('includes/locations.json');
+                            $.getJSON('includes/locations.json', function(data) {
+                                locationsFromJSON = data;
+                                $("#location").typeahead({
+                                    name: 'locations',
+                                    local: data
+                                });
 
-                            $("#location").typeahead({
-                                name: 'locations',
-                                prefetch: 'includes/locations.json',
-                                limit: 10
                             });
                         });
         </script>

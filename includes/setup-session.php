@@ -18,5 +18,6 @@ if (!isset($_SESSION['teamNumber'])) {
     $isAdmin = $_SESSION['isAdmin'];
     $teamTable = $_SESSION['teamTable'];
     $teamType = $tablesToTypes[$teamTable];
+    $dataTable = $_SESSION['dataTable'];
 }
 ?>

@@ -30,7 +30,12 @@
                         </div>
                     </div>
                 </div>
-                <?php if ($isAdmin) { ?>
+                <?php if ($teamType === "FTC") { ?>
+
+                <button onclick='window.location =  "ftc/container.php";' class="btn btn-lg btn-success btn-home-selections">Scout a new team</button>
+                <?php } ?>
+                <?php if ($isAdmin) {
+                    ?>
                     <br /><br />
                     <font style="color: #868686; float: right; font-size: 10pt;">Admin Tools</font>
                     <hr style="border-top: 1px solid #bbb">
@@ -77,12 +82,12 @@
                     $('#authModal').on('shown.bs.modal', function() {
                         $('#adminPassword').focus();
                     })
-                    
+
                     $('#authModal').on('hidden.bs.modal', function() {
-                       $("#authTitle").text("Authenticate as administrator"); 
-                       $("#adminPassword").val('');
+                        $("#authTitle").text("Authenticate as administrator");
+                        $("#adminPassword").val('');
                     });
-                    
+
                     function loginAdmin() {
                         $("#authButton").button('loading');
                         var adminPassword = $("#adminPassword").val();
@@ -110,10 +115,10 @@
                             window.location = 'team-profile.php';
                         } else if (otherTeamNumber === "") {
                             showMessage("Please enter a team number.", 'warning');
-                        } else if(isNaN(otherTeamNumber)) {	
+                        } else if (isNaN(otherTeamNumber)) {
                             showMessage("That's not a number!", 'danger');
-			} else if(otherTeamNumber < 0) {
-			    showMessage("That's not a valid team number!", 'danger');
+                        } else if (otherTeamNumber < 0) {
+                            showMessage("That's not a valid team number!", 'danger');
                         } else {
                             window.location = 'other-team-profile.php?team=' + otherTeamNumber;
                         }
