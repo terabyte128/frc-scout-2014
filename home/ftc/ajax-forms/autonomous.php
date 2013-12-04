@@ -2,8 +2,9 @@
 
 <div class="container">
     <div class="span4 offset4">
-        <form role="form" onsubmit="submit(); return false;">
-            <h3 class="text-center">Autonomous</h3>
+        <h3 class="text-center">Autonomous</h3>
+        <form role="form" onsubmit="submit();
+                return false;">
             <h4 class="text-center">Record points for each goal</h4>
             <p><button class="btn btn-large fullButton btn-primary" data-toggle="button">Can delay start?</button></p>
             <div class="btn-group">
@@ -40,94 +41,106 @@
             <p class="totalSize" id="totalPoints">0</p>
             <p></p>
             <div class="btn-group" data-toggle="buttons">
-                <button type="checkbox" class="btn buttonGroup2Full btn-primary">Block Score Assist</button>
-                <button type="checkbox" class="btn buttonGroup2Full btn-primary">Ramp Assist</button>
+                <button type="checkbox" class="btn buttonGroup2Full btn-primary" id="blockScoreAssist">Block Score Assist</button>
+                <button type="checkbox" class="btn buttonGroup2Full btn-primary" id="rampAssist">Ramp Assist</button>
             </div>
             <p></p>
             <p><button class="btn btn-large fullButton btn-success">Continue to Driver Controlled</button>
+                <br />
         </form>
-        <br />
     </div>
     <script type="text/javascript">
-                var irBeaconGoal = 0;
-                var pendulumGoal = 0;
-                var floorGoal = 0;
-                var robotOnBridge = "No";
+            var irBeaconGoal = 0;
+            var pendulumGoal = 0;
+            var floorGoal = 0;
+            var robotOnBridge = "No";
+            var blockScoreAssist = false;
+            var rampAssist = false;
 
-                function submit() {
-                    $.ajax({
-                        url: 'ajax-submit.php',
-                        type: "POST",
-                        data: {
-                            'page': 'auto',
-                            'irBeaconGoal': irBeaconGoal,
-                            'pendulumGoal': pendulumGoal,
-                            'floorGoal': floorGoal,
-                            'robotOnBridge': robotOnBridge
-                        },
-                        success: function(response, textStatus, jqXHR) {
-                            processResponse(response);
-                        }
-                    });
-                }
+            function submit() {
+                $.ajax({
+                    url: 'ajax-submit.php',
+                    type: "POST",
+                    data: {
+                        'page': 'auto',
+                        'irBeaconGoal': irBeaconGoal,
+                        'pendulumGoal': pendulumGoal,
+                        'floorGoal': floorGoal,
+                        'robotOnBridge': robotOnBridge,
+                        'blockScoreAssist': blockScoreAssist,
+                        'rampAssist': rampAssist
+                    },
+                    success: function(response, textStatus, jqXHR) {
+                        processResponse(response);
+                    }
+                });
+            }
 
-                $(function() {
-                    $("#addIrBeacon").click(function() {
-                        irBeaconGoal++;
+            $("#blockScoreAssist").click(function() {
+                blockScoreAssist = !blockScoreAssist;
+            });
+
+            $("#rampAssist").click(function() {
+                rampAssist = !rampAssist;
+            });
+
+            $(function() {
+                $("#addIrBeacon").click(function() {
+                    irBeaconGoal++;
+                    $("#irBeaconTotal").text(irBeaconGoal);
+                    updateTotals();
+                });
+            });
+
+            $(function() {
+                $("#removeIrBeacon").click(function() {
+                    if (irBeaconGoal > 0) {
+                        irBeaconGoal--;
                         $("#irBeaconTotal").text(irBeaconGoal);
                         updateTotals();
-                    });
+                    }
                 });
+            });
 
-                $(function() {
-                    $("#removeIrBeacon").click(function() {
-                        if (irBeaconGoal > 0) {
-                            irBeaconGoal--;
-                            $("#irBeaconTotal").text(irBeaconGoal);
-                            updateTotals();
-                        }
-                    });
+            $(function() {
+                $("#addPendulum").click(function() {
+                    pendulumGoal++;
+                    $("#pendulumTotal").text(pendulumGoal);
+                    updateTotals();
                 });
+            });
 
-                $(function() {
-                    $("#addPendulum").click(function() {
-                        pendulumGoal++;
+            $(function() {
+                $("#removePendulum").click(function() {
+                    if (pendulumGoal > 0) {
+                        pendulumGoal--;
                         $("#pendulumTotal").text(pendulumGoal);
                         updateTotals();
-                    });
+                    }
                 });
+            });
 
-                $(function() {
-                    $("#removePendulum").click(function() {
-                        if (pendulumGoal > 0) {
-                            pendulumGoal--;
-                            $("#pendulumTotal").text(pendulumGoal);
-                            updateTotals();
-                        }
-                    });
+            $(function() {
+                $("#addFloor").click(function() {
+                    floorGoal++;
+                    $("#floorTotal").text(floorGoal);
+                    updateTotals();
                 });
+            });
 
-                $(function() {
-                    $("#addFloor").click(function() {
-                        floorGoal++;
+            $(function() {
+                $("#removeFloor").click(function() {
+                    if (floorGoal > 0) {
+                        floorGoal--;
                         $("#floorTotal").text(floorGoal);
                         updateTotals();
-                    });
+                    }
                 });
+            });
 
-                $(function() {
-                    $("#removeFloor").click(function() {
-                        if (floorGoal > 0) {
-                            floorGoal--;
-                            $("#floorTotal").text(floorGoal);
-                            updateTotals();
-                        }
-                    });
-                });
-
-                function updateTotals() {
-                    $("#totalPoints").text(irBeaconGoal * 40 + pendulumGoal * 20 + floorGoal * 5);
-                }
+            function updateTotals() {
+                $("#totalPoints").text(irBeaconGoal * 40 + pendulumGoal * 20 + floorGoal * 5);
+            }
 
     </script>
 </div>
