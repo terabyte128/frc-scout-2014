@@ -32,7 +32,8 @@
                 </div>
                 <?php if ($teamType === "FTC") { ?>
 
-                <button onclick='window.location =  "ftc/container.php";' class="btn btn-lg btn-success btn-home-selections">Scout a new team</button>
+                <button onclick='window.location =  "ftc/container.php";' class="btn btn-lg btn-success btn-home-selections">Scout a New Team</button>
+                <button onclick='window.location =  "ftc/ftc-team-averages.php";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
                 <?php } ?>
                 <?php if ($isAdmin) {
                     ?>

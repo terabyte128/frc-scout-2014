@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include '../includes/headers.php' ?>
+        <?php include '../headers.php' ?>
         <?php if ($isLoggedInTeam) { ?>
             <title>Your Team Profile</title>
         <?php } else { ?>
@@ -11,7 +11,7 @@
     <body>
         <div class="wrapper">
             <div class="container">             
-                <?php include '../includes/messages.php' ?>
+                <?php include '../messages.php' ?>
                 <?php if ($isLoggedInTeam) { ?>
                     <h2>Your Team Profile</h2>
                 <?php } else { ?>
@@ -67,7 +67,7 @@
                     
                     <?php } ?>
                 </div>
-                <?php include '../includes/footer.php' ?>
+                <?php include '../footer.php' ?>
             </div>
         </div>
         <?php if ($isAdmin && $isLoggedInTeam) { ?>
@@ -75,7 +75,7 @@
                 $(function() {
                     $(".editable").editable({
                         pk: '<?php echo $teamNumber ?>',
-                        url: "../ajax-handlers/change-profile-ajax-submit.php",
+                        url: "../../ajax-handlers/change-profile-ajax-submit.php",
                         success: function(response, newVal) {
                             if (response.indexOf("success") === -1) {
                                 showMessage(response, 'warning');

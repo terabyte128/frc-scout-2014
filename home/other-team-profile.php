@@ -4,7 +4,7 @@ require_once '../includes/db-connect.php';
 
 $otherTeamNumber = $_GET['team'];
 
-require 'team-profile-db-queries.php';
+require '../includes/team-profiles/team-profile-db-queries.php';
 
 if (empty($response)) {
     $isRegistered = false;
@@ -17,5 +17,5 @@ if (empty($response)) {
 # return $isRegistered to tell team-profile-backend.php whether or not to try and load name, photo and description
 $isLoggedInTeam = false;
 
-include '../includes/team-profile-backend.php';
+include '../includes/team-profiles/team-profile-backend.php';
 ?>
