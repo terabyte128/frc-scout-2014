@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include '../headers.php' ?>
         <?php if ($isLoggedInTeam) { ?>
             <title>Your Team Profile</title>
         <?php } else { ?>
             <title>Team <?php echo $otherTeamNumber; ?>'s Profile</title>
         <?php } ?>
+        <?php include '../includes/headers.php'; ?>
     </head>
     <body>
         <div class="wrapper">
@@ -67,7 +67,7 @@
                     
                     <?php } ?>
                 </div>
-                <?php include '../footer.php' ?>
+                <?php include '../includes/footer.php' ?>
             </div>
         </div>
         <?php if ($isAdmin && $isLoggedInTeam) { ?>
