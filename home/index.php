@@ -32,8 +32,15 @@
                 </div>
                 <?php if ($teamType === "FTC") { ?>
 
-                <button onclick='window.location =  "ftc/container.php";' class="btn btn-lg btn-success btn-home-selections">Scout a New Team</button>
-                <button onclick='window.location =  "ftc/ftc-team-averages.php";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
+                    <button onclick='window.location = "ftc/container.php";' class="btn btn-lg btn-success btn-home-selections">Scout a New Team</button>
+                    <button onclick='window.location = "ftc/ftc-team-averages.php";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
+                <?php } ?>
+                <?php if ($teamType === "FRC") { ?>
+                    <button onclick='window.location = "scouting/match";' class="btn btn-lg btn-success btn-home-selections">Scout a Match</button>
+                    <br /><br />
+                    <font style="color: #868686; float: right; font-size: 10pt;">Results</font>
+                    <hr style="border-top: 1px solid #bbb">
+                    <button onclick='window.location = "results/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
                 <?php } ?>
                 <?php if ($isAdmin) {
                     ?>
