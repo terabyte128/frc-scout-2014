@@ -33,7 +33,8 @@
                                 <form onsubmit="goToTeamProfile();
                                 return false;" style="display: inline;">
                                     <div style="display: table-cell">
-                                        <input type="number" class="form-control btn btn-lg btn-home-selections" style="display: inline; height: 45px; border-radius: 6px; width: 175px;" placeholder="find team profile..." id="searchForTeam">
+
+                                        <input type="number" class="form-control" style="display: inline; height: 45px; border-radius: 6px; width: 175px;" placeholder="Team number" id="searchForTeam">
                                     </div>
                                     <div style="display: table-cell">
                                         <button class="btn btn-lg btn-info btn-home-selections" style="width: 60px; display: inline; text-align: center;" id="searchButton">Go</button>
@@ -140,4 +141,3 @@
         </script>  
     </body>
 </html>
-
