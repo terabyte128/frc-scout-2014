@@ -28,35 +28,35 @@
                 <p></p>
                 <div class="btn-group" data-toggle="buttons">
                     <button type="checkbox" class="btn buttonGroup2Full btn-primary" id="canBlock">Can block</button>
-                </div>
+                </div><br><br>
                 <div class="btn-group" data-toggle="buttons">
                     <button type="checkbox" class="btn buttonGroup2Full btn-primary" id="canPush">Can push</button>
-                </div>
+                </div><br><br>
                 <div class="btn-group" data-toggle="buttons">
                     <button type="checkbox" class="btn buttonGroup2Full btn-primary" id="unpushable">Unpushable</button>
                 </div>
                 <p></p>
                 <div class="btn-group" data-toggle="buttons" id="robotSpeed">
-                    <label class="btn btn-primary">
+                    <label class="btn btn-primary btn-lg">
                         <input type="radio" id="slow">Slow
                     </label>
-                    <label class="btn btn-primary">
+                    <label class="btn btn-primary btn-lg">
                         <input type="radio" id="average">Average
                     </label>
-                    <label class="btn btn-primary">
+                    <label class="btn btn-primary btn-lg">
                         <input type="radio" id="fast">Fast
                     </label>
                 </div>
                 <p></p>
                 <p class="text-center">Carrying Capacity</p>
                 <div class="btn-group" data-toggle="buttons" id="robotCapacity">
-                    <label class="btn btn-primary" id="lessThan4">
+                    <label class="btn btn-primary btn-lg" id="lessThan4">
                         <input type="radio" id="lessThan4">Less than 4
                     </label>
-                    <label class="btn btn-primary" id="4">
+                    <label class="btn btn-primary btn-lg" id="4">
                         <input type="radio" id="exactly4">4 blocks
                     </label>
-                    <label class="btn btn-primary" id="moreThan4">
+                    <label class="btn btn-primary btn-lg" id="moreThan4">
                         <input type="radio" id="moreThan4">More than 4
                     </label>
                 </div>

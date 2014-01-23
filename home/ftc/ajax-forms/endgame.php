@@ -5,13 +5,13 @@
                     return false;">
                 <h3 class="text-center">End Game</h3>
                 <div class="btn-group" data-toggle="buttons" id="flagScore">
-                    <label class="btn btn-primary btn-success" id="35">
+                    <label class="btn btn-success btn-lg" id="35">
                         <input type="radio" id="35">Flag High +35
                     </label>
-                    <label class="btn btn-primary  btn-warning" id="20">
+                    <label class="btn btn-warning btn-lg" id="20">
                         <input type="radio" id="20">Flag Low +20
                     </label>
-                    <label class="btn btn-primary btn-danger" id="0">
+                    <label class="btn btn-danger btn-lg" id="0">
                         <input type="radio" id="0">No score
                     </label>
                 </div>
@@ -19,10 +19,10 @@
                 <br />
                 <br /> 
                 <div class="btn-group" data-toggle="buttons" id="hangScore">
-                    <label class="btn btn-primary btn-success" id="50">
+                    <label class="btn btn-lgbtn-success" id="50">
                         <input type="radio" id="50">Robot Hang +50
                     </label>
-                    <label class="btn btn-primary  btn-danger" id="0">
+                    <label class="btn btn-lg  btn-danger" id="0">
                         <input type="radio" id="0">No Hang
                     </label>
                 </div>
@@ -31,10 +31,10 @@
 
 
                 <div class="btn-group" data-toggle="buttons" id="balanced">
-                    <label class="btn btn-primary" id="false">
+                    <label class="btn btn-primary btn-lg" id="false">
                         <input type="radio" name="options" id="false">Pendulum Unbalanced
                     </label>
-                    <label class="btn btn-primary" id="true">
+                    <label class="btn btn-primary btn-lg" id="true">
                         <input type="radio" name="options" id="true">Pendulum Balanced
                     </label>
                 </div>

@@ -27,13 +27,13 @@
             <br /><br />
             <p>Robot On Bridge</p>
             <div class="btn-group" data-toggle="buttons" id="robotOnBridge">
-                <label class="btn btn-primary">
+                <label class="btn btn-primary btn-lg">
                     <input type="radio" id="no">No
                 </label>
-                <label class="btn btn-primary">
+                <label class="btn btn-primary btn-lg">
                     <input type="radio" id="partially">Partially
                 </label>
-                <label class="btn btn-primary">
+                <label class="btn btn-primary btn-lg">
                     <input type="radio" id="completely">Completely
                 </label>
             </div><br />

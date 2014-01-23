@@ -11,7 +11,7 @@
             <input type="number" class="form-control" placeholder="Match Number" id="matchNumber" required>
         </div>
         <br />
-        <button id="toAuto" class="btn btn-default btn-success">Continue to autonomous</button>
+        <button id="toAuto" class="btn btn-success btn-lg">Continue to autonomous</button>
     </form>
 </div>
 
