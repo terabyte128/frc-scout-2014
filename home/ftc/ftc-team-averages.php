@@ -4,7 +4,7 @@
     <head>
 
         <?php include '../../includes/headers.php'; ?>
-        <title>FIRST Scout: Home</title>
+        <title>FTC Team Averages</title>
         <script type="text/javascript" src="../../includes/jquery.tablesorter.js"></script>
         <link rel="stylesheet" href="../../css/theme.default.css">
 

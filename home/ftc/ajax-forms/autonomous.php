@@ -31,10 +31,10 @@
                     <input type="radio" id="no">No
                 </label>
                 <label class="btn btn-primary btn-lg">
-                    <input type="radio" id="partially">Partially
+                    <input type="radio" id="partially">Partial
                 </label>
                 <label class="btn btn-primary btn-lg">
-                    <input type="radio" id="completely">Completely
+                    <input type="radio" id="completely">Complete
                 </label>
             </div><br />
             <p class="textToButton">Total Points:</p>

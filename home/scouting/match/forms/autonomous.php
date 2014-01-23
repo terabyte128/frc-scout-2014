@@ -2,5 +2,8 @@
     autonomous
 </form>
 <script type="text/javascript">
-$('#phasebutton').text('Next phase')
+    $(function() {
+        $("#pageNameTitle").text("Autonomous");
+        $('#phasebutton').text('Continue to teleoperated');
+    });
 </script>

@@ -18,12 +18,12 @@ if($teamType === "FTC") {
         <div class="wrapper">
             <div class="container">
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
-                <h1>Match Data Entry</h1>
-                <br>
+                <h1><span id="pageNameTitle">Scouting</span><span id="teamNumberTitle"></span></h1>
                 <div id="content-holder">
                 </div>
-                <br>
-                <button id="phasebutton" class="btn btn-lg btn-success" onclick="nextPhase()">Start scouting</button>
+                <br />
+                <br /> 
+                <button id="nextPhaseButton" class="btn btn-lg btn-success" onclick="pushToLocalStorage();">Start scouting</button>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
             </div>
         </div>
@@ -41,6 +41,8 @@ if($teamType === "FTC") {
         }
     var nextPhase = function() {
         currentPhase = ids[currentPhase];
+        $("#nextPhaseButton").button('loading');
         $('#content-holder').load("forms/" + currentPhase + ".php");
+        $("#nextPhaseButton").button('reset');
     }
 </script>

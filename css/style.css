@@ -87,7 +87,7 @@ body.modal-open {
 }
 
 .twitter-typeahead {
-	width: 100%;
+    width: 100%;
 }
 
 .tt-dropdown-menu {
@@ -150,4 +150,20 @@ body.modal-open {
 
 table, thead, th, td, .tablesorter-header-inner {
     font-family: "Helvetica";
+}
+
+.scouting-form {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn.btn-blue-selection {
+    background-color: rgb(0, 82, 255); 
+    border-color: rgb(0, 82, 255);
+    color: white;
+}
+
+.btn.active {
+    border-color: black;
 }

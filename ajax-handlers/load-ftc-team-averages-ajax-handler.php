@@ -10,11 +10,11 @@ if ($_GET['teamNumber']) {
 }
 $query = "SELECT
 `scouted_team`,
-AVG((`auto_ir_beacon_goal` * 40) + (`auto_pendulum_goal` * 20) + (`auto_floor_goal` * 10)) AS `avg_auto_block_score`,
-AVG((`tele_outer_pendulum` * 3) + (`tele_inner_pendulum` * 2) + (`tele_floor_goal` * 1)) AS `avg_tele_block_score`,
-AVG(`end_balanced`* 100) AS `avg_end_balanced`,
-AVG(`end_flag_score`) AS `avg_end_flag_score`,
-AVG(`end_hang_score`) AS `avg_end_hang_score`
+format(AVG((`auto_ir_beacon_goal` * 40) + (`auto_pendulum_goal` * 20) + (`auto_floor_goal` * 10)),1) AS `avg_auto_block_score`,
+format(AVG((`tele_outer_pendulum` * 3) + (`tele_inner_pendulum` * 2) + (`tele_floor_goal` * 1)),1) AS `avg_tele_block_score`,
+format(AVG(`end_balanced`* 100),1) AS `avg_end_balanced`,
+format(AVG(`end_flag_score`),1) AS `avg_end_flag_score`,
+format(AVG(`end_hang_score`),1) AS `avg_end_hang_score`
 
 FROM `ftc_scouting_data` WHERE `complete`=1";
 
