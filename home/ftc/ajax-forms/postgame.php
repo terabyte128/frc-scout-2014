@@ -12,16 +12,16 @@
                 misc_comments text
                 -->
                 <br />
-                <button type="button" data-toggle="button" id="deadRobot" class="btn btn-danger">Dead Robot</button>
+                <button type="button" data-toggle="button" id="deadRobot" class="btn btn-danger btn-lg">Dead Robot</button>
                 <br /><br />
                 <div class="btn-group" data-toggle="buttons" id="matchOutcome">
-                    <label class="btn btn-success">
+                    <label class="btn btn-success btn-lg">
                         <input type="radio" class="update-outcome" id="win">Win
                     </label>
-                    <label class="btn btn-danger">
+                    <label class="btn btn-danger btn-lg">
                         <input type="radio" class="update-outcome" id="lose">Lose
                     </label>
-                    <label class="btn btn-warning">
+                    <label class="btn btn-warning btn-lg">
                         <input type="radio" class="update-outcome" id="tie">Tie
                     </label>
                 </div>
