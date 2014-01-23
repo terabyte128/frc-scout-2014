@@ -19,10 +19,10 @@
                 <br />
                 <br /> 
                 <div class="btn-group" data-toggle="buttons" id="hangScore">
-                    <label class="btn btn-lgbtn-success" id="50">
+                    <label class="btn btn-lg btn-success" id="50">
                         <input type="radio" id="50">Robot Hang +50
                     </label>
-                    <label class="btn btn-lg  btn-danger" id="0">
+                    <label class="btn btn-lg btn-danger" id="0">
                         <input type="radio" id="0">No Hang
                     </label>
                 </div>
