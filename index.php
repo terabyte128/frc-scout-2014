@@ -1,14 +1,14 @@
-<?php include 'includes/redirect-if-session-exists.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/redirect-if-session-exists.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>FIRST Scout: Login</title>
-        <?php include 'includes/headers.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/headers.php'; ?>
     </head>
     <body>
         <div class="wrapper">
             <div class="container">
-                <?php include 'includes/messages.php'; ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
                 <div class="title">
                     <img style='margin: 20px auto 2px auto; max-width: 275px' src="images/logo_earfuzz_hat.png" alt="header logo" id="main-title-image" />
                     <h2 style='margin-top: 2px;'>FIRST Scout: Login</h2>
