@@ -22,7 +22,6 @@ if($teamType === "FTC") {
                 <div id="content-holder">
                 </div>
                 <br />
-                <br /> 
                 <button id="nextPhaseButton" class="btn btn-lg btn-success" onclick="pushToLocalStorage();">Start scouting</button>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
             </div>
@@ -31,7 +30,7 @@ if($teamType === "FTC") {
 </html>
 
 <script type="text/javascript">
-    $('#content-holder').load('forms/prematch.php');
+    $('#content-holder').load('forms/autonomous.php');
     var currentPhase = "prematch";
         var ids = {
             "prematch": "autonomous",

@@ -1,22 +1,28 @@
-<form class="scouting-form">    
-    <label for="teamNumber">Team number</label>
-    <input type="number" class="form-control" placeholder="Team number" id="teamNumber" onkeyup="updateTeamNumber($('#teamNumber').val());">
+<form class="scouting-form">
+    <button data-toggle="button" class="btn btn-lg btn-success active" id="teamPresent" style='width: 200px;' onclick='updatePresent();'>Team Present</button>
+    <br /><br />
+    <label for="teamNumber">Team number:</label>
+    <input type="number" class="form-control" placeholder="Team number" id="teamNumber" onblur="updateTeamNumber($('#teamNumber').val());">
     <br />
-    <label for="teamNumber">Match number</label>
+    <label for="teamNumber">Match number:</label>
     <input type="number" class="form-control" placeholder="Match number" id="matchNumber">
     <br />
-    <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-danger" onclick="updateAlliance('red');">
-            <input type="radio" name="options" id="redAlliance">Red Alliance
+    <label for='selectAlliance'>Alliance color:</label>
+    <br />
+    <div class="btn-group" data-toggle="buttons" id='selectAlliance'>
+        <label class="btn btn-danger btn-lg" onclick="updateAlliance('red');" style="width: 100px;">
+            <input type="radio" name="options" id="redAlliance">Red
         </label>
-        <label class="btn btn-blue-selection" onclick="updateAlliance('blue');">
-            <input type="radio" name="options" id="blueAlliance"> Blue Alliance
+        <label class="btn btn-blue-selection btn-lg" onclick="updateAlliance('blue');"  style="width: 100px;">
+            <input type="radio" name="options" id="blueAlliance">Blue
         </label>
     </div>
 </form>
 <script type="text/javascript">
 
     var allianceColor = "";
+    var borderColor = "";
+    var teamPresent = true;
 
     $(function() {
         $('#nextPhaseButton').text('Start scouting')
@@ -25,7 +31,6 @@
 
     function updateAlliance(color) {
 
-        var borderColor;
         if (color === "red") {
             borderColor = "#d2322d";
         } else {
@@ -37,7 +42,16 @@
             'border-bottom': '5px solid ' + borderColor
         });
 
+
+        $("#movedToAllianceZone").css({
+            'background-color' : borderColor
+        });
+        
         allianceColor = color;
+    }
+
+    function updatePresent() {
+        teamPresent = !teamPresent;
     }
 
     function pushToLocalStorage() {
@@ -61,6 +75,8 @@
         }
 
         if (!errors) {
+            localStorage.teamPresent = teamPresent;
+            localStorage.allianceColorId = borderColor;
             localStorage.allianceColor = allianceColor;
             localStorage.teamNumber = $("#teamNumber").val();
             localStorage.matchNumber = $("#matchNumber").val();

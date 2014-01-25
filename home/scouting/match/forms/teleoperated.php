@@ -1,6 +1,7 @@
 <form id="teleoperated">
-    teleoperated
+    
 </form>
 <script type="text/javascript">
-$('#phasebutton').text('Finish')
+    $('#pageNameTitle').text("Teleoperated")
+    $('#nextPhaseButton').text('Finish');
 </script>
