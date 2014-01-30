@@ -17,68 +17,72 @@
     </div>
     <br />
     <button data-toggle="button" class="btn btn-lg btn-warning" id="hotGoal" style='margin-top: 10px; width: 212px;' onclick='updateHotGoal();
-            updateTotals();' disabled>Hot Goal</button>
+                updateTotals();' disabled>Hot Goal</button>
     <br />
     <br />
     <button data-toggle="button" class="btn btn-lg btn-info btn-no-border" id="movedToAllianceZone" style='margin-top: 10px; width: 212px;' onclick='updateMovedToAllianceZone();
-            updateTotals();'>Moved to <span id='allianceColor'></span> zone</button>
+                updateTotals();'>Moved to <span id='allianceColor'></span> zone</button>
     <br />
     <br />
     <h4><strong>Total Points: <span id='totalPoints'>0</span></strong></h4>
 
 </form>
 <script type="text/javascript">
-    $(function() {
-        $("#pageNameTitle").text("Autonomous");
-        $('#nextPhaseButton').text('Continue to teleoperated');
-        $("#allianceColor").text(localStorage.allianceColor);
-        $("#movedToAllianceZone").css({
-            "background-color": localStorage.allianceColorId,
-            "text-color": "white"
-        });
-    });
+            $(function() {
+                $("#pageNameTitle").text("Autonomous");
+                $('#nextPhaseButton').text('Continue to teleoperated');
+                $("#allianceColor").text(localStorage.allianceColor);
+                $("#movedToAllianceZone").css({
+                    "background-color": localStorage.allianceColorId,
+                    "text-color": "white"
+                });
+            });
 
-    var goalValue = undefined;
+            var goalValue = undefined;
 
-    var goalValueListener = new Object();
+            var hotGoal = false;
+            var movedToAllianceZone = false;
 
-    var hotGoal = false;
-    var movedToAllianceZone = false;
+            function updateHotGoal() {
+                hotGoal = !hotGoal;
+            }
 
-    function updateHotGoal() {
-        hotGoal = !hotGoal;
-    }
+            function updateMovedToAllianceZone() {
+                movedToAllianceZone = !movedToAllianceZone;
+            }
 
-    function updateMovedToAllianceZone() {
-        movedToAllianceZone = !movedToAllianceZone;
-    }
+            function updateTotals() {
+                totalPoints = 0;
 
-    function updateTotals() {
-        totalPoints = 0;
+                if (goalValue !== undefined) {
+                    totalPoints += goalValue;
+                }
 
-        totalPoints += goalValue;
+                if (hotGoal) {
+                    totalPoints += 5;
+                }
 
-        if (hotGoal) {
-            totalPoints += 5;
-        }
+                if (movedToAllianceZone) {
+                    totalPoints += 5;
+                }
 
-        if (movedToAllianceZone) {
-            totalPoints += 5;
-        }
+                $("#totalPoints").text(totalPoints);
+                if (goalValue !== 0 && goalValue !== undefined) {
+                    $("#hotGoal").prop("disabled", false);
+                } else {             
+                    $("#hotGoal").prop("disabled", true);
+                }
+            }
 
-        $("#totalPoints").text(totalPoints);
-
-        $("#hotGoal").prop("disabled", false);
-    }
-    function pushToLocalStorage() {
-        if (!(goalValue === undefined)) {
-            localStorage.autoGoalValue = goalValue;
-            localStorage.autoHotGoal = hotGoal;
-            localStorage.autoMovedToAllianceZone = movedToAllianceZone;
-            hideMessage();
-            nextPhase();
-        } else {
-            showMessage("Please select goal scored.", "danger");
-        }
-    }
+            function pushToLocalStorage() {
+                if (!(goalValue === undefined)) {
+                    localStorage.autoGoalValue = goalValue;
+                    localStorage.autoHotGoal = hotGoal;
+                    localStorage.autoMovedToAllianceZone = movedToAllianceZone;
+                    hideMessage();
+                    nextPhase();
+                } else {
+                    showMessage("Please select goal scored.", "danger");
+                }
+            }
 </script>
