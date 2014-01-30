@@ -70,6 +70,10 @@
                 if (goalValue !== 0 && goalValue !== undefined) {
                     $("#hotGoal").prop("disabled", false);
                 } else {             
+                    if (hotGoal) {
+                        $("#hotGoal").click();
+                        $("#hotGoal").removeClass("active");
+                    }
                     $("#hotGoal").prop("disabled", true);
                 }
             }

@@ -1,3 +1,4 @@
+<?php include 'pwd-include.php'; ?>
 <?php
 if (isset($_REQUEST['error'])) {
     $error = intval($_REQUEST['error']);
