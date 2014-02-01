@@ -3,12 +3,12 @@
     <div id='assists'>
         <div>
             <button type="button" id="receivedAdd" class="btn btn-lg btn-default btn-add-score">Received</button>
-            <button type="button" id="receivedRemove" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
+            <button type="button" id="receivedSubtract" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
             <span id='receivedTotal' class='score-tally'>0</span>
         </div>
         <div>
-            <button type="button" class="btn btn-lg btn-default btn-add-score">Passed</button>
-            <button type="button" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
+            <button type="button" id="passedAdd" class="btn btn-lg btn-default btn-add-score">Passed</button>
+            <button type="button" id="passedSubtract" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
             <span id='passedTotal' class='score-tally'>0</span>
         </div>
     </div>
@@ -16,32 +16,32 @@
     <label for='goals'>Goals</label>
     <div id='goals'>
         <div>
-            <button type="button" class="btn btn-lg btn-default btn-mini-change-score">High</button>
-            <button type="button" class="btn btn-lg btn-default btn-mini-change-score">Low</button>
-            <button type="button" class="btn btn-lg btn-default btn-mini-change-score">Miss</button>
+            <button type="button" id="highGoalAdd" class="btn btn-lg btn-default btn-add-score">High</button>
+            <button type="button" id="highGoalSubtract" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
+            <span id='highGoalTotal' class='score-tally'>0</span>
         </div>
         <div>
-            <button type="button" class="btn btn-lg btn-default btn-mini-change-score">&mdash;</button>
-            <button type="button" class="btn btn-lg btn-default btn-mini-change-score">&mdash;</button>
-            <button type="button" class="btn btn-lg btn-default btn-mini-change-score">&mdash;</button>
+            <button type="button" id="lowGoalAdd" class="btn btn-lg btn-default btn-add-score">Low</button>
+            <button type="button" id="lowGoalSubtract" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
+            <span id='lowGoalTotal' class='score-tally'>0</span>
         </div>
         <div>
-            <span id='highTotal' class="score-tally mini-score-tally">0</span>
-            <span id='lowTotal' class="score-tally mini-score-tally">0</span>
-            <span id='missTotal' class="score-tally mini-score-tally">0</span>
+            <button type="button" id="missedGoalAdd" class="btn btn-lg btn-default btn-add-score">Miss</button>
+            <button type="button" id="missedGoalSubtract" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
+            <span id='missedGoalTotal' class='score-tally'>0</span>
         </div>
     </div>
     <br />
     <label for='truss'>Truss</label>
     <div id='truss'>
         <div>
-            <button type="button" class="btn btn-lg btn-default btn-add-score">Threw Over</button>
-            <button type="button" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
+            <button type="button" id="threwOverTrussAdd" class="btn btn-lg btn-default btn-add-score">Threw Over</button>
+            <button type="button" id="threwOverTrussSubtract" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
             <span id='trussThrew' class='score-tally'>0</span>
         </div>
         <div>
-            <button type="button" class="btn btn-lg btn-default btn-add-score">Caught From</button>
-            <button type="button" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
+            <button type="button" id="caughtFromTrussAdd" class="btn btn-lg btn-default btn-add-score">Caught From</button>
+            <button type="button" id="caughtFromTrussSubtract" class="btn btn-lg btn-default btn-remove-score">&mdash;</button>
             <span id='trussCaught' class='score-tally'>0</span>
         </div>
     </div>
@@ -60,14 +60,58 @@
     var trussThrows = 0;
     var trussCatches = 0;
 
-    $("#receivedAdd").click(function() {
-        update(receivedAssists, 'receivedTotal', false);
-    });
+    $("button").click(function() {
+        switch (this.id) {
+            case "receivedAdd":
+                receivedAssists = update(receivedAssists, 'receivedTotal', false);
+                break;
+            case "receivedSubtract":
+                receivedAssists = update(receivedAssists, 'receivedTotal', true);
+                break;
 
-    function add1(foo) {
-        foo++; 
-        return foo;
-    }
+            case "passedAdd":
+                passedAssists = update(passedAssists, 'passedTotal', false);
+                break;
+            case "passedSubtract":
+                passedAssists = update(passedAssists, 'passedTotal', true);
+                break;
+
+            case "highGoalAdd":
+                highGoals = update(highGoals, 'highGoalTotal', false);
+                break;
+            case "highGoalSubtract":
+                highGoals = update(highGoals, 'highGoalTotal', true);
+                break;
+
+            case "lowGoalAdd":
+                lowGoals = update(lowGoals, 'lowGoalTotal', false);
+                break;
+            case "lowGoalSubtract":
+                lowGoals = update(lowGoals, 'lowGoalTotal', true);
+                break;
+
+            case "missedGoalAdd":
+                missedGoals = update(missedGoals, 'missedGoalTotal', false);
+                break;
+            case "missedGoalSubtract":
+                missedGoals = update(missedGoals, 'missedGoalTotal', true);
+                break;
+
+            case "threwOverTrussAdd":
+                trussThrows = update(trussThrows, 'trussThrew', false);
+                break;
+            case "threwOverTrussSubtract":
+                trussThrows = update(trussThrows, 'trussThrew', true);
+                break;
+
+            case "caughtFromTrussAdd":
+                trussCatches = update(trussCatches, 'trussCaught', false);
+                break;
+            case "caughtFromTrussSubtract":
+                trussCatches = update(trussCatches, 'trussCaught', true);
+                break;
+        }
+    });
 
     function update(variable, countId, subtract) {
         if (subtract) {
@@ -77,7 +121,8 @@
         } else {
             variable++;
         }
-        
-        //$("'#" + countId + "'").text(variable);
+
+        $("#" + countId + "").text(variable);
+        return variable;
     }
 </script>

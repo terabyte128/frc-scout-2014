@@ -153,7 +153,7 @@ table, thead, th, td, .tablesorter-header-inner {
 }
 
 .scouting-form {
-    width: 220px;
+    width: 250px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -215,6 +215,9 @@ input[type='checkbox'].checkbox-big {
     margin-left: 10px;
     font-size: 16px;
     font-weight: bold;
+    width: 20px;
+    display: inline-block;
+    text-align: right;
 }
 
 .mini-score-tally {

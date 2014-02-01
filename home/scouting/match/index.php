@@ -30,7 +30,7 @@ if ($teamType === "FTC") {
 </html>
 
 <script type="text/javascript">
-                    $('#content-holder').load('forms/teleoperated.php');
+                    $('#content-holder').load('forms/postmatch.php');
                     var currentPhase = "prematch";
                     var ids = {
                         "prematch": "autonomous",
