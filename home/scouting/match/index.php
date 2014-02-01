@@ -3,7 +3,7 @@ $docRoot = $_SERVER['DOCUMENT_ROOT'];
 
 require_once $docRoot . '/includes/setup-session.php';
 
-if($teamType === "FTC") {
+if ($teamType === "FTC") {
     header('location: /home/ftc/container.php');
 }
 ?>
@@ -30,18 +30,22 @@ if($teamType === "FTC") {
 </html>
 
 <script type="text/javascript">
-    $('#content-holder').load('forms/prematch.php');
-    var currentPhase = "prematch";
-        var ids = {
-            "prematch": "autonomous",
-            "autonomous": "teleoperated",
-            "teleoperated": "postmatch",
-            "postmatch": "prematch"
-        }
-    var nextPhase = function() {
-        currentPhase = ids[currentPhase];
-        $("#nextPhaseButton").button('loading');
-        $('#content-holder').load("forms/" + currentPhase + ".php");
-        $("#nextPhaseButton").button('reset');
-    }
+                    $('#content-holder').load('forms/teleoperated.php');
+                    var currentPhase = "prematch";
+                    var ids = {
+                        "prematch": "autonomous",
+                        "autonomous": "teleoperated",
+                        "teleoperated": "postmatch",
+                        "postmatch": "prematch"
+                    }
+                    function nextPhase() {
+                        currentPhase = ids[currentPhase];
+                        $("#nextPhaseButton").button('loading');
+                        $('#content-holder').load("forms/" + currentPhase + ".php");
+                        if(currentPhase !== "prematch") {
+                            $("#absentButton").hide();
+                        }
+                        $("#nextPhaseButton").button('reset');
+                    }
+
 </script>

@@ -153,7 +153,7 @@ table, thead, th, td, .tablesorter-header-inner {
 }
 
 .scouting-form {
-    width: 200px;
+    width: 220px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -180,10 +180,45 @@ table, thead, th, td, .tablesorter-header-inner {
         border-radius: 0px;
         -moz-border-radius: 0px;
     }
-    
+
     .wrapper {
         margin: 0px;
     }
 
 }
 
+.checkbox-big-label {
+}
+
+input[type='checkbox'].checkbox-big {
+    width: 30px;
+    height: 30px;
+    margin: -5px 10px 0 -20px;
+}
+
+.btn-add-score {
+    width: 130px;
+    margin-bottom: 5px;
+}
+
+.btn-remove-score {
+    width: 60px;
+    margin-bottom: 5px;
+}
+
+.btn-mini-change-score {
+    width: 70px;
+    margin-bottom: 5px;
+    /*font-size: 12px;*/
+}
+.score-tally {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mini-score-tally {
+    margin: 0px;
+    min-width:70px;
+    display:inline-block;
+}

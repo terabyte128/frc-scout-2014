@@ -1,6 +1,4 @@
 <form class="scouting-form">
-    <button data-toggle="button" class="btn btn-lg btn-success active" id="teamPresent" style='width: 200px;' onclick='updatePresent();'>Team Present</button>
-    <br /><br />
     <label for="teamNumber">Team number:</label>
     <input type="number" class="form-control" placeholder="Team number" id="teamNumber" onblur="updateTeamNumber($('#teamNumber').val());">
     <br />
@@ -17,77 +15,105 @@
             <input type="radio" name="options" id="blueAlliance">Blue
         </label>
     </div>
+    <br /><br/> 
+    <button id="absentButton" class="btn btn-lg btn-warning next-page-button" type="button" data-toggle="modal" data-target="#cancelModal">Team Absent</button>
 </form>
+
+<!-- Modal -->
+<form role="form">
+    <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="font-size: 16px;">
+                    Marking this team as absent will terminate this scouting session. Are you sure?
+                    <br /><br/> 
+                    <textarea class="form-control" placeholder="Please leave a comment." rows="6" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-warning btn-lg" onsubmit="cancel(); return false;">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
 <script type="text/javascript">
 
-    var allianceColor = "";
-    var borderColor = "";
-    var teamPresent = true;
+        var allianceColor = "";
+        var borderColor = "";
+        var teamPresent = true;
 
-    $(function() {
-        $('#nextPhaseButton').text('Start scouting')
-        $('#pageNameTitle').text("Pre-Match Information")
-    });
-
-    function updateAlliance(color) {
-
-        if (color === "red") {
-            borderColor = "#d2322d";
-        } else {
-            borderColor = "rgb(0, 82, 255)";
-        }
-
-        $(".container").css({
-            'border-top': '5px solid ' + borderColor,
-            'border-bottom': '5px solid ' + borderColor
+        $(function() {
+            $('#nextPhaseButton').text('Start scouting')
+            $('#pageNameTitle').text("Pre-Match Information")
+            document.location.hash = "prematch";
         });
 
+        function updateAlliance(color) {
 
-        $("#movedToAllianceZone").css({
-            'background-color' : borderColor
-        });
-        
-        allianceColor = color;
-    }
+            if (color === "red") {
+                borderColor = "#d2322d";
+            } else {
+                borderColor = "rgb(0, 82, 255)";
+            }
 
-    function updatePresent() {
-        teamPresent = !teamPresent;
-    }
+            $(".container").css({
+                'border-top': '5px solid ' + borderColor,
+                'border-bottom': '5px solid ' + borderColor
+            });
 
-    function pushToLocalStorage() {
-        var errorMessage = "";
-        var errors = false;
-        teamNumber = $("#teamNumber").val();
-        matchNumber = $("#matchNumber").val();
 
-        if (teamNumber === "") {
-            errorMessage += "&bull; Enter a team number.<br />";
-            errors = true;
-        }
-        if (matchNumber === "") {
-            errorMessage += "&bull; Enter a match number.<br />";
-            errors = true;
+            $("#movedToAllianceZone").css({
+                'background-color': borderColor
+            });
+
+            allianceColor = color;
         }
 
-        if (allianceColor === "") {
-            errorMessage += "&bull; Select an alliance color.";
-            errors = true;
+        function updatePresent() {
+            teamPresent = !teamPresent;
         }
 
-        if (!errors) {
-            localStorage.teamPresent = teamPresent;
-            localStorage.allianceColorId = borderColor;
-            localStorage.allianceColor = allianceColor;
-            localStorage.teamNumber = $("#teamNumber").val();
-            localStorage.matchNumber = $("#matchNumber").val();
-            hideMessage();
-            nextPhase();
-        } else {
-            showMessage("Please correct the following errors:<br />" + errorMessage, "danger");
-        }
-    }
+        function pushToLocalStorage() {
+            var errorMessage = "";
+            var errors = false;
+            teamNumber = $("#teamNumber").val();
+            matchNumber = $("#matchNumber").val();
 
-    function updateTeamNumber(teamNumber) {
-        $('#teamNumberTitle').text(": " + teamNumber);
-    }
+            if (teamNumber === "") {
+                errorMessage += "&bull; Enter a team number.<br />";
+                errors = true;
+            }
+            if (matchNumber === "") {
+                errorMessage += "&bull; Enter a match number.<br />";
+                errors = true;
+            }
+
+            if (allianceColor === "") {
+                errorMessage += "&bull; Select an alliance color.";
+                errors = true;
+            }
+
+            if (!errors) {
+                localStorage.teamPresent = teamPresent;
+                localStorage.allianceColorId = borderColor;
+                localStorage.allianceColor = allianceColor;
+                localStorage.teamNumber = $("#teamNumber").val();
+                localStorage.matchNumber = $("#matchNumber").val();
+                hideMessage();
+                nextPhase();
+            } else {
+                showMessage("Please correct the following errors:<br />" + errorMessage, "danger");
+            }
+        }
+
+        function updateTeamNumber(teamNumber) {
+            $('#teamNumberTitle').text(": " + teamNumber);
+        }
+
+        function cancel() {
+            // this will handle absences in the future
+        }
+
 </script>

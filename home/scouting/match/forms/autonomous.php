@@ -36,6 +36,8 @@
                     "background-color": localStorage.allianceColorId,
                     "text-color": "white"
                 });
+                document.location.hash = "autonomous";
+
             });
 
             var goalValue = undefined;
@@ -69,7 +71,7 @@
                 $("#totalPoints").text(totalPoints);
                 if (goalValue !== 0 && goalValue !== undefined) {
                     $("#hotGoal").prop("disabled", false);
-                } else {             
+                } else {
                     if (hotGoal) {
                         $("#hotGoal").click();
                         $("#hotGoal").removeClass("active");
