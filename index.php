@@ -28,7 +28,8 @@
                         <div class="form-group">
                             <label for="teamPassword">Team Password</label>
                             <input type="password" class="form-control" id="teamPassword" placeholder="Team Password" required>
-                        </div>                  
+                        </div>       
+                        <!--
                         <div class="form-group">
                             <label for="teamType">Team Type</label>
                             <select class="form-control" id="teamType">
@@ -36,6 +37,7 @@
                                 <option id="ftc">FTC (small robots)</option>                           
                             </select>
                         </div>
+                        -->
                         <div class="form-group">
                             <label for="location">Location</label><br />
                             <input type="text" id="location" placeholder="Location" class="form-control" required style="width: 100%;">
@@ -58,7 +60,7 @@
                             var teamNumber = $("#teamNumber").val();
                             var scoutName = $("#scoutName").val();
                             var teamPassword = $("#teamPassword").val();
-                            var teamType = $('#teamType').find('option:selected').attr('id');
+                            var teamType = "frc";
                             var currentLocation = $("#location").val();
 
                             if ($.inArray(currentLocation, locationsFromJSON) === -1) {

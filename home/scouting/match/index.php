@@ -31,7 +31,7 @@ if ($teamType === "FTC") {
 
 <script type="text/javascript">
 
-    var currentPhase = "prematch";
+    var currentPhase = "postmatch";
 
     $(function() {
         nextPhase();
