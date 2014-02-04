@@ -10,20 +10,49 @@
         <br />
         <textarea class='form-control' placeholder="Please comment on fouls caused." rows='6' id='foulComments'></textarea>
     </div>
-    
+
     <div class='form-group'>
         <br />
-        <textarea class='form-control' placeholder='Miscellaneous comments.' rows='6'></textarea>
+        <textarea class='form-control' placeholder='Miscellaneous comments.' rows='6' id="miscComments"></textarea>
     </div>
 </form>
 <script type="text/javascript">
-    $('#pageNameTitle').text("Post-Game")
-    $('#nextPhaseButton').text('Review Match');
 
+    var diedDuringMatch = false;
+    var causedFouls = false;
+
+    $("button").click(function() {
+        switch (this.id) {
+            case "diedDuringMatch":
+                diedDuringMatch = !diedDuringMatch;
+                break;
+            case "causedFouls":
+                causedFouls = !causedFouls;
+                break;
+            default:
+                break;
+
+        }
+    });
+
+
+
+    $('#pageNameTitle').text("Post-Game")
 
     $("#causedFouls").click(function() {
         $("#foulCommentsWrapper").slideToggle(200);
-        $("#foulComments")
     });
-9
+
+    function pushToLocalStorage() {
+        var foulComments = $("#foulComments").val();
+        var miscComments = $("#miscComments").val();
+
+        hideMessage();
+        localStorage.diedDuringMatch = diedDuringMatch;
+        localStorage.causedFouls = causedFouls;
+        localStorage.foulComments = foulComments;
+        localStorage.miscComments = miscComments;
+        nextPhase();
+
+    }
 </script>

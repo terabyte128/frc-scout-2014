@@ -45,7 +45,6 @@
         var teamPresent = true;
 
         $(function() {
-            $('#nextPhaseButton').text('Start scouting')
             $('#pageNameTitle').text("Pre-Match Information")
             document.location.hash = "prematch";
         });

@@ -34,7 +34,7 @@
                                 return false;" style="display: inline;">
                                     <div style="display: table-cell">
 
-                                        <input type="number" class="form-control" style="display: inline; height: 45px; border-radius: 6px; width: 175px;" placeholder="Team number" id="searchForTeam">
+                                        <input type="number" class="form-control" style="display: inline; height: 50px; border-radius: 6px; width: 175px; height: 48px; font-size: 18px; text-align: center; margin-right: 4px;" placeholder="Team number" id="searchForTeam">
                                     </div>
                                     <div style="display: table-cell">
                                         <button class="btn btn-lg btn-info btn-home-selections" style="width: 60px; display: inline; text-align: center;" id="searchButton">Go</button>
@@ -135,7 +135,7 @@
                             } else if (otherTeamNumber < 0) {
                                 showMessage("That's not a valid team number!", 'danger');
                             } else {
-                                window.location = 'other-team-profile.php?team=' + otherTeamNumber;
+                                window.location = '/team/' + otherTeamNumber;
                             }
                         }
         </script>  

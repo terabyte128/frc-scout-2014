@@ -30,7 +30,6 @@
 <script type="text/javascript">
             $(function() {
                 $("#pageNameTitle").text("Autonomous");
-                $('#nextPhaseButton').text('Continue to teleoperated');
                 $("#allianceColor").text(localStorage.allianceColor);
                 $("#movedToAllianceZone").css({
                     "background-color": localStorage.allianceColorId,

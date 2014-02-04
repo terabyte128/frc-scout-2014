@@ -48,7 +48,6 @@
 </form>
 <script type="text/javascript">
     $('#pageNameTitle').text("Teleoperated")
-    $('#nextPhaseButton').text('Finish');
 
     var highGoals = 0;
     var lowGoals = 0;
@@ -124,5 +123,22 @@
 
         $("#" + countId + "").text(variable);
         return variable;
+    }
+    
+    function pushToLocalStorage() {
+        //assists
+        localStorage.teleReceivedAssists = receivedAssists;
+        localStorage.telePassedAssists = passedAssists;
+        
+        //goals
+        localStorage.teleHighGoals = highGoals;
+        localStorage.teleLowGoals = lowGoals;
+        localStorage.teleMissedGoals = missedGoals;
+        
+        //truss
+        localStorage.teleTrussThrows = trussThrows;
+        localStorage.teleTrussCatches = trussCatches;
+        
+        nextPhase();
     }
 </script>
