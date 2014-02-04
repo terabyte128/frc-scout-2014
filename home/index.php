@@ -26,7 +26,7 @@
                     <br /><br />
                     <font style="color: #868686; float: right; font-size: 10pt;">Results</font>
                     <hr style="border-top: 1px solid #bbb">
-                    <button onclick="window.location = 'team-profile.php';" class="btn btn-lg btn-info btn-home-selections">Team Profile</button>
+                    <button onclick="window.location = '/team';" class="btn btn-lg btn-info btn-home-selections">Team Profile</button>
                     <div style="display: inline;">
                         <div style="display: inline-table;">
                             <div style="display: table-row">
@@ -34,7 +34,7 @@
                                 return false;" style="display: inline;">
                                     <div style="display: table-cell">
 
-                                        <input type="number" class="form-control" style="display: inline; height: 50px; border-radius: 6px; width: 175px; height: 48px; font-size: 18px; text-align: center; margin-right: 4px;" placeholder="Team number" id="searchForTeam">
+                                        <input type="number" class="form-control" style="display: inline; height: 50px; border-radius: 6px; width: 175px; height: 48px; font-size: 18px; text-align: center; margin-right: 4px;" placeholder="Find Team Profile" id="searchForTeam">
                                     </div>
                                     <div style="display: table-cell">
                                         <button class="btn btn-lg btn-info btn-home-selections" style="width: 60px; display: inline; text-align: center;" id="searchButton">Go</button>

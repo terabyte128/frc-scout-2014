@@ -3,6 +3,10 @@ require_once '../includes/setup-session.php';
 require_once '../includes/db-connect.php';
 
 $otherTeamNumber = $_GET['team'];
+if($teamNumber == $otherTeamNumber) {
+    header('location: /team');
+}
+
 
 require '../includes/team-profiles/team-profile-db-queries.php';
 
