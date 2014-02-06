@@ -30,7 +30,7 @@
 <script type="text/javascript">
 
     $('#pageNameTitle').text("Finish Scouting")
-    document.location.hash = "review";
+    //document.location.hash = "review";
     $("#nextPhaseButtonContainer").hide();
 
     /*

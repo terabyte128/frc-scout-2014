@@ -48,7 +48,7 @@
 </form>
 <script type="text/javascript">
     $('#pageNameTitle').text("Teleoperated")
-    document.location.hash = "teleoperated";
+    //document.location.hash = "teleoperated";
 
     var highGoals = 0;
     var lowGoals = 0;

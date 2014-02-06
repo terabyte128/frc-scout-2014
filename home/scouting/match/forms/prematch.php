@@ -46,7 +46,7 @@
 
         $(function() {
             $('#pageNameTitle').text("Pre-Match Information")
-            document.location.hash = "prematch";
+            //document.location.hash = "prematch";
         });
 
         function updateAlliance(color) {

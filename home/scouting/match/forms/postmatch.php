@@ -36,7 +36,7 @@
     var diedDuringMatch = false;
     var causedFouls = false;
     var matchOutcome = undefined;
-    document.location.hash = "postmatch";
+    //document.location.hash = "postmatch";
 
 
     $("button").click(function() {

@@ -46,7 +46,9 @@ if ($teamType === "FTC") {
     })
 
     window.onhashchange = function() {
-        
+        console.log("called onhashchange");
+        var currentPhase = window.location.hash.substring(1);
+        updateContainer();
     }
 
     var ids = {
@@ -56,7 +58,15 @@ if ($teamType === "FTC") {
         "postmatch": "review",
         "review": "prematch"
     }
+    
     function nextPhase() {
+        window.location.hash = currentPhase;
+        updateContainer();
+        console.log("called nextPhase()");
+    }
+    
+    function updateContainer() {
+        console.log("called updateContainer()");
         $("#nextPhaseButton").button('loading');
 
         $("#loading").show();
@@ -84,29 +94,5 @@ if ($teamType === "FTC") {
         }
     }
 
-    function clearLocalStorage() {
-        /*
-         localStorage.removeItem(allianceColor);
-         localStorage.removeItem(allianceColorId);
-         localStorage.removeItem(autoGoalValue);
-         localStorage.removeItem(autoMovedToAllianceZone);
-         localStorage.removeItem(causedFouls);
-         localStorage.removeItem(diedDuringMatch);
-         localStorage.removeItem(foulComments);
-         localStorage.removeItem(matchNumber);
-         localStorage.removeItem(miscComments);
-         localStorage.removeItem(teamNumber);
-         localStorage.removeItem(teamPresent);
-         localStorage.removeItem(teleHighGoals);
-         localStorage.removeItem(teleLowGoals);
-         localStorage.removeItem(teleMissedGoals);
-         localStorage.removeItem(telePassedAssists);
-         localStorage.removeItem(teleReceivedAssists);
-         localStorage.removeItem(teleTrussCatches);
-         localStorage.removeItem(teleTrussThrows);
-         */
-
-        localStorage.clear();
-    }
 
 </script>

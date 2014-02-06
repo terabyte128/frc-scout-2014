@@ -35,7 +35,7 @@
                     "background-color": localStorage.allianceColorId,
                     "text-color": "white"
                 });
-                document.location.hash = "autonomous";
+                //document.location.hash = "autonomous";
 
             });
 
@@ -89,5 +89,9 @@
                 } else {
                     showMessage("Please select goal scored.", "danger");
                 }
+            }
+            
+            function pullFromLocalStorage() {
+                
             }
 </script>
