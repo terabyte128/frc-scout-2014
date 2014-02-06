@@ -8,11 +8,11 @@
     <label for='selectAlliance'>Alliance color:</label>
     <br />
     <div class="btn-group" data-toggle="buttons" id='selectAlliance'>
-        <label class="btn btn-danger btn-lg" onclick="updateAlliance('red');" style="width: 100px;">
-            <input type="radio" name="options" id="redAlliance">Red
+        <label class="btn btn-danger btn-lg" onclick="updateAlliance('red');" style="width: 100px;" id="redAlliance">
+            <input type="radio" name="options">Red
         </label>
-        <label class="btn btn-blue-selection btn-lg" onclick="updateAlliance('blue');"  style="width: 100px;">
-            <input type="radio" name="options" id="blueAlliance">Blue
+        <label class="btn btn-blue-selection btn-lg" onclick="updateAlliance('blue');" style="width: 100px;" id="blueAlliance">
+            <input type="radio" name="options">Blue
         </label>
     </div>
     <br /><br/> 
@@ -72,6 +72,15 @@
 
         function updatePresent() {
             teamPresent = !teamPresent;
+        }
+
+        function pullFromLocalStorage() {
+            $("#teamNumber").val(localStorage.teamNumber);
+            $("#matchNumber").val(localStorage.matchNumber);
+            
+            if(localStorage.allianceColor) {
+                $("#" + localStorage.allianceColor).addClass('active');
+            }
         }
 
         function pushToLocalStorage() {
