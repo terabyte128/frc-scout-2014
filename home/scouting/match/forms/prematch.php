@@ -8,10 +8,10 @@
     <label for='selectAlliance'>Alliance color:</label>
     <br />
     <div class="btn-group" data-toggle="buttons" id='selectAlliance'>
-        <label class="btn btn-danger btn-lg" onclick="updateAlliance('red');" style="width: 100px;" id="redAlliance">
+        <label class="btn btn-danger btn-lg" onclick="updateAlliance('red');" style="width: 100px;" id="red">
             <input type="radio" name="options">Red
         </label>
-        <label class="btn btn-blue-selection btn-lg" onclick="updateAlliance('blue');" style="width: 100px;" id="blueAlliance">
+        <label class="btn btn-blue-selection btn-lg" onclick="updateAlliance('blue');" style="width: 100px;" id="blue">
             <input type="radio" name="options">Blue
         </label>
     </div>
@@ -78,8 +78,10 @@
             $("#teamNumber").val(localStorage.teamNumber);
             $("#matchNumber").val(localStorage.matchNumber);
             
-            if(localStorage.allianceColor) {
-                $("#" + localStorage.allianceColor).addClass('active');
+            allianceColor = localStorage.allianceColor;
+                                 
+            if(allianceColor !== null) {
+                $("#" + allianceColor).addClass('active');
             }
         }
 
@@ -110,7 +112,8 @@
                 localStorage.teamNumber = $("#teamNumber").val();
                 localStorage.matchNumber = $("#matchNumber").val();
                 hideMessage();
-                nextPhase();
+                //nextPhase();
+                changePhase("autonomous");
             } else {
                 showMessage("Please correct the following errors:<br />" + errorMessage, "danger");
             }

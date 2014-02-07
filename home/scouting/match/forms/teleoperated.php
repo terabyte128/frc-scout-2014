@@ -140,6 +140,40 @@
         localStorage.teleTrussThrows = trussThrows;
         localStorage.teleTrussCatches = trussCatches;
 
-        nextPhase();
+        //nextPhase();
+        changePhase("postmatch");
+    }
+    
+    function pullFromLocalStorage() {
+        if(localStorage.teleReceivedAssists !== undefined) {
+            receivedAssists = localStorage.teleReceivedAssists;
+            $("#receivedTotal").text(receivedAssists);
+        }
+        if(localStorage.telePassedAssists !== undefined) {
+            passedAssists = localStorage.telePassedAssists;
+            $("#passedTotal").text(passedAssists);
+        }
+        
+        if(localStorage.teleHighGoals !== undefined) {
+            highGoals = localStorage.teleHighGoals;
+            $("#highGoalTotal").text(highGoals);
+        }
+        if(localStorage.teleLowGoals !== undefined) {
+            lowGoals = localStorage.teleLowGoals;
+            $("#lowGoalTotal").text(lowGoals);
+        }
+        if(localStorage.teleMissedGoals !== undefined) {
+            missedGoals = localStorage.teleMissedGoals;
+            $("#missedGoalTotal").text(missedGoals);
+        }
+        
+        if(localStorage.teleTrussThrows !== undefined) {
+            trussThrows = localStorage.teleTrussThrows;
+            $("#trussThrew").text(trussThrows);
+        }
+        if(localStorage.teleTrussCatches !== undefined) {
+            trussCatches = localStorage.teleTrussCatches;
+            $("#trussCaught").text(trussCatches);
+        }
     }
 </script>

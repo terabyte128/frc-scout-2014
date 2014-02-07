@@ -95,7 +95,14 @@
             localStorage.causedFouls = causedFouls;
             localStorage.foulComments = foulComments;
             localStorage.miscComments = miscComments;
-            nextPhase();
+
+            changePhase("review");
+
+            //nextPhase();
         }
+    }
+
+    function pullFromLocalStorage() {
+
     }
 </script>

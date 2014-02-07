@@ -34,21 +34,26 @@ if ($teamType === "FTC") {
 <script type="text/javascript">
 
 
-    //var currentPhase = "prematch";
-    if (window.location.hash) {
-        var currentPhase = window.location.hash.substring(1);
-    } else {
-        var currentPhase = "prematch";
-    }
+    var currentPhase = "prematch";
 
     $(function() {
-        nextPhase();
+        if (window.location.hash) {
+            currentPhase = window.location.hash.substring(1);
+        } else {
+            window.location.hash = currentPhase;
+        }
+
+        loadContainer();
     })
 
+    function changePhase(hash) {
+        window.location.hash = hash;
+    }
+    
     window.onhashchange = function() {
-        console.log("called onhashchange");
-        var currentPhase = window.location.hash.substring(1);
-        updateContainer();
+        currentPhase = window.location.hash.substring(1);
+        console.log("called onhashchange with hash " + currentPhase);
+        loadContainer();
     }
 
     var ids = {
@@ -58,15 +63,12 @@ if ($teamType === "FTC") {
         "postmatch": "review",
         "review": "prematch"
     }
-    
-    function nextPhase() {
-        window.location.hash = currentPhase;
-        updateContainer();
-        console.log("called nextPhase()");
-    }
-    
-    function updateContainer() {
-        console.log("called updateContainer()");
+
+    function loadContainer() {
+        console.log("called loadContainer()");
+        
+        
+        
         $("#nextPhaseButton").button('loading');
 
         $("#loading").show();
@@ -85,8 +87,8 @@ if ($teamType === "FTC") {
                     }
 
                     $("#nextPhaseButton").button(currentPhase);
-                    // currentPhase now holds the next phase
-                    currentPhase = ids[currentPhase];
+
+                    console.log("forms/" + currentPhase + ".php")
                 });
 
         if (currentPhase !== "prematch") {
