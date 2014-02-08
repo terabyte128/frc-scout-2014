@@ -7,6 +7,10 @@
             <title>Team <?php echo $otherTeamNumber; ?>'s Profile</title>
         <?php } ?>
         <?php include '../includes/headers.php'; ?>
+        <!-- choose a theme file -->
+        <link rel="stylesheet" href="/css/theme.default.css">
+        <!-- load jQuery and tablesorter scripts -->
+        <script type="text/javascript" src="/includes/jquery.tablesorter.js"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -15,7 +19,7 @@
                 <?php if ($isLoggedInTeam) { ?>
                     <h2>Your Team Profile</h2>
                 <?php } else { ?>
-                    <h2>Team <?php echo $otherTeamNumber; ?>'s Profile</h2>
+                    <h2>Team <?php echo $otherTeamNumber; ?>'s Profile & Statistics</h2>
                 <?php } ?>                
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Team Profile</font>
@@ -63,7 +67,7 @@
                             <?php } ?>
                         </div>
                     <?php } else { ?>
-                        This team is not yet registered for FIRST Scout.
+                        This team has not yet registered for FIRST Scout.
                     <?php } ?>
                 </div>
                 <br />
@@ -75,7 +79,7 @@
                         <!-- ftc stuff, I don't really know how the game works, whoops --> 
                     <?php } ?>
                     <?php if ($teamType === "FRC") { ?>
-                        <table class="table table-striped" id="tablesorter">
+                        <table class="table table-striped table-bordered table-hover tablesorter" id="tablesorter">
                             <thead>
                             <th>Match Number</th>
                             <th>Total Score</th>
@@ -84,12 +88,35 @@
                             <th>Assists Received</th>
                             </thead>
                             <tbody id="averages">
-
+                                <tr>
+                                    <td>foo</td>
+                                    <td>foo</td>
+                                    <td>foo</td>
+                                    <td>foo</td>
+                                    <td>foo</td>
+                                </tr>
                             </tbody>
                         </table>
                     <?php } ?>
-                    <?php include '../../includes/footer.php' ?>
                 </div>
+                <br />
+                <font style="color: #868686; float: right; font-size: 10pt;">Comments</font>
+                <hr style="border-top: 1px solid #bbb">
+                <div style="max-width: 500px; text-align:left; margin:2px auto 2px auto" id="comments">
+                    <table class="table table-striped table-bordered table-hover tablesorter" id="commentsTable">
+                        <thead>
+                        <th>Date</th>
+                        <th>Match Number</th>
+                        <th>Comment</th>
+                        </thead>
+                        <tbody id="commentBody">
+                            <tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
             </div> 
     </body>
 
@@ -146,15 +173,34 @@
             });
         </script>
     <?php } ?>
+
     <script type="text/javascript">
         $(function() {
             loadAverages();
+            loadComments();
         });
+
+        function loadComments() {
+            $.ajax({
+                url: '../../ajax-handlers/load-frc-comments.php',
+                type: "POST",
+                data: {
+                    'teamNumber': '<?php echo $otherTeamNumber ?>'
+                },
+                success: function(response, textStatus, jqXHR) {
+                    $("#commentBody").html(response);
+                    $("#commentsTable").tablesorter();
+                }
+            });
+        }
 
         function loadAverages() {
             $.ajax({
                 url: '../../ajax-handlers/load-frc-team-averages-ajax-handler.php',
                 type: "POST",
+                data: {
+                    'teamNumber': '<?php echo $otherTeamNumber ?>'
+                },
                 success: function(response, textStatus, jqXHR) {
                     $("#averages").html(response);
                     $("#tablesorter").tablesorter();
