@@ -91,6 +91,9 @@
             var miscComments = $("#miscComments").val();
 
             hideMessage();
+
+            localStorage.matchOutcome = matchOutcome;
+            localStorage.totalMatchPoints = matchPoints;
             localStorage.diedDuringMatch = diedDuringMatch;
             localStorage.causedFouls = causedFouls;
             localStorage.foulComments = foulComments;
@@ -104,5 +107,37 @@
 
     function pullFromLocalStorage() {
 
+        if (localStorage.matchOutcome !== undefined) {
+            matchOutcome = parseInt(localStorage.matchOutcome);
+            switch (matchOutcome) {
+                case 0:
+                    $("#win").addClass("active");
+                    break;
+                case 1:
+                    $("#lose").addClass("active");
+                    break;
+                case 2:
+                    $("#tie").addClass("active");
+                    break;
+
+            }
+        }
+
+        if (localStorage.totalMatchPoints !== undefined) {
+            $("#matchPoints").val(parseInt(localStorage.totalMatchPoints));
+        }
+
+        if (localStorage.diedDuringMatch === "true") {
+            $("#diedDuringMatch").addClass("active");
+        }
+
+        if (localStorage.causedFouls === "true") {
+            $("#causedFouls").addClass("active");
+            $("#foulComments").text(localStorage.foulComments);
+            $("#foulComments").show();
+        }
+
+        if (localStorage.miscComments !== undefined)
+            $("#miscComments").text(localStorage.miscComments);
     }
 </script>

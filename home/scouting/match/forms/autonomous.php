@@ -107,6 +107,11 @@
         if (localStorage.autoMovedToAllianceZone === "true") {
             updateMovedToAllianceZone();
             $("#movedToAllianceZone").addClass("active");
+            
+            $("#movedToAllianceZone").css({
+                "background-color": localStorage.allianceColorId,
+                "text-color": "white"
+            });
         }
 
         updateTotals();

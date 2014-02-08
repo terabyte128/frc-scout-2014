@@ -3,4 +3,5 @@ ErrorDocument 500 /error.php?error=500
 ErrorDocument 200 /error.php?error=200
 
 RewriteRule ^team/([0-9]+)/?$ /home/other-team-profile.php?team=$1 [NC,L] #rewrite team profiles to make them prettier
-RewriteRule ^team/?$ /home/team-profile.php [NC,L] #make team profile better
+RewriteRule ^team/?$ /home/team-profile.php [NC,L] #make team profile better\
+RewriteRule ^averages/?$ /home/team-averages.php [NC,L] #make team profile better

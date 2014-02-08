@@ -15,7 +15,7 @@ if (!empty($_FILES["teamPicture"])) {
         exit;
     }
 
-    $maxSize = 1048576;
+    $maxSize = 8048576;
     if($myFile['size'] >= $maxSize) {
         die("Your photo cannot be larger than 1 MB.");
     }

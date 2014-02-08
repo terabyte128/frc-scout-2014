@@ -35,6 +35,8 @@ if ($teamType === "FTC") {
 
 
     var currentPhase = "prematch";
+    var loggedInTeam = <?php echo $teamNumber; ?>;
+
 
     $(function() {
         if (window.location.hash) {
@@ -49,7 +51,7 @@ if ($teamType === "FTC") {
     function changePhase(hash) {
         window.location.hash = hash;
     }
-    
+
     window.onhashchange = function() {
         currentPhase = window.location.hash.substring(1);
         console.log("called onhashchange with hash " + currentPhase);
@@ -66,9 +68,9 @@ if ($teamType === "FTC") {
 
     function loadContainer() {
         console.log("called loadContainer()");
-        
-        
-        
+
+
+
         $("#nextPhaseButton").button('loading');
 
         $("#loading").show();
@@ -84,6 +86,12 @@ if ($teamType === "FTC") {
                             'border-top': '5px solid ' + localStorage.allianceColorId,
                             'border-bottom': '5px solid ' + localStorage.allianceColorId
                         });
+                    }
+
+                    if (currentPhase === "review") {
+                        $("#nextPhaseButtonContainer").hide();
+                    } else {
+                        $("#nextPhaseButtonContainer").show();
                     }
 
                     $("#nextPhaseButton").button(currentPhase);

@@ -138,6 +138,15 @@
                                 window.location = '/team/' + otherTeamNumber;
                             }
                         }
+                        
+                        /*
+                         * Called when a user decides that they were stupid and didn't
+                         * in fact want to delete their match data, restores it from
+                         * a localStorage array back as before
+                         */
+                        function restore() {
+                            alert("This feature will be added soon");
+                        }
         </script>  
     </body>
 </html>

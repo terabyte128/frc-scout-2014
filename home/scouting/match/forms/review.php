@@ -11,13 +11,12 @@
         
     </label>
     -->
-
     <label>Submit data to the database and:</label>
     <div class="form-group">
-        <button class="btn btn-lg btn-info" type="button" style="width: 250px;" onclick="updateDatabase();">Go to scouting home</button>
+        <button class="btn btn-lg btn-info" type="button" style="width: 250px;" onclick="updateDatabase(true);">Go to scouting home</button>
     </div>
     <div class="form-group">
-        <button class="btn btn-lg btn-success" type="button" style="width: 250px;">Scout another match</button>
+        <button class="btn btn-lg btn-success" type="button" style="width: 250px;" onclick="updateDatabase(false);">Scout another match</button>
     </div>
     <br />
     <br />
@@ -31,30 +30,20 @@
 
     $('#pageNameTitle').text("Finish Scouting")
     //document.location.hash = "review";
-    $("#nextPhaseButtonContainer").hide();
 
-    /*
-     $("#teamNumber").text(localStorage.teamNumber);
-     $("#matchNumber").text(localStorage.matchNumber);
-     $(".editable").editable({
-     type: 'number',
-     success: function(response, newValue) {
-     switch (this.id) {
-     case "teamNumber":
-     localStorage.teamNumber = newValue;
-     break;
-     case "matchNumber":
-     localStorage.matchNumber = newValue;
-     break;
-     }
-     }
-     });
-     */
-    
+
+    $(function() {
+        if (parseInt(localStorage.teamNumber) === loggedInTeam && parseInt(localStorage.matchOutcome) === 0) {
+            showMessage("<h3><marquee scrollamount='10' scrolldelay='1'>Congratulations! Your team won the match!</marquee></h3>", "success");
+        }
+    });
+
+
     $("#discardData").click(function() {
-        if(confirm("This will discard all the data for this match! Are you sure you wish to continue?")) {
+        if (confirm("This will discard all the data for this match! Are you sure you wish to continue?")) {
+            localStorage.discardedMatch = JSON.stringify(localStorage);
             localStorage.clear();
-            loadPageWithMessage("/home", "Match data cleared.", "danger");
+            loadPageWithMessage("/home", "Match data discarded.", "danger");
         }
     });
 
@@ -65,8 +54,8 @@
     function pullFromLocalStorage() {
         //dummy function
     }
-    
-    function updateDatabase() {
+
+    function updateDatabase(goHome) {
         $.ajax({
             url: 'push-to-database.php',
             type: "POST",
@@ -74,8 +63,18 @@
                 'matchData': JSON.stringify(localStorage)
             },
             success: function(response) {
-                console.log(response);
-            } 
+                if(response === "200 Success") {
+                    localStorage.clear();
+                    if(goHome) {
+                        loadPageWithMessage("/", "Match data submitted.", "success");
+                    } else {
+                        window.location = "#prematch";
+                        loadPageWithMessage("#prematch", "Match data submitted.", "success");
+                    }
+                } else {
+                    showMessage("You must start scouting from the beginning of the match. <a href='#prematch' onclick='hideMessage();'>Go there.</a>", "danger");
+                }
+            }
         })
     }
 </script>
