@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <button onclick='window.location = "results/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
+                    <button onclick='window.location = "/home/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
                 <?php } ?>
 
 
