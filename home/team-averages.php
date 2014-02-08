@@ -1,8 +1,10 @@
 <?php
 $docRoot = $_SERVER['DOCUMENT_ROOT'];
 
+
 require_once $docRoot . '/includes/setup-session.php';
 require_once $docRoot . '/includes/db-connect.php';
+
 
 try {
     $query = $db->prepare('SELECT scouted_team, '
@@ -25,7 +27,7 @@ print_r($results);
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
-<?php include $docRoot . '/includes/headers.php'; ?>
+        <?php include $docRoot . '/includes/headers.php'; ?>
         <!-- choose a theme file -->
         <link rel="stylesheet" href="/css/theme.default.css">
         <!-- load jQuery and tablesorter scripts -->
@@ -34,7 +36,7 @@ print_r($results);
     <body>
         <div class="wrapper">
             <div class="container">
-<?php include $docRoot . '/includes/messages.php'; ?>
+                <?php include $docRoot . '/includes/messages.php'; ?>
                 <h2>Team Averages</h2>
                 <label>View data collected by:</label><br />
                 <div class="btn-group" data-toggle="buttons" id="matchOutcome">
@@ -56,27 +58,27 @@ print_r($results);
                             </tr>
                         </thead>
                         <tbody>
-<?php while ($results = $query->fetch(PDO::FETCH_ASSOC)) { ?>
+                            <?php while ($results = $query->fetch(PDO::FETCH_ASSOC)) { ?>
                                 <tr>
+                                    <td><a href="/team/<?php echo $results['scouted_team']; ?>">
+                                            <?php echo $results['scouted_team']; ?>
+                                        </a></td>
                                     <td>
-    <?php echo $results['scouted_team']; ?>
+                                        <?php echo $results['total_points']; ?>
                                     </td>
                                     <td>
-    <?php echo $results['total_points']; ?>
+                                        <?php echo $results['auto_points']; ?>
                                     </td>
                                     <td>
-    <?php echo $results['auto_points']; ?>
-                                    </td>
-                                    <td>
-    <?php echo $results['tele_points']; ?>
+                                        <?php echo $results['tele_points']; ?>
                                     </td>
                                 </tr>
-<?php } ?>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
                 * Note: for scoring purposes, all assists are counted as being worth 10 points.
-<?php include $docRoot . "/includes/footer.php"; ?>
+                <?php include $docRoot . "/includes/footer.php"; ?>
             </div>
         </div>
         <script type="text/javascript">

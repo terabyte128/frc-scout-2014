@@ -1,0 +1,244 @@
+[26-Oct-2013 14:36:09 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:17
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(17): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 17
+[26-Oct-2013 14:36:12 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:17
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(17): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 17
+[26-Oct-2013 14:36:22 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:17
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(17): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 17
+[26-Oct-2013 14:37:56 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:10
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(10): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 10
+[26-Oct-2013 14:37:57 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:10
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(10): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 10
+[26-Oct-2013 14:38:21 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:10
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(10): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 10
+[26-Oct-2013 14:39:19 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:39:40 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:40:16 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:40:17 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:40:46 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:40:47 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:41:01 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:41:52 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stevenz9_frcscout_2013.'team_accounts'' doesn't exist' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:41:53 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stevenz9_frcscout_2013.'team_accounts'' doesn't exist' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:41:54 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stevenz9_frcscout_2013.'team_accounts'' doesn't exist' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:42:24 America/Denver] PHP Catchable fatal error:  Object of class PDO could not be converted to string in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 16
+[26-Oct-2013 14:42:26 America/Denver] PHP Catchable fatal error:  Object of class PDO could not be converted to string in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 16
+[26-Oct-2013 14:43:51 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stevenz9_frcscout_2013.'team_accounts'' doesn't exist' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:25
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(25): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 25
+[26-Oct-2013 14:43:52 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stevenz9_frcscout_2013.'team_accounts'' doesn't exist' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:25
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(25): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 25
+[26-Oct-2013 14:45:32 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:48:20 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:18
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 18
+[26-Oct-2013 14:48:41 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:48:52 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:49:13 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:49:57 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:49:59 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:50:01 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:50:57 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:51:00 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:51:59 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:52:28 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:52:29 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:54:21 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:55:21 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[26-Oct-2013 14:55:55 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4030' for key 'team_number'' in /home1/stevenz9/public_html/frc_scout_2013/create-account.php:14
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/create-account.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/create-account.php on line 14
+[01-Nov-2013 16:41:04 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 15
+[01-Nov-2013 16:41:04 America/Denver] PHP Notice:  Undefined index: teamPassword in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 16
+[01-Nov-2013 16:41:04 America/Denver] PHP Notice:  Undefined index: scoutName in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 17
+[01-Nov-2013 16:41:04 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[01-Nov-2013 16:41:11 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 15
+[01-Nov-2013 16:41:11 America/Denver] PHP Notice:  Undefined index: teamPassword in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 16
+[01-Nov-2013 16:41:11 America/Denver] PHP Notice:  Undefined index: scoutName in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 17
+[01-Nov-2013 16:41:11 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[01-Nov-2013 16:42:07 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 15
+[01-Nov-2013 16:42:07 America/Denver] PHP Notice:  Undefined index: teamPassword in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 16
+[01-Nov-2013 16:42:07 America/Denver] PHP Notice:  Undefined index: scoutName in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 17
+[01-Nov-2013 16:42:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[01-Nov-2013 16:43:02 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 15
+[01-Nov-2013 16:43:02 America/Denver] PHP Notice:  Undefined index: teamPassword in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 16
+[01-Nov-2013 16:43:02 America/Denver] PHP Notice:  Undefined index: scoutName in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 17
+[01-Nov-2013 16:43:02 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[01-Nov-2013 16:43:12 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 15
+[01-Nov-2013 16:43:12 America/Denver] PHP Notice:  Undefined index: teamPassword in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 16
+[01-Nov-2013 16:43:12 America/Denver] PHP Notice:  Undefined index: scoutName in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 17
+[01-Nov-2013 16:43:12 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[01-Nov-2013 16:43:24 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 15
+[01-Nov-2013 16:43:24 America/Denver] PHP Notice:  Undefined index: teamPassword in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 16
+[01-Nov-2013 16:43:24 America/Denver] PHP Notice:  Undefined index: scoutName in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 17
+[01-Nov-2013 16:43:24 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[01-Nov-2013 16:44:07 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 15
+[01-Nov-2013 16:44:07 America/Denver] PHP Notice:  Undefined index: teamPassword in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 16
+[01-Nov-2013 16:44:07 America/Denver] PHP Notice:  Undefined index: scoutName in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 17
+[01-Nov-2013 16:44:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[01-Nov-2013 17:00:02 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[01-Nov-2013 17:07:05 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[01-Nov-2013 17:07:10 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[06-Nov-2013 09:35:29 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[08-Nov-2013 15:53:00 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[08-Nov-2013 16:56:33 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[08-Nov-2013 16:56:39 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[08-Nov-2013 16:56:53 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[08-Nov-2013 17:07:23 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[08-Nov-2013 18:32:02 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[08-Nov-2013 21:09:21 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 31
+[09-Nov-2013 01:39:21 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 01:39:30 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:09:48 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:12:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:13:46 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:13:48 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:13:50 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:14:03 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:14:04 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:14:05 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:15:43 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:17:14 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:33:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:33:08 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:33:12 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:38:23 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 03:39:12 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 10:25:52 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 10:26:05 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 10:26:14 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 10:26:26 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[09-Nov-2013 11:33:05 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/login.php on line 32
+[13-Nov-2013 11:38:11 America/Denver] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/upload.php on line 4
+[13-Nov-2013 11:38:55 America/Denver] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/upload.php on line 4
+[13-Nov-2013 11:39:25 America/Denver] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/upload.php on line 4
+[13-Nov-2013 11:39:50 America/Denver] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/upload.php on line 4
+[14-Jan-2014 16:36:44 America/Denver] PHP Notice:  Undefined variable: error in /home1/stevenz9/public_html/frc_scout_2013/error.php on line 30
+[14-Jan-2014 16:36:44 America/Denver] PHP Fatal error:  Function name must be a string in /home1/stevenz9/public_html/frc_scout_2013/error.php on line 30
+[14-Jan-2014 16:36:50 America/Denver] PHP Fatal error:  Function name must be a string in /home1/stevenz9/public_html/frc_scout_2013/error.php on line 30
+[14-Jan-2014 16:37:07 America/Denver] PHP Fatal error:  Function name must be a string in /home1/stevenz9/public_html/frc_scout_2013/error.php on line 30
+[14-Jan-2014 16:37:25 America/Denver] PHP Fatal error:  Function name must be a string in /home1/stevenz9/public_html/frc_scout_2013/error.php on line 31
+[14-Jan-2014 16:37:49 America/Denver] PHP Notice:  Array to string conversion in /home1/stevenz9/public_html/frc_scout_2013/error.php on line 30
+[14-Jan-2014 16:37:57 America/Denver] PHP Notice:  Array to string conversion in /home1/stevenz9/public_html/frc_scout_2013/error.php on line 30
