@@ -24,7 +24,7 @@
                     <button onclick='window.location = "scouting/pit";' class="btn btn-lg btn-success btn-home-selections">Pit Scout a Team</button>
 
                     <br /><br />
-                    <font style="color: #868686; float: right; font-size: 10pt;">Results</font>
+                    <font style="color: #868686; float: right; font-size: 10pt;">Results Tools</font>
                     <hr style="border-top: 1px solid #bbb">
                     <button onclick="window.location = '/team';" class="btn btn-lg btn-info btn-home-selections">Team Profile</button>
                     <div style="display: inline;">

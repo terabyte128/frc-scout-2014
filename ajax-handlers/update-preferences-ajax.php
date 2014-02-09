@@ -46,24 +46,25 @@ try {
     $request = $db->prepare($queryString);
     $request->execute($params);
 } catch (PDOException $ex) {
-    echo $queryString;
-    echo "<BR>";
-    echo "<BR>";
-    print_r($_POST);
-    echo "<BR>";
-    echo "<BR>";
-    die("Unable to update database: " . $ex->getMessage());
+//    echo $queryString;
+//    echo "<BR>";
+//    echo "<BR>";
+//    print_r($_POST);
+//    echo "<BR>";
+//    echo "<BR>";
+//    die("Unable to update database: " . $ex->getMessage());
+    die("You did not specify anything to change.");
 }
 
 if ($request->rowCount() !== 0) {
     echo 'Preferences updated successfully.';
 } else {
-    echo $queryString;
-    echo "<BR>";
-    echo "<BR>";
-    print_r($params);
-    echo "<BR>";
-    echo "<BR>";
-    echo 'The admin password was entered incorrectly.';
+//    echo $queryString;
+//    echo "<BR>";
+//    echo "<BR>";
+//    print_r($params);
+//    echo "<BR>";
+//    echo "<BR>";
+    echo 'Either the admin password was entered incorrectly, or nothing was changed.';
 }
 ?>
