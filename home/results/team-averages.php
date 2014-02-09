@@ -24,7 +24,7 @@
                         <input type="radio">Only <?php echo $teamNumber ?>
                     </label>
                 </div>
-                <div class="table-responsive">
+                <div class="table">
                     <table id="averagesTable" class="table table-striped table-bordered table-hover tablesorter">
                         <thead>
                             <tr>

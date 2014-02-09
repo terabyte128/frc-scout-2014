@@ -19,13 +19,13 @@
                 <?php if ($isLoggedInTeam) { ?>
                     <h2>Your Team Profile</h2>
                 <?php } else { ?>
-                    <h2>Team <?php echo $otherTeamNumber; ?>'s Profile & Statistics</h2>
+                    <h2><?php if ($isRegistered) echo "Profile & "; ?> Statistics for team <?php echo $otherTeamNumber; ?></h2>
                 <?php } ?>                
                 <br />
-                <font style="color: #868686; float: right; font-size: 10pt;">Team Profile</font>
-                <hr style="border-top: 1px solid #bbb">
-                <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
-                    <?php if ($isRegistered) { ?>          
+                <?php if ($isRegistered) { ?>
+                    <font style="color: #868686; float: right; font-size: 10pt;">Team Profile</font>
+                    <hr style="border-top: 1px solid #bbb">
+                    <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
                         <?php if (!empty($response['team_picture'])) { ?>
                             <img class="img-rounded img-responsive" src="../uploads/<?php echo $response['team_picture'] ?>" style="margin-left: auto; margin-right: auto;">
                         <?php } ?>
@@ -66,10 +66,8 @@
                                 </a>
                             <?php } ?>
                         </div>
-                    <?php } else { ?>
-                        This team has not yet registered for FIRST Scout.
-                    <?php } ?>
-                </div>
+                    </div>
+                <?php } ?>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
@@ -81,6 +79,7 @@
                     <?php if ($teamType === "FRC") { ?>
                         <table class="table table-striped table-bordered table-hover tablesorter" id="tablesorter">
                             <thead>
+                            <th>Date</th>
                             <th>Match Number</th>
                             <th>Total Score</th>
                             <th>Auto Score</th>
@@ -88,13 +87,7 @@
                             <th>Assists Received</th>
                             </thead>
                             <tbody id="averages">
-                                <tr>
-                                    <td>foo</td>
-                                    <td>foo</td>
-                                    <td>foo</td>
-                                    <td>foo</td>
-                                    <td>foo</td>
-                                </tr>
+
                             </tbody>
                         </table>
                     <?php } ?>

@@ -31,7 +31,7 @@
                         <div style="display: inline-table;">
                             <div style="display: table-row">
                                 <form onsubmit="goToTeamProfile();
-                                return false;" style="display: inline;">
+                                        return false;" style="display: inline;">
                                     <div style="display: table-cell">
 
                                         <input type="number" class="form-control" style="display: inline; height: 50px; border-radius: 6px; width: 175px; height: 48px; font-size: 18px; text-align: center; margin-right: 4px;" placeholder="Find Team Profile" id="searchForTeam">
@@ -43,7 +43,9 @@
                             </div>
                         </div>
                     </div>
-                    <button onclick='window.location = "/home/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
+                    
+                    <button onclick='window.location = "/home/results/compare";' class="btn btn-lg btn-info btn-home-selections">Compare Alliances</button>
+                    <button onclick='window.location = "/home/results/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
                 <?php } ?>
 
 
@@ -70,7 +72,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <form role="form" id="authAsAdmin" onsubmit="loginAdmin();
-                                return false;">
+                                            return false;">
                                         <div class="form-group">
                                             <label for="adminPassword">Admin Password</label>
                                             <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
@@ -83,7 +85,7 @@
                     </div><!-- /.modal -->
 
                     <div class='login-form align-center' id="authAsAdmin" onsubmit="loginAdmin();
-                                return false;" style='width: 250px; display: none; margin-top: 20px;'>
+                            return false;" style='width: 250px; display: none; margin-top: 20px;'>
                         <br />
 
                     </div>
@@ -93,59 +95,59 @@
         </div>
 
         <script type="text/javascript">
-                        $('#authModal').on('shown.bs.modal', function() {
-                            $('#adminPassword').focus();
-                        })
+            $('#authModal').on('shown.bs.modal', function() {
+                $('#adminPassword').focus();
+            })
 
-                        $('#authModal').on('hidden.bs.modal', function() {
-                            $("#authTitle").text("Authenticate as administrator");
-                            $("#adminPassword").val('');
-                        });
+            $('#authModal').on('hidden.bs.modal', function() {
+                $("#authTitle").text("Authenticate as administrator");
+                $("#adminPassword").val('');
+            });
 
-                        function loginAdmin() {
-                            $("#authButton").button('loading');
-                            var adminPassword = $("#adminPassword").val();
-                            $.ajax({
-                                url: '../ajax-handlers/auth-as-admin-ajax-submit.php',
-                                type: "POST",
-                                data: {
-                                    'adminPassword': adminPassword
-                                },
-                                success: function(response, textStatus, jqXHR) {
-                                    $("#authButton").button('reset');
-                                    if (response.indexOf("Successfully") !== -1) {
-                                        location.reload();
-                                        $('#authModal').modal('dismiss');
-                                    } else {
-                                        $("#authTitle").html("<font style='color: firebrick;'>Incorrect password, please try again.</font>");
-                                    }
-                                }
-                            });
+            function loginAdmin() {
+                $("#authButton").button('loading');
+                var adminPassword = $("#adminPassword").val();
+                $.ajax({
+                    url: '../ajax-handlers/auth-as-admin-ajax-submit.php',
+                    type: "POST",
+                    data: {
+                        'adminPassword': adminPassword
+                    },
+                    success: function(response, textStatus, jqXHR) {
+                        $("#authButton").button('reset');
+                        if (response.indexOf("Successfully") !== -1) {
+                            location.reload();
+                            $('#authModal').modal('dismiss');
+                        } else {
+                            $("#authTitle").html("<font style='color: firebrick;'>Incorrect password, please try again.</font>");
                         }
+                    }
+                });
+            }
 
-                        function goToTeamProfile() {
-                            var otherTeamNumber = $("#searchForTeam").val();
-                            if (otherTeamNumber == <?php echo $teamNumber ?>) {
-                                window.location = 'team-profile.php';
-                            } else if (otherTeamNumber === "") {
-                                showMessage("Please enter a team number.", 'warning');
-                            } else if (isNaN(otherTeamNumber)) {
-                                showMessage("That's not a number!", 'danger');
-                            } else if (otherTeamNumber < 0) {
-                                showMessage("That's not a valid team number!", 'danger');
-                            } else {
-                                window.location = '/team/' + otherTeamNumber;
-                            }
-                        }
-                        
-                        /*
-                         * Called when a user decides that they were stupid and didn't
-                         * in fact want to delete their match data, restores it from
-                         * a localStorage array back as before
-                         */
-                        function restore() {
-                            alert("This feature will be added soon");
-                        }
+            function goToTeamProfile() {
+                var otherTeamNumber = $("#searchForTeam").val();
+                if (otherTeamNumber == <?php echo $teamNumber ?>) {
+                    window.location = 'team-profile.php';
+                } else if (otherTeamNumber === "") {
+                    showMessage("Please enter a team number.", 'warning');
+                } else if (isNaN(otherTeamNumber)) {
+                    showMessage("That's not a number!", 'danger');
+                } else if (otherTeamNumber < 0) {
+                    showMessage("That's not a valid team number!", 'danger');
+                } else {
+                    window.location = '/team/' + otherTeamNumber;
+                }
+            }
+
+            /*
+             * Called when a user decides that they were stupid and didn't
+             * in fact want to delete their match data, restores it from
+             * a localStorage array back as before
+             */
+            function restore() {
+                alert("This feature will be added soon");
+            }
         </script>  
     </body>
 </html>
