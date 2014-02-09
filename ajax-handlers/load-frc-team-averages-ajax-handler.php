@@ -5,8 +5,9 @@ require_once '../includes/db-connect.php';
 
 $params = array();
 
-array_push($params, intval($_POST['teamNumber']));
-
+if ($_GET['teamNumber']) {
+    array_push($params, $_GET['teamNumber']);
+}
 /* $query = "SELECT
   `scouted_team`,
   format(AVG((`auto_ir_beacon_goal` * 40) + (`auto_pendulum_goal` * 20) + (`auto_floor_goal` * 10)),1) AS `avg_auto_block_score`,

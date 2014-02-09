@@ -7,10 +7,6 @@
             <title>Team <?php echo $otherTeamNumber; ?>'s Profile</title>
         <?php } ?>
         <?php include '../includes/headers.php'; ?>
-        <!-- choose a theme file -->
-        <link rel="stylesheet" href="/css/theme.default.css">
-        <!-- load jQuery and tablesorter scripts -->
-        <script type="text/javascript" src="/includes/jquery.tablesorter.js"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -105,101 +101,86 @@
                         <tbody id="commentBody">
                             <tr>
 
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
-            </div> 
+                    </tbody>
+                </table>
+                <?php include '../../includes/footer.php' ?>
+            </div>
+        </div> 
     </body>
-
-    <?php if ($isAdmin && $isLoggedInTeam) { ?>
-        <script type="text/javascript">
-            $(function() {
-                $(".editable").editable({
-                    pk: '<?php echo $teamNumber ?>',
-                    url: "../../ajax-handlers/change-profile-ajax-submit.php",
-                    success: function(response, newVal) {
-                        if (response.indexOf("success") === -1) {
-                            showMessage(response, 'warning');
+        
+		<?php } ?>
+		</div>
+<?php include '../includes/footer.php' ?>
+            </div>
+        </div>
+        <?php if ($isAdmin && $isLoggedInTeam) { ?>
+            <script type="text/javascript">
+                $(function() {
+                    $(".editable").editable({
+                        pk: '<?php echo $teamNumber ?>',
+                        url: "../../ajax-handlers/change-profile-ajax-submit.php",
+                        success: function(response, newVal) {
+                            if (response.indexOf("success") === -1) {
+                                showMessage(response, 'warning');
+                            }
                         }
-                    }
+                    });
+
+                    var options = {
+                        beforeSend: function()
+                        {
+                            $("#progress").show();
+                            //clear everything
+                            $("#bar").width('0%');
+                            $("#message").html("");
+                            $("#percent").html("0%");
+                        },
+                        uploadProgress: function(event, position, total, percentComplete)
+                        {
+                            $("#percent").html('Uploading ' + percentComplete + '%');
+
+                        },
+                        success: function(response)
+                        {
+                            $("#percent").html('Upload complete!');
+                            console.log("got a response: " + response);
+                            if (response === "Success") {
+                                location.reload();
+                            } else {
+                                showMessage(response, "danger");
+                            }
+
+                        },
+                        complete: function(response)
+                        {
+
+                        },
+                        error: function()
+                        {
+
+                        }
+
+                    };
+
+                    $("#submitTeamPicture").ajaxForm(options);
                 });
-
-                var options = {
-                    beforeSend: function()
-                    {
-                        $("#progress").show();
-                        //clear everything
-                        $("#bar").width('0%');
-                        $("#message").html("");
-                        $("#percent").html("0%");
-                    },
-                    uploadProgress: function(event, position, total, percentComplete)
-                    {
-                        $("#percent").html('Uploading ' + percentComplete + '%');
-
-                    },
-                    success: function(response)
-                    {
-                        $("#percent").html('Upload complete!');
-                        console.log("got a response: " + response);
-                        if (response === "Success") {
-                            location.reload();
-                        } else {
-                            showMessage(response, "danger");
-                        }
-
-                    },
-                    complete: function(response)
-                    {
-
-                    },
-                    error: function()
-                    {
-
-                    }
-
-                };
-
-                $("#submitTeamPicture").ajaxForm(options);
-            });
-        </script>
-    <?php } ?>
-
-    <script type="text/javascript">
-        $(function() {
-            loadAverages();
-            loadComments();
-        });
-
-        function loadComments() {
-            $.ajax({
-                url: '../../ajax-handlers/load-frc-comments.php',
-                type: "POST",
-                data: {
-                    'teamNumber': '<?php echo $otherTeamNumber ?>'
-                },
-                success: function(response, textStatus, jqXHR) {
-                    $("#commentBody").html(response);
-                    $("#commentsTable").tablesorter();
-                }
-            });
-        }
-
-        function loadAverages() {
-            $.ajax({
-                url: '../../ajax-handlers/load-frc-team-averages-ajax-handler.php',
-                type: "POST",
-                data: {
-                    'teamNumber': '<?php echo $otherTeamNumber ?>'
-                },
-                success: function(response, textStatus, jqXHR) {
-                    $("#averages").html(response);
-                    $("#tablesorter").tablesorter();
-                }
-            });
-        }
-    </script>
-</body>
+            </script>
+        <?php } ?>
+	<script type="text/javascript">
+     	 $(function() {
+       	     loadAverages();
+       	 });
+	
+       	 function loadAverages() {
+       	     $.ajax({
+       	         url: '../../ajax-handlers/load-frc-team-averages-ajax-handler.php',
+       	         type: "POST",
+       	         success: function(response, textStatus, jqXHR) {
+       	             $("#averages").html(response);
+       	             $("#tablesorter").tablesorter();
+       	         }
+       	     });
+       	 }
+	</script>
+    </body>
 </html>
