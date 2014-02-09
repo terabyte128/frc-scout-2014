@@ -17,6 +17,9 @@
                 <?php } else { ?>
                     <h2>Team <?php echo $otherTeamNumber; ?>'s Profile</h2>
                 <?php } ?>                
+		<br />
+		<font style="color: #868686; float: right; font-size: 10pt;">Team Profile</font>
+                <hr style="border-top: 1px solid #bbb">
                 <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
                     <?php if ($isRegistered) { ?>          
                         <?php if (!empty($response['team_picture'])) { ?>
@@ -60,14 +63,38 @@
                             <?php } ?>
                         </div>
                     <?php } else { ?>
-                        <h3>This team has not yet registered for FIRST Scout!</h3>
+                        This team is not yet registered for FIRST Scout.
                     <?php } ?>
-                    <!-- other stats will go here once they exist -->
-                    <?php if ($teamType === "FTC") { ?>
-                    
-                    <?php } ?>
-                </div>
-                <?php include '../includes/footer.php' ?>
+                                   </div>
+                <br />
+                <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
+                <hr style="border-top: 1px solid #bbb">
+		<div style="max-width: 500px; text-align:left; margin:2px auto 2px auto">
+		<!-- other stats will go here once they exist -->
+		<?php if ($teamType === "FTC") { ?>
+                   <!-- ftc stuff, I don't really know how the game works, whoops --> 
+                <?php } ?>
+		<?php if ($teamType === "FRC") { ?>
+                <table class="table table-striped" id="tablesorter">
+                    <thead>
+		    <th>Match Number</th>
+		    <th>Total Score</th>
+                    <th>Auto Score</th>
+                    <th>Teleop Score</th>
+		    <th>Assists Received</th>
+                    </thead>
+                    <tbody id="averages">
+
+                    </tbody>
+                </table>
+                <?php include '../../includes/footer.php' ?>
+            </div>
+        </div> 
+    </body>
+        
+		<?php } ?>
+		</div>
+<?php include '../includes/footer.php' ?>
             </div>
         </div>
         <?php if ($isAdmin && $isLoggedInTeam) { ?>
@@ -123,5 +150,21 @@
                 });
             </script>
         <?php } ?>
+	<script type="text/javascript">
+     	 $(function() {
+       	     loadAverages();
+       	 });
+	
+       	 function loadAverages() {
+       	     $.ajax({
+       	         url: '../../ajax-handlers/load-frc-team-averages-ajax-handler.php',
+       	         type: "POST",
+       	         success: function(response, textStatus, jqXHR) {
+       	             $("#averages").html(response);
+       	             $("#tablesorter").tablesorter();
+       	         }
+       	     });
+       	 }
+	</script>
     </body>
 </html>

@@ -58,9 +58,9 @@ print_r($results);
                         <tbody>
 <?php while ($results = $query->fetch(PDO::FETCH_ASSOC)) { ?>
                                 <tr>
-                                    <td>
+                                    <td><a href="/team/<?php echo $results['scouted_team']; ?>">
     <?php echo $results['scouted_team']; ?>
-                                    </td>
+                                    </a></td>
                                     <td>
     <?php echo $results['total_points']; ?>
                                     </td>
