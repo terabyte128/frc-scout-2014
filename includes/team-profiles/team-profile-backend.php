@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 <?php } else { ?>
-                    <p>This team is not currently registered with FIRST Scout.</p>
+                    <p style="margin: 10px 0 0 0;">This team is not currently registered with FIRST Scout.</p>
                 <?php } ?>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
