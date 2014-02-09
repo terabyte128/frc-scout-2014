@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <button onclick='window.location = "results/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
+                    <button onclick='window.location = "/home/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
                 <?php } ?>
 
 
@@ -51,8 +51,7 @@
                 <br /><br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Account Tools</font>
                 <hr style="border-top: 1px solid #bbb">
-                <?php if ($isAdmin) {
-                    ?>
+                <?php if ($isAdmin) { ?>
 
                     <button onclick="window.location = 'change-password.php';" class="btn btn-lg btn-warning btn-home-selections">Change Team Password</button>
                     <button onclick="window.location = 'change-admin-password.php';" class="btn btn-lg btn-warning btn-home-selections">Change Admin Password</button>

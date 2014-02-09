@@ -11,7 +11,7 @@ $matchData = json_decode($_POST['matchData'], true);
 
 $params = array(
     //prematch
-    $teamNumber, $matchData['teamNumber'], $matchData['allianceColor'] == "red" ? 0 : 1, !$matchData['teamPresent'],
+    $teamNumber, $matchData['teamNumber'], $matchData['matchNumber'], $matchData['allianceColor'] == "red" ? 0 : 1, !$matchData['teamPresent'],
     //autonomous
     $matchData['autoHotGoal'] === "true" ? 1 : 0, $matchData['autoGoalValue'], $matchData['autoMovedToAllianceZone'] === "true" ? 1 : 0,
     //teleoperated
@@ -26,7 +26,7 @@ $params = array(
 try {
     $query = $db->prepare("INSERT INTO frc_match_data ("
             //prematch 
-           . "timestamp, scouting_team, scouted_team, alliance_color, team_absent, "
+           . "timestamp, scouting_team, scouted_team, match_number, alliance_color, team_absent, "
 
             //autonomous
             . "auto_hot_goal, auto_goal_value, auto_moved_to_alliance_zone, "
@@ -39,7 +39,7 @@ try {
             . "match_outcome, total_match_points, died_during_match, caused_fouls, foul_comments, misc_comments) VALUES ("
 
             //dem values doe
-            . "now(), ?, ?, ?, ?,"
+            . "now(), ?, ?, ?, ?, ?,"
             . " ?, ?, ?,"
             . " ?, ?, ?,"
             . " ?, ?, ?, ?,"

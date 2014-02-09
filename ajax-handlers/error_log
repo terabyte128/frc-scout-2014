@@ -1,0 +1,911 @@
+[09-Nov-2013 12:33:18 America/Denver] PHP Fatal error:  require(): Failed opening required 'includes/db-connect.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 5
+[09-Nov-2013 12:33:37 America/Denver] PHP Fatal error:  require(): Failed opening required 'includes/db-connect.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 5
+[09-Nov-2013 12:33:45 America/Denver] PHP Fatal error:  require(): Failed opening required 'includes/db-connect.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 5
+[09-Nov-2013 13:19:27 America/Denver] PHP Fatal error:  require(): Failed opening required 'includes/db-connect.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 5
+[09-Nov-2013 13:20:14 America/Denver] PHP Fatal error:  require(): Failed opening required 'includes/db-connect.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 5
+[09-Nov-2013 17:52:01 America/Denver] PHP Fatal error:  require(): Failed opening required 'includes/db-connect.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 5
+[09-Nov-2013 17:52:06 America/Denver] PHP Fatal error:  require(): Failed opening required 'includes/db-connect.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 5
+[09-Nov-2013 17:53:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 17:53:20 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 18:45:19 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[09-Nov-2013 18:45:25 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[09-Nov-2013 18:48:08 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[09-Nov-2013 19:08:33 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[09-Nov-2013 19:26:49 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[09-Nov-2013 19:27:01 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 19:35:08 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 19:36:00 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 19:39:32 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 19:58:27 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[09-Nov-2013 20:25:51 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 20:25:58 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 22:27:30 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 22:27:39 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[09-Nov-2013 22:31:45 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[10-Nov-2013 19:57:06 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:09:55 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:10:06 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:10:11 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:10:14 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:10:36 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[10-Nov-2013 20:14:16 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:17:39 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:19:08 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:19:17 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:19:19 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:19:20 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:37:01 America/Denver] PHP Notice:  Array to string conversion in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[10-Nov-2013 20:39:19 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:39:20 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 20:39:24 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[10-Nov-2013 21:50:22 America/Denver] PHP Notice:  Undefined index: name in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 2
+[10-Nov-2013 21:50:22 America/Denver] PHP Notice:  Undefined index: value in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 3
+[10-Nov-2013 21:50:51 America/Denver] PHP Notice:  Undefined index: name in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 2
+[10-Nov-2013 21:50:51 America/Denver] PHP Notice:  Undefined index: value in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 3
+[10-Nov-2013 22:19:14 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 10
+[10-Nov-2013 22:19:14 America/Denver] PHP Fatal error:  Call to a member function rowCount() on a non-object in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:20:06 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 10
+[10-Nov-2013 22:20:06 America/Denver] PHP Fatal error:  Call to a member function rowCount() on a non-object in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:21:04 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 10
+[10-Nov-2013 22:21:04 America/Denver] PHP Fatal error:  Call to a member function rowCount() on a non-object in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:22:42 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 10
+[10-Nov-2013 22:24:10 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:25:09 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:25:39 America/Denver] PHP Notice:  Undefined index: id in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 4
+[10-Nov-2013 22:25:40 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:27:41 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:28:14 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:28:47 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:28:47 America/Denver] PHP Notice:  Undefined property: PDOStatement::$rowCount in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 18
+[10-Nov-2013 22:29:12 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:29:12 America/Denver] PHP Fatal error:  Call to undefined function rowCount() in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 19
+[10-Nov-2013 22:29:25 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:30:01 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:30:02 America/Denver] PHP Notice:  Undefined variable: team in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 18
+[10-Nov-2013 22:30:30 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:30:30 America/Denver] PHP Notice:  Undefined variable: team in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 18
+[10-Nov-2013 22:31:33 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 12
+[10-Nov-2013 22:31:33 America/Denver] PHP Notice:  Undefined variable: team in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 19
+[10-Nov-2013 22:31:47 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:32:52 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 22:34:06 America/Denver] PHP Warning:  PDOStatement::execute() expects at most 1 parameter, 3 given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 11
+[10-Nov-2013 23:48:56 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[11-Nov-2013 00:07:26 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[11-Nov-2013 13:56:56 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[12-Nov-2013 08:59:42 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[12-Nov-2013 11:34:40 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 11:34:44 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 11:34:46 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 11:34:47 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 11:34:50 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 13:22:48 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[12-Nov-2013 13:22:50 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 23
+[12-Nov-2013 13:30:33 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 13:33:46 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 13:34:43 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 13:36:29 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 13:37:59 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 15:28:04 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 15:39:44 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 15:39:54 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 15:39:56 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 15:39:57 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 19:18:23 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[12-Nov-2013 20:42:01 America/Denver] PHP Notice:  Undefined index: teamTable in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 10
+[12-Nov-2013 21:16:16 America/Denver] PHP Notice:  Undefined index: teamType in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 10
+[12-Nov-2013 21:16:16 America/Denver] PHP Notice:  Undefined index:  in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 18
+[12-Nov-2013 21:17:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:17:14 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:17:18 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:20:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:20:15 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:20:16 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:20:17 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:20:32 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:39:57 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:40:02 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 21:49:33 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[12-Nov-2013 21:49:33 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[12-Nov-2013 21:49:33 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[12-Nov-2013 21:49:33 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[12-Nov-2013 21:49:33 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[12-Nov-2013 22:12:24 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[12-Nov-2013 22:12:24 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[12-Nov-2013 22:12:24 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[12-Nov-2013 22:12:24 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[12-Nov-2013 22:12:24 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[12-Nov-2013 22:19:11 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 22:20:06 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[12-Nov-2013 22:20:06 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[12-Nov-2013 22:20:06 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[12-Nov-2013 22:20:06 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[12-Nov-2013 22:20:06 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[12-Nov-2013 22:20:20 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[12-Nov-2013 22:20:20 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[12-Nov-2013 22:20:20 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[12-Nov-2013 22:20:20 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[12-Nov-2013 22:20:20 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[12-Nov-2013 22:20:23 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[12-Nov-2013 22:20:23 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[12-Nov-2013 22:20:23 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[12-Nov-2013 22:20:23 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[12-Nov-2013 22:20:23 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[12-Nov-2013 22:22:06 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[12-Nov-2013 22:22:16 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[12-Nov-2013 22:22:16 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[12-Nov-2013 22:22:16 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[12-Nov-2013 22:22:16 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[12-Nov-2013 22:22:16 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[12-Nov-2013 22:22:45 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[12-Nov-2013 22:22:45 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[12-Nov-2013 22:22:45 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[12-Nov-2013 22:22:45 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[12-Nov-2013 22:22:45 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[12-Nov-2013 22:22:52 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[12-Nov-2013 22:22:52 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[12-Nov-2013 22:22:52 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[12-Nov-2013 22:22:52 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[12-Nov-2013 22:22:52 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:00:16 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[13-Nov-2013 00:00:58 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:00:58 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:00:58 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:00:58 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:00:58 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:01:11 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:01:11 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:01:11 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:01:11 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:01:11 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:01:19 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:01:19 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:01:19 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:01:19 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:01:19 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:01:38 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:01:38 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:01:38 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:01:38 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:01:38 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:02:04 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:02:04 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:02:04 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:02:04 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:02:04 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:02:16 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:02:16 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:02:16 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:02:16 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:02:16 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:02:26 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:02:26 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:02:26 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:02:26 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:02:26 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:04:02 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[13-Nov-2013 00:04:05 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[13-Nov-2013 00:05:30 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:05:30 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:05:30 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:05:30 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:05:30 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:05:30 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[13-Nov-2013 00:05:34 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:05:34 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:05:34 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:05:34 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:05:34 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 00:05:34 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[13-Nov-2013 00:05:40 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 00:05:40 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 00:05:40 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 00:05:40 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 00:05:40 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 09:29:35 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 09:29:35 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 09:29:35 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 09:29:35 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 09:29:35 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 10:43:51 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[13-Nov-2013 10:45:23 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 10:45:23 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 10:45:23 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 10:45:23 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 10:45:23 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 10:45:41 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 10:45:41 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 10:45:41 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 10:45:41 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 10:45:41 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 10:45:58 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 10:45:58 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 10:45:58 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 10:45:58 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 10:45:58 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 10:46:10 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 10:46:10 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 10:46:10 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 10:46:10 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 10:46:10 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 10:46:23 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 10:46:23 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 10:46:23 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 10:46:23 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 10:46:23 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 18:59:38 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 18:59:38 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 18:59:38 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 18:59:38 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 18:59:38 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 18:59:49 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 18:59:49 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 18:59:49 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 18:59:49 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 18:59:49 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 21:36:39 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 21:36:39 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 21:36:39 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 21:36:39 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 21:36:39 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 21:37:21 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 21:37:21 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 21:37:21 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 21:37:21 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 21:37:21 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 21:37:35 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 21:37:35 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 21:37:35 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 21:37:35 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 21:37:35 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 22:15:32 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 22:15:32 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 22:15:32 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 22:15:32 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 22:15:32 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 22:59:47 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 22:59:47 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 22:59:47 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 22:59:47 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 22:59:47 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 23:00:02 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 23:00:09 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 23:08:18 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 23:08:18 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 23:08:18 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 23:08:18 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 23:08:18 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[13-Nov-2013 23:16:09 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[13-Nov-2013 23:16:09 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[13-Nov-2013 23:16:09 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[13-Nov-2013 23:16:09 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[13-Nov-2013 23:16:09 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:31:02 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:31:02 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:31:02 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:31:02 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:31:02 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:31:21 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:36:30 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:47:35 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:47:35 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:47:35 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:47:35 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:47:35 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:47:35 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[14-Nov-2013 09:47:37 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:47:37 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:47:37 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:47:37 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:47:37 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:47:45 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:47:54 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:04 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:12 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:19 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:22 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:28 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:48:52 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:49:02 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:49:03 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:49:24 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:49:47 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:50:03 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:50:34 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:50:49 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:51:34 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:51:43 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 09:54:02 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 10:42:24 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 10:42:24 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 10:42:24 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 10:42:24 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 10:42:24 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 10:42:57 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 16:17:31 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[14-Nov-2013 16:17:54 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 16:17:54 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 16:17:54 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 16:17:54 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 16:17:54 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 16:41:53 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 16:41:53 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 16:41:53 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 16:41:53 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 16:41:53 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 16:42:05 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:03:57 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:03:57 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:03:57 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:03:57 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:03:57 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:03:57 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[14-Nov-2013 17:04:00 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:04:00 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:04:00 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:04:00 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:04:00 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:04:25 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:04:38 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:07:32 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:07:32 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:07:32 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:07:32 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:07:32 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:09:23 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:09:23 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:09:23 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:09:23 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:09:23 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:10:15 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 17:10:32 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 18:07:31 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[14-Nov-2013 18:07:37 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[14-Nov-2013 18:10:37 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[14-Nov-2013 22:24:30 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[14-Nov-2013 22:24:39 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[14-Nov-2013 23:08:04 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:08:04 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:08:04 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:08:04 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:08:04 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:08:56 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:08:56 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:08:56 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:08:56 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:08:56 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:09:23 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:09:32 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:09:41 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:09:56 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:09:56 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:09:56 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:09:56 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:09:56 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/stevenz9/public_html/frc_scout_2013/includes/setup-session.php on line 3
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:10:01 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:10:06 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[14-Nov-2013 23:10:13 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:10:13 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:10:13 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:10:13 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:10:13 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:11:43 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[14-Nov-2013 23:11:53 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:11:53 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:11:53 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:11:53 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:11:53 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:11:53 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[14-Nov-2013 23:12:29 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:12:29 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:12:29 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:12:29 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:12:29 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:12:29 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[14-Nov-2013 23:12:32 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:12:32 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:12:32 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:12:32 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:12:32 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:12:32 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[14-Nov-2013 23:13:00 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:13:00 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:13:00 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:13:00 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:13:00 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:13:00 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[14-Nov-2013 23:13:13 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:13:13 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:13:13 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:13:13 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:13:13 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:13:13 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[14-Nov-2013 23:14:27 America/Denver] PHP Notice:  Constant DSN already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 2
+[14-Nov-2013 23:14:27 America/Denver] PHP Notice:  Constant DB_USER already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 3
+[14-Nov-2013 23:14:27 America/Denver] PHP Notice:  Constant DB_PASS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 4
+[14-Nov-2013 23:14:27 America/Denver] PHP Notice:  Constant FRC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 5
+[14-Nov-2013 23:14:27 America/Denver] PHP Notice:  Constant FTC_TEAM_ACCOUNTS already defined in /home1/stevenz9/public_html/frc_scout_2013/includes/constants.php on line 6
+[14-Nov-2013 23:14:27 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[14-Nov-2013 23:44:14 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[14-Nov-2013 23:44:32 America/Denver] PHP Warning:  require_once(../includes/admin-require_onced.php): failed to open stream: No such file or directory in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 5
+[14-Nov-2013 23:44:32 America/Denver] PHP Fatal error:  require_once(): Failed opening required '../includes/admin-require_onced.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 5
+[14-Nov-2013 23:44:34 America/Denver] PHP Warning:  require_once(../includes/admin-require_onced.php): failed to open stream: No such file or directory in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 5
+[14-Nov-2013 23:44:34 America/Denver] PHP Fatal error:  require_once(): Failed opening required '../includes/admin-require_onced.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/change-profile-ajax-submit.php on line 5
+[15-Nov-2013 01:19:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 09:05:13 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 09:05:31 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 11:20:02 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 11:33:10 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[15-Nov-2013 11:33:32 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[15-Nov-2013 18:01:01 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 18:02:54 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 18:03:01 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 18:03:24 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 18:03:35 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 18:04:02 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 18:04:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 18:13:54 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[15-Nov-2013 19:04:46 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[20-Nov-2013 01:39:07 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 35
+[21-Nov-2013 12:06:53 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[21-Nov-2013 12:08:39 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[21-Nov-2013 17:03:24 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[21-Nov-2013 17:07:23 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[21-Nov-2013 17:07:28 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[21-Nov-2013 17:07:29 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 16:12:51 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 16:13:19 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 16:13:32 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 16:16:59 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 16:17:05 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 19:08:54 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 19:13:51 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 19:14:42 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 19:15:04 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 19:15:18 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 19:28:22 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 19:49:24 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 19:57:53 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[22-Nov-2013 21:12:12 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 33
+[03-Dec-2013 20:59:28 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[03-Dec-2013 21:06:10 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[03-Dec-2013 21:06:15 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[03-Dec-2013 21:06:16 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[03-Dec-2013 21:06:16 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[03-Dec-2013 21:06:16 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[03-Dec-2013 21:06:17 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[03-Dec-2013 21:15:20 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[03-Dec-2013 21:20:28 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/auth-as-admin-ajax-submit.php on line 16
+[06-Dec-2013 17:43:33 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[06-Dec-2013 17:44:18 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[13-Dec-2013 17:42:03 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:42:03 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:42:22 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:42:22 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:42:31 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:42:31 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:43:05 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:43:05 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:43:07 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:43:07 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:43:10 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:43:10 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:43:11 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:43:11 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:43:49 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:43:49 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:43:50 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:43:50 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:43:51 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:43:51 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:27
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(27): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 27
+[13-Dec-2013 17:44:06 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:44:06 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:28
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(28): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 28
+[13-Dec-2013 17:44:39 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:44:39 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `scouted_team`' at line 7' in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php:30
+Stack trace:
+#0 /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php(30): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 30
+[13-Dec-2013 17:44:53 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[13-Dec-2013 17:45:24 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[16-Dec-2013 17:09:29 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[01-Jan-2014 21:57:11 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[04-Jan-2014 12:47:46 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[07-Jan-2014 17:30:24 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:31:02 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:31:33 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:41:43 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:44:01 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:44:01 America/Denver] PHP Notice:  Undefined variable: stmt in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 40
+[07-Jan-2014 17:44:01 America/Denver] PHP Fatal error:  Call to a member function fetch() on a non-object in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 40
+[07-Jan-2014 17:44:22 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:45:31 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:49:34 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:49:36 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:50:04 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:53:56 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:54:08 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:54:09 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 17:54:29 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:02:38 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:03:08 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:05:39 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:06:06 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:07:28 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:07:33 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:08:37 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:09:01 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:10:26 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:15:03 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[07-Jan-2014 18:22:00 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[09-Jan-2014 20:46:16 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[10-Jan-2014 17:21:45 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[10-Jan-2014 17:23:59 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[10-Jan-2014 17:33:20 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[10-Jan-2014 17:35:24 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[10-Jan-2014 17:35:46 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[10-Jan-2014 19:16:18 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[10-Jan-2014 19:16:36 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[10-Jan-2014 19:18:22 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[10-Jan-2014 21:20:57 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[10-Jan-2014 21:25:50 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[10-Jan-2014 21:36:06 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[10-Jan-2014 21:40:38 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[10-Jan-2014 21:44:19 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[11-Jan-2014 11:32:47 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[14-Jan-2014 16:07:14 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[14-Jan-2014 16:07:21 America/Denver] PHP Warning:  key_exists() expects parameter 2 to be array, boolean given in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/login-ajax-submit.php on line 36
+[14-Jan-2014 16:07:27 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
+[14-Jan-2014 16:07:42 America/Denver] PHP Notice:  Undefined index: teamNumber in /home1/stevenz9/public_html/frc_scout_2013/ajax-handlers/load-ftc-team-averages-ajax-handler.php on line 8
