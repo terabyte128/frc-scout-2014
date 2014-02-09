@@ -15,6 +15,8 @@
             <div class="container">
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
                 <h2>Team Averages</h2>
+                <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
+                <br />
                 <label>View data collected by:</label><br />
                 <div class="btn-group" data-toggle="buttons" id="matchOutcome">
                     <label class="btn btn-default active" style="width: 130px;" id="all" onclick="window.location.hash = 'all'">

@@ -1,4 +1,4 @@
-w<form id="postmatch" role="form" class="scouting-form">
+<form id="postmatch" role="form" class="scouting-form">
     <label for="matchOutcome">Match Outcome</label>
     <div class="form-group">
         <div class="btn-group" data-toggle="buttons" id="matchOutcome">

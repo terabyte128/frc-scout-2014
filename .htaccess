@@ -6,3 +6,4 @@ RewriteRule ^team/([0-9]+)/?$ /home/other-team-profile.php?team=$1 [NC,L] #rewri
 RewriteRule ^team/?$ /home/team-profile.php [NC,L] #make team profile better
 RewriteRule ^home/results/averages/?$ /home/results/team-averages.php [NC,L] #make team profile better
 RewriteRule ^home/results/compare/?$ /home/results/compare-alliances.php [NC,L] #make team profile better
+RewriteRule ^home/preferences/?$ /home/team-preferences.php [NC,L] #make team profile better

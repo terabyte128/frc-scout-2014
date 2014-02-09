@@ -22,9 +22,10 @@ if ($isAdmin) {
     if ($request->rowCount() != 1) {
         echo 'Failed to change values.';
     } else {
-        echo 'success';
+        echo 'foobar';
     }
 } else {
     echo 'Only administrators may do that.';
 }
+
 ?>

@@ -19,7 +19,7 @@ $query = 'SELECT '
         . 'format(AVG((tele_received_assists * 10) + (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)),0) AS tele_points, '
         . 'format(AVG(auto_goal_value + (auto_hot_goal * 5) + (auto_moved_to_alliance_zone * 5) + '
         . '(tele_received_assists * 10) + (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)), 0) AS total_points, '
-        . 'tele_received_assists, `match_number`, `timestamp`'
+        . 'tele_received_assists, `match_number`, `timestamp`, `location`'
         . 'FROM `frc_match_data` WHERE `scouted_team` = ? GROUP BY `match_number`';
 
 
@@ -44,7 +44,7 @@ try {
 while ($row = $response->fetch(PDO::FETCH_ASSOC)) {
     echo '<tr>';
     echo '<td>';
-    echo $row['timestamp'];
+    echo $row['location'] . ', ' . $row['timestamp'];
     echo '</td>';
     echo '<td>';
     echo $row['match_number'];

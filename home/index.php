@@ -55,8 +55,7 @@
                 <hr style="border-top: 1px solid #bbb">
                 <?php if ($isAdmin) { ?>
 
-                    <button onclick="window.location = 'change-password.php';" class="btn btn-lg btn-warning btn-home-selections">Change Team Password</button>
-                    <button onclick="window.location = 'change-admin-password.php';" class="btn btn-lg btn-warning btn-home-selections">Change Admin Password</button>
+                    <button onclick="window.location = 'preferences';" class="btn btn-lg btn-warning btn-home-selections">Update Team Preferences</button>
 
                 <?php } ?>
                 <button onclick="window.location = 'logout.php';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>

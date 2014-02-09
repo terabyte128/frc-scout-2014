@@ -17,15 +17,16 @@
             <div class="container">             
                 <?php include '../messages.php' ?>
                 <?php if ($isLoggedInTeam) { ?>
-                    <h2>Your Team Profile</h2>
+                    <h2>Your Team Profile & Statistics</h2>
                 <?php } else { ?>
-                    <h2>Team <?php echo $otherTeamNumber; ?>'s Profile & Statistics</h2>
+                    <h2>Team <?php echo $otherTeamNumber; ?>'s <?php if ($isRegistered) { ?> Profile &<?php } ?> Statistics</h2>
                 <?php } ?>                
-                <br />
-                <font style="color: #868686; float: right; font-size: 10pt;">Team Profile</font>
-                <hr style="border-top: 1px solid #bbb">
-                <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
-                    <?php if ($isRegistered) { ?>          
+                <button class="btn btn-default" onclick="window.location = '/'">Return Home</button>
+                <?php if ($isRegistered) { ?>          
+                    <br />
+                    <font style="color: #868686; float: right; font-size: 10pt;">Team Profile</font>
+                    <hr style="border-top: 1px solid #bbb">
+                    <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
                         <?php if (!empty($response['team_picture'])) { ?>
                             <img class="img-rounded img-responsive" src="../uploads/<?php echo $response['team_picture'] ?>" style="margin-left: auto; margin-right: auto;">
                         <?php } ?>
@@ -38,38 +39,19 @@
                         <?php } ?>
                         <br />
                         <div>
-                            <span style="font-weight: 600;">Team Name: </span>
-                            <?php if ($isAdmin && $isLoggedInTeam) { ?>
-                                <a href="#" class="editable" data-type="text" id="team_name" title="Update team name">
-                                <?php } ?>
-                                <span><?php
-                                    if (!empty($response['team_name']))
-                                        echo $response['team_name'];
-                                    else
-                                        echo "<i>&mdash; none &mdash;</i>";
-                                    ?></span>
-                                <?php if ($isAdmin && $isLoggedInTeam) { ?>
-                                </a>
-                            <?php } ?>
-                            <br />
-                            <span style="font-weight: 600;">Team Description: </span><br />
-                            <?php if ($isAdmin && $isLoggedInTeam) { ?>
-                                <a href="#" class="editable" data-type="textarea" style="white-space: normal;" id="description" title="Update team description">
-                                <?php } ?>                           
-                                <span><?php
-                                    if (!empty($response['description']))
-                                        echo $response['description'];
-                                    else
-                                        echo "<i>&mdash; none &mdash;</i>";
-                                    ?></span>
-                                <?php if ($isAdmin && $isLoggedInTeam) { ?>
-                                </a>
+                            <?php if ($isLoggedInTeam && $isAdmin) { ?>
+                                <a href="#" class="editable" style="font-size: 20pt; margin-bottom: 0px;" id="team_name" data-emptytext="Click to edit team name"><?php echo $response['team_name']; ?></a>
+                                <br />
+                                <a href="#" class="editable" style="white-space: pre-wrap" data-type="textarea" id="description" data-emptytext="Click to edit team description"><?php echo $response['description']; ?></a>
+                            <?php } else { ?>
+                                <p style="font-size: 20pt; margin-bottom: 0px;"><?php echo $response['team_name']; ?></p>
+                                <p style="white-space: pre-wrap"><?php echo $response['description']; ?></p>
                             <?php } ?>
                         </div>
-                    <?php } else { ?>
-                        This team has not yet registered for FIRST Scout.
-                    <?php } ?>
-                </div>
+                    </div>
+                <?php } else { ?>
+                    <p>This team is not currently registered with FIRST Scout.</p>
+                <?php } ?>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
@@ -81,7 +63,7 @@
                     <?php if ($teamType === "FRC") { ?>
                         <table class="table table-striped table-bordered table-hover tablesorter" id="tablesorter">
                             <thead>
-                            <th>Date</th>
+                            <th>Event</th>
                             <th>Match Number</th>
                             <th>Total Score</th>
                             <th>Auto Score</th>
@@ -89,13 +71,7 @@
                             <th>Assists Received</th>
                             </thead>
                             <tbody id="averages">
-                                <tr>
-                                    <td>foo</td>
-                                    <td>foo</td>
-                                    <td>foo</td>
-                                    <td>foo</td>
-                                    <td>foo</td>
-                                </tr>
+
                             </tbody>
                         </table>
                     <?php } ?>
@@ -106,7 +82,7 @@
                 <div style="max-width: 500px; text-align:left; margin:2px auto 2px auto" id="comments">
                     <table class="table table-striped table-bordered table-hover tablesorter" id="commentsTable">
                         <thead>
-                        <th>Date</th>
+                        <th>Event</th>
                         <th>Match Number</th>
                         <th>Comment</th>
                         </thead>
@@ -119,6 +95,7 @@
                 </div>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
             </div> 
+        </div>
     </body>
 
     <?php if ($isAdmin && $isLoggedInTeam) { ?>
@@ -126,11 +103,12 @@
             $(function() {
                 $(".editable").editable({
                     pk: '<?php echo $teamNumber ?>',
-                    url: "../../ajax-handlers/change-profile-ajax-submit.php",
+                    url: "/ajax-handlers/change-profile-ajax-submit.php",
                     success: function(response, newVal) {
                         if (response.indexOf("success") === -1) {
                             showMessage(response, 'warning');
                         }
+                        showMessage(newVal, "danger");
                     }
                 });
 
