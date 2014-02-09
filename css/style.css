@@ -225,3 +225,16 @@ input[type='checkbox'].checkbox-big {
     min-width:70px;
     display:inline-block;
 }
+
+
+a.editable-click {
+    border-bottom: 0;
+}
+
+a.editable-click:hover {
+    border-bottom: 0;
+}
+
+.table-wrapper {
+    max-width: 800px;
+}

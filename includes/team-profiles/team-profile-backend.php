@@ -19,7 +19,7 @@
                 <?php if ($isLoggedInTeam) { ?>
                     <h2>Your Team Profile & Statistics</h2>
                 <?php } else { ?>
-                    <h2>Team <?php echo $otherTeamNumber; ?>'s <?php if ($isRegistered) { ?> Profile &<?php } ?> Statistics</h2>
+                    <h2><?php if ($isRegistered) { ?> Profile &<?php } ?> Statistics for Team <?php echo $otherTeamNumber; ?></h2>
                 <?php } ?>                
                 <button class="btn btn-default" onclick="window.location = '/'">Return Home</button>
                 <?php if ($isRegistered) { ?>          
@@ -27,16 +27,18 @@
                     <font style="color: #868686; float: right; font-size: 10pt;">Team Profile</font>
                     <hr style="border-top: 1px solid #bbb">
                     <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
+                        <?php if ($isLoggedInTeam && $isAdmin) { ?>
+                            <a href="#" onclick="$('#submitTeamPicture').slideToggle(200);">Change team picture</a>
+                            <form id="submitTeamPicture" action="../uploads/uploader.php" method="post" enctype="multipart/form-data" style="display: none;">                                
+                                <input class="form-control" type="file" size="60" name="teamPicture" value="Update team picture">
+                                <button class="form-control btn btn-sm" id="percent">Update</button>
+                            </form>
+                            <br /><br />
+                        <?php } ?>
                         <?php if (!empty($response['team_picture'])) { ?>
                             <img class="img-rounded img-responsive" src="../uploads/<?php echo $response['team_picture'] ?>" style="margin-left: auto; margin-right: auto;">
                         <?php } ?>
-                        <?php if ($isLoggedInTeam && $isAdmin) { ?>
-                            <form id="submitTeamPicture" action="../uploads/uploader.php" method="post" enctype="multipart/form-data">
-                                <label for="teamPicture">Update team picture: </label>
-                                <input class="form-control" type="file" size="60" name="teamPicture">
-                                <button class="form-control btn btn-sm" id="percent">Update</button>
-                            </form>
-                        <?php } ?>
+
                         <br />
                         <div>
                             <?php if ($isLoggedInTeam && $isAdmin) { ?>
@@ -50,12 +52,12 @@
                         </div>
                     </div>
                 <?php } else { ?>
-                    <p style="margin: 10px 0 0 0;">This team is not currently registered with FIRST Scout.</p>
+                    <p style="margin: 10px 0 0 0;"><i>This team is not currently registered with FIRST Scout.</i></p>
                 <?php } ?>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
-                <div style="max-width: 500px; text-align:left; margin:2px auto 2px auto">
+                <div class="table-wrapper" style="text-align:left; margin:2px auto 2px auto">
                     <!-- other stats will go here once they exist -->
                     <?php if ($teamType === "FTC") { ?>
                         <!-- ftc stuff, I don't really know how the game works, whoops --> 
@@ -79,7 +81,7 @@
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Comments</font>
                 <hr style="border-top: 1px solid #bbb">
-                <div style="max-width: 500px; text-align:left; margin:2px auto 2px auto" id="comments">
+                <div class="table-wrapper" style="text-align:left; margin:2px auto 2px auto" id="comments">
                     <table class="table table-striped table-bordered table-hover tablesorter" id="commentsTable">
                         <thead>
                         <th>Event</th>
@@ -100,56 +102,56 @@
 
     <?php if ($isAdmin && $isLoggedInTeam) { ?>
         <script type="text/javascript">
-            $(function() {
-                $(".editable").editable({
-                    pk: '<?php echo $teamNumber ?>',
-                    url: "/ajax-handlers/change-profile-ajax-submit.php",
-                    success: function(response, newVal) {
-                        if (response.indexOf("success") === -1) {
-                            showMessage(response, 'warning');
-                        }
-                        showMessage(newVal, "danger");
-                    }
-                });
+                    $(function() {
+                        $(".editable").editable({
+                            pk: '<?php echo $teamNumber ?>',
+                            url: "/ajax-handlers/change-profile-ajax-submit.php",
+                            success: function(response, newVal) {
+                                if (response.indexOf("success") === -1) {
+                                    showMessage(response, 'warning');
+                                }
+                                showMessage(newVal, "danger");
+                            }
+                        });
 
-                var options = {
-                    beforeSend: function()
-                    {
-                        $("#progress").show();
-                        //clear everything
-                        $("#bar").width('0%');
-                        $("#message").html("");
-                        $("#percent").html("0%");
-                    },
-                    uploadProgress: function(event, position, total, percentComplete)
-                    {
-                        $("#percent").html('Uploading ' + percentComplete + '%');
+                        var options = {
+                            beforeSend: function()
+                            {
+                                $("#progress").show();
+                                //clear everything
+                                $("#bar").width('0%');
+                                $("#message").html("");
+                                $("#percent").html("0%");
+                            },
+                            uploadProgress: function(event, position, total, percentComplete)
+                            {
+                                $("#percent").html('Uploading ' + percentComplete + '%');
 
-                    },
-                    success: function(response)
-                    {
-                        $("#percent").html('Upload complete!');
-                        console.log("got a response: " + response);
-                        if (response === "Success") {
-                            location.reload();
-                        } else {
-                            showMessage(response, "danger");
-                        }
+                            },
+                            success: function(response)
+                            {
+                                $("#percent").html('Upload complete!');
+                                console.log("got a response: " + response);
+                                if (response === "Success") {
+                                    location.reload();
+                                } else {
+                                    showMessage(response, "danger");
+                                }
 
-                    },
-                    complete: function(response)
-                    {
+                            },
+                            complete: function(response)
+                            {
 
-                    },
-                    error: function()
-                    {
+                            },
+                            error: function()
+                            {
 
-                    }
+                            }
 
-                };
+                        };
 
-                $("#submitTeamPicture").ajaxForm(options);
-            });
+                        $("#submitTeamPicture").ajaxForm(options);
+                    });
         </script>
     <?php } ?>
 
