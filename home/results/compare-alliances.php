@@ -56,7 +56,8 @@
         </div>
         <script type="text/javascript">
             $(".btn-editable").editable({
-                mode: 'inline'
+                mode: 'inline',
+                type: 'number'
             });
 
             function compare() {
