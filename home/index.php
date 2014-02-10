@@ -21,18 +21,19 @@
                     <button onclick='window.location = "ftc/ftc-team-averages.php";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
                 <?php } ?>
                 <?php if ($teamType === "FRC") { ?>
-                    <button onclick='localStorage.clear(); window.location = "scouting/match";' class="btn btn-lg btn-success btn-home-selections">Scout a Match</button>
+                    <button onclick='localStorage.clear();
+                                window.location = "scouting/match";' class="btn btn-lg btn-success btn-home-selections">Scout a Match</button>
                     <button onclick='window.location = "scouting/pit";' class="btn btn-lg btn-success btn-home-selections">Pit Scout a Team</button>
 
                     <br /><br />
                     <font style="color: #868686; float: right; font-size: 10pt;">Results Tools</font>
                     <hr style="border-top: 1px solid #bbb">
-                    <button onclick="window.location = '/team';" class="btn btn-lg btn-info btn-home-selections">Your Team Profile</button>
+                <button onclick="window.location = '/team';" id="yourTeamProfile" class="btn btn-lg btn-info btn-home-selections"><?php if($isAdmin) { ?>Edit<?php } else { ?>Your<?php } ?> Team Profile</button>
                     <div style="display: inline;">
                         <div style="display: inline-table;">
                             <div style="display: table-row">
                                 <form onsubmit="goToTeamProfile();
-                                        return false;" style="display: inline;">
+                                            return false;" style="display: inline;">
                                     <div style="display: table-cell">
 
                                         <input type="number" class="form-control" style="display: inline; height: 50px; border-radius: 6px; width: 175px; height: 48px; font-size: 18px; text-align: center; margin-right: 4px;" placeholder="Find Team Profile" id="searchForTeam">
@@ -44,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <button onclick='window.location = "/home/results/compare";' class="btn btn-lg btn-info btn-home-selections">Compare Alliances</button>
                     <button onclick='window.location = "/home/results/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
                 <?php } ?>
@@ -61,35 +62,7 @@
                 <?php } ?>
                 <button onclick="window.location = 'logout.php';" class="btn btn-lg btn-warning btn-home-selections">Log Out</button>
 
-                <?php if (!$isAdmin) { ?>
 
-                    <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title" id="authTitle">Authenticate as administrator</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <form role="form" id="authAsAdmin" onsubmit="loginAdmin();
-                                            return false;">
-                                        <div class="form-group">
-                                            <label for="adminPassword">Admin Password</label>
-                                            <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
-                                        </div>                        
-                                        <button type="submit" id="authButton" class="btn btn-default btn-success">Authenticate</button>
-                                    </form>
-                                </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
-
-                    <div class='login-form align-center' id="authAsAdmin" onsubmit="loginAdmin();
-                            return false;" style='width: 250px; display: none; margin-top: 20px;'>
-                        <br />
-
-                    </div>
-                <?php } ?>
                 <?php include '../includes/footer.php' ?>
             </div>
         </div>
@@ -103,34 +76,36 @@
                 $("#authTitle").text("Authenticate as administrator");
                 $("#adminPassword").val('');
             });
-            
-            $("#optionAuthAsAdmin").popover({
-                content: "Administrators can edit team profiles and passwords.",
-                trigger: 'hover',
-                placement: 'top',
-                html: "true"
-            });
 
-            function loginAdmin() {
-                $("#authButton").button('loading');
-                var adminPassword = $("#adminPassword").val();
-                $.ajax({
-                    url: '../ajax-handlers/auth-as-admin-ajax-submit.php',
-                    type: "POST",
-                    data: {
-                        'adminPassword': adminPassword
-                    },
-                    success: function(response, textStatus, jqXHR) {
-                        $("#authButton").button('reset');
-                        if (response.indexOf("Successfully") !== -1) {
-                            location.reload();
-                            $('#authModal').modal('dismiss');
-                        } else {
-                            $("#authTitle").html("<font style='color: firebrick;'>Incorrect password, please try again.</font>");
-                        }
-                    }
+            if (localStorage.newAccount === "true") {
+
+                $("#optionAuthAsAdmin").popover({
+                    content: "<span style='color: rgb(182, 19, 0)'>Administrators can edit team profiles and passwords.</span>",
+                    trigger: 'hover',
+                    placement: 'top',
+                    html: "true"
                 });
+                
+                $("#yourTeamProfile").popover({
+                    content: "Team profiles contain general information and statistics about your team.",
+                    trigger: 'hover',
+                    placement: 'top',
+                    html: "true"
+                });
+                
+                $("#optionAuthAsAdmin").popover({
+                    content: "<span style='color: rgb(182, 19, 0)'>Administrators can edit team profiles and passwords.</span>",
+                    trigger: 'hover',
+                    placement: 'top',
+                    html: "true"
+                });
+                
+                $("#optionAuthAsAdmin").popover('show');
+                
+                localStorage.newAccount = undefined;
             }
+
+            
 
             function goToTeamProfile() {
                 var otherTeamNumber = $("#searchForTeam").val();

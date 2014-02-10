@@ -108,6 +108,7 @@
                                             $("#submitCreateRequest").button('reset');
                                             showMessage(response, 'danger');
                                         } else {
+                                            localStorage.newAccount = true;
                                             loadPageWithMessage("index.php", response, "success");
                                         }
                                     }
