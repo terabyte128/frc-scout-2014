@@ -79,7 +79,7 @@
                                     'scoutName': scoutName,
                                     'teamPassword': teamPassword,
                                     'teamType': teamType,
-                                    'location': currentLocation
+                                    'location': currentLocation,
 				    'redirect': redirect
                                 },
                                 success: function(response, textStatus, jqXHR) {

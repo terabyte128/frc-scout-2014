@@ -46,7 +46,7 @@ if (key_exists('team_number', $teams)) {
     $_SESSION['teamTable'] = $teamTable;
     $_SESSION['dataTable'] = $dataTable;
 
-    if(!isEmpty($_POST['redirect'])) {
+    if(!empty($_POST['redirect'])) {
 	    echo 'redir ' . $_POST['redirect'];
     }
 
