@@ -10,6 +10,7 @@
             <div class="container">
                 <?php include '../includes/messages.php' ?>
                 <h2>FIRST Scout: Home</h2>
+                <p><?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams are registered on FIRST Scout</p>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Scouting Tools</font>
                 <hr style="border-top: 1px solid #bbb">
