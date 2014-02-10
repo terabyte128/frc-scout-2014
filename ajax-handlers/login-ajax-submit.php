@@ -46,6 +46,12 @@ if (key_exists('team_number', $teams)) {
     $_SESSION['teamTable'] = $teamTable;
     $_SESSION['dataTable'] = $dataTable;
 
+    if(!isEmpty($_POST['redirect'])) {
+	    echo 'redir ' . $_POST['redirect'];
+    }
+
+    echo 'hi';
+
     # Redirect to the post-login page
     //header('location: home');
 } else {

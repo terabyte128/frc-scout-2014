@@ -62,6 +62,7 @@
                             var teamPassword = $("#teamPassword").val();
                             var teamType = "frc";
                             var currentLocation = $("#location").val();
+			    var redirect = localStorage.redirect;
 
                             if ($.inArray(currentLocation, locationsFromJSON) === -1) {
                                 showMessage("Invalid location, please enter a different one.", "danger");
@@ -79,13 +80,17 @@
                                     'teamPassword': teamPassword,
                                     'teamType': teamType,
                                     'location': currentLocation
+				    'redirect': redirect
                                 },
                                 success: function(response, textStatus, jqXHR) {
-                                    if (response !== "") {
+					console.log(response);
+                                    if (response === "") {
+                                        location.reload();
+                                    } else if (response.indexOf("redir") !== -1) {
+                                        window.setLocation(response.substring(6));
+                                    } else {
                                         showMessage(response, 'danger');
                                         $("#loginButton").button('reset');
-                                    } else {
-                                        location.reload();
                                     }
                                 }
                             });

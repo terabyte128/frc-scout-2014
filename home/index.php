@@ -26,7 +26,7 @@
                     <br /><br />
                     <font style="color: #868686; float: right; font-size: 10pt;">Results Tools</font>
                     <hr style="border-top: 1px solid #bbb">
-                    <button onclick="window.location = '/team';" class="btn btn-lg btn-info btn-home-selections">Team Profile</button>
+                    <button onclick="window.location = '/team';" class="btn btn-lg btn-info btn-home-selections">Your Team Profile</button>
                     <div style="display: inline;">
                         <div style="display: inline-table;">
                             <div style="display: table-row">
