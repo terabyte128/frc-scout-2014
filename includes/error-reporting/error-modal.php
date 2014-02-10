@@ -32,7 +32,7 @@
                             url: '/includes/error-reporting/send-error-report.php',
                             type: "POST",
                             data: {
-                                'errorMessage': $("#errorText").text(),
+                                'errorMessage': $("#errorText").val(),
                                 'error': "<?php echo $error; ?>"
                             },
                             success: function(response, textStatus, jqXHR) {
