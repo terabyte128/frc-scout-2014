@@ -87,7 +87,7 @@
                                     if (response === "") {
                                         location.reload();
                                     } else if (response.indexOf("redir") !== -1) {
-                                        window.setLocation(response.substring(6));
+                                        window.location = response.substring(6);
                                     } else {
                                         showMessage(response, 'danger');
                                         $("#loginButton").button('reset');
