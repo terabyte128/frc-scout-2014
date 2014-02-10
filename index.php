@@ -84,7 +84,7 @@
                     success: function(response, textStatus, jqXHR) {
                         console.log(response);
                         if (response === "") {
-                            if (localStorage.redirect !== undefined) {
+                            if (localStorage.redirect && localStorage.redirect !== "undefined") {
                                 var redirect = localStorage.redirect;
                                 localStorage.redirect = undefined;
                                 window.location = redirect;
