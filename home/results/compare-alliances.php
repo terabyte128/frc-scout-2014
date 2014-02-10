@@ -24,22 +24,22 @@
                     <div style="display: inline-table;">
                         <div style="display: table-row;">
                             <div style="display: table-cell;">
-                                <button id="red1" class="btn btn-danger btn-lg btn-editable"></button>
+                                <button id="red1" class="btn btn-danger btn-lg btn-editable" data-emptytext="#1"></button>
                                 <br />
-                                <button id="red2" class="btn btn-danger btn-lg btn-editable"></button>
+                                <button id="red2" class="btn btn-danger btn-lg btn-editable" data-emptytext="#2"></button>
                                 <br />
-                                <button id="red3" class="btn btn-danger btn-lg btn-editable"></button>
+                                <button id="red3" class="btn btn-danger btn-lg btn-editable" data-emptytext="#3"></button>
                                 <br />
                             </div>
                             <div style="display: table-cell; padding-left: 15px; padding-right: 15px; vertical-align: middle; line-height: 10px;">
                                 <p style="font-size: 50px;">vs</p>
                             </div>
                             <div style="display: table-cell;">
-                                <button id="blue1" class="btn btn-blue-selection btn-lg btn-editable"></button>
+                                <button id="blue1" class="btn btn-blue-selection btn-lg btn-editable" data-emptytext="#1"></button>
                                 <br />
-                                <button id="blue2" class="btn btn-blue-selection btn-lg btn-editable"></button>
+                                <button id="blue2" class="btn btn-blue-selection btn-lg btn-editable" data-emptytext="#2"></button>
                                 <br />
-                                <button id="blue3" class="btn btn-blue-selection btn-lg btn-editable"></button>
+                                <button id="blue3" class="btn btn-blue-selection btn-lg btn-editable" data-emptytext="#3"></button>
                                 <br />
                             </div>
                         </div>
@@ -55,14 +55,26 @@
             </div>
         </div>
         <script type="text/javascript">
-            $(".btn-editable").editable({
-                mode: 'inline',
-                type: 'number'
-            });
+                            $(".btn-editable").editable({
+                                mode: 'inline',
+                                type: 'number'
+                            });
 
-            function compare() {
-                $("#selectAlliances").slideUp(200);
-            }
+                            var redAlliance, blueAlliance;
+
+                            function compare() {
+                                $("#selectAlliances").slideUp(200);
+                                redAlliance = [
+                                    $("#red1").text(),
+                                    $("#red2").text(),
+                                    $("#red3").text()
+                                ]
+                                blueAlliance = [
+                                    $("#blue1").text(),
+                                    $("#blue2").text(),
+                                    $("#blue3").text()
+                                ]
+                            }
         </script>
     </body>
 </html>

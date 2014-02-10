@@ -57,7 +57,7 @@
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
-                <div class="table-wrapper" style="text-align:left; margin:2px auto 2px auto">
+                <div class="table-wrapper table-responsive">
                     <!-- other stats will go here once they exist -->
                     <?php if ($teamType === "FTC") { ?>
                         <!-- ftc stuff, I don't really know how the game works, whoops --> 
@@ -81,7 +81,7 @@
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Comments</font>
                 <hr style="border-top: 1px solid #bbb">
-                <div class="table-wrapper" style="text-align:left; margin:2px auto 2px auto" id="comments">
+                <div class="table-wrapper" id="comments">
                     <table class="table table-striped table-bordered table-hover tablesorter" id="commentsTable">
                         <thead>
                         <th>Event</th>
