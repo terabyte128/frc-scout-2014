@@ -103,6 +103,13 @@
                 $("#authTitle").text("Authenticate as administrator");
                 $("#adminPassword").val('');
             });
+            
+            $("#optionAuthAsAdmin").popover({
+                content: "Administrators can edit team profiles and passwords.",
+                trigger: 'hover',
+                placement: 'top',
+                html: "true"
+            });
 
             function loginAdmin() {
                 $("#authButton").button('loading');
