@@ -21,7 +21,7 @@
                     <button onclick='window.location = "ftc/ftc-team-averages.php";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
                 <?php } ?>
                 <?php if ($teamType === "FRC") { ?>
-                    <button onclick='window.location = "scouting/match";' class="btn btn-lg btn-success btn-home-selections">Scout a Match</button>
+                    <button onclick='localStorage.clear(); window.location = "scouting/match";' class="btn btn-lg btn-success btn-home-selections">Scout a Match</button>
                     <button onclick='window.location = "scouting/pit";' class="btn btn-lg btn-success btn-home-selections">Pit Scout a Team</button>
 
                     <br /><br />
