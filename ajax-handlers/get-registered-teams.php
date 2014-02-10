@@ -2,9 +2,7 @@
 
 session_start();
 
-//connect to the database
-require_once '../includes/setup-session.php';
-require_once '../includes/db-connect.php';
+require_once $_SERVER['DOCUMENT_ROOT'].  '/includes/db-connect.php';
 
 
 try {

@@ -45,9 +45,13 @@
                                 <a href="#" class="editable" style="font-size: 20pt; margin-bottom: 0px;" id="team_name" data-emptytext="Click to edit team name"><?php echo $response['team_name']; ?></a>
                                 <br />
                                 <a href="#" class="editable" style="white-space: pre-wrap" data-type="textarea" id="description" data-emptytext="Click to edit team description"><?php echo $response['description']; ?></a>
+                                <br />
+                                <br />
+                                <a href="#" class="editable" id="website" data-emptytext="Click to edit team website (do not enter http://)"><?php echo $response['website']; ?></a>
                             <?php } else { ?>
                                 <p style="font-size: 20pt; margin-bottom: 0px;"><?php echo $response['team_name']; ?></p>
                                 <p style="white-space: pre-wrap"><?php echo $response['description']; ?></p>
+                                <a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a>
                             <?php } ?>
                         </div>
                     </div>
@@ -102,56 +106,56 @@
 
     <?php if ($isAdmin && $isLoggedInTeam) { ?>
         <script type="text/javascript">
-                    $(function() {
-                        $(".editable").editable({
-                            pk: '<?php echo $teamNumber ?>',
-                            url: "/ajax-handlers/change-profile-ajax-submit.php",
-                            success: function(response, newVal) {
-                                if (response.indexOf("success") === -1) {
-                                    showMessage(response, 'warning');
-                                }
-                                showMessage(newVal, "danger");
-                            }
-                        });
+            $(function() {
+                $(".editable").editable({
+                    pk: '<?php echo $teamNumber ?>',
+                    url: "/ajax-handlers/change-profile-ajax-submit.php",
+                    success: function(response, newVal) {
+                        if (response.indexOf("success") === -1) {
+                            showMessage(response, 'warning');
+                        }
+                        showMessage(newVal, "danger");
+                    }
+                });
 
-                        var options = {
-                            beforeSend: function()
-                            {
-                                $("#progress").show();
-                                //clear everything
-                                $("#bar").width('0%');
-                                $("#message").html("");
-                                $("#percent").html("0%");
-                            },
-                            uploadProgress: function(event, position, total, percentComplete)
-                            {
-                                $("#percent").html('Uploading ' + percentComplete + '%');
+                var options = {
+                    beforeSend: function()
+                    {
+                        $("#progress").show();
+                        //clear everything
+                        $("#bar").width('0%');
+                        $("#message").html("");
+                        $("#percent").html("0%");
+                    },
+                    uploadProgress: function(event, position, total, percentComplete)
+                    {
+                        $("#percent").html('Uploading ' + percentComplete + '%');
 
-                            },
-                            success: function(response)
-                            {
-                                $("#percent").html('Upload complete!');
-                                console.log("got a response: " + response);
-                                if (response === "Success") {
-                                    location.reload();
-                                } else {
-                                    showMessage(response, "danger");
-                                }
+                    },
+                    success: function(response)
+                    {
+                        $("#percent").html('Upload complete!');
+                        console.log("got a response: " + response);
+                        if (response === "Success") {
+                            location.reload();
+                        } else {
+                            showMessage(response, "danger");
+                        }
 
-                            },
-                            complete: function(response)
-                            {
+                    },
+                    complete: function(response)
+                    {
 
-                            },
-                            error: function()
-                            {
+                    },
+                    error: function()
+                    {
 
-                            }
+                    }
 
-                        };
+                };
 
-                        $("#submitTeamPicture").ajaxForm(options);
-                    });
+                $("#submitTeamPicture").ajaxForm(options);
+            });
         </script>
     <?php } ?>
 
