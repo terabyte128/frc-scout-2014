@@ -50,7 +50,6 @@ if (key_exists('team_number', $teams)) {
 	    echo 'redir ' . $_POST['redirect'];
     }
 
-    echo 'hi';
 
     # Redirect to the post-login page
     //header('location: home');
