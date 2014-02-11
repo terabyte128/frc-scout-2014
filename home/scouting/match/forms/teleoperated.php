@@ -1,5 +1,5 @@
 <form id="teleoperated" class="scouting-form">
-    <label for='assists'>Assists</label>
+    <label for='assists'>Possessions</label>
     <div id='assists'>
         <div>
             <button type="button" id="receivedAdd" class="btn btn-lg btn-default btn-add-score">Received</button>
@@ -127,7 +127,7 @@
     }
 
     function pushToLocalStorage() {
-        //assists
+        //possessions
         localStorage.teleReceivedAssists = receivedAssists;
         localStorage.telePassedAssists = passedAssists;
 
