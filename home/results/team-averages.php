@@ -38,7 +38,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="table-wrapper">
+                <div class="table-wrapper table-responsive">
                     <table id="averagesTable" class="table table-striped table-bordered table-hover tablesorter">
                         <thead>
                             <tr>

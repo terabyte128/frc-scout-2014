@@ -16,22 +16,23 @@
         </label>
     </div>
     <br /><br/> 
-    <button id="absentButton" class="btn btn-lg btn-warning next-page-button" type="button" data-toggle="modal" data-target="#cancelModal">Team Absent</button>
+    <button id="absentButton" class="btn btn-lg btn-warning next-page-button" type="button" onclick="showAbsentModal();">Team Absent</button>
 </form>
 
 <!-- Modal -->
-<form role="form">
+<form role="form" onsubmit="cancel();
+            return false;">
     <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body" style="font-size: 16px;">
                     Marking this team as absent will terminate this scouting session. Are you sure?
                     <br /><br/> 
-                    <textarea class="form-control" placeholder="Please leave a comment." rows="6" required></textarea>
+                    <textarea class="form-control" placeholder="Please leave a comment." rows="6" id="absentComments" required></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">No</button>
-                    <button type="submit" class="btn btn-warning btn-lg" onsubmit="cancel(); return false;">Yes</button>
+                    <button type="submit" class="btn btn-warning btn-lg">Yes</button>
                 </div>
             </div>
         </div>
@@ -77,10 +78,12 @@
         function pullFromLocalStorage() {
             $("#teamNumber").val(localStorage.teamNumber);
             $("#matchNumber").val(localStorage.matchNumber);
-            
-            allianceColor = localStorage.allianceColor;
-                                 
-            if(allianceColor !== null) {
+
+            if (localStorage.allianceColor !== undefined && localStorage.allianceColor !== "undefined") {
+                allianceColor = localStorage.allianceColor;
+            }
+
+            if (allianceColor !== null) {
                 $("#" + allianceColor).addClass('active');
             }
         }
@@ -88,8 +91,8 @@
         function pushToLocalStorage() {
             var errorMessage = "";
             var errors = false;
-            teamNumber = $("#teamNumber").val();
-            matchNumber = $("#matchNumber").val();
+            var teamNumber = $("#teamNumber").val();
+            var matchNumber = $("#matchNumber").val();
 
             if (teamNumber === "") {
                 errorMessage += "&bull; Enter a team number.<br />";
@@ -119,12 +122,52 @@
             }
         }
 
+        function showAbsentModal() {
+            var errorMessage = "";
+            var errors = false;
+            var teamNumber = $("#teamNumber").val();
+            var matchNumber = $("#matchNumber").val();
+
+            if (teamNumber === "") {
+                errorMessage += "&bull; Enter a team number.<br />";
+                errors = true;
+            }
+
+            if (matchNumber === "") {
+                errorMessage += "&bull; Enter a match number.<br />";
+                errors = true;
+            }
+
+            if (!errors) {
+                $("#cancelModal").modal('toggle');
+                hideMessage();
+            } else {
+                showMessage("Please correct the following errors:<br />" + errorMessage, "danger");
+            }
+        }
+
         function updateTeamNumber(teamNumber) {
             $('#teamNumberTitle').text(": " + teamNumber);
         }
 
         function cancel() {
-            // this will handle absences in the future
+            var teamNumber = $("#teamNumber").val();
+            var matchNumber = $("#matchNumber").val();
+
+            var absentComments = $("#absentComments").val();
+            $.ajax({
+                url: 'push-absence-to-database.php',
+                type: "POST",
+                data: {
+                    'teamNumber': teamNumber,
+                    'matchNumber': matchNumber,
+                    'absentComments': absentComments
+                },
+                success: function(response) {
+                    localStorage.clear();
+                    loadPageWithMessage("./", response, "warning");
+                }
+            })
         }
 
 </script>
