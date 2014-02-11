@@ -61,6 +61,45 @@
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
+                <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
+                    <?php if ($isAdmin && $isLoggedInTeam) { ?>
+
+
+
+                    <?php } else { ?>
+                        <div style="display: inline-table;">
+                            <div style="display: table-row;">
+                                <div style="display: table-cell;">
+                                    <label>Dimensions</label>
+                                    <p id="dimensions"><?php echo $response['robot_length']; ?>" length x <?php echo $response['robot_width']; ?>" width x <?php echo $response['robot_height']; ?>" height</p>
+                                    <label>Weight</label>
+                                    <p id="weight"><?php echo $response['robot_weight']; ?> lbs</p>
+                                    <label>Drivetrain</label>
+                                    <p id="drivetrain"><?php echo $response['robot_drivetrain_type']; ?></p>
+                                    <label>Wheel Type</label>
+                                    <p id="wheelType"><?php echo $response['robot_wheel_type']; ?></p>
+                                    <label>Shifters</label>
+                                    <p id="shifters"><?php echo $response['robot_shifters'] === "1" ? "yes" : "no"; ?></p>
+                                </div>
+                                <div style="display: table-cell; padding-left: 30px;">
+                                    <label>Low Speed</label>
+                                    <p id="lowSpeed"><?php echo $response['robot_low_speed']; ?> ft/sec</p>
+                                    <label>High Speed</label>
+                                    <p id="highSpeed"><?php echo $response['robot_high_speed']; ?> ft/sec</p>
+                                    <label>Starting Position</label>
+                                    <p id="startingPosition"><?php echo $response['robot_starting_position']; ?></p>
+                                    <label>Role</label>
+                                    <p id="role"><?php echo $response['robot_role']; ?></p>
+                                    <label>Comments</label>
+                                    <p id="comments"><?php echo $response['robot_comments']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+                <br />
+                <font style="color: #868686; float: right; font-size: 10pt;">Match Statistics</font>
+                <hr style="border-top: 1px solid #bbb">
                 <div class="table-wrapper table-responsive">
                     <!-- other stats will go here once they exist -->
                     <?php if ($teamType === "FTC") { ?>
@@ -106,56 +145,56 @@
 
     <?php if ($isAdmin && $isLoggedInTeam) { ?>
         <script type="text/javascript">
-            $(function() {
-                $(".editable").editable({
-                    pk: '<?php echo $teamNumber ?>',
-                    url: "/ajax-handlers/change-profile-ajax-submit.php",
-                    success: function(response, newVal) {
-                        if (response.indexOf("success") === -1) {
-                            showMessage(response, 'warning');
-                        }
-                        showMessage(newVal, "danger");
-                    }
-                });
+                    $(function() {
+                        $(".editable").editable({
+                            pk: '<?php echo $teamNumber ?>',
+                            url: "/ajax-handlers/change-profile-ajax-submit.php",
+                            success: function(response, newVal) {
+                                if (response.indexOf("success") === -1) {
+                                    showMessage(response, 'warning');
+                                }
+                                showMessage(newVal, "danger");
+                            }
+                        });
 
-                var options = {
-                    beforeSend: function()
-                    {
-                        $("#progress").show();
-                        //clear everything
-                        $("#bar").width('0%');
-                        $("#message").html("");
-                        $("#percent").html("0%");
-                    },
-                    uploadProgress: function(event, position, total, percentComplete)
-                    {
-                        $("#percent").html('Uploading ' + percentComplete + '%');
+                        var options = {
+                            beforeSend: function()
+                            {
+                                $("#progress").show();
+                                //clear everything
+                                $("#bar").width('0%');
+                                $("#message").html("");
+                                $("#percent").html("0%");
+                            },
+                            uploadProgress: function(event, position, total, percentComplete)
+                            {
+                                $("#percent").html('Uploading ' + percentComplete + '%');
 
-                    },
-                    success: function(response)
-                    {
-                        $("#percent").html('Upload complete!');
-                        console.log("got a response: " + response);
-                        if (response === "Success") {
-                            location.reload();
-                        } else {
-                            showMessage(response, "danger");
-                        }
+                            },
+                            success: function(response)
+                            {
+                                $("#percent").html('Upload complete!');
+                                console.log("got a response: " + response);
+                                if (response === "Success") {
+                                    location.reload();
+                                } else {
+                                    showMessage(response, "danger");
+                                }
 
-                    },
-                    complete: function(response)
-                    {
+                            },
+                            complete: function(response)
+                            {
 
-                    },
-                    error: function()
-                    {
+                            },
+                            error: function()
+                            {
 
-                    }
+                            }
 
-                };
+                        };
 
-                $("#submitTeamPicture").ajaxForm(options);
-            });
+                        $("#submitTeamPicture").ajaxForm(options);
+                    });
         </script>
     <?php } ?>
 
