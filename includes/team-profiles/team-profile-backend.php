@@ -45,9 +45,13 @@
                                 <a href="#" class="editable" style="font-size: 20pt; margin-bottom: 0px;" id="team_name" data-emptytext="Click to edit team name"><?php echo $response['team_name']; ?></a>
                                 <br />
                                 <a href="#" class="editable" style="white-space: pre-wrap" data-type="textarea" id="description" data-emptytext="Click to edit team description"><?php echo $response['description']; ?></a>
+                                <br />
+                                <br />
+                                <a href="#" class="editable" id="website" data-emptytext="Click to edit team website (do not enter http://)"><?php echo $response['website']; ?></a>
                             <?php } else { ?>
                                 <p style="font-size: 20pt; margin-bottom: 0px;"><?php echo $response['team_name']; ?></p>
                                 <p style="white-space: pre-wrap"><?php echo $response['description']; ?></p>
+                                <a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a>
                             <?php } ?>
                         </div>
                     </div>
@@ -56,6 +60,45 @@
                 <?php } ?>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
+                <hr style="border-top: 1px solid #bbb">
+                <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
+                    <?php if ($isAdmin && $isLoggedInTeam) { ?>
+
+
+
+                    <?php } else { ?>
+                        <div style="display: inline-table;">
+                            <div style="display: table-row;">
+                                <div style="display: table-cell;">
+                                    <label>Dimensions</label>
+                                    <p id="dimensions"><?php echo $response['robot_length']; ?>" length x <?php echo $response['robot_width']; ?>" width x <?php echo $response['robot_height']; ?>" height</p>
+                                    <label>Weight</label>
+                                    <p id="weight"><?php echo $response['robot_weight']; ?> lbs</p>
+                                    <label>Drivetrain</label>
+                                    <p id="drivetrain"><?php echo $response['robot_drivetrain_type']; ?></p>
+                                    <label>Wheel Type</label>
+                                    <p id="wheelType"><?php echo $response['robot_wheel_type']; ?></p>
+                                    <label>Shifters</label>
+                                    <p id="shifters"><?php echo $response['robot_shifters'] === "1" ? "yes" : "no"; ?></p>
+                                </div>
+                                <div style="display: table-cell; padding-left: 30px;">
+                                    <label>Low Speed</label>
+                                    <p id="lowSpeed"><?php echo $response['robot_low_speed']; ?> ft/sec</p>
+                                    <label>High Speed</label>
+                                    <p id="highSpeed"><?php echo $response['robot_high_speed']; ?> ft/sec</p>
+                                    <label>Starting Position</label>
+                                    <p id="startingPosition"><?php echo $response['robot_starting_position']; ?></p>
+                                    <label>Role</label>
+                                    <p id="role"><?php echo $response['robot_role']; ?></p>
+                                    <label>Comments</label>
+                                    <p id="comments"><?php echo $response['robot_comments']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+                <br />
+                <font style="color: #868686; float: right; font-size: 10pt;">Match Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
                 <div class="table-wrapper table-responsive">
                     <!-- other stats will go here once they exist -->
@@ -81,7 +124,7 @@
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Comments</font>
                 <hr style="border-top: 1px solid #bbb">
-                <div class="table-wrapper" id="comments">
+                <div class="table-wrapper table-responsive" id="comments">
                     <table class="table table-striped table-bordered table-hover tablesorter" id="commentsTable">
                         <thead>
                         <th>Event</th>

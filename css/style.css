@@ -240,3 +240,12 @@ a.editable-click:hover {
     text-align:left; 
     margin:2px auto 2px auto;
 }
+
+.table-responsive>.table>thead>tr>th, 
+.table-responsive>.table>tbody>tr>th, 
+.table-responsive>.table>tfoot>tr>th, 
+.table-responsive>.table>thead>tr>td, 
+.table-responsive>.table>tbody>tr>td, 
+.table-responsive>.table>tfoot>tr>td {
+    white-space: normal;
+}

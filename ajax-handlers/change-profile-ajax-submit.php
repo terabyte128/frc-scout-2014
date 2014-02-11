@@ -1,6 +1,6 @@
 <?php
 
-$whitelist = array('team_name', 'description');
+$whitelist = array('team_name', 'description', 'website');
 require_once '../includes/setup-session.php';
 require_once '../includes/admin-required.php';
 $colName = $_POST['name'];

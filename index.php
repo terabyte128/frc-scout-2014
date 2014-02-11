@@ -14,7 +14,7 @@
                     <img style='margin: 20px auto 2px auto; max-width: 275px' src="images/logo_earfuzz_hat.png" alt="header logo" id="main-title-image" />
                     <h2 style='margin-top: 2px;'>FIRST Scout: Login</h2>
                 </div>
-                <div class='login-form align-center' style='width: 250px;'>
+                <div class='login-form align-center' style='max-width: 320px;'>
                     <form role="form" onsubmit="login();
                             return false;">
                         <div class="form-group">
@@ -45,6 +45,7 @@
                         <button type="submit" id="loginButton" class="btn btn-default btn-success">Login</button>
                     </form>
                     <br />
+                    <p>So far, <?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams have registered on FIRST Scout!</p>
                     <a href="create-account.php">Create an account</a>
                     <br />
                     <a href="forgot-password.php">Recover your password</a>
@@ -53,59 +54,61 @@
             </div>
         </div>
         <script type="text/javascript">
-                        var locationsFromJSON;
+            var locationsFromJSON;
 
-                        function login() {
-                            $("#loginButton").button('loading');
-                            var teamNumber = $("#teamNumber").val();
-                            var scoutName = $("#scoutName").val();
-                            var teamPassword = $("#teamPassword").val();
-                            var teamType = "frc";
-                            var currentLocation = $("#location").val();
+            function login() {
+                $("#loginButton").button('loading');
+                var teamNumber = $("#teamNumber").val();
+                var scoutName = $("#scoutName").val();
+                var teamPassword = $("#teamPassword").val();
+                var teamType = "frc";
+                var currentLocation = $("#location").val();
 
-                            if ($.inArray(currentLocation, locationsFromJSON) === -1) {
-                                showMessage("Invalid location, please enter a different one.", "danger");
-                                $("#loginButton").button('reset');
-                                return;
+                if ($.inArray(currentLocation, locationsFromJSON) === -1) {
+                    showMessage("Invalid location, please enter a different one.", "danger");
+                    $("#loginButton").button('reset');
+                    return;
+                }
+
+
+                $.ajax({
+                    url: 'ajax-handlers/login-ajax-submit.php',
+                    type: "POST",
+                    data: {
+                        'teamNumber': teamNumber,
+                        'scoutName': scoutName,
+                        'teamPassword': teamPassword,
+                        'teamType': teamType,
+                        'location': currentLocation
+                    },
+                    success: function(response, textStatus, jqXHR) {
+                        console.log(response);
+                        if (response === "") {
+                            if (localStorage.redirect && localStorage.redirect !== "undefined") {
+                                var redirect = localStorage.redirect;
+                                localStorage.redirect = undefined;
+                                window.location = redirect;
+                            } else {
+                                location.reload();
                             }
-
-
-                            $.ajax({
-                                url: 'ajax-handlers/login-ajax-submit.php',
-                                type: "POST",
-                                data: {
-                                    'teamNumber': teamNumber,
-                                    'scoutName': scoutName,
-                                    'teamPassword': teamPassword,
-                                    'teamType': teamType,
-                                    'location': currentLocation
-                                },
-                                success: function(response, textStatus, jqXHR) {
-                                    console.log(response);
-                                    if (response === "") {
-                                        if (localStorage.redirect !== undefined) {
-                                            window.location = localStorage.redirect;
-                                        } else {
-                                            location.reload();
-                                        }
-                                    } else {
-                                        showMessage(response, 'danger');
-                                        $("#loginButton").button('reset');
-                                    }
-                                }
-                            });
+                        } else {
+                            showMessage(response, 'danger');
+                            $("#loginButton").button('reset');
                         }
+                    }
+                });
+            }
 
-                        $(function() {
-                            $.getJSON('includes/locations.json', function(data) {
-                                locationsFromJSON = data;
-                                $("#location").typeahead({
-                                    name: 'locations',
-                                    local: data
-                                });
+            $(function() {
+                $.getJSON('includes/locations.json', function(data) {
+                    locationsFromJSON = data;
+                    $("#location").typeahead({
+                        name: 'locations',
+                        local: data
+                    });
 
-                            });
-                        });
+                });
+            });
         </script>
     </body>
 </html>
