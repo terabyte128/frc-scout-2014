@@ -14,7 +14,9 @@
             <div class="container">
                 <?php include '../includes/messages.php' ?>
                 <h2>View Registered Teams</h2>
-                <div style="max-width: 500px;" class="align-center">
+                <div style="max-width: 800px;" class="align-center">
+                    <button class="btn btn-default" onclick="window.location = '/'">Return Home</button>
+                    <br /><br />
                     <form role="form" onsubmit="return false;">
                         <label for="teamSearch">Search by name or number:
                             <input id="teamSearch" class="form-control" style="width: 200px;" placeholder="Search for team" onkeyup="search();" onblur="search();">
@@ -39,22 +41,22 @@
             </div>
         </div>
         <script type="text/javascript">
-            
-            search();
 
-            function search() {
-                $.ajax({
-                    url: '/ajax-handlers/get-registered-team-numbers.php',
-                    type: "POST",
-                    data: {
-                        query: $("#teamSearch").val()
-                    },
-                    success: function(response) {
-                        $("#teamBody").html(response);
-                        $(".tablesorter").tablesorter();
-                    }
-                })
-            }
+                                       search();
+
+                                       function search() {
+                                           $.ajax({
+                                               url: '/ajax-handlers/get-registered-team-numbers.php',
+                                               type: "POST",
+                                               data: {
+                                                   query: $("#teamSearch").val()
+                                               },
+                                               success: function(response) {
+                                                   $("#teamBody").html(response);
+                                                   $(".tablesorter").tablesorter();
+                                               }
+                                           })
+                                       }
         </script>
     </body>
 </html>

@@ -85,7 +85,7 @@
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Comments</font>
                 <hr style="border-top: 1px solid #bbb">
-                <div class="table-wrapper" id="comments">
+                <div class="table-wrapper table-responsive" id="comments">
                     <table class="table table-striped table-bordered table-hover tablesorter" id="commentsTable">
                         <thead>
                         <th>Event</th>
