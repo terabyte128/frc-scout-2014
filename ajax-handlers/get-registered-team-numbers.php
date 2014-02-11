@@ -15,7 +15,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db-connect.php';
 
 try {
     $params = array();
-    $queryString = 'SELECT team_number, team_name FROM `frc_team_accounts` ';
+    $queryString = 'SELECT team_number, team_name, website FROM `frc_team_accounts` ';
 
     if ($queryExists) {
         $queryString .= "WHERE `team_number` LIKE ? OR `team_name` LIKE ? ";
@@ -41,6 +41,11 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
     echo '</td>';
     echo "<td>";
     echo $row['team_name'];
+    echo '</td>';
+    echo "<td>";
+    echo "<a target=\"blank\" href=\"http://" . $row['website'] . "\">";
+    echo $row['website'];
+    echo "</a>";
     echo '</td>';
     echo '</tr>';
 }

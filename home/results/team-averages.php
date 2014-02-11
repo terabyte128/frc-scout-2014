@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>Team Averages</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/headers.php'; ?>
         <!-- choose a theme file -->
         <link rel="stylesheet" href="/css/theme.default.css">

@@ -15,8 +15,8 @@
                 <?php include '../includes/messages.php' ?>
                 <h2>View Registered Teams</h2>
                 <div style="max-width: 800px;" class="align-center">
-                    <button class="btn btn-default" onclick="window.location = '/'">Return Home</button>
-                    <br /><br />
+                    <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
+                    <br />
                     <form role="form" onsubmit="return false;">
                         <label for="teamSearch">Search by name or number:
                             <input id="teamSearch" class="form-control" style="width: 200px;" placeholder="Search for team" onkeyup="search();" onblur="search();">
@@ -27,11 +27,11 @@
                             <thead>
                                 <tr>
                                     <th>Team Number</th>
-                                    <th>Team Name</th>
+                                    <th>Name</th>
+                                    <th>Website</th>
                                 </tr>
                             </thead>
                             <tbody id="teamBody">
-
                             </tbody>
                         </table>
                     </div>
@@ -41,22 +41,21 @@
             </div>
         </div>
         <script type="text/javascript">
+                        search();
 
-                                       search();
-
-                                       function search() {
-                                           $.ajax({
-                                               url: '/ajax-handlers/get-registered-team-numbers.php',
-                                               type: "POST",
-                                               data: {
-                                                   query: $("#teamSearch").val()
-                                               },
-                                               success: function(response) {
-                                                   $("#teamBody").html(response);
-                                                   $(".tablesorter").tablesorter();
-                                               }
-                                           })
-                                       }
+                        function search() {
+                            $.ajax({
+                                url: '/ajax-handlers/get-registered-team-numbers.php',
+                                type: "POST",
+                                data: {
+                                    query: $("#teamSearch").val()
+                                },
+                                success: function(response) {
+                                    $("#teamBody").html(response);
+                                    $(".tablesorter").tablesorter();
+                                }
+                            })
+                        }
         </script>
     </body>
 </html>
