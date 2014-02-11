@@ -45,7 +45,7 @@
                         <button type="submit" id="loginButton" class="btn btn-default btn-success">Login</button>
                     </form>
                     <br />
-                    <p>So far, <?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams have registered on FIRST Scout.</p>
+                    <p>So far, <?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams have registered on FIRST Scout!</p>
                     <a href="create-account.php">Create an account</a>
                     <br />
                     <a href="forgot-password.php">Recover your password</a>
