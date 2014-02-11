@@ -6,6 +6,12 @@ if ($_REQUEST['onlyLoggedInTeam'] === "true") {
     $onlyLoggedInTeam = false;
 }
 
+if ($_REQUEST['onlyThisLocation'] === "true") {
+    $onlyThisLocation = true;
+} else {
+    $onlyThisLocation = false;
+}
+
 $docRoot = $_SERVER['DOCUMENT_ROOT'];
 
 // initialize $params as an empty array; fill it with the logged in team's number if they want to filter
@@ -29,6 +35,17 @@ if ($onlyLoggedInTeam) {
 
     //this needs to be passed as an argument to the sql query
     array_push($params, $teamNumber);
+    if ($onlyThisLocation) {
+        $queryString .= ' AND ';
+    }
+}
+
+if ($onlyThisLocation) {
+    if (!$onlyLoggedInTeam) {
+        $queryString .= ' WHERE ';
+    }
+    $queryString .= 'location=?';
+    array_push($params, $location);
 }
 
 $queryString .= ' GROUP BY `scouted_team`';
