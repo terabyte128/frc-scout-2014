@@ -91,7 +91,7 @@
                     <?php } else { ?>
                         <div>
                             <?php if (!empty($response['robot_length'])) { ?>
-                                <p id="dimensions"><strong>Dimensions: </strong><?php echo $response['robot_length']; ?>" length x <?php echo $response['robot_width']; ?>" width x <?php echo $response['robot_height']; ?>" height</p>
+                                <p id="dimensions"><strong>Dimensions: </strong><?php echo $response['robot_length']; ?> length x <?php echo $response['robot_width']; ?> width x <?php echo $response['robot_height']; ?> height</p>
                             <?php } ?>
                             <?php if (!empty($response['robot_weight'])) { ?>
                                 <p id="weight"><strong>Weight: </strong><?php echo $response['robot_weight']; ?></p>

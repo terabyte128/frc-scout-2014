@@ -79,7 +79,7 @@
                     if (localStorage.newAccount === "true") {
 
                         $("#optionAuthAsAdmin").popover({
-                            content: "<span style='color: rgb(182, 19, 0)'>Administrators can edit team profiles and passwords.</span>",
+                            content: "<font style='color: rgb(182, 19, 0); font-size:14px;'>Administrators can edit team profiles and passwords.</font>",
                             trigger: 'hover',
                             placement: 'top',
                             html: "true"
