@@ -190,6 +190,7 @@
                         {value: 0, text: 'No'},
                         {value: 1, text: 'Yes'}
                     ],
+                    showbuttons: false,
                     pk: '<?php echo $teamNumber ?>',
                     url: "/ajax-handlers/change-profile-ajax-submit.php",
                     success: function(response, newVal) {
