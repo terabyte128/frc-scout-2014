@@ -36,11 +36,16 @@
 
         </div>
     <?php } ?>
-    <?php if (!$isAdmin && ($_SERVER['PHP_SELF'] === "/home/index.php" || $_SERVER['PHP_SELF'] === "/home/team-profile.php")) { ?>
-        <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authModal').modal('show');
-                    $('#adminPassword').focus();" class='footer-right'>Authenticate as administrator</a>
-        </span>
-    <?php } ?>
+    <?php if ($_SERVER['PHP_SELF'] === "/home/index.php" || $_SERVER['PHP_SELF'] === "/home/team-profile.php") { ?>
+        <?php if (!$isAdmin) { ?>
+            <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authModal').modal('show');
+                        $('#adminPassword').focus();" class='footer-right'>Authenticate as administrator</a>
+            </span>
+        <?php } else { ?>
+            <span><a href="#" id="optionDeauthAsAdmin" onclick="logoutAdmin();" class='footer-right'>De-authenticate as administrator</a>
+            </span>
+        <?php }
+    } ?>
 
     <script type="text/javascript">
         function loginAdmin() {
@@ -60,6 +65,16 @@
                     } else {
                         $("#authTitle").html("<font style='color: firebrick;'>Incorrect password, please try again.</font>");
                     }
+                }
+            });
+        }
+        
+        function logoutAdmin() {
+            $.ajax({
+                url: '../ajax-handlers/deauth-as-admin-ajax-submit.php',
+                type: "POST",
+                success: function(response, textStatus, jqXHR) {
+                    location.reload();
                 }
             });
         }

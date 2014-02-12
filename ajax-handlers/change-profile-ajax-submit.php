@@ -20,6 +20,9 @@ require_once '../includes/admin-required.php';
 $colName = $_POST['name'];
 $value = strip_tags($_POST['value']);
 $value = trim($value);
+if ($colName === 'robot_shifters' && $value === 'Yes') {
+    $value = 1;
+}
 
 if ($isAdmin) {
     if (!in_array($colName, $whitelist)) {

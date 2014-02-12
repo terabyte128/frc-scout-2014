@@ -68,8 +68,14 @@
                         <p id="weight"><strong>Weight: </strong><a href='#' id='robot_weight' class="editable"><?php echo $response['robot_weight']; ?></a></p>
                         <p id="drivetrain"><strong>Drivetrain: </strong><a href='#' id='robot_drivetrain_type' class="editable"><?php echo $response['robot_drivetrain_type']; ?></a></p>
                         <p id="wheelType"><strong>Wheel Type: </strong><a href='#' id='robot_wheel_type' class="editable"><?php echo $response['robot_wheel_type']; ?></a></p>
-                        <p id="shifters"><strong>Shifters: </strong><a href='#' id='robot_shifters' class="editable"><?php echo $response['robot_shifters'] === "1" ? "yes" : "no"; ?></a></p>
-
+                        <p id="shifters"><strong>Shifters: </strong><a href='#' id='robot_shifters' data-type="select" class="editable">
+                            <?php if ($response['robot_shifters'] === "0") {
+                                echo "No";
+                            } else if ($response['robot_shifters'] === "1") {
+                                echo "Yes";
+                            } else {
+                                echo "Choose an option";
+                            } ?></a></p>
                         <p id="lowSpeed"><strong>Low Speed: </strong><a href='#' id='robot_low_speed' class="editable"><?php echo $response['robot_low_speed']; ?></a></p>
                         <p id="highSpeed"><strong>High Speed: </strong><a href='#' id='robot_high_speed' class="editable"><?php echo $response['robot_high_speed']; ?></a></p>
                         <p id="startingPosition"><strong>Starting Position: </strong><a href='#' id='robot_starting_position' class="editable"><?php echo $response['robot_starting_position']; ?></a></p>
@@ -79,16 +85,33 @@
                     <?php } else { ?>
                         <div>
                             <p id="dimensions"><strong>Dimensions: </strong><?php echo $response['robot_length']; ?>" length x <?php echo $response['robot_width']; ?>" width x <?php echo $response['robot_height']; ?>" height</p>
+                            <?php if(!empty($response['robot_weight'])) { ?>
                             <p id="weight"><strong>Weight: </strong><?php echo $response['robot_weight']; ?></p>
+                            <?php } ?>
+                            <?php if(!empty($response['robot_drivetrain'])) { ?>
                             <p id="drivetrain"><strong>Drivetrain: </strong><?php echo $response['robot_drivetrain_type']; ?></p>
+                            <?php } ?>
+                            <?php if(!empty($response['robot_wheel_type'])) { ?>
                             <p id="wheelType"><strong>Wheel Type: </strong><?php echo $response['robot_wheel_type']; ?></p>
-                            <p id="shifters"><strong>Shifters: </strong><?php echo $response['robot_shifters'] === "1" ? "yes" : "no"; ?></p>
-
+                            <?php } ?>
+                            <?php if($response['robot_shifters'] != null) { ?>
+                            <p id="shifters"><strong>Shifters: </strong><?php echo $response['robot_shifters'] === "1" ? "Yes" : "No"; ?></p>
+                            <?php } ?>
+                            <?php if(!empty($response['robot_low_speed'])) { ?>
                             <p id="lowSpeed"><strong>Low Speed: </strong><?php echo $response['robot_low_speed']; ?></p>
+                            <?php } ?>
+                            <?php if(!empty($response['robot_high_speed'])) { ?>
                             <p id="highSpeed"><strong>High Speed: </strong><?php echo $response['robot_high_speed']; ?></p>
+                            <?php } ?>
+                            <?php if(!empty($response['robot_starting_position'])) { ?>
                             <p id="startingPosition"><strong>Starting Position: </strong><?php echo $response['robot_starting_position']; ?></p>
+                            <?php } ?>
+                            <?php if(!empty($response['robot_role'])) { ?>
                             <p id="role"><strong>Role: </strong><?php echo $response['robot_role']; ?></p>
+                            <?php } ?>
+                            <?php if(!empty($response['robot_comments'])) { ?>
                             <p id="comments"><strong>Comments: </strong><?php echo $response['robot_comments']; ?></p>
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
@@ -140,7 +163,25 @@
 
     <?php if ($isAdmin && $isLoggedInTeam) { ?>
         <script type="text/javascript">
+            
                         $(function() {
+                            $("#robot_shifters").editable({
+                                value: null,
+                                source: [
+                                    {value: null, text: 'Choose an option'},
+                                    {value: 0, text: 'No'},
+                                    {value: 1, text: 'Yes'}
+                                ],
+                                pk: '<?php echo $teamNumber ?>',
+                                url: "/ajax-handlers/change-profile-ajax-submit.php",
+                                success: function(response, newVal) {
+                                    if (response.indexOf("success") === -1) {
+                                        showMessage(response, 'warning');
+                                    }
+                                    showMessage(newVal, "danger");
+                                }
+                            });
+                            
                             $(".editable").editable({
                                 pk: '<?php echo $teamNumber ?>',
                                 url: "/ajax-handlers/change-profile-ajax-submit.php",
@@ -151,6 +192,8 @@
                                     showMessage(newVal, "danger");
                                 }
                             });
+                            
+                            
 
                             var options = {
                                 beforeSend: function()
