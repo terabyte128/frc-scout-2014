@@ -47,11 +47,13 @@
                                 <a href="#" class="editable" style="white-space: pre-wrap" data-type="textarea" id="description" data-emptytext="Click to edit team description"><?php echo $response['description']; ?></a>
                                 <br />
                                 <br />
-                                <a href="#" class="editable" id="website" data-emptytext="Click to edit team website (do not enter http://)"><?php echo $response['website']; ?></a>
+                                <strong>Website: </strong><a href="#" class="editable" id="website" data-emptytext="Click to add (don't enter http://)"><?php echo $response['website']; ?></a>
                             <?php } else { ?>
                                 <p style="font-size: 20pt; margin-bottom: 0px;"><?php echo $response['team_name']; ?></p>
                                 <p style="white-space: pre-wrap"><?php echo $response['description']; ?></p>
-                                <a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a>
+                                <?php if (!empty($response['website'])) { ?>
+                                    <strong>Website: </strong><a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a>
+                                <?php } ?>
                             <?php } ?>
                         </div>
                     </div>
@@ -83,7 +85,7 @@
                                 }
                                 ?></a></p>
                         <p id="lowSpeed"><strong>Low Speed: </strong><a href='#' id='robot_low_speed' class="editable"><?php echo $response['robot_low_speed']; ?></a></p>
-                        <p id="highSpeed"><strong>High Speed: </strong><a href='#' id='robot_high_speed' class="editable"><?php echo $response['robot_high_speed']; ?></a></p>
+                        <p id="highSpeed"><strong><span id='highText' style='display:inline;'><?php if ($response['robot_shifters'] === "1") { ?>High&nbsp;<?php } ?></span>Speed: </strong><a href='#' id='robot_high_speed' class="editable"><?php echo $response['robot_high_speed']; ?></a></p>
                         <p id="startingPosition"><strong>Starting Position: </strong><a href='#' id='robot_starting_position' class="editable"><?php echo $response['robot_starting_position']; ?></a></p>
                         <p id="role"><strong>Role: </strong><a href='#' id='robot_role' class="editable"><?php echo $response['robot_role']; ?></a></p>
                         <p id="comments"><strong>Comments: </strong><a href='#' id='robot_comments' class="editable" data-type="textarea"><?php echo $response['robot_comments']; ?></a></p>
@@ -109,7 +111,7 @@
                                 <p id="lowSpeed"><strong>Low Speed: </strong><?php echo $response['robot_low_speed']; ?></p>
                             <?php } ?>
                             <?php if (!empty($response['robot_high_speed'])) { ?>
-                                <p id="highSpeed"><strong>High Speed: </strong><?php echo $response['robot_high_speed']; ?></p>
+                                <p id="highSpeed"><strong><?php if ($response['robot_shifters'] === "1") { ?>High <?php } ?>Speed: </strong><?php echo $response['robot_high_speed']; ?></p>
                             <?php } ?>
                             <?php if (!empty($response['robot_starting_position'])) { ?>
                                 <p id="startingPosition"><strong>Starting Position: </strong><?php echo $response['robot_starting_position']; ?></p>
@@ -174,82 +176,84 @@
 
 
 
-                    $(function() {
+            $(function() {
 
-                        if ("<?php echo $response['robot_shifters']; ?>" === "1") {
+                if ("<?php echo $response['robot_shifters']; ?>" === "1") {
+                    $("#lowSpeed").show(100);
+                } else {
+                    $("#lowSpeed").hide();
+                }
+
+                $("#robot_shifters").editable({
+                    value: null,
+                    source: [
+                        {value: 0, text: 'No'},
+                        {value: 1, text: 'Yes'}
+                    ],
+                    pk: '<?php echo $teamNumber ?>',
+                    url: "/ajax-handlers/change-profile-ajax-submit.php",
+                    success: function(response, newVal) {
+                        if (response.indexOf("success") === -1) {
+                            showMessage(response, 'warning');
+                        }
+                        if (newVal === "1") {
                             $("#lowSpeed").show(100);
+                            $("#highText").show(100);
                         } else {
-                            $("#lowSpeed").hide();
+                            $("#lowSpeed").hide(100);
+                            $("#highText").hide(100);
+                        }
+                    }
+                });
+
+                $(".editable").editable({
+                    pk: '<?php echo $teamNumber ?>',
+                    url: "/ajax-handlers/change-profile-ajax-submit.php",
+                    success: function(response, newVal) {
+                        if (response.indexOf("success") === -1) {
+                            showMessage(response, 'warning');
+                        }
+                        console.log(newVal);
+                    }
+                });
+                var options = {
+                    beforeSend: function()
+                    {
+                        $("#progress").show();
+                        //clear everything
+                        $("#bar").width('0%');
+                        $("#message").html("");
+                        $("#percent").html("0%");
+                    },
+                    uploadProgress: function(event, position, total, percentComplete)
+                    {
+                        $("#percent").html('Uploading ' + percentComplete + '%');
+
+                    },
+                    success: function(response)
+                    {
+                        $("#percent").html('Upload complete!');
+                        console.log("got a response: " + response);
+                        if (response === "Success") {
+                            location.reload();
+                        } else {
+                            showMessage(response, "danger");
                         }
 
-                        $("#robot_shifters").editable({
-                            value: null,
-                            source: [
-                                {value: 0, text: 'No'},
-                                {value: 1, text: 'Yes'}
-                            ],
-                            pk: '<?php echo $teamNumber ?>',
-                            url: "/ajax-handlers/change-profile-ajax-submit.php",
-                            success: function(response, newVal) {
-                                if (response.indexOf("success") === -1) {
-                                    showMessage(response, 'warning');
-                                }
-                                if (newVal === "1") {
-                                    $("#lowSpeed").show(100);
-                                } else {
-                                    $("#lowSpeed").hide(100);
-                                }
-                            }
-                        });
+                    },
+                    complete: function(response)
+                    {
 
-                        $(".editable").editable({
-                            pk: '<?php echo $teamNumber ?>',
-                            url: "/ajax-handlers/change-profile-ajax-submit.php",
-                            success: function(response, newVal) {
-                                if (response.indexOf("success") === -1) {
-                                    showMessage(response, 'warning');
-                                }
-                                console.log(newVal);
-                            }
-                        });
-                        var options = {
-                            beforeSend: function()
-                            {
-                                $("#progress").show();
-                                //clear everything
-                                $("#bar").width('0%');
-                                $("#message").html("");
-                                $("#percent").html("0%");
-                            },
-                            uploadProgress: function(event, position, total, percentComplete)
-                            {
-                                $("#percent").html('Uploading ' + percentComplete + '%');
+                    },
+                    error: function()
+                    {
 
-                            },
-                            success: function(response)
-                            {
-                                $("#percent").html('Upload complete!');
-                                console.log("got a response: " + response);
-                                if (response === "Success") {
-                                    location.reload();
-                                } else {
-                                    showMessage(response, "danger");
-                                }
+                    }
 
-                            },
-                            complete: function(response)
-                            {
+                };
 
-                            },
-                            error: function()
-                            {
-
-                            }
-
-                        };
-
-                        $("#submitTeamPicture").ajaxForm(options);
-                    });
+                $("#submitTeamPicture").ajaxForm(options);
+            });
         </script>
     <?php } ?>
 
