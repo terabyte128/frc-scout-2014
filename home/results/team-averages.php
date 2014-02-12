@@ -17,7 +17,7 @@
                 <h2>Team Averages</h2>
                 <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
                 <br />
-                <a onclick="$('#filterOptions').slideToggle(200);">Filter these results</a>
+                <a href="# "onclick="$('#filterOptions').slideToggle(200);">Filter these results</a>
                 <div id="filterOptions" style="display:none;">
                     <label>View data collected by:</label><br />
                     <div class="btn-group" data-toggle="buttons" id="matchOutcome">
@@ -37,6 +37,8 @@
                             <input type="radio">Everywhere
                         </label>
                     </div>
+                    <br />
+                    <br />
                 </div>
                 <div class="table-wrapper table-responsive">
                     <table id="averagesTable" class="table table-striped table-bordered table-hover tablesorter">

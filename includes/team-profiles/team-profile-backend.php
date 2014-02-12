@@ -61,6 +61,40 @@
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
+                <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
+                    <?php if ($isAdmin && $isLoggedInTeam) { ?>
+
+                        <p id="dimensions"><strong>Dimensions: </strong><?php echo $response['robot_length']; ?>" length x <?php echo $response['robot_width']; ?>" width x <?php echo $response['robot_height']; ?>" height</p>
+                        <p id="weight"><strong>Weight: </strong><a href='#' id='robot_weight' class="editable"><?php echo $response['robot_weight']; ?></a></p>
+                        <p id="drivetrain"><strong>Drivetrain: </strong><a href='#' id='robot_drivetrain_type' class="editable"><?php echo $response['robot_drivetrain_type']; ?></a></p>
+                        <p id="wheelType"><strong>Wheel Type: </strong><a href='#' id='robot_wheel_type' class="editable"><?php echo $response['robot_wheel_type']; ?></a></p>
+                        <p id="shifters"><strong>Shifters: </strong><a href='#' id='robot_shifters' class="editable"><?php echo $response['robot_shifters'] === "1" ? "yes" : "no"; ?></a></p>
+
+                        <p id="lowSpeed"><strong>Low Speed: </strong><a href='#' id='robot_low_speed' class="editable"><?php echo $response['robot_low_speed']; ?></a></p>
+                        <p id="highSpeed"><strong>High Speed: </strong><a href='#' id='robot_high_speed' class="editable"><?php echo $response['robot_high_speed']; ?></a></p>
+                        <p id="startingPosition"><strong>Starting Position: </strong><a href='#' id='robot_starting_position' class="editable"><?php echo $response['robot_starting_position']; ?></a></p>
+                        <p id="role"><strong>Role: </strong><a href='#' id='robot_role' class="editable"><?php echo $response['robot_role']; ?></a></p>
+                        <p id="comments"><strong>Comments: </strong><a href='#' id='robot_comments' class="editable" data-type="textarea"><?php echo $response['robot_comments']; ?></a></p>
+
+                    <?php } else { ?>
+                        <div>
+                            <p id="dimensions"><strong>Dimensions: </strong><?php echo $response['robot_length']; ?>" length x <?php echo $response['robot_width']; ?>" width x <?php echo $response['robot_height']; ?>" height</p>
+                            <p id="weight"><strong>Weight: </strong><?php echo $response['robot_weight']; ?></p>
+                            <p id="drivetrain"><strong>Drivetrain: </strong><?php echo $response['robot_drivetrain_type']; ?></p>
+                            <p id="wheelType"><strong>Wheel Type: </strong><?php echo $response['robot_wheel_type']; ?></p>
+                            <p id="shifters"><strong>Shifters: </strong><?php echo $response['robot_shifters'] === "1" ? "yes" : "no"; ?></p>
+
+                            <p id="lowSpeed"><strong>Low Speed: </strong><?php echo $response['robot_low_speed']; ?></p>
+                            <p id="highSpeed"><strong>High Speed: </strong><?php echo $response['robot_high_speed']; ?></p>
+                            <p id="startingPosition"><strong>Starting Position: </strong><?php echo $response['robot_starting_position']; ?></p>
+                            <p id="role"><strong>Role: </strong><?php echo $response['robot_role']; ?></p>
+                            <p id="comments"><strong>Comments: </strong><?php echo $response['robot_comments']; ?></p>
+                        </div>
+                    <?php } ?>
+                </div>
+                <br />
+                <font style="color: #868686; float: right; font-size: 10pt;">Match Statistics</font>
+                <hr style="border-top: 1px solid #bbb">
                 <div class="table-wrapper table-responsive">
                     <!-- other stats will go here once they exist -->
                     <?php if ($teamType === "FTC") { ?>
@@ -106,56 +140,56 @@
 
     <?php if ($isAdmin && $isLoggedInTeam) { ?>
         <script type="text/javascript">
-            $(function() {
-                $(".editable").editable({
-                    pk: '<?php echo $teamNumber ?>',
-                    url: "/ajax-handlers/change-profile-ajax-submit.php",
-                    success: function(response, newVal) {
-                        if (response.indexOf("success") === -1) {
-                            showMessage(response, 'warning');
-                        }
-                        showMessage(newVal, "danger");
-                    }
-                });
+                        $(function() {
+                            $(".editable").editable({
+                                pk: '<?php echo $teamNumber ?>',
+                                url: "/ajax-handlers/change-profile-ajax-submit.php",
+                                success: function(response, newVal) {
+                                    if (response.indexOf("success") === -1) {
+                                        showMessage(response, 'warning');
+                                    }
+                                    showMessage(newVal, "danger");
+                                }
+                            });
 
-                var options = {
-                    beforeSend: function()
-                    {
-                        $("#progress").show();
-                        //clear everything
-                        $("#bar").width('0%');
-                        $("#message").html("");
-                        $("#percent").html("0%");
-                    },
-                    uploadProgress: function(event, position, total, percentComplete)
-                    {
-                        $("#percent").html('Uploading ' + percentComplete + '%');
+                            var options = {
+                                beforeSend: function()
+                                {
+                                    $("#progress").show();
+                                    //clear everything
+                                    $("#bar").width('0%');
+                                    $("#message").html("");
+                                    $("#percent").html("0%");
+                                },
+                                uploadProgress: function(event, position, total, percentComplete)
+                                {
+                                    $("#percent").html('Uploading ' + percentComplete + '%');
 
-                    },
-                    success: function(response)
-                    {
-                        $("#percent").html('Upload complete!');
-                        console.log("got a response: " + response);
-                        if (response === "Success") {
-                            location.reload();
-                        } else {
-                            showMessage(response, "danger");
-                        }
+                                },
+                                success: function(response)
+                                {
+                                    $("#percent").html('Upload complete!');
+                                    console.log("got a response: " + response);
+                                    if (response === "Success") {
+                                        location.reload();
+                                    } else {
+                                        showMessage(response, "danger");
+                                    }
 
-                    },
-                    complete: function(response)
-                    {
+                                },
+                                complete: function(response)
+                                {
 
-                    },
-                    error: function()
-                    {
+                                },
+                                error: function()
+                                {
 
-                    }
+                                }
 
-                };
+                            };
 
-                $("#submitTeamPicture").ajaxForm(options);
-            });
+                            $("#submitTeamPicture").ajaxForm(options);
+                        });
         </script>
     <?php } ?>
 

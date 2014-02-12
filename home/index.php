@@ -21,18 +21,18 @@
                 <?php } ?>
                 <?php if ($teamType === "FRC") { ?>
                     <button onclick='localStorage.clear();
-                                window.location = "scouting/match";' class="btn btn-lg btn-success btn-home-selections">Scout a Match</button>
+                            window.location = "scouting/match";' class="btn btn-lg btn-success btn-home-selections">Scout a Match</button>
                     <button onclick='window.location = "/teams";' class="btn btn-lg btn-success btn-home-selections">View Registered Teams</button>
 
                     <br /><br />
                     <font style="color: #868686; float: right; font-size: 10pt;">Results Tools</font>
                     <hr style="border-top: 1px solid #bbb">
-                <button onclick="window.location = '/team';" id="yourTeamProfile" class="btn btn-lg btn-info btn-home-selections"><?php if($isAdmin) { ?>Edit<?php } else { ?>Your<?php } ?> Team Profile</button>
+                    <button onclick="window.location = '/team';" id="yourTeamProfile" class="btn btn-lg btn-info btn-home-selections"><?php if ($isAdmin) { ?>Edit<?php } else { ?>Your<?php } ?> Team Profile</button>
                     <div style="display: inline;">
                         <div style="display: inline-table;">
                             <div style="display: table-row">
                                 <form onsubmit="goToTeamProfile();
-                                            return false;" style="display: inline;">
+                            return false;" style="display: inline;">
                                     <div style="display: table-cell">
 
                                         <input type="number" class="form-control" style="display: inline; height: 50px; border-radius: 6px; width: 175px; height: 48px; font-size: 18px; text-align: center; margin-right: 4px;" placeholder="Find Team Profile" id="searchForTeam">
@@ -67,68 +67,68 @@
         </div>
 
         <script type="text/javascript">
-            $('#authModal').on('shown.bs.modal', function() {
-                $('#adminPassword').focus();
-            })
+                    $('#authModal').on('shown.bs.modal', function() {
+                        $('#adminPassword').focus();
+                    })
 
-            $('#authModal').on('hidden.bs.modal', function() {
-                $("#authTitle").text("Authenticate as administrator");
-                $("#adminPassword").val('');
-            });
+                    $('#authModal').on('hidden.bs.modal', function() {
+                        $("#authTitle").text("Authenticate as administrator");
+                        $("#adminPassword").val('');
+                    });
 
-            if (localStorage.newAccount === "true") {
+                    if (localStorage.newAccount === "true") {
 
-                $("#optionAuthAsAdmin").popover({
-                    content: "<span style='color: rgb(182, 19, 0)'>Administrators can edit team profiles and passwords.</span>",
-                    trigger: 'hover',
-                    placement: 'top',
-                    html: "true"
-                });
-                
-                $("#yourTeamProfile").popover({
-                    content: "Team profiles contain general information and statistics about your team.",
-                    trigger: 'hover',
-                    placement: 'top',
-                    html: "true"
-                });
-                
-                $("#optionAuthAsAdmin").popover({
-                    content: "<span style='color: rgb(182, 19, 0)'>Administrators can edit team profiles and passwords.</span>",
-                    trigger: 'hover',
-                    placement: 'top',
-                    html: "true"
-                });
-                
-                $("#optionAuthAsAdmin").popover('show');
-                
-                localStorage.newAccount = undefined;
-            }
+                        $("#optionAuthAsAdmin").popover({
+                            content: "<span style='color: rgb(182, 19, 0)'>Administrators can edit team profiles and passwords.</span>",
+                            trigger: 'hover',
+                            placement: 'top',
+                            html: "true"
+                        });
 
-            
+                        $("#yourTeamProfile").popover({
+                            content: "Team profiles contain general information and statistics about your team.",
+                            trigger: 'hover',
+                            placement: 'top',
+                            html: "true"
+                        });
 
-            function goToTeamProfile() {
-                var otherTeamNumber = $("#searchForTeam").val();
-                if (otherTeamNumber == <?php echo $teamNumber ?>) {
-                    window.location = 'team-profile.php';
-                } else if (otherTeamNumber === "") {
-                    showMessage("Please enter a team number.", 'warning');
-                } else if (isNaN(otherTeamNumber)) {
-                    showMessage("That's not a number!", 'danger');
-                } else if (otherTeamNumber < 0) {
-                    showMessage("That's not a valid team number!", 'danger');
-                } else {
-                    window.location = '/team/' + otherTeamNumber;
-                }
-            }
+                        $("#optionAuthAsAdmin").popover({
+                            content: "<span style='color: rgb(182, 19, 0)'>Administrators can edit team profiles and passwords.</span>",
+                            trigger: 'hover',
+                            placement: 'top',
+                            html: "true"
+                        });
 
-            /*
-             * Called when a user decides that they were stupid and didn't
-             * in fact want to delete their match data, restores it from
-             * a localStorage array back as before
-             */
-            function restore() {
-                alert("This feature will be added soon");
-            }
+                        $("#optionAuthAsAdmin").popover('show');
+
+                        localStorage.newAccount = undefined;
+                    }
+
+
+
+                    function goToTeamProfile() {
+                        var otherTeamNumber = $("#searchForTeam").val();
+                        if (otherTeamNumber == <?php echo $teamNumber ?>) {
+                            window.location = 'team-profile.php';
+                        } else if (otherTeamNumber === "") {
+                            showMessage("Please enter a team number.", 'warning');
+                        } else if (isNaN(otherTeamNumber)) {
+                            showMessage("That's not a number!", 'danger');
+                        } else if (otherTeamNumber < 0) {
+                            showMessage("That's not a valid team number!", 'danger');
+                        } else {
+                            window.location = '/team/' + otherTeamNumber;
+                        }
+                    }
+
+                    /*
+                     * Called when a user decides that they were stupid and didn't
+                     * in fact want to delete their match data, restores it from
+                     * a localStorage array back as before
+                     */
+                    function restore() {
+                        alert("This feature will be added soon");
+                    }
         </script>  
     </body>
 </html>
