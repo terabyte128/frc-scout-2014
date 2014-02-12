@@ -24,22 +24,22 @@
                     <div style="display: inline-table;">
                         <div style="display: table-row;">
                             <div style="display: table-cell;">
-                                <button id="red1" class="btn btn-danger btn-lg btn-editable" data-emptytext="#1"></button>
+                                <label id="red1" class="btn btn-danger btn-lg btn-editable" data-emptytext="#1"></label>
                                 <br />
-                                <button id="red2" class="btn btn-danger btn-lg btn-editable" data-emptytext="#2"></button>
+                                <label id="red2" class="btn btn-danger btn-lg btn-editable" data-emptytext="#2"></label>
                                 <br />
-                                <button id="red3" class="btn btn-danger btn-lg btn-editable" data-emptytext="#3"></button>
+                                <label id="red3" class="btn btn-danger btn-lg btn-editable" data-emptytext="#3"></label>
                                 <br />
                             </div>
                             <div style="display: table-cell; padding-left: 15px; padding-right: 15px; vertical-align: middle; line-height: 10px;">
                                 <p style="font-size: 50px;">vs</p>
                             </div>
                             <div style="display: table-cell;">
-                                <button id="blue1" class="btn btn-blue-selection btn-lg btn-editable" data-emptytext="#1"></button>
+                                <label id="blue1" class="btn btn-blue-selection btn-lg btn-editable" data-emptytext="#1"></label>
                                 <br />
-                                <button id="blue2" class="btn btn-blue-selection btn-lg btn-editable" data-emptytext="#2"></button>
+                                <label id="blue2" class="btn btn-blue-selection btn-lg btn-editable" data-emptytext="#2"></label>
                                 <br />
-                                <button id="blue3" class="btn btn-blue-selection btn-lg btn-editable" data-emptytext="#3"></button>
+                                <label id="blue3" class="btn btn-blue-selection btn-lg btn-editable" data-emptytext="#3"></label>
                                 <br />
                             </div>
                         </div>
@@ -50,6 +50,9 @@
                     <div>
                         <button class="btn btn-lg btn-success" style="width: 288px;" onclick="compare()">Compare</button>
                     </div>
+                </div>
+                <div style='display:none;' id='showResults'>
+                    
                 </div>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
             </div>
@@ -65,15 +68,27 @@
                             function compare() {
                                 $("#selectAlliances").slideUp(200);
                                 redAlliance = [
-                                    $("#red1").text(),
-                                    $("#red2").text(),
-                                    $("#red3").text()
-                                ]
+                                    parseInt($("#red1").text()),
+                                    parseInt($("#red2").text()),
+                                    parseInt($("#red3").text())
+                                ];
                                 blueAlliance = [
-                                    $("#blue1").text(),
-                                    $("#blue2").text(),
-                                    $("#blue3").text()
-                                ]
+                                    parseInt($("#blue1").text()),
+                                    parseInt($("#blue2").text()),
+                                    parseInt($("#blue3").text())
+                                ];
+                                $.ajax({
+                                    url: '/ajax-handlers/compare-alliances-ajax-submit.php',
+                                    type: 'POST',
+                                    data: {
+                                        'redAlliance' : redAlliance,
+                                        'blueAlliance': blueAlliance
+                                    },
+                                    success: function(response, textStatus, jqXHR) {
+                                        $("#showResults").html(response);
+                                    }
+                                })
+                                $("#showResults").slideDown(200);
                             }
         </script>
     </body>

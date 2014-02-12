@@ -28,7 +28,7 @@
                     <hr style="border-top: 1px solid #bbb">
                     <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
                         <?php if ($isLoggedInTeam && $isAdmin) { ?>
-                            <a href="#" onclick="$('#submitTeamPicture').slideToggle(200); return false;">Change team picture</a>
+                            <a href="#" onclick="$('#submitTeamPicture').slideToggle(200);">Change team picture</a>
                             <form id="submitTeamPicture" action="../uploads/uploader.php" method="post" enctype="multipart/form-data" style="display: none;">                                
                                 <input class="form-control" type="file" size="60" name="teamPicture" value="Update team picture">
                                 <button class="form-control btn btn-sm" id="percent">Update</button>
@@ -42,16 +42,18 @@
                         <br />
                         <div>
                             <?php if ($isLoggedInTeam && $isAdmin) { ?>
-                                <a href="#" onclick="return false;" class="editable" style="font-size: 20pt; margin-bottom: 0px;" id="team_name" data-emptytext="Click to edit team name"><?php echo $response['team_name']; ?></a>
+                                <a href="#" class="editable" style="font-size: 20pt; margin-bottom: 0px;" id="team_name" data-emptytext="Click to edit team name"><?php echo $response['team_name']; ?></a>
                                 <br />
-                                <a href="#" onclick="return false;" class="editable" style="white-space: pre-wrap" data-type="textarea" id="description" data-emptytext="Click to edit team description"><?php echo $response['description']; ?></a>
+                                <a href="#" class="editable" style="white-space: pre-wrap" data-type="textarea" id="description" data-emptytext="Click to edit team description"><?php echo $response['description']; ?></a>
                                 <br />
                                 <br />
-                                <a href="#" onclick="return false;" class="editable" id="website" data-emptytext="Click to edit team website (do not enter http://)"><?php echo $response['website']; ?></a>
+                                <strong>Website: </strong><a href="#" class="editable" id="website" data-emptytext="Click to add (don't enter http://)"><?php echo $response['website']; ?></a>
                             <?php } else { ?>
                                 <p style="font-size: 20pt; margin-bottom: 0px;"><?php echo $response['team_name']; ?></p>
                                 <p style="white-space: pre-wrap"><?php echo $response['description']; ?></p>
-                                <a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a>
+                                <?php if (!empty($response['website'])) { ?>
+                                    <strong>Website: </strong><a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a>
+                                <?php } ?>
                             <?php } ?>
                         </div>
                     </div>
@@ -65,14 +67,14 @@
                     <?php if ($isAdmin && $isLoggedInTeam) { ?>
 
                         <p id="dimensions"><strong>Dimensions: </strong>
-                            <a href='#' id='robot_length' class="editable" onclick="return false;"><?php echo $response['robot_length']; ?></a> length x 
+                            <a href='#' id='robot_length' class="editable"><?php echo $response['robot_length']; ?></a> length x 
                             <a href='#' id='robot_width' class="editable"><?php echo $response['robot_width']; ?></a> width x 
                             <a href='#' id='robot_height' class="editable"><?php echo $response['robot_height']; ?></a> height
                         </p>
-                        <p id="weight"><strong>Weight: </strong><a href='#' id='robot_weight' class="editable" onclick="return false;"><?php echo $response['robot_weight']; ?></a></p>
-                        <p id="drivetrain"><strong>Drivetrain: </strong><a href='#' id='robot_drivetrain_type' class="editable" onclick="return false;"><?php echo $response['robot_drivetrain_type']; ?></a></p>
-                        <p id="wheelType"><strong>Wheel Type: </strong><a href='#' id='robot_wheel_type' class="editable" onclick="return false;"><?php echo $response['robot_wheel_type']; ?></a></p>
-                        <p id="shifters"><strong>Shifters: </strong><a href='#' id='robot_shifters' data-type="select" class="editable" onclick="return false;">
+                        <p id="weight"><strong>Weight: </strong><a href='#' id='robot_weight' class="editable"><?php echo $response['robot_weight']; ?></a></p>
+                        <p id="drivetrain"><strong>Drivetrain: </strong><a href='#' id='robot_drivetrain_type' class="editable"><?php echo $response['robot_drivetrain_type']; ?></a></p>
+                        <p id="wheelType"><strong>Wheel Type: </strong><a href='#' id='robot_wheel_type' class="editable"><?php echo $response['robot_wheel_type']; ?></a></p>
+                        <p id="shifters"><strong>Shifters: </strong><a href='#' id='robot_shifters' data-type="select" class="editable">
                                 <?php
                                 if ($response['robot_shifters'] === "0") {
                                     echo "No";
@@ -82,11 +84,11 @@
                                     echo "Choose an option";
                                 }
                                 ?></a></p>
-                        <p id="lowSpeed"><strong>Low Speed: </strong><a href='#' id='robot_low_speed' class="editable" onclick="return false;"><?php echo $response['robot_low_speed']; ?></a></p>
-                        <p id="highSpeed"><strong>High Speed: </strong><a href='#' id='robot_high_speed' class="editable" onclick="return false;"><?php echo $response['robot_high_speed']; ?></a></p>
-                        <p id="startingPosition"><strong>Starting Position: </strong><a href='#' id='robot_starting_position' class="editable" onclick="return false;"><?php echo $response['robot_starting_position']; ?></a></p>
-                        <p id="role"><strong>Role: </strong><a href='#' id='robot_role' class="editable" onclick="return false;"><?php echo $response['robot_role']; ?></a></p>
-                        <p id="comments"><strong>Comments: </strong><a href='#' id='robot_comments' class="editable" data-type="textarea" onclick="return false;"><?php echo $response['robot_comments']; ?></a></p>
+                        <p id="lowSpeed"><strong>Low Speed: </strong><a href='#' id='robot_low_speed' class="editable"><?php echo $response['robot_low_speed']; ?></a></p>
+                        <p id="highSpeed"><strong><span id='highText' style='display:inline;'><?php if ($response['robot_shifters'] === "1") { ?>High&nbsp;<?php } ?></span>Speed: </strong><a href='#' id='robot_high_speed' class="editable"><?php echo $response['robot_high_speed']; ?></a></p>
+                        <p id="startingPosition"><strong>Starting Position: </strong><a href='#' id='robot_starting_position' class="editable"><?php echo $response['robot_starting_position']; ?></a></p>
+                        <p id="role"><strong>Role: </strong><a href='#' id='robot_role' class="editable"><?php echo $response['robot_role']; ?></a></p>
+                        <p id="comments"><strong>Comments: </strong><a href='#' id='robot_comments' class="editable" data-type="textarea"><?php echo $response['robot_comments']; ?></a></p>
 
                     <?php } else { ?>
                         <div>
@@ -109,7 +111,7 @@
                                 <p id="lowSpeed"><strong>Low Speed: </strong><?php echo $response['robot_low_speed']; ?></p>
                             <?php } ?>
                             <?php if (!empty($response['robot_high_speed'])) { ?>
-                                <p id="highSpeed"><strong>High Speed: </strong><?php echo $response['robot_high_speed']; ?></p>
+                                <p id="highSpeed"><strong><?php if ($response['robot_shifters'] === "1") { ?>High <?php } ?>Speed: </strong><?php echo $response['robot_high_speed']; ?></p>
                             <?php } ?>
                             <?php if (!empty($response['robot_starting_position'])) { ?>
                                 <p id="startingPosition"><strong>Starting Position: </strong><?php echo $response['robot_starting_position']; ?></p>
@@ -174,82 +176,85 @@
 
 
 
-                    $(function() {
+            $(function() {
 
-                        if ("<?php echo $response['robot_shifters']; ?>" === "1") {
+                if ("<?php echo $response['robot_shifters']; ?>" === "1") {
+                    $("#lowSpeed").show(100);
+                } else {
+                    $("#lowSpeed").hide();
+                }
+
+                $("#robot_shifters").editable({
+                    value: null,
+                    source: [
+                        {value: 0, text: 'No'},
+                        {value: 1, text: 'Yes'}
+                    ],
+                    showbuttons: false,
+                    pk: '<?php echo $teamNumber ?>',
+                    url: "/ajax-handlers/change-profile-ajax-submit.php",
+                    success: function(response, newVal) {
+                        if (response.indexOf("success") === -1) {
+                            showMessage(response, 'warning');
+                        }
+                        if (newVal === "1") {
                             $("#lowSpeed").show(100);
+                            $("#highText").show(100);
                         } else {
-                            $("#lowSpeed").hide();
+                            $("#lowSpeed").hide(100);
+                            $("#highText").hide(100);
+                        }
+                    }
+                });
+
+                $(".editable").editable({
+                    pk: '<?php echo $teamNumber ?>',
+                    url: "/ajax-handlers/change-profile-ajax-submit.php",
+                    success: function(response, newVal) {
+                        if (response.indexOf("success") === -1) {
+                            showMessage(response, 'warning');
+                        }
+                        console.log(newVal);
+                    }
+                });
+                var options = {
+                    beforeSend: function()
+                    {
+                        $("#progress").show();
+                        //clear everything
+                        $("#bar").width('0%');
+                        $("#message").html("");
+                        $("#percent").html("0%");
+                    },
+                    uploadProgress: function(event, position, total, percentComplete)
+                    {
+                        $("#percent").html('Uploading ' + percentComplete + '%');
+
+                    },
+                    success: function(response)
+                    {
+                        $("#percent").html('Upload complete!');
+                        console.log("got a response: " + response);
+                        if (response === "Success") {
+                            location.reload();
+                        } else {
+                            showMessage(response, "danger");
                         }
 
-                        $("#robot_shifters").editable({
-                            value: null,
-                            source: [
-                                {value: 0, text: 'No'},
-                                {value: 1, text: 'Yes'}
-                            ],
-                            pk: '<?php echo $teamNumber ?>',
-                            url: "/ajax-handlers/change-profile-ajax-submit.php",
-                            success: function(response, newVal) {
-                                if (response.indexOf("success") === -1) {
-                                    showMessage(response, 'warning');
-                                }
-                                if (newVal === "1") {
-                                    $("#lowSpeed").show(100);
-                                } else {
-                                    $("#lowSpeed").hide(100);
-                                }
-                            }
-                        });
+                    },
+                    complete: function(response)
+                    {
 
-                        $(".editable").editable({
-                            pk: '<?php echo $teamNumber ?>',
-                            url: "/ajax-handlers/change-profile-ajax-submit.php",
-                            success: function(response, newVal) {
-                                if (response.indexOf("success") === -1) {
-                                    showMessage(response, 'warning');
-                                }
-                                console.log(newVal);
-                            }
-                        });
-                        var options = {
-                            beforeSend: function()
-                            {
-                                $("#progress").show();
-                                //clear everything
-                                $("#bar").width('0%');
-                                $("#message").html("");
-                                $("#percent").html("0%");
-                            },
-                            uploadProgress: function(event, position, total, percentComplete)
-                            {
-                                $("#percent").html('Uploading ' + percentComplete + '%');
+                    },
+                    error: function()
+                    {
 
-                            },
-                            success: function(response)
-                            {
-                                $("#percent").html('Upload complete!');
-                                console.log("got a response: " + response);
-                                if (response === "Success") {
-                                    location.reload();
-                                } else {
-                                    showMessage(response, "danger");
-                                }
+                    }
 
-                            },
-                            complete: function(response)
-                            {
+                };
 
-                            },
-                            error: function()
-                            {
-
-                            }
-
-                        };
-
-                        $("#submitTeamPicture").ajaxForm(options);
-                    });
+                $("#submitTeamPicture").ajaxForm(options);
+            });
         </script>
     <?php } ?>
 
