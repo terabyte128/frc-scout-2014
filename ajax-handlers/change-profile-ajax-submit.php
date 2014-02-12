@@ -11,7 +11,7 @@ robot_weight' class="editable"><?php echo $response['robot_weight']; ?></a></p>
                         <p id="role"><strong>Role: </strong><a href='#' id='robot_role' class="editable"><?php echo $response['robot_role']; ?></a></p>
                         <p id="comments"><strong>Comments: </strong><a href='#' id='robot_comments'/>*/
 
-$whitelist = array('team_name', 'description', 'website', 'robot_weight', 
+$whitelist = array('team_name', 'description', 'website', 'robot_height', 'robot_width', 'robot_length', 'robot_weight', 
     'robot_drivetrain_type', 'robot_wheel_type','robot_shifters', 'robot_low_speed',
     'robot_high_speed', 'robot_starting_position', 'robot_role', 'robot_comments');
 
