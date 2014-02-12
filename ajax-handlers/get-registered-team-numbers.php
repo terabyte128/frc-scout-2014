@@ -42,11 +42,11 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
     echo "<td>";
     echo $row['team_name'];
     echo '</td>';
-    echo "<td>";
-    echo "<a target=\"blank\" href=\"http://" . $row['website'] . "\">";
-    echo $row['website'];
-    echo "</a>";
-    echo '</td>';
+//    echo "<td>";
+//    echo "<a target=\"blank\" href=\"http://" . $row['website'] . "\">";
+//    echo $row['website'];
+//    echo "</a>";
+//    echo '</td>';
     echo '</tr>';
 }
 ?>

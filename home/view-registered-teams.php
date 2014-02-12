@@ -28,7 +28,6 @@
                                 <tr>
                                     <th>Team Number</th>
                                     <th>Name</th>
-                                    <th>Website</th>
                                 </tr>
                             </thead>
                             <tbody id="teamBody">

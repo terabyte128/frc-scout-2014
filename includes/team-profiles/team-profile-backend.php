@@ -105,7 +105,7 @@
                             <?php if ($response['robot_shifters'] !== null) { ?>
                                 <p id="shifters"><strong>Shifters: </strong><?php echo $response['robot_shifters'] === "1" ? "Yes" : "No"; ?></p>
                             <?php } ?>
-                            <?php if (!empty($response['robot_low_speed']) && $response['robot_shifters'] !== "1") { ?>
+                            <?php if (!empty($response['robot_low_speed']) && $response['robot_shifters'] === "1") { ?>
                                 <p id="lowSpeed"><strong>Low Speed: </strong><?php echo $response['robot_low_speed']; ?></p>
                             <?php } ?>
                             <?php if (!empty($response['robot_high_speed'])) { ?>
@@ -118,7 +118,7 @@
                                 <p id="role"><strong>Role: </strong><?php echo $response['robot_role']; ?></p>
                             <?php } ?>
                             <?php if (!empty($response['robot_comments'])) { ?>
-                                <p id="comments"><strong>Comments: </strong><?php echo $response['robot_comments']; ?></p>
+                                <p id="comments" style="white-space: pre-wrap;"><strong>Comments: </strong><?php echo $response['robot_comments']; ?></p>
                             <?php } ?>
                         </div>
                     <?php } ?>
