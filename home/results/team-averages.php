@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>Team Averages</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/headers.php'; ?>
         <!-- choose a theme file -->
         <link rel="stylesheet" href="/css/theme.default.css">
@@ -30,10 +30,10 @@
                     </div><br /><br />
                     <div class="btn-group" data-toggle="buttons" id="matchOutcome">
                         <label>View data from:</label><br />
-                        <label class="btn btn-default active" style="width: 130px;" id="here" onclick="setFilterHash('everywhere', 'here');">
+                        <label class="btn btn-default active" style="width: 130px;" id="here" onclick="setFilterHash('global', 'here');">
                             <input type="radio">Here<!--<?php echo $location; ?>-->
                         </label>
-                        <label class="btn btn-default" style="width: 130px;" id="everywhere" onclick="setFilterHash('here', 'everywhere');">
+                        <label class="btn btn-default" style="width: 130px;" id="global" onclick="setFilterHash('here', 'global');">
                             <input type="radio">Everywhere
                         </label>
                     </div>
@@ -60,24 +60,23 @@
         <script type="text/javascript">
             $(function() {
                 if (window.location.hash.indexOf("only") !== -1) {
-                    if (window.location.hash.indexOf("everywhere") !== -1) {
-                        loadTable(true, false);
-                        $("#here").removeClass("active");
-                        $("#everywhere").addClass("active");
-                    } else {
-                        loadTable(true, true);
-                    }
-                    $("#all").removeClass("active");
+                    onlyUs = true;
                     $("#only").addClass("active");
+                    $("#all").removeClass("active");
                 } else {
-                    if (window.location.hash.indexOf("everywhere") !== -1) {
-                        loadTable(false, false);
-                        $("#here").removeClass("active");
-                        $("#everywhere").addClass("active");
-                    } else {
-                        loadTable(false, true);
-                    }
+                    onlyUs = false;
                 }
+                if (window.location.hash.indexOf("global") !== -1) {
+                    onlyHere = false;
+                    $("#global").addClass("active");
+                    $("#here").removeClass("active");
+                } else {
+                    onlyHere = true;
+                }
+                loadTable(onlyUs, onlyHere);
+                $("#averagesTable").tablesorter({
+                    sortForce: [[1, 1]]
+                });
             });
 
             var setFilterHash = function(thingToChange, thingToChangeTo) {
@@ -85,7 +84,7 @@
                     window.location.hash = window.location.hash.replace(thingToChange, thingToChangeTo);
                 } else if (window.location.hash.indexOf(thingToChangeTo) === -1) {
                     if (window.location.hash === "") {
-                        window.location.hash = window.location.hash + thingToChangeTo;
+                        window.location.hash = thingToChangeTo;
                     } else {
                         window.location.hash = window.location.hash + "," + thingToChangeTo;
                     }
@@ -94,18 +93,16 @@
 
             window.onhashchange = function() {
                 if (window.location.hash.indexOf("only") !== -1) {
-                    if (window.location.hash.indexOf("everywhere") !== -1) {
-                        loadTable(true, false);
-                    } else {
-                        loadTable(true, true);
-                    }
+                    onlyUs = true;
                 } else {
-                    if (window.location.hash.indexOf("everywhere") !== -1) {
-                        loadTable(false, false);
-                    } else {
-                        loadTable(false, true);
-                    }
+                    onlyUs = false;
                 }
+                if (window.location.hash.indexOf("global") !== -1) {
+                    onlyHere = false;
+                } else {
+                    onlyHere = true;
+                }
+                loadTable(onlyUs, onlyHere);
             };
 
 
@@ -118,11 +115,11 @@
                     },
                     success: function(response) {
                         $("#tableBody").html(response);
-                        $("#averagesTable").tablesorter({
-                            sortList: [[1, 1]]
-                        });
+                        $("#averagesTable").trigger("update");
+                        var sorting = [[1,1]];
+                        $("#averagesTable").trigger("sorton", [sorting]);
                     }
-                })
+                });
             }
         </script>
     </body>
