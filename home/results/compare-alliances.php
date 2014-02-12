@@ -19,6 +19,12 @@
                 border-color: rgb(0, 82, 255);
                 color: white;
             }
+            .red {
+                color: #d2322d;
+            }
+            .blue {
+                color: rgb(0, 82, 255);
+            }
         </style>
         <div class="wrapper">
             <div class="container" style="border-left: 5px solid #d2322d; border-right: 5px solid rgb(0, 82, 255);">
@@ -54,11 +60,13 @@
 
                     </div>
                     <div>
-                        <button id="compareButton" class="btn btn-lg btn-success" style="width: 288px;" onclick="compare()">Compare</button>
+                        <button data-toggle="button" class="btn btn-lg btn-default" id="onlyHere" style="width: 278px;">Only <?php echo $location ?></button><br /><br />
+                        <button id="compareButton" class="btn btn-lg btn-success" style="width: 278px;" onclick="compare()">Compare Alliances</button>
                     </div>
                 </div>
                 <div style='display:none;' id='showResults'>
-
+                    <div id='resultsHolder'></div>
+                    <br /><button id="resetButton" class="btn btn-success" style="width: 150px;" onclick="reset()">Compare Again</button>
                 </div>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
             </div>
@@ -69,42 +77,69 @@
              type: 'number'
              });*/
 
+            var onlyHere = false;
+
             $(".btn-editable").focus(function() {
                 this.select();
+            });
+
+            $("#onlyHere").click(function() {
+                onlyHere = !onlyHere;
             });
 
             var redAlliance, blueAlliance;
 
             function compare() {
-                if ($("input").val() === "") {
+                var nope = false;
+                redAlliance = [
+                    parseInt($("#red1").val()),
+                    parseInt($("#red2").val()),
+                    parseInt($("#red3").val())
+                ];
+                blueAlliance = [
+                    parseInt($("#blue1").val()),
+                    parseInt($("#blue2").val()),
+                    parseInt($("#blue3").val())
+                ];
+                // why doesn't this work wtf
+                for (var i in redAlliance) {
+                    if (isNaN(i)) {
+                        nope = true;
+                    }
+                }
+                for (var i in blueAlliance) {
+                    if (isNaN(i)) {
+                        nope = true;
+                    }
+                }
+                if (nope) {
                     showMessage("You must enter six teams!", "danger");
                 } else {
                     $("#compareButton").button("loading");
-                    redAlliance = [
-                        parseInt($("#red1").val()),
-                        parseInt($("#red2").val()),
-                        parseInt($("#red3").val())
-                    ];
-                    blueAlliance = [
-                        parseInt($("#blue1").val()),
-                        parseInt($("#blue2").val()),
-                        parseInt($("#blue3").val())
-                    ];
                     $.ajax({
                         url: '/ajax-handlers/compare-alliances-ajax-submit.php',
                         type: 'POST',
                         data: {
                             'redAlliance': redAlliance,
-                            'blueAlliance': blueAlliance
+                            'blueAlliance': blueAlliance,
+                            'onlyHere': onlyHere
                         },
                         success: function(response, textStatus, jqXHR) {
-                            $("#showResults").html(response);
+                            $("#resultsHolder").html(response);
                         }
-                    })
+                    });
                     $("#selectAlliances").slideUp(200, function() {
                         $("#showResults").slideDown(200);
                     });
                 }
+            }
+
+            function reset() {
+                $("#compareButton").button("reset");
+                $("input").text("");
+                $("#showResults").slideUp(200, function() {
+                    $("#selectAlliances").slideDown(200);
+                });
             }
         </script>
     </body>
