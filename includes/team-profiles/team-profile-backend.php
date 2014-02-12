@@ -128,12 +128,14 @@
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Match Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
-                <div class="table-wrapper table-responsive">
+                <!--<div class="table-wrapper table-responsive">-->
+                <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
                     <!-- other stats will go here once they exist -->
                     <?php if ($teamType === "FTC") { ?>
                         <!-- ftc stuff, I don't really know how the game works, whoops --> 
                     <?php } ?>
                     <?php if ($teamType === "FRC") { ?>
+                        <!--
                         <table class="table table-striped table-bordered table-hover tablesorter" id="tablesorter">
                             <thead>
                             <th>Event</th>
@@ -147,6 +149,8 @@
 
                             </tbody>
                         </table>
+                        -->
+                        <p><strong>Attendance Rate: </strong><?php echo $stats['attendance']; ?>%</p>
                     <?php } ?>
                 </div>
                 <br />
