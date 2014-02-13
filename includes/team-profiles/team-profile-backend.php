@@ -6,7 +6,9 @@
         <?php } else { ?>
             <title>Team <?php echo $otherTeamNumber; ?>'s Profile</title>
         <?php } ?>
-        <?php include '../includes/headers.php'; ?>
+        <?php
+        include $_SERVER['DOCUMENT_ROOT'] . '/includes/headers.php';
+        ?>
         <!-- choose a theme file -->
         <link rel="stylesheet" href="/css/theme.default.css">
         <!-- load jQuery and tablesorter scripts -->
@@ -150,7 +152,19 @@
                             </tbody>
                         </table>
                         -->
-                        <p><strong>Attendance Rate: </strong><?php echo $stats['attendance']; ?>%</p>
+                        <h3>Percentages</h3>
+                        <ul>
+                            <li><strong>Attendance Rate: </strong><?php echo $stats['attendance']; ?>%</li>
+                            <li><strong>Teleop Goal Scoring Rate: </strong><?php echo $stats['percentageOfShotsMade']; ?>%</li>
+                        </ul>
+
+                        <h3>Averages</h3>
+                        <ul>
+                            <li><strong>Teleop High Goals: </strong><?php echo $averageGoals['teleAverageHigh']; ?></li>
+                            <li><strong>Teleop Low Goals: </strong><?php echo $averageGoals['teleAverageLow']; ?></li>
+                            <li><strong>Teleop Truss Throws: </strong><?php echo $averageGoals['teleTrussThrow']; ?></li>
+                            <li><strong>Teleop Truss Catches: </strong><?php echo $averageGoals['teleTrussCatch']; ?></li>
+                        </ul>
                     <?php } ?>
                 </div>
                 <br />
@@ -180,85 +194,85 @@
 
 
 
-            $(function() {
+                    $(function() {
 
-                if ("<?php echo $response['robot_shifters']; ?>" === "1") {
-                    $("#lowSpeed").show(100);
-                } else {
-                    $("#lowSpeed").hide();
-                }
-
-                $("#robot_shifters").editable({
-                    value: null,
-                    source: [
-                        {value: 0, text: 'No'},
-                        {value: 1, text: 'Yes'}
-                    ],
-                    showbuttons: false,
-                    pk: '<?php echo $teamNumber ?>',
-                    url: "/ajax-handlers/change-profile-ajax-submit.php",
-                    success: function(response, newVal) {
-                        if (response.indexOf("success") === -1) {
-                            showMessage(response, 'warning');
-                        }
-                        if (newVal === "1") {
+                        if ("<?php echo $response['robot_shifters']; ?>" === "1") {
                             $("#lowSpeed").show(100);
-                            $("#highText").show(100);
                         } else {
-                            $("#lowSpeed").hide(100);
-                            $("#highText").hide(100);
-                        }
-                    }
-                });
-
-                $(".editable").editable({
-                    pk: '<?php echo $teamNumber ?>',
-                    url: "/ajax-handlers/change-profile-ajax-submit.php",
-                    success: function(response, newVal) {
-                        if (response.indexOf("success") === -1) {
-                            showMessage(response, 'warning');
-                        }
-                        console.log(newVal);
-                    }
-                });
-                var options = {
-                    beforeSend: function()
-                    {
-                        $("#progress").show();
-                        //clear everything
-                        $("#bar").width('0%');
-                        $("#message").html("");
-                        $("#percent").html("0%");
-                    },
-                    uploadProgress: function(event, position, total, percentComplete)
-                    {
-                        $("#percent").html('Uploading ' + percentComplete + '%');
-
-                    },
-                    success: function(response)
-                    {
-                        $("#percent").html('Upload complete!');
-                        console.log("got a response: " + response);
-                        if (response === "Success") {
-                            location.reload();
-                        } else {
-                            showMessage(response, "danger");
+                            $("#lowSpeed").hide();
                         }
 
-                    },
-                    complete: function(response)
-                    {
+                        $("#robot_shifters").editable({
+                            value: null,
+                            source: [
+                                {value: 0, text: 'No'},
+                                {value: 1, text: 'Yes'}
+                            ],
+                            showbuttons: false,
+                            pk: '<?php echo $teamNumber ?>',
+                            url: "/ajax-handlers/change-profile-ajax-submit.php",
+                            success: function(response, newVal) {
+                                if (response.indexOf("success") === -1) {
+                                    showMessage(response, 'warning');
+                                }
+                                if (newVal === "1") {
+                                    $("#lowSpeed").show(100);
+                                    $("#highText").show(100);
+                                } else {
+                                    $("#lowSpeed").hide(100);
+                                    $("#highText").hide(100);
+                                }
+                            }
+                        });
 
-                    },
-                    error: function()
-                    {
+                        $(".editable").editable({
+                            pk: '<?php echo $teamNumber ?>',
+                            url: "/ajax-handlers/change-profile-ajax-submit.php",
+                            success: function(response, newVal) {
+                                if (response.indexOf("success") === -1) {
+                                    showMessage(response, 'warning');
+                                }
+                                console.log(newVal);
+                            }
+                        });
+                        var options = {
+                            beforeSend: function()
+                            {
+                                $("#progress").show();
+                                //clear everything
+                                $("#bar").width('0%');
+                                $("#message").html("");
+                                $("#percent").html("0%");
+                            },
+                            uploadProgress: function(event, position, total, percentComplete)
+                            {
+                                $("#percent").html('Uploading ' + percentComplete + '%');
 
-                    }
+                            },
+                            success: function(response)
+                            {
+                                $("#percent").html('Upload complete!');
+                                console.log("got a response: " + response);
+                                if (response === "Success") {
+                                    location.reload();
+                                } else {
+                                    showMessage(response, "danger");
+                                }
 
-                };
+                            },
+                            complete: function(response)
+                            {
 
-                $("#submitTeamPicture").ajaxForm(options);
-            });
+                            },
+                            error: function()
+                            {
+
+                            }
+
+                        };
+
+                        $("#submitTeamPicture").ajaxForm(options);
+                    });
         </script>
     <?php } ?>
 

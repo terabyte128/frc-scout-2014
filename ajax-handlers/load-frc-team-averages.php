@@ -1,5 +1,9 @@
 <?php
 
+if ($_REQUEST['writeTable'] === "true") {
+    $writeTable = true;
+}
+
 if ($_REQUEST['onlyLoggedInTeam'] === "true") {
     $onlyLoggedInTeam = true;
 } else {
@@ -10,6 +14,10 @@ if ($_REQUEST['onlyThisLocation'] === "true") {
     $onlyThisLocation = true;
 } else {
     $onlyThisLocation = false;
+}
+
+if (isset($_REQUEST['scoutedTeam'])) {
+    $scoutedTeamNumber = $_REQUEST['scoutedTeam'];
 }
 
 $docRoot = $_SERVER['DOCUMENT_ROOT'];
@@ -46,7 +54,19 @@ if ($onlyThisLocation) {
     }
     $queryString .= 'location=?';
     array_push($params, $location);
+    if (isset($scoutedTeamNumber)) {
+        $queryString .= ' AND ';
+    }
 }
+
+if (isset($scoutedTeamNumber)) {
+    if (!$onlyThisLocation) {
+        $queryString .= ' WHERE ';
+    }
+    $queryString .= 'scouted_team=?';
+    array_push($params, $scoutedTeamNumber);
+}
+
 
 $queryString .= ' GROUP BY `scouted_team`';
 
@@ -57,21 +77,25 @@ try {
     print_r($e->getMessage());
 }
 
-while ($results = $query->fetch(PDO::FETCH_ASSOC)) {
+if ($writeTable) {
+    while ($averages = $query->fetch(PDO::FETCH_ASSOC)) {
 //write the table in PHP instead of HTML
-    echo "<tr>";
-    echo "<td><a href=\"/team/" . $results['scouted_team'] . "\">";
-    echo $results['scouted_team'];
-    echo "</a></td>";
-    echo "<td>";
-    echo $results['total_points'];
-    echo "</td>";
-    echo "<td>";
-    echo $results['auto_points'];
-    echo "</td>";
-    echo "<td>";
-    echo $results['tele_points'];
-    echo "</td>";
-    echo "</tr>";
+        echo "<tr>";
+        echo "<td><a href=\"/team/" . $averages['scouted_team'] . "\">";
+        echo $averages['scouted_team'];
+        echo "</a></td>";
+        echo "<td>";
+        echo $averages['total_points'];
+        echo "</td>";
+        echo "<td>";
+        echo $averages['auto_points'];
+        echo "</td>";
+        echo "<td>";
+        echo $averages['tele_points'];
+        echo "</td>";
+        echo "</tr>";
+    }
+} else {
+    $averages = $query->fetch(PDO::FETCH_ASSOC);
 }
 ?>

@@ -110,7 +110,7 @@
 
             function loadTable(onlyLoggedInTeam, onlyThisLocation) {
                 $.ajax({
-                    url: '/ajax-handlers/load-team-averages.php',
+                    url: '/ajax-handlers/load-frc-team-averages.php',
                     data: {
                         'onlyLoggedInTeam': onlyLoggedInTeam,
                         'onlyThisLocation': onlyThisLocation
