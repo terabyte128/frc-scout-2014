@@ -14,7 +14,7 @@
         <div class="wrapper">
             <div class="container">
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
-                <h2>Team Averages</h2>
+                <h2><img id="loading" src="/images/loading.gif" style="height: 24px; vertical-align: initial; display: none;"> Team Averages</h2>
                 <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
                 <br />
                 <a href="#" onclick="$('#filterOptions').slideToggle(200);
@@ -69,7 +69,7 @@
                         } else {
                             onlyUs = false;
                         }
-                        if (window.location.hash.indexOf("global") === -1) {
+                        if (window.location.hash.indexOf("here") !== -1) {
                             onlyHere = true;
                             $("#global").removeClass("active");
                             $("#here").addClass("active");
@@ -110,6 +110,7 @@
 
 
                     function loadTable(onlyLoggedInTeam, onlyThisLocation) {
+                        $("#loading").show();
                         $.ajax({
                             url: '/ajax-handlers/load-frc-team-averages.php',
                             data: {
@@ -117,6 +118,7 @@
                                 'onlyThisLocation': onlyThisLocation
                             },
                             success: function(response) {
+                                $("#loading").hide();
                                 $("#tableBody").html(response);
                                 $("#averagesTable").trigger("update");
                                 var sorting = [[1, 1]];
