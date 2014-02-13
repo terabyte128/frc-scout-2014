@@ -102,54 +102,46 @@ echo '<br /><a href="#" onclick="$(\'#breakdown\').slideToggle(200);"><strong>Vi
 
 # score breakdown
 echo '<div style="display:none;" id="breakdown">';
-# red alliance div
-echo '<div style="display:inline-block; padding: 10px;">';
-echo '<span style="color: #d2322d; font-size:20pt;"><strong><em>Red Alliance</em></strong></span><br />';
-echo '<table class="table table-striped table-bordered table-hover"><thead><th></th>';
+#echo '<div style="display:inline-block; padding: 10px;">';
+#echo '<span style="color: #d2322d; font-size:20pt;"><strong><em>Red Alliance</em></strong></span><br />';
+echo '<table style="max-width: 500px; margin: auto;" class="table table-striped table-bordered table-hover tablesorter"><thead>';
 # team names
 foreach ($redAllianceResults as $value) {
-    echo '<th><span style="color: #d2322d;"><strong>' . $value['scouted_team'] . '</strong></span></th>';
+    echo '<th style="text-align:right; max-width: 66px;"><span class="red"><strong>' . $value['scouted_team'] . '</strong></span></th>';
+}
+echo '<th style="width: 100px;"></th>';
+foreach ($blueAllianceResults as $value) {
+    echo '<th style="text-align:left; max-width: 66px;"><span class="blue"><strong>' . $value['scouted_team'] . '</strong></span></th>';
 }
 # auto points
-echo '</thead><tbody><tr><td style="text-align: right;">Auto Points</td>';
+echo '</thead><tbody><tr>';
 foreach ($redAllianceResults as $value) {
     echo '<td>' . $value['auto_points'] . '</td>';
 }
-# tele points
-echo '<tr><td style="text-align: right;">Tele Points</td>';
-foreach ($redAllianceResults as $value) {
-    echo '<td>' . $value['tele_points'] . '</td>';
-}
-# total points
-echo '<tr><td style="text-align: right;"><strong>Total Points</strong></td>';
-foreach ($redAllianceResults as $value) {
-    echo '<td>' . $value['total_points'] . '</td>';
-}
-echo '</tbody></table></div>';
-
-# blue alliance div
-echo '<div style="display:inline-block; padding: 10px;"><span style="color: rgb(0, 82, 255); font-size:20pt;"><strong><em>Blue Alliance</em></strong></span><br />';
-echo '<table class="table table-striped table-bordered table-hover"><thead><th></th>';
-# team names
-foreach ($blueAllianceResults as $value) {
-    echo '<th><span style="color: rgb(0, 82, 255);"><strong>' . $value['scouted_team'] . '</strong></span></th>';
-}
-# auto points
-echo '</thead><tbody><tr><td style="text-align: right;">Auto Points</td>';
+echo '<td style="text-align: center;">Auto Points</td>';
 foreach ($blueAllianceResults as $value) {
     echo '<td>' . $value['auto_points'] . '</td>';
 }
+echo '</tr>';
 # tele points
-echo '<tr><td style="text-align: right;">Tele Points</td>';
+echo '<tr>';
+foreach ($redAllianceResults as $value) {
+    echo '<td>' . $value['tele_points'] . '</td>';
+}
+echo '<td style="text-align: center;">Tele Points</td>';
 foreach ($blueAllianceResults as $value) {
     echo '<td>' . $value['tele_points'] . '</td>';
 }
+echo '</tr>';
 # total points
-echo '<tr><td style="text-align: right;"><strong>Total Points</strong></td>';
+echo '<tr>';
+foreach ($redAllianceResults as $value) {
+    echo '<td>' . $value['total_points'] . '</td>';
+}
+echo '<td style="text-align: center;"><strong>Total Points</strong></td>';
 foreach ($blueAllianceResults as $value) {
     echo '<td>' . $value['total_points'] . '</td>';
 }
+echo '</tr>';
 echo '</tbody></table></div>';
-# end score breakdown
-echo '</div>';
 ?>
