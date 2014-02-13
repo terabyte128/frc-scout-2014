@@ -41,7 +41,7 @@
             <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authModal').modal('show'); return false;" class='footer-right'>Authenticate as administrator</a>
             </span>
         <?php } else { ?>
-            <span><a href="#" id="optionDeauthAsAdmin" onclick="logoutAdmin(); return false;" class='footer-right'>De-authenticate as administrator</a>
+            <span><a href="#" id="optionDeauthAsAdmin" onclick="logoutAdmin();" class='footer-right'>De-authenticate as administrator</a>
             </span>
             <?php
         }
