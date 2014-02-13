@@ -30,11 +30,11 @@
                     </div><br /><br />
                     <div class="btn-group" data-toggle="buttons" id="matchOutcome">
                         <label>View data from:</label><br />
-                        <label class="btn btn-default active" style="width: 130px;" id="here" onclick="setFilterHash('global', 'here');">
-                            <input type="radio">Here<!--<?php echo $location; ?>-->
-                        </label>
-                        <label class="btn btn-default" style="width: 130px;" id="global" onclick="setFilterHash('here', 'global');">
+                        <label class="btn btn-default active" style="width: 130px;" id="global" onclick="setFilterHash('here', 'global');">
                             <input type="radio">Everywhere
+                        </label>                        
+                        <label class="btn btn-default" style="width: 130px;" id="here" onclick="setFilterHash('global', 'here');">
+                            <input type="radio">Only Here<!--<?php echo $location; ?>-->
                         </label>
                     </div>
                     <br />
@@ -68,13 +68,13 @@
                 } else {
                     onlyUs = false;
                 }
-                if (window.location.hash.indexOf("global") !== -1) {
+                if (window.location.hash.indexOf("global") === -1) {
                     onlyHere = false;
                     $("#global").addClass("active");
                     $("#here").removeClass("active");
                 } else {
                     onlyHere = true;
-                }
+;                }
                 loadTable(onlyUs, onlyHere);
                 $("#averagesTable").tablesorter({
                     sortForce: [[1, 1]]

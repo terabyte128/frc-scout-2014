@@ -72,6 +72,7 @@
                         loadPageWithMessage("#prematch", "Match data submitted.", "success");
                     }
                 } else {
+                    //showMessage(response, "danger");
                     showMessage("You must start scouting from the beginning of the match. <a href='#prematch' onclick='hideMessage();'>Go there.</a>", "danger");
                 }
             }
