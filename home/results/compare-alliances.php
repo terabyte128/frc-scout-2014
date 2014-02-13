@@ -91,6 +91,13 @@
 
             function compare() {
                 var nope = false;
+                // fine we'll do it the hard way
+                if (isNaN(parseInt($("#red1").val()))) nope = true;
+                if (isNaN(parseInt($("#red2").val()))) nope = true;
+                if (isNaN(parseInt($("#red3").val()))) nope = true;
+                if (isNaN(parseInt($("#blue1").val()))) nope = true;
+                if (isNaN(parseInt($("#blue2").val()))) nope = true;
+                if (isNaN(parseInt($("#blue3").val()))) nope = true;
                 redAlliance = [
                     parseInt($("#red1").val()),
                     parseInt($("#red2").val()),
@@ -101,19 +108,8 @@
                     parseInt($("#blue2").val()),
                     parseInt($("#blue3").val())
                 ];
-                // why doesn't this work wtf
-                for (var i in redAlliance) {
-                    if (isNaN(i)) {
-                        nope = true;
-                    }
-                }
-                for (var i in blueAlliance) {
-                    if (isNaN(i)) {
-                        nope = true;
-                    }
-                }
                 if (nope) {
-                    showMessage("You must enter six teams!", "danger");
+                    showMessage("You must enter six team numbers!", "danger");
                 } else {
                     $("#compareButton").button("loading");
                     $.ajax({
@@ -125,6 +121,7 @@
                             'onlyHere': onlyHere
                         },
                         success: function(response, textStatus, jqXHR) {
+                            hideMessage();
                             $("#resultsHolder").html(response);
                             $("#selectAlliances").slideUp(200, function() {
                                 $("#showResults").slideDown(200);
@@ -136,7 +133,12 @@
 
             function reset() {
                 $("#compareButton").button("reset");
-                $("input").text("");
+                $("#red1").text("");
+                $("#red2").text("");
+                $("#red3").text("");
+                $("#blue1").text("");
+                $("#blue2").text("");
+                $("#blue3").text("");
                 $("#showResults").slideUp(200, function() {
                     $("#selectAlliances").slideDown(200);
                 });
