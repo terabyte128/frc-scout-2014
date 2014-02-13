@@ -126,10 +126,10 @@
                         },
                         success: function(response, textStatus, jqXHR) {
                             $("#resultsHolder").html(response);
+                            $("#selectAlliances").slideUp(200, function() {
+                                $("#showResults").slideDown(200);
+                            });
                         }
-                    });
-                    $("#selectAlliances").slideUp(200, function() {
-                        $("#showResults").slideDown(200);
                     });
                 }
             }
