@@ -38,10 +38,10 @@
     <?php } ?>
     <?php if ($_SERVER['PHP_SELF'] === "/home/index.php" || $_SERVER['PHP_SELF'] === "/home/team-profile.php") { ?>
         <?php if (!$isAdmin) { ?>
-            <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authModal').modal('show');" class='footer-right'>Authenticate as administrator</a>
+            <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authModal').modal('show'); return false;" class='footer-right'>Authenticate as administrator</a>
             </span>
         <?php } else { ?>
-            <span><a href="#" id="optionDeauthAsAdmin" onclick="logoutAdmin();" class='footer-right'>De-authenticate as administrator</a>
+            <span><a href="#" id="optionDeauthAsAdmin" onclick="logoutAdmin(); return false;" class='footer-right'>De-authenticate as administrator</a>
             </span>
             <?php
         }

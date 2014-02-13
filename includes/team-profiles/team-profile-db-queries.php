@@ -3,7 +3,6 @@
 require_once '../includes/setup-session.php';
 require_once '../includes/db-connect.php';
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/load-frc-team-averages.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/load-frc-average-throws-catches-goals.php';
 
 try {

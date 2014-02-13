@@ -77,25 +77,21 @@ try {
     print_r($e->getMessage());
 }
 
-if ($writeTable) {
-    while ($averages = $query->fetch(PDO::FETCH_ASSOC)) {
+while ($averages = $query->fetch(PDO::FETCH_ASSOC)) {
 //write the table in PHP instead of HTML
-        echo "<tr>";
-        echo "<td><a href=\"/team/" . $averages['scouted_team'] . "\">";
-        echo $averages['scouted_team'];
-        echo "</a></td>";
-        echo "<td>";
-        echo $averages['total_points'];
-        echo "</td>";
-        echo "<td>";
-        echo $averages['auto_points'];
-        echo "</td>";
-        echo "<td>";
-        echo $averages['tele_points'];
-        echo "</td>";
-        echo "</tr>";
-    }
-} else {
-    $averages = $query->fetch(PDO::FETCH_ASSOC);
+    echo "<tr>";
+    echo "<td><a href=\"/team/" . $averages['scouted_team'] . "\">";
+    echo $averages['scouted_team'];
+    echo "</a></td>";
+    echo "<td>";
+    echo $averages['total_points'];
+    echo "</td>";
+    echo "<td>";
+    echo $averages['auto_points'];
+    echo "</td>";
+    echo "<td>";
+    echo $averages['tele_points'];
+    echo "</td>";
+    echo "</tr>";
 }
 ?>
