@@ -39,7 +39,7 @@ try {
             . "match_outcome, total_match_points, died_during_match, caused_fouls, foul_comments, misc_comments) VALUES ("
 
             //dem values doe
-            . "?, now(), ?, ?, ?, ?, ?, ?, ?,"
+            . "?, now(), ?, ?, ?, ?, ?, ?,"
             . " ?, ?, ?,"
             . " ?, ?, ?,"
             . " ?, ?, ?, ?,"
