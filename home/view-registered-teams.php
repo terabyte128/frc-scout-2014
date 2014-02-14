@@ -13,7 +13,7 @@
         <div class="wrapper">
             <div class="container">
                 <?php include '../includes/messages.php' ?>
-                <h2>View Registered Teams</h2>
+                <h2><img class="loading" id="loading" src="/images/loading.gif" style="height: 24px; vertical-align: initial; display: none;"> View Registered Teams</h2>
                 <div style="max-width: 800px;" class="align-center">
                     <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
                     <br />
@@ -34,27 +34,31 @@
                             </tbody>
                         </table>
                     </div>
+                    <p>(<?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams total)</p>
+
                 </div>
 
                 <?php include '../includes/footer.php' ?>
             </div>
         </div>
         <script type="text/javascript">
-                        search();
+            search();
 
-                        function search() {
-                            $.ajax({
-                                url: '/ajax-handlers/get-registered-team-numbers.php',
-                                type: "POST",
-                                data: {
-                                    query: $("#teamSearch").val()
-                                },
-                                success: function(response) {
-                                    $("#teamBody").html(response);
-                                    $(".tablesorter").tablesorter();
-                                }
-                            })
-                        }
+            function search() {
+                $(".loading").show();
+                $.ajax({
+                    url: '/ajax-handlers/get-registered-team-numbers.php',
+                    type: "POST",
+                    data: {
+                        query: $("#teamSearch").val()
+                    },
+                    success: function(response) {
+                        $("#teamBody").html(response);
+                        $(".tablesorter").tablesorter();
+                        $(".loading").hide();
+                    }
+                })
+            }
         </script>
     </body>
 </html>
