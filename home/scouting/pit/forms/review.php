@@ -56,16 +56,17 @@
             },
             success: function(response) {
                 if(response === "200 Success") {
+                    localStorage.teamNumber = "";
                     localStorage.clear();
                     if(goHome) {
-                        loadPageWithMessage("/", "Match data submitted.", "success");
+                        loadPageWithMessage("/", "Scouting data submitted.", "success");
                     } else {
-                        window.location = "#prematch";
-                        loadPageWithMessage("#prematch", "Match data submitted.", "success");
+                        window.location = "#basic";
+                        loadPageWithMessage("#basic", "Scouting data submitted.", "success");
                     }
                 } else {
                     //showMessage(response, "danger");
-                    showMessage("You must start scouting from the beginning of the match. <a href='#basic' onclick='hideMessage();'>Go there.</a>", "danger");
+                    showMessage("You must start scouting from the beginning. <a href='#basic' onclick='hideMessage();'>Go there.</a>", "danger");
                 }
             }
         })

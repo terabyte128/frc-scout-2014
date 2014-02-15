@@ -4,10 +4,14 @@
     <br />
     <label for="robotWeight">Robot height (in):</label>
     <br />
-    <div style="display: inline-block; width: 60%;">
-        <input type="number" class="form-control" placeholder="Robot height" id="robotHeight">
-    </div><div style="display:inline-block; width: 40%;">
-        <button data-toggle="button" class="btn btn-success btn-no-border" id="canExtend" style='width: 100%; margin-left: 5px;' onclick='updateCanExtend();'>Can extend</button>
+    <div style="display:table">
+        <div style="display:table-row;">
+            <div style="display:table-cell; width: 60%;">
+                <input type="number" class="form-control" placeholder="Robot height" id="robotHeight">
+            </div><div style="display:table-cell; width: 40%;">
+                <button data-toggle="button" class="btn btn-success btn-no-border" id="canExtend" style='width: 100%; margin-left: 5px;' onclick='updateCanExtend();'>Can extend</button>
+            </div>
+        </div>
     </div>
     <br /><br />
     <label for="shooterType">Shooter type:</label>
@@ -24,6 +28,8 @@
 </form>
 
 <script type="text/javascript">
+
+    var canExtend = false;
 
     $(function() {
         $('#pageNameTitle').text("Physical Information");
@@ -49,6 +55,7 @@
         $("#wheelNum").val(localStorage.wheelNum);
 
         if (localStorage.canExtend === "true") {
+            updateCanExtend();
             $("#canExtend").addClass("active");
         }
         updateTeamNumber(localStorage.teamNumber);

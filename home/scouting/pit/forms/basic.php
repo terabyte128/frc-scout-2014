@@ -26,7 +26,7 @@
     }
 
     function updateTeamNumber(teamNumber) {
-        if (teamNumber !== "") {
+        if (teamNumber !== "" && teamNumber !== undefined) {
             $('#teamNumberTitle').text(": " + teamNumber);
             $('#thisText').text("");
             $('#teamNumberText').text(teamNumber + " ");
