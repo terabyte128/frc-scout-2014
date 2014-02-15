@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db-connect.php';
 
 $params = array($_POST['teamNumber']);
 
-$query = 'SELECT `timestamp`, `match_number`, `misc_comments`, `location` FROM `frc_match_data` WHERE `scouted_team`=?';
+$query = 'SELECT `scout_name`, `scouting_team`, `timestamp`, `match_number`, `misc_comments`, `location` FROM `frc_match_data` WHERE `scouted_team`=?';
 
 try {
     $response = $db->prepare($query);
@@ -16,17 +16,30 @@ try {
 
 while ($row = $response->fetch(PDO::FETCH_ASSOC)) {
     if (!empty($row['misc_comments'])) {
-        echo '<tr>';
-        echo '<td>';
-        echo $row['location'] . ', ' . $row['timestamp'];
-        echo '</td>';
-        echo '<td>';
-        echo $row['match_number'];
-        echo '</td>';
-        echo '<td>';
+        echo '<div class="comment-wrapper">';
+        
+        echo '<div class="comment-timestamp">';
+        echo $row['location'] . ', ' . $row['timestamp'] . ', match ' . $row['match_number'];
+        echo '</div>';
+        
+        echo '<div class="comment-commenter">';
+        // NOTE ON THINGS I'M NOT SURE ABOUT:
+        // IS IT OKAY TO SHOW SCOUTS' NAMES FROM TEAMS YOU'RE NOT LOGGED IN AS?
+        // I'M GOING TO ERR ON THE SIDE OF "NO" FOR SAFETY, BUT I AM NOT SURE.
+        // I WILL CONSULT WITH MORE PEOPLE LATER.
+        if (empty($row['scout_name']) || $row['scouting_team'] !== $teamNumber) {
+            echo '<a href="/team/' . $row['scouting_team'] . '">Team ' . $row['scouting_team'] . '</a>';
+        } else {
+            echo '<strong>' . $row['scout_name'] . '</strong> (<a href="/team/' . $row['scouting_team'] . '">team ' . $row['scouting_team'] . '</a>)';
+        }
+        echo ' said:</div>';
+        
+        echo '<div class="comment-text">';
+        echo '<hr style="border-top: 1px solid #bbb; margin: 3px 0px;" />';
         echo $row['misc_comments'];
-        echo '</td>';
-        echo '</tr>';
+        echo '</div>';
+        
+        echo '</div>';
     }
 }
 ?>

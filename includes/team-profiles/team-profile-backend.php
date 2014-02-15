@@ -168,21 +168,10 @@
                     <?php } ?>
                 </div>
                 <br />
-                <font style="color: #868686; float: right; font-size: 10pt;">Comments</font>
+                <font style="color: #868686; float: right; font-size: 10pt;">Match Comments</font>
                 <hr style="border-top: 1px solid #bbb">
-                <div class="table-wrapper table-responsive" id="comments">
-                    <table class="table table-striped table-bordered table-hover tablesorter" id="commentsTable">
-                        <thead>
-                        <th>Event</th>
-                        <th>Match Number</th>
-                        <th>Comment</th>
-                        </thead>
-                        <tbody id="commentBody">
-                            <tr>
-
-                            </tr>
-                        </tbody>
-                    </table>
+                <div id="matchComments">
+                    
                 </div>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
             </div> 
@@ -290,8 +279,8 @@
                     'teamNumber': '<?php echo $otherTeamNumber ?>'
                 },
                 success: function(response, textStatus, jqXHR) {
-                    $("#commentBody").html(response);
-                    $("#commentsTable").tablesorter();
+                    $("#matchComments").html(response);
+                    //$("#commentsTable").tablesorter();
                 }
             });
         }

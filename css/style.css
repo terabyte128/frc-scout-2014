@@ -249,3 +249,42 @@ a.editable-click:hover {
 .table-responsive>.table>tfoot>tr>td {
     white-space: normal;
 }
+
+.comment-wrapper {
+    background: #eee; 
+    border-radius: 5px; 
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 5px; 
+    max-width: 500px; 
+    margin: auto; 
+    margin-bottom: 10px;
+}
+
+.comment-wrapper:hover {
+    background: #f8f8f8; 
+    border-radius: 5px; 
+    padding: 5px; 
+    max-width: 500px; 
+    margin: auto; 
+    margin-bottom: 10px;
+}
+
+.comment-commenter {
+    text-align: left; 
+    float: left;
+    vertical-align: bottom;
+}
+
+.comment-timestamp {
+    color: #999; 
+    text-align: right;
+    display:inline-block;
+    vertical-align: bottom;
+    float: right;
+}
+
+.comment-text {
+    clear: both; 
+    text-align: left;
+}
