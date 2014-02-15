@@ -21,6 +21,7 @@
         $("#strength").val(localStorage.strength);
         $("#problems").val(localStorage.problems);
         $("#comments").val(localStorage.comments);
+        updateTeamNumber(localStorage.teamNumber);
     }
 
     function updateTeamNumber(teamNumber) {
@@ -30,8 +31,8 @@
     }
 
     function pushToLocalStorage() {
-        localStorage.strength = $("#robotWeight").val();
-        localStorage.problems = $("#robotHeight").val();
+        localStorage.strength = $("#strength").val();
+        localStorage.problems = $("#problems").val();
         localStorage.comments = $("#comments").val();
         hideMessage();
         //nextPhase();

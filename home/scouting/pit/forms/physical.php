@@ -51,6 +51,7 @@
         if (localStorage.canExtend === "true") {
             $("#canExtend").addClass("active");
         }
+        updateTeamNumber(localStorage.teamNumber);
     }
 
     function updateTeamNumber(teamNumber) {

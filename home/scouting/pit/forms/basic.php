@@ -22,6 +22,7 @@
         $("#teamNumber").val(localStorage.teamNumber);
         $("#teamCoach").val(localStorage.teamCoach);
         $("#infoProvider").val(localStorage.infoProvider);
+        updateTeamNumber(localStorage.teamNumber);
     }
 
     function updateTeamNumber(teamNumber) {

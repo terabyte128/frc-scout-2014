@@ -88,6 +88,7 @@
             $("#canBlock").addClass("active");
             canBlock = !canBlock;
         }
+        updateTeamNumber(localStorage.teamNumber);
     }
 
     function updateTeamNumber(teamNumber) {
