@@ -48,11 +48,11 @@
                                 <p style="font-size: 50px;">vs</p>
                             </div>
                             <div style="display: table-cell;">
-                                <input id="blue1" placeholder="#1" type="text" class="btn-editable btn-blue-selection btn-lg">
+                                <input id="blue1" placeholder="#1" type="number" class="btn-editable btn-blue-selection btn-lg">
                                 <br />
-                                <input id="blue2" placeholder="#2" type="text" class="btn-editable btn-blue-selection btn-lg">
+                                <input id="blue2" placeholder="#2" type="number" class="btn-editable btn-blue-selection btn-lg">
                                 <br />
-                                <input id="blue3" placeholder="#3" type="text" class="btn-editable btn-blue-selection btn-lg">
+                                <input id="blue3" placeholder="#3" type="number" class="btn-editable btn-blue-selection btn-lg">
                                 <br />
                             </div>
                         </div>

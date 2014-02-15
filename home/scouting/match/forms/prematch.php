@@ -2,7 +2,7 @@
     <label for="teamNumber">Team number:</label>
     <input type="number" class="form-control" placeholder="Team number" id="teamNumber" onblur="updateTeamNumber($('#teamNumber').val());">
     <br />
-    <label for="teamNumber">Match number:</label>
+    <label for="matchNumber">Match number:</label>
     <input type="number" class="form-control" placeholder="Match number" id="matchNumber">
     <br />
     <label for='selectAlliance'>Alliance color:</label>
@@ -28,7 +28,7 @@
                 <div class="modal-body" style="font-size: 16px;">
                     Marking this team as absent will terminate this scouting session. Are you sure?
                     <br /><br/> 
-                    <textarea class="form-control" placeholder="Please leave a comment." rows="6" id="absentComments" required></textarea>
+                    <textarea class="form-control" placeholder="Please leave a comment." rows="4" id="absentComments" required></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">No</button>
