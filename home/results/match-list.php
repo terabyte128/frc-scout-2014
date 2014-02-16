@@ -41,8 +41,11 @@ $listNum = 0;
             <div class="container">
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
                 <h2><img id="loading" src="/images/loading.gif" style="height: 24px; vertical-align: initial; display: none;"> Team <?php echo $otherTeamNumber ?>'s Matches</h2>
-                <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
+                <button class="btn btn-default" onclick="window.location = '/team/<?= $otherTeamNumber ?>'" style="margin-bottom: 10px;">Back to Team <?= $otherTeamNumber ?>'s Profile</button>
                 <br />
+                <a href="#" onclick="expandAll();
+                        return false;" id="expandLink">Expand all matches</a>
+                <br /><br />
                 <?php while ($match = $query->fetch(PDO::FETCH_ASSOC)) { ?>
                     <div class="comment-wrapper">
                         <div class="comment-timestamp">
@@ -148,3 +151,26 @@ $listNum = 0;
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php"; ?>
             </div>
         </div>
+        <script type="text/javascript">
+            function expandAll() {
+                if ($("#expandLink").text() === "Expand all matches") {
+                    $("#expandLink").text("Shrink all matches");
+<?php for ($i = 0; $i < $listNum; $i++) { ?>
+                        $("#moreGeneralData<?= $i ?>").slideDown(200);
+                        $("#moreAutoData<?= $i ?>").slideDown(200);
+                        $("#moreTeleData<?= $i ?>").slideDown(200);
+                        $("#expander<?= $i ?>").text("less");
+<?php } ?>
+                } else {
+                    $("#expandLink").text("Expand all matches");
+<?php for ($i = 0; $i < $listNum; $i++) { ?>
+                        $("#moreGeneralData<?= $i ?>").slideUp(200);
+                        $("#moreAutoData<?= $i ?>").slideUp(200);
+                        $("#moreTeleData<?= $i ?>").slideUp(200);
+                        $("#expander<?= $i ?>").text("more");
+<?php } ?>
+                }
+            }
+        </script>
+    </body>
+</html>
