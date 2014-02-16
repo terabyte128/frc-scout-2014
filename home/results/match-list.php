@@ -6,10 +6,14 @@ require_once $docRoot . '/includes/db-connect.php';
 
 $otherTeamNumber = $_GET['team'];
 $queryString = "SELECT *, "
-        . "(auto_goal_value + 5*auto_hot_goal + 5*auto_moved_to_alliance_zone) AS auto_total_points, "
-        . "(tele_low_goals + 10*tele_high_goals + 10*tele_truss_throws + 10*tele_truss_catches + 10*tele_received_assists) AS tele_total_points, "
+        . "(auto_goal_value + 5*auto_hot_goal + 5*auto_moved_to_alliance_zone) AS `auto_total_points`, "
+        . "(tele_low_goals + 10*tele_high_goals + 10*tele_truss_throws + 10*tele_truss_catches + 10*tele_received_assists) AS `tele_total_points`, "
         . "format((tele_high_goals / (tele_high_goals + tele_missed_goals)) * 100, 1) AS tele_accuracy, "
-        . "(tele_high_goals + tele_missed_goals) AS tele_total_shots "
+        . "(tele_high_goals + tele_missed_goals) AS tele_total_shots, "
+        . "(SELECT (auto_goal_value + 5*auto_hot_goal + 5*auto_moved_to_alliance_zone + "
+        . "tele_low_goals + 10*tele_high_goals + 10*tele_truss_throws + 10*tele_truss_catches + "
+        . "10*tele_received_assists)) AS total_points, "
+        . "(SELECT format((total_points / total_match_points) * 100, 0)) AS proportion "
         . "FROM frc_match_data WHERE scouted_team=?";
 $params = array($otherTeamNumber);
 try {
@@ -58,6 +62,7 @@ $listNum = 0;
                             <hr class="comment-divider-hr" />
                             <?php if ($match['team_absent'] !== "1") { ?>
                                 <span class="comment-commenter"><strong>General</strong></span><br />
+                                Total score: <strong><?php echo $match['total_points']; ?></strong> (<strong><?= $match['proportion']; ?>%</strong> of alliance score)<br />
                                 Match outcome: <strong><?php if ($match['match_outcome'] === "0") { ?>
                                         <span style="color: #468847;">Win</span>
                                     <?php } else if ($match['match_outcome'] === "1") { ?>
@@ -70,7 +75,8 @@ $listNum = 0;
                                             <span style="color: #0044cc;">Blue</span>
                                         <?php } else { ?>
                                             <span style="color: #a9302a;">Red</span>
-                                        <?php } ?></strong>
+                                        <?php } ?></strong><br />
+                                    Alliance total score: <strong><?= $match['total_match_points']; ?></strong>
                                 </div>
                                 <hr class="comment-divider-hr" />
                                 <span class="comment-commenter"><strong>Autonomous</strong></span><br />
@@ -81,8 +87,10 @@ $listNum = 0;
                                             echo '<span style="color: #a9302a;">Missed</span>';
                                         } else if ($match['auto_goal_value'] === "6") {
                                             echo 'Low';
-                                        } else {
+                                        } else if ($match['auto_goal_value'] === "15") {
                                             echo 'High';
+                                        } else {
+                                            echo "Didn't shoot";
                                         }
                                         ?></strong><br />
                                     Shot to hot goal: <strong><?php echo $match['auto_hot_goal'] === "1" ? 'Yes' : 'No'; ?></strong><br />
@@ -91,7 +99,7 @@ $listNum = 0;
                                 <hr class="comment-divider-hr" />
                                 <span class="comment-commenter"><strong>Teleoperated</strong></span><br />
                                 Points scored: <strong><?php echo $match['tele_total_points']; ?></strong><br />
-                                Accuracy: 
+                                High goal accuracy: 
                                 <?php if ($match['tele_total_shots'] !== "0") { ?><strong><?php echo $match['tele_accuracy']; ?>%</strong>
                                 <?php } else { ?><em>(no shots attempted)</em><?php } ?>
                                 <div id="moreTeleData<?php echo $listNum; ?>" style="display:none;">

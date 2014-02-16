@@ -13,7 +13,7 @@ $params = array(
     //prematch
     $location, $scoutName, $teamNumber, $matchData['teamNumber'], $matchData['matchNumber'], $matchData['allianceColor'] == "red" ? 0 : 1, !$matchData['teamPresent'],
     //autonomous
-    $matchData['autoMissedGoal'], $matchData['autoHotGoal'] === "true" ? 1 : 0, $matchData['autoGoalValue'], $matchData['autoMovedToAllianceZone'] === "true" ? 1 : 0,
+    $matchData['autoMissedGoal'] === "true" ? 1 : 0, $matchData['autoHotGoal'] === "true" ? 1 : 0, $matchData['autoGoalValue'], $matchData['autoMovedToAllianceZone'] === "true" ? 1 : 0,
     //teleoperated
     $matchData['teleReceivedAssists'], $matchData['telePassedAssists'], $matchData['teleHighGoals'],
     $matchData['teleLowGoals'], $matchData['teleMissedGoals'], $matchData['teleTrussThrows'], $matchData['teleTrussCatches'],
