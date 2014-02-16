@@ -173,6 +173,9 @@
                         }
                         if ($statsAvailable) {
                             ?>
+                            <div style="text-align:center; font-weight:bold;">
+                                <a href="/team/<?php echo $otherTeamNumber; ?>/matches/">View individual matches for this team</a>
+                            </div><br />
                             <div class="comment-wrapper">
                                 <div class="comment-commenter"><strong>General</strong></div>
                                 <div class="comment-text">
@@ -190,7 +193,7 @@
                                 <div class="comment-text">
                                     <hr class="comment-divider-hr" />
                                     <?php if (!empty($stats['attendance'])) { ?>
-                                    More stuff: <strong><em>coming soon~</em></strong><br />
+                                        More stuff: <strong><em>coming soon~</em></strong><br />
                                     <?php } ?>
                                 </div>
                             </div>
