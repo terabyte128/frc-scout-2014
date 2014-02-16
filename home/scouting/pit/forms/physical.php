@@ -4,12 +4,12 @@
     <br />
     <label for="robotWeight">Robot height (in):</label>
     <br />
-    <div style="display:table">
+    <div style="display:table;">
         <div style="display:table-row;">
             <div style="display:table-cell; width: 60%;">
-                <input type="number" class="form-control" placeholder="Robot height" id="robotHeight">
+                <input type="number" class="form-control" style="margin-bottom: 0px;" placeholder="Robot height" id="robotHeight">
             </div><div style="display:table-cell; width: 40%;">
-                <button data-toggle="button" class="btn btn-success btn-no-border" id="canExtend" style='width: 100%; margin-left: 5px;' onclick='updateCanExtend();'>Can extend</button>
+                <button data-toggle="button" class="btn btn-success btn-no-border" id="canExtend" style='width:100%; margin-top: 0px; margin-left: 5px;' onclick='updateCanExtend();'>Can extend</button>
             </div>
         </div>
     </div>

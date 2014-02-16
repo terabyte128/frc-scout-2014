@@ -152,7 +152,7 @@
                             </tbody>
                         </table>
                         -->
-                        <h3>Percentages</h3>
+                        <!--<h3>Percentages</h3>
                         <ul>
                             <li><strong>Attendance Rate: </strong><?php echo $stats['attendance']; ?>%</li>
                             <li><strong>Teleop Goal Scoring Rate: </strong><?php echo $stats['percentageOfShotsMade']; ?>%</li>
@@ -164,14 +164,59 @@
                             <li><strong>Teleop Low Goals: </strong><?php echo $averageGoals['teleAverageLow']; ?></li>
                             <li><strong>Teleop Truss Throws: </strong><?php echo $averageGoals['teleTrussThrow']; ?></li>
                             <li><strong>Teleop Truss Catches: </strong><?php echo $averageGoals['teleTrussCatch']; ?></li>
-                        </ul>
+                        </ul>-->
+                        <?php
+                        $statsAvailable = false;
+                        if (!empty($stats['attendance']) || !empty($stats['teleAverageHigh']) ||
+                                !empty($stats['percentageOfShotsMade'])) {
+                            $statsAvailable = true;
+                        }
+                        if ($statsAvailable) {
+                            ?>
+                            <div class="comment-wrapper">
+                                <div class="comment-commenter"><strong>General</strong></div>
+                                <div class="comment-text">
+                                    <hr class="comment-divider-hr" />
+                                    <?php if (!empty($stats['attendance'])) { ?>
+                                        Attendance rate: <strong><?php echo $stats['attendance']; ?>%</strong><br />
+                                    <?php } ?>
+                                    <?php if (!empty($stats['winRate'])) { ?>
+                                        Win rate: <strong><?php echo $stats['winRate']; ?>%</strong><br />
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="comment-wrapper">
+                                <div class="comment-commenter"><strong>Autonomous</strong></div>
+                                <div class="comment-text">
+                                    <hr class="comment-divider-hr" />
+                                    <?php if (!empty($stats['attendance'])) { ?>
+                                    More stuff: <strong><em>coming soon~</em></strong><br />
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="comment-wrapper">
+                                <div class="comment-commenter"><strong>Teleoperated</strong></div>
+                                <div class="comment-text">
+                                    <hr class="comment-divider-hr" />
+                                    <?php if (!empty($stats['percentageOfShotsMade'])) { ?>
+                                        High Goal Accuracy: <strong><?php echo $stats['percentageOfShotsMade']; ?>%</strong><br />
+                                    <?php } ?>
+                                    <?php if (!empty($stats['teleAverageHigh'])) { ?>
+                                        High Goals Per Match: <strong><?php echo $stats['teleAverageHigh']; ?></strong><br />
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        <?php } else { ?>
+                            <em>no data available</em>
+
+                        <?php } ?>
                     <?php } ?>
                 </div>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Match Comments</font>
                 <hr style="border-top: 1px solid #bbb">
                 <div id="matchComments">
-                    
+
                 </div>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
             </div> 
@@ -183,85 +228,85 @@
 
 
 
-                    $(function() {
+            $(function() {
 
-                        if ("<?php echo $response['robot_shifters']; ?>" === "1") {
+                if ("<?php echo $response['robot_shifters']; ?>" === "1") {
+                    $("#lowSpeed").show(100);
+                } else {
+                    $("#lowSpeed").hide();
+                }
+
+                $("#robot_shifters").editable({
+                    value: null,
+                    source: [
+                        {value: 0, text: 'No'},
+                        {value: 1, text: 'Yes'}
+                    ],
+                    showbuttons: false,
+                    pk: '<?php echo $teamNumber ?>',
+                    url: "/ajax-handlers/change-profile-ajax-submit.php",
+                    success: function(response, newVal) {
+                        if (response.indexOf("success") === -1) {
+                            showMessage(response, 'warning');
+                        }
+                        if (newVal === "1") {
                             $("#lowSpeed").show(100);
+                            $("#highText").show(100);
                         } else {
-                            $("#lowSpeed").hide();
+                            $("#lowSpeed").hide(100);
+                            $("#highText").hide(100);
+                        }
+                    }
+                });
+
+                $(".editable").editable({
+                    pk: '<?php echo $teamNumber ?>',
+                    url: "/ajax-handlers/change-profile-ajax-submit.php",
+                    success: function(response, newVal) {
+                        if (response.indexOf("success") === -1) {
+                            showMessage(response, 'warning');
+                        }
+                        console.log(newVal);
+                    }
+                });
+                var options = {
+                    beforeSend: function()
+                    {
+                        $("#progress").show();
+                        //clear everything
+                        $("#bar").width('0%');
+                        $("#message").html("");
+                        $("#percent").html("0%");
+                    },
+                    uploadProgress: function(event, position, total, percentComplete)
+                    {
+                        $("#percent").html('Uploading ' + percentComplete + '%');
+
+                    },
+                    success: function(response)
+                    {
+                        $("#percent").html('Upload complete!');
+                        console.log("got a response: " + response);
+                        if (response === "Success") {
+                            location.reload();
+                        } else {
+                            showMessage(response, "danger");
                         }
 
-                        $("#robot_shifters").editable({
-                            value: null,
-                            source: [
-                                {value: 0, text: 'No'},
-                                {value: 1, text: 'Yes'}
-                            ],
-                            showbuttons: false,
-                            pk: '<?php echo $teamNumber ?>',
-                            url: "/ajax-handlers/change-profile-ajax-submit.php",
-                            success: function(response, newVal) {
-                                if (response.indexOf("success") === -1) {
-                                    showMessage(response, 'warning');
-                                }
-                                if (newVal === "1") {
-                                    $("#lowSpeed").show(100);
-                                    $("#highText").show(100);
-                                } else {
-                                    $("#lowSpeed").hide(100);
-                                    $("#highText").hide(100);
-                                }
-                            }
-                        });
+                    },
+                    complete: function(response)
+                    {
 
-                        $(".editable").editable({
-                            pk: '<?php echo $teamNumber ?>',
-                            url: "/ajax-handlers/change-profile-ajax-submit.php",
-                            success: function(response, newVal) {
-                                if (response.indexOf("success") === -1) {
-                                    showMessage(response, 'warning');
-                                }
-                                console.log(newVal);
-                            }
-                        });
-                        var options = {
-                            beforeSend: function()
-                            {
-                                $("#progress").show();
-                                //clear everything
-                                $("#bar").width('0%');
-                                $("#message").html("");
-                                $("#percent").html("0%");
-                            },
-                            uploadProgress: function(event, position, total, percentComplete)
-                            {
-                                $("#percent").html('Uploading ' + percentComplete + '%');
+                    },
+                    error: function()
+                    {
 
-                            },
-                            success: function(response)
-                            {
-                                $("#percent").html('Upload complete!');
-                                console.log("got a response: " + response);
-                                if (response === "Success") {
-                                    location.reload();
-                                } else {
-                                    showMessage(response, "danger");
-                                }
+                    }
 
-                            },
-                            complete: function(response)
-                            {
+                };
 
-                            },
-                            error: function()
-                            {
-
-                            }
-
-                        };
-
-                        $("#submitTeamPicture").ajaxForm(options);
-                    });
+                $("#submitTeamPicture").ajaxForm(options);
+            });
         </script>
     <?php } ?>
 

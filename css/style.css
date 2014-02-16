@@ -273,18 +273,23 @@ a.editable-click:hover {
 .comment-commenter {
     text-align: left; 
     float: left;
-    vertical-align: bottom;
+    font-size: 10pt;
 }
 
 .comment-timestamp {
     color: #999; 
     text-align: right;
     display:inline-block;
-    vertical-align: bottom;
     float: right;
+    font-size: 10pt;
 }
 
 .comment-text {
     clear: both; 
     text-align: left;
+}
+
+.comment-divider-hr {
+    border-top: 1px solid #bbb; 
+    margin: 3px 0px;
 }

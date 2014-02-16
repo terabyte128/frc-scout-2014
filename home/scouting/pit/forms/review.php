@@ -32,10 +32,10 @@
     //document.location.hash = "review";
 
     $("#discardData").click(function() {
-        if (confirm("This will discard all the data for this match! Are you sure you wish to continue?")) {
+        if (confirm("This will discard all the data for this scouting session! Are you sure you wish to continue?")) {
             localStorage.discardedMatch = JSON.stringify(localStorage);
             localStorage.clear();
-            loadPageWithMessage("/home", "Match data discarded.", "danger");
+            loadPageWithMessage("/home", "Scouting data discarded.", "danger");
         }
     });
 
