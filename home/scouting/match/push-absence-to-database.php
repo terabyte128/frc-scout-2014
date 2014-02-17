@@ -23,5 +23,5 @@ try {
     die($e->getMessage());
 }
 
-print_r($_POST);
+echo "200 Success";
 ?>

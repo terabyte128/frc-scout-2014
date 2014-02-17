@@ -40,7 +40,7 @@ while ($row = $response->fetch(PDO::FETCH_ASSOC)) {
         echo $row['misc_comments'];
         echo '</div>';
         if ($row['team_absent'] === "1") {
-            echo '<div style="border-radius:3px; margin-top:2px; padding:2px; background:#fdd; color:#a00; text-align:center; font-size:10pt;">(Team was absent for this match)</div>';
+            echo '<div style="text-align:left;"><strong><em>Team was absent for this match.</em></strong></div>';
         }   
         echo '</div>';
     }

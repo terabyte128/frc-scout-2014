@@ -165,7 +165,11 @@
                 },
                 success: function(response) {
                     localStorage.clear();
-                    loadPageWithMessage("./", response, "warning");
+                    if (response.indexOf("Success") !== -1) {
+                        loadPageWithMessage("/", "Team marked as absent.", "warning");
+                    } else {
+                        showMessage("Unable to add values to database.", "danger");
+                    }
                 }
             })
         }

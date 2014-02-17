@@ -36,7 +36,7 @@
 
         </div>
     <?php } ?>
-    <?php if ($_SERVER['PHP_SELF'] === "/home/index.php" || $_SERVER['PHP_SELF'] === "/home/team-profile.php") { ?>
+    <?php if ($_SERVER['PHP_SELF'] === "/home/index.php" || $_SERVER['PHP_SELF'] === "/home/team-profile.php" || $_SERVER['PHP_SELF'] === "/home/results/match-list.php") { ?>
         <?php if (!$isAdmin) { ?>
             <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authModal').modal('show'); return false;" class='footer-right'>Authenticate as administrator</a>
             </span>
@@ -59,7 +59,7 @@
                                 $("#authButton").button('loading');
                                 var adminPassword = $("#adminPassword").val();
                                 $.ajax({
-                                    url: '../ajax-handlers/auth-as-admin-ajax-submit.php',
+                                    url: '/ajax-handlers/auth-as-admin-ajax-submit.php',
                                     type: "POST",
                                     data: {
                                         'adminPassword': adminPassword

@@ -128,6 +128,14 @@
                     <?php } ?>
                 </div>
                 <br />
+                <?php
+                        $statsAvailable = false;
+                        if (!empty($stats['attendance']) || !empty($stats['teleAverageHigh']) ||
+                                !empty($stats['percentageOfShotsMade'])) {
+                            $statsAvailable = true;
+                        }
+                        if ($statsAvailable) {
+                            ?>
                 <font style="color: #868686; float: right; font-size: 10pt;">Match Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
                 <!--<div class="table-wrapper table-responsive">-->
@@ -165,16 +173,12 @@
                             <li><strong>Teleop Truss Throws: </strong><?php echo $averageGoals['teleTrussThrow']; ?></li>
                             <li><strong>Teleop Truss Catches: </strong><?php echo $averageGoals['teleTrussCatch']; ?></li>
                         </ul>-->
-                        <?php
-                        $statsAvailable = false;
-                        if (!empty($stats['attendance']) || !empty($stats['teleAverageHigh']) ||
-                                !empty($stats['percentageOfShotsMade'])) {
-                            $statsAvailable = true;
-                        }
-                        if ($statsAvailable) {
-                            ?>
-                            <div style="text-align:center; font-weight:bold;">
-                                <a href="/team/<?php echo $otherTeamNumber; ?>/matches/">View individual matches for this team</a>
+                        
+                            <div style="text-align:center;">
+                                <strong><a href="/team/<?php echo $otherTeamNumber; ?>/matches/">View individual matches for this team</a></strong>
+                                <?php if ($isAdmin) { ?>
+                                <br />As an administrator, use this page to manage data on this team's matches that your team has scouted.
+                                <?php } ?>
                             </div><br />
                             <div class="comment-wrapper">
                                 <div class="comment-commenter"><strong>General</strong></div>
