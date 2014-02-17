@@ -255,7 +255,7 @@ a.editable-click:hover {
     border-radius: 5px; 
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    padding: 5px; 
+    padding: 5px 5px 3px 5px; 
     max-width: 500px; 
     margin: auto; 
     margin-bottom: 10px;
@@ -263,11 +263,6 @@ a.editable-click:hover {
 
 .comment-wrapper:hover {
     background: #f8f8f8; 
-    border-radius: 5px; 
-    padding: 5px; 
-    max-width: 500px; 
-    margin: auto; 
-    margin-bottom: 10px;
 }
 
 .comment-commenter {

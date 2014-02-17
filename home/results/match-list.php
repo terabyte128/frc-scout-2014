@@ -147,7 +147,7 @@ $listNum = 0;
                             <?php } ?>
 
                             <?php if ($canDeleteData) { ?>
-                                <div class="comment-timestamp">(<a href="#" style="color: #a9302a;" onclick="deleteMatch<?= $listNum ?>()">delete</a>)</div><br />
+                                <div class="comment-timestamp" style="vertical-align: bottom;">(<a href="#" style="color: #a9302a;" onclick="deleteMatch<?= $listNum ?>()">delete</a>)</div><br />
                             <?php } ?>
                             <script type="text/javascript">
                                 $("#expander<?= $listNum ?>").click(function() {
