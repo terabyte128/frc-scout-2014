@@ -164,7 +164,7 @@ $listNum = 0;
 
     <?php if ($canDeleteData) { ?>
                                     deleteMatch<?= $listNum ?> = function() {
-                                        alert("Are you sure you want to delete this match data? This cannot be undone!");
+                                        if(confirm("Are you sure you want to delete this match data? This cannot be undone!")) {
                                         $.ajax({
                                             url: '/ajax-handlers/delete-match-data.php',
                                             type: 'POST',
@@ -179,6 +179,7 @@ $listNum = 0;
                                                 }
                                             }
                                         });
+}
                                     };
     <?php } ?>
                             </script>
