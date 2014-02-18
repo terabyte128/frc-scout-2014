@@ -135,14 +135,14 @@ $listNum = 0;
                             <?php if (!empty($match['misc_comments'])) { ?>
                                 <hr class="comment-divider-hr" />
                                 <div<?php if ($canDeleteData && $match['caused_fouls'] !== "1") { ?> style="float:left;"<?php } ?>>
-                                    <?= $match['misc_comments'] ?><br />
+                                    <?= nl2br($match['misc_comments'], true) ?><br />
                                 </div>
                             <?php } ?>
 
                             <?php if ($match['caused_fouls'] === "1") { ?>
                                 <div<?php if ($canDeleteData) { ?> style="float:left;"<?php } ?>>
                                     <strong>Caused fouls<?php if ($match['foul_comments'] === "") { ?>.<?php } else { ?>:
-                                        <?php } ?> </strong><?= $match['foul_comments'] ?><br />
+                                        <?php } ?> </strong><?= nl2br($match['foul_comments'], true) ?><br />
                                 </div>
                             <?php } ?>
 
@@ -164,21 +164,23 @@ $listNum = 0;
 
     <?php if ($canDeleteData) { ?>
                                     deleteMatch<?= $listNum ?> = function() {
-                                        alert("Are you sure you want to delete this match data? This cannot be undone!");
-                                        $.ajax({
-                                            url: '/ajax-handlers/delete-match-data.php',
-                                            type: 'POST',
-                                            data: {
-                                                'matchToDelete': <?= $match['uid'] ?>
-                                            },
-                                            success: function(response, textStatus, jqXHR) {
-                                                if (response.indexOf("Successfully") !== - 1) {
-                                                    loadPageWithMessage("/team/<?= $otherTeamNumber ?>/matches/", "Match data deleted successfully.", "warning");
-                                                } else {
-                                                    showMessage("Database error.", "danger");
+                                        if (confirm("Are you sure you want to delete this match data? This cannot be undone!")) {
+                                            $.ajax({
+                                                url: '/ajax-handlers/delete-data.php',
+                                                type: 'POST',
+                                                data: {
+                                                    'idToDelete': <?= $match['uid'] ?>,
+                                                    'type': 'match'
+                                                },
+                                                success: function(response, textStatus, jqXHR) {
+                                                    if (response.indexOf("Successfully") !== -1) {
+                                                        loadPageWithMessage("/team/<?= $otherTeamNumber ?>/matches/", "Match data deleted successfully.", "warning");
+                                                    } else {
+                                                        showMessage("Database error.", "danger");
+                                                    }
                                                 }
-                                            }
-                                        });
+                                            });
+                                        }
                                     };
     <?php } ?>
                             </script>
@@ -192,23 +194,23 @@ $listNum = 0;
         </div>
         <script type="text/javascript">
             function expandAll() {
-            if ($("#expandLink").text() === "Expand all matches") {
-            $("#expandLink").text("Shrink all matches");
+                if ($("#expandLink").text() === "Expand all matches") {
+                    $("#expandLink").text("Shrink all matches");
 <?php for ($i = 0; $i < $listNum; $i++) { ?>
-                $("#moreGeneralData<?= $i ?>").slideDown(200);
+                        $("#moreGeneralData<?= $i ?>").slideDown(200);
                         $("#moreAutoData<?= $i ?>").slideDown(200);
                         $("#moreTeleData<?= $i ?>").slideDown(200);
                         $("#expander<?= $i ?>").text("less");
 <?php } ?>
-            } else {
-            $("#expandLink").text("Expand all matches");
+                } else {
+                    $("#expandLink").text("Expand all matches");
 <?php for ($i = 0; $i < $listNum; $i++) { ?>
-                $("#moreGeneralData<?= $i ?>").slideUp(200);
+                        $("#moreGeneralData<?= $i ?>").slideUp(200);
                         $("#moreAutoData<?= $i ?>").slideUp(200);
                         $("#moreTeleData<?= $i ?>").slideUp(200);
                         $("#expander<?= $i ?>").text("more");
 <?php } ?>
-            }
+                }
             }
         </script>
     </body>

@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="matchPoints">Total Match Points
+        <label for="matchPoints">Alliance Total Score
             <input type="number" class="form-control" id="matchPoints" style="width: 200px;">
         </label>
     </div>

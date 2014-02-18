@@ -22,6 +22,8 @@
                 <?php if ($teamType === "FRC") { ?>
                     <button onclick='localStorage.clear();
                             window.location = "scouting/match";' class="btn btn-lg btn-success btn-home-selections">Scout a Match</button>
+                    <button onclick='localStorage.clear();
+                            window.location = "scouting/pit";' class="btn btn-lg btn-success btn-home-selections">Pit Scout a Team</button>
                     <button onclick='window.location = "/teams";' class="btn btn-lg btn-success btn-home-selections">View Registered Teams</button>
 
                     <br /><br />
