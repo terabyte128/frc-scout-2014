@@ -358,25 +358,49 @@ if ($thingToLoad === "allpit") {
         }
         if (!empty($finalRow['strength'])) {
             echo '<hr class="comment-divider-hr" />';
-            echo '<div class="comment-commenter"><strong>Biggest strength:</strong></div><br />' . nl2br($finalRow['strength'], true);
+            echo '<div class="comment-commenter"><strong>Biggest strength:</strong></div><br />';
+            if ($canDeleteData && empty($finalRow['comments']) && empty($finalRow['problems'])) {
+                echo '<div style="float:left;">';
+            }
+            echo nl2br($finalRow['strength'], true);
+            if ($canDeleteData && empty($finalRow['comments']) && empty($finalRow['problems'])) {
+                echo '</div>';
+            }
         }
         if (!empty($finalRow['problems'])) {
             echo '<hr class="comment-divider-hr" />';
-            echo '<div class="comment-commenter"><strong>Known problems:</strong></div><br />' . nl2br($finalRow['problems'], true);
+            echo '<div class="comment-commenter"><strong>Known problems:</strong></div><br />';
+            if ($canDeleteData && empty($finalRow['comments'])) {
+                echo '<div style="float:left;">';
+            }
+            echo nl2br($finalRow['problems'], true);
+            if ($canDeleteData && empty($finalRow['comments'])) {
+                echo '</div>';
+            }
         }
         if (!empty($finalRow['comments'])) {
             echo '<hr class="comment-divider-hr" />';
-            echo '<div class="comment-commenter"><strong>Miscellaneous comments:</strong></div><br />' . nl2br($finalRow['comments'], true);
+            echo '<div class="comment-commenter"><strong>Miscellaneous comments:</strong></div><br />';
+            if ($canDeleteData) {
+                echo '<div style="float:left;">';
+            }
+            echo nl2br($finalRow['comments'], true);
+            if ($canDeleteData) {
+                echo '</div>';
+            }
         }
 
         if ($canDeleteData) {
-            echo '<div class="comment-timestamp">(<a href="#" style="color: #a9302a;" onclick="deleteMatch' . $listNum . '()">delete</a>)</div><br />';
+            echo '<div class="comment-timestamp">(<a href="#" onclick="edit' . $listNum . '()">edit</a> - <a href="#" style="color: #a9302a;" onclick="deleteMatch' . $listNum . '()">delete</a>)</div><br />';
         }
-        echo '</div></div>';
+        echo '<div style="clear:both;"></div></div></div>';
 
         if ($canDeleteData) {
-            echo '<script type="text/javascript">'
-            . 'deleteMatch' . $listNum . " = function() {
+            echo '<script type="text/javascript">
+                edit' . $listNum . ' = function() { 
+                    alert("hi");
+                }
+                deleteMatch' . $listNum . " = function() {
                                         if (confirm('Are you sure you want to delete this scouting data? This cannot be undone!')) {
                                             $.ajax({
                                                 url: '/ajax-handlers/delete-data.php',
