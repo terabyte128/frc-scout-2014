@@ -420,6 +420,27 @@ if ($thingToLoad === "allpit") {
                                         }
                                     };
                                     </script>";
+            echo '<script type="text/javascript">'
+            . 'deleteMatch' . $listNum . " = function() {
+if (confirm('Are you sure you want to delete this scouting data? This cannot be undone!')) {
+$.ajax({
+url: '/ajax-handlers/delete-data.php',
+type: 'POST',
+data: {
+'idToDelete':" . $finalRow['uid'] . ",
+'type': 'pit'
+},
+success: function(response, textStatus, jqXHR) {
+if (response.indexOf('Successfully') !== -1) {
+loadPageWithMessage('/team/" . $finalRow['scouted_team'] . "/robot', 'Scouting data deleted successfully.', 'warning');
+} else {
+showMessage('Database error.', 'danger');
+}
+}
+});
+}
+};
+</script>";
         }
 
         $listNum++;
