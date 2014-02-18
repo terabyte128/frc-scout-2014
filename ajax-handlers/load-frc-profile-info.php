@@ -107,7 +107,7 @@ if ($thingToLoad === "pit") {
         if ($isAdmin) {
             echo "<br />As an administrator, use this page to manage ";
             if ($teamNumber === $finalRow['scouted_team']) {
-                echo "team " . $finalRow['scouted_team'] . "'s pit scouting data for itself.";
+                echo "team " . $finalRow['scouted_team'] . "'s own pit scouting data.";
             } else {
                 echo "your team's pit scouting data for team " . $finalRow['scouted_team'] . ".";
             }
@@ -125,13 +125,12 @@ if ($thingToLoad === "pit") {
         echo '</div>';
         echo '<div class="comment-text">';
         echo '<hr class="comment-divider-hr" />';
-        echo '<em>';
         if ($finalRow['scouting_team'] === $finalRow['scouted_team']) {
             if ($finalRow['scouting_team'] === $teamNumber) {
                 echo 'This is public data that your team provides to other teams.<br />';
             } else {
-                echo 'This data is provided by <strong>team ' . $finalRow['scouting_team']
-                . ' themselves</strong>.';
+                echo 'This data is provided by <strong><a href="/team/' . $finalRow['scouting_team'] . '">team ' . $finalRow['scouting_team']
+                . '</a> themselves.</strong>';
             }
         } else {
             if (!empty($finalRow['info_provider'])) {
@@ -143,7 +142,6 @@ if ($thingToLoad === "pit") {
                 }
             }
         }
-        echo '</em>';
         if (!empty($finalRow['team_coach'])) {
             echo '<hr class="comment-divider-hr" />';
             echo 'Team coach: <strong>' . $finalRow['team_coach'] . '</strong><br />';
@@ -272,13 +270,12 @@ if ($thingToLoad === "allpit") {
         echo '</div>';
         echo '<div class="comment-text">';
         echo '<hr class="comment-divider-hr" />';
-        echo '<em>';
         if ($finalRow['scouting_team'] === $finalRow['scouted_team']) {
             if ($finalRow['scouting_team'] === $teamNumber) {
                 echo 'This is public data that your team provides to other teams.<br />';
             } else {
-                echo 'This data is provided by <strong>team ' . $finalRow['scouting_team']
-                . ' themselves</strong>.';
+                echo 'This data is provided by <strong><a href="/team/' . $finalRow['scouting_team'] . '">team ' . $finalRow['scouting_team']
+                . '</a> themselves.</strong>';
             }
         } else {
             if (!empty($finalRow['info_provider'])) {
@@ -290,7 +287,6 @@ if ($thingToLoad === "allpit") {
                 }
             }
         }
-        echo '</em>';
         if (!empty($finalRow['team_coach'])) {
             echo '<hr class="comment-divider-hr" />';
             echo 'Team coach: <strong>' . $finalRow['team_coach'] . '</strong><br />';
@@ -397,10 +393,10 @@ if ($thingToLoad === "allpit") {
                                     };
                                     </script>";
         }
-
+        
         $listNum++;
     }
-
+    
     echo '<strong>Scouted ' . $listNum . ' times in total</strong>';
 }
 ?>
