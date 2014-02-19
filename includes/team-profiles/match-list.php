@@ -55,7 +55,7 @@ $listNum = 0;
                         $canDeleteData = false;
                     }
                     ?>
-                    <div class="comment-wrapper">
+                    <div class="comment-wrapper" id="section<?= $listNum ?>">
                         <div class="comment-timestamp">
                             <?= $match['location'] ?>, <?= $match['timestamp'] ?>, match <?= $match['match_number'] ?>
                             <?php if ($match['team_absent'] !== "1") { ?>
@@ -164,6 +164,7 @@ $listNum = 0;
 
     <?php if ($canDeleteData) { ?>
                                     deleteMatch<?= $listNum ?> = function() {
+                                        $('#section<?= $listNum ?>').css('background-color', '#ffc7c7');
                                         if (confirm("Are you sure you want to delete this match data? This cannot be undone!")) {
                                             $.ajax({
                                                 url: '/ajax-handlers/delete-data.php',
@@ -180,6 +181,9 @@ $listNum = 0;
                                                     }
                                                 }
                                             });
+                                        } else {
+                                            $('#section<?= $listNum ?>').css('background-color', '#eee');
+                                            return false;
                                         }
                                     };
     <?php } ?>

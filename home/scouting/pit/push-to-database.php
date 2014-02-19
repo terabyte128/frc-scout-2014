@@ -16,7 +16,7 @@ $params = array(
     $teamData['teamNumber'], $teamData['teamCoach'], $teamData['infoProvider'],
     //physical
     $teamData['robotWeight'], $teamData['robotHeight'], $teamData['canExtend'] === "true" ? 1 : 0, $teamData['shooterType'],
-    $teamData['wheelType'], $teamData['wheelNum'],
+    $teamData['wheelType'], $teamData['swerve'] === "true" ? 1 : 0, $teamData['wheelNum'],
     //strategy
     $teamData['startPosition'], $teamData['role'], $teamData['canCollect'] === "true" ? 1 : 0, $teamData['canPass'] === "true" ? 1 : 0,
     $teamData['canThrow'] === "true" ? 1 : 0, $teamData['canCatch'] === "true" ? 1 : 0, $teamData['canHighGoal'] === "true" ? 1 : 0,
@@ -27,7 +27,7 @@ $params = array(
 
 try {
     $query = $db->prepare("INSERT INTO frc_pit_scouting_data ("
-            //prematch 
+            //stuff 
             . "location, timestamp, `scout_name`, scouting_team, "
 
             //basic
@@ -35,7 +35,7 @@ try {
 
             //physical
             . "robot_weight, robot_height, can_extend, shooter_type, "
-            . "wheel_type, wheel_num, "
+            . "wheel_type, is_swerve, wheel_num, "
 
             //strategy
             . "start_position, role, can_collect, can_pass, "
@@ -47,7 +47,7 @@ try {
             //dem values doe
             . "?, now(), ?, ?,"
             . " ?, ?, ?,"
-            . " ?, ?, ?, ?, ?, ?,"
+            . " ?, ?, ?, ?, ?, ?, ?,"
             . " ?, ?, ?, ?, ?, ?, ?, ?,"
             . " ?, ?, ?"
             . ")");

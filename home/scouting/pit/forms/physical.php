@@ -20,16 +20,20 @@
     <br /><br />
     <label for="wheelType">Wheel type:</label>
     <input type="text" class="form-control" placeholder="Wheel type" id="wheelType">
-    <span class="typeahead-hint">high-traction | mecanum | omni | plaction <br /> colson | pneumatic | other</span>
+    <span class="typeahead-hint">high-traction | mecanum | omni | plaction <br /> caster | pneumatic | other</span>
+    <br /><br />
+    <button data-toggle="button" class="btn btn-info btn-no-border btn-lg" style="width:250px;" id="swerve" onclick="updateSwerve()">Has Swerve Drive</button>
     <br /><br />
     <label for="wheelType">Number of wheels:</label>
     <input type="number" class="form-control" placeholder="Number of wheels" id="wheelNum">
-    <br />
+
+    <br /><br />
 </form>
 
 <script type="text/javascript">
 
     var canExtend = false;
+    var swerve = false;
 
     $(function() {
         $('#pageNameTitle').text("Physical Information");
@@ -38,13 +42,17 @@
                 "Electric Ram", "Pneumatic Ram", "Spring Ram", "Slingshot", "Hammer"]
         });
         $('#wheelType').typeahead({
-            'local': ["Plaction", "High-Traction", "Mecanum", "Omni", "Colson", "Pneumatic"]
+            'local': ["Plaction", "High-Traction", "Mecanum", "Omni", "Caster", "Pneumatic"]
         });
         //document.location.hash = "prematch";
     });
 
     function updateCanExtend() {
         canExtend = !canExtend;
+    }
+
+    function updateSwerve() {
+        swerve = !swerve;
     }
 
     function pullFromLocalStorage() {
@@ -57,6 +65,10 @@
         if (localStorage.canExtend === "true") {
             updateCanExtend();
             $("#canExtend").addClass("active");
+        }
+        if (localStorage.swerve === "true") {
+            updateSwerve();
+            $("#swerve").addClass("active");
         }
         updateTeamNumber(localStorage.teamNumber);
     }
@@ -72,6 +84,7 @@
         localStorage.robotHeight = $("#robotHeight").val();
         localStorage.canExtend = canExtend;
         localStorage.shooterType = $("#shooterType").val();
+        localStorage.swerve = swerve;
         localStorage.wheelType = $("#wheelType").val();
         localStorage.wheelNum = $("#wheelNum").val();
         hideMessage();
