@@ -5,8 +5,10 @@ ErrorDocument 200 /error.php?error=200
 RewriteRule ^team/([0-9]+)/?$ /home/other-team-profile.php?team=$1 [NC,L] #rewrite team profiles to make them prettier
 RewriteRule ^team/?$ /home/team-profile.php [NC,L] #make team profile better
 RewriteRule ^home/results/averages/?$ /home/results/team-averages.php [NC,L] #make team profile better
-RewriteRule ^home/results/compare/?$ /home/results/compare-alliances.php [NC,L] #make team profile better
+RewriteRule ^alliances/compare/?$ /home/results/compare-alliances.php [NC,L] #make team profile better
 RewriteRule ^home/preferences/?$ /home/team-preferences.php [NC,L] #make team profile better
 RewriteRule ^team/([0-9]+)/matches/?$ /includes/team-profiles/match-list.php?team=$1 [NC,L] #make specific matches better
 RewriteRule ^team/([0-9]+)/robot/?$ /includes/team-profiles/pit-scouting.php?team=$1 [NC,L] #make pit scouting pages better
 RewriteRule ^teams/?$ /home/view-registered-teams.php [NC,L] #rewrite team profiles to make them prettier
+RewriteRule ^alliances/?$ /home/results/alliance-tools.php [NC,L] #make alliance tools better
+RewriteRule ^alliances/builder/?$ /home/results/alliance-builder.php [NC,L] #make alliance builder better
