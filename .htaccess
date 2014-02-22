@@ -13,3 +13,4 @@ RewriteRule ^teams/?$ /home/view-registered-teams.php [NC,L] #rewrite team profi
 RewriteRule ^alliances/?$ /home/results/alliance-tools.php [NC,L] #make alliance tools better
 RewriteRule ^alliances/builder/?$ /home/results/alliance-builder.php [NC,L] #make alliance builder better
 RewriteRule ^home/scouting/pit/([0-9]+)/?$ /home/scouting/pit/index.php?team=$1 [NC,L] #for the "pit scout yourself" link
+RewriteRule ^alliances/builder/results/?$ /home/results/builder-results.php [NC,L] #for the builder results page

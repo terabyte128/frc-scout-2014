@@ -42,6 +42,16 @@
                             <label for="location">Location</label><br />
                             <input type="text" id="location" placeholder="Location" class="form-control" required style="width: 100%;">
                         </div>
+                        <!--[if lt IE 10]>
+                        <div id="warningAlreadyScouted" style="background: #ffff99; padding: 5px; padding-right:0; border-radius: 5px; position: relative;">
+        <div style="display: inline-block; max-width: 10%; height: 100%; position: absolute; top: 0; left: -5px; bottom: 0; right: 0; margin-top: auto; margin-bottom: auto;">
+            <span class="glyphicon glyphicon-exclamation-sign" style="position: absolute; top: 43%; left: 20px;"></span>
+        </div>
+        <div style="display: inline-block; max-width: 90%; padding-left: 15px;">This website is not guaranteed to look or work 100% correctly in your browser.<br />
+                        Consider <a href='http://windows.microsoft.com/en-US/internet-explorer/download-ie'>updating Internet Explorer</a>, or 
+                        <a href='http://chrome.google.com'>downloading</a> a <a href='http://www.mozilla.org/en-US/'>different browser</a>.</div>
+    </div><br />
+                        <![endif]-->
                         <button type="submit" id="loginButton" class="btn btn-default btn-success">Login</button>
                     </form> 
                     <br />

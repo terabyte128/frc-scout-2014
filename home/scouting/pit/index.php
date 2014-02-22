@@ -39,7 +39,6 @@ if ($teamType === "FTC") {
 
 <script type="text/javascript">
 
-
     var currentPhase = "basic";
     var loggedInTeam = <?php echo $teamNumber; ?>;
 
@@ -52,7 +51,7 @@ if ($teamType === "FTC") {
         }
 
         loadContainer();
-    })
+    });
 
     function changePhase(hash) {
         window.location.hash = hash;
@@ -62,7 +61,7 @@ if ($teamType === "FTC") {
         currentPhase = window.location.hash.substring(1);
         console.log("called onhashchange with hash " + currentPhase);
         loadContainer();
-    }
+    };
 
     var ids = {
         "basic": "physical",
@@ -70,7 +69,7 @@ if ($teamType === "FTC") {
         "strategy": "comments",
         "comments": "review",
         "review": "physical"
-    }
+    };
 
     function loadContainer() {
         console.log("called loadContainer()");
@@ -100,11 +99,10 @@ if ($teamType === "FTC") {
 
                     $("#nextPhaseButton").button(currentPhase);
 
-                    console.log("forms/" + currentPhase + ".php")
+                    console.log("forms/" + currentPhase + ".php");
                 });
 
 
     }
-
 
 </script>

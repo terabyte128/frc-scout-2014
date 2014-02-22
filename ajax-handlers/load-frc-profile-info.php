@@ -219,7 +219,7 @@ function printPSData($finalRow, $canDeleteData, $listNum, $teamNumber) {
         }
     } else {
         if ($finalRow['can_extend'] === "1") {
-            echo 'Can extend';
+            echo 'Can extend<br />';
         }
     }
     if (!empty($finalRow['wheel_type'])) {

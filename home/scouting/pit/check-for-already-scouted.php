@@ -20,5 +20,5 @@ try {
 }
 
 if(!empty($response)) {
-    echo '!';
+    echo 'already scouted!!';
 }
