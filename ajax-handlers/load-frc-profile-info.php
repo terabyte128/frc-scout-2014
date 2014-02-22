@@ -64,8 +64,12 @@ if ($thingToLoad === "pit") {
         $finalRow = $row;
     } else {
         if ($teamNumber === $_POST['teamNumber']) {
-            echo 'You can set up this section of your team profile to provide your own information about your team to other teams, through the '
-            . '<a href="<a href="/home/scouting/pit">Pit Scouting</a> page.';
+            if ($isAdmin) {
+            echo '<em>You can set up this section of your team profile to provide your own information about your team to other teams, through the '
+            . '<a href="/home/scouting/pit/'. $teamNumber . '">Pit Scouting</a> page.</em>';
+            } else {
+                echo '<em>No one has pit scouted your team yet! Perhaps you\'d like to <a href="/home/scouting/pit/'. $teamNumber . '">do it yourself?</a></em>';
+            }
         }
         $params2 = array($_POST['teamNumber'], $_POST['teamNumber']);
         try {

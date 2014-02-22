@@ -18,7 +18,7 @@
                     </div>
                     <div class="modal-body">
                         <form role="form" id="authAsAdmin" onsubmit="loginAdmin();
-                                    return false;">
+                                return false;">
                             <div class="form-group">
                                 <label for="adminPassword">Admin Password</label>
                                 <input type="password" class="form-control" id="adminPassword" placeholder="Admin Password" required>
@@ -31,59 +31,59 @@
         </div><!-- /.modal -->
 
         <div class='login-form align-center' id="authAsAdmin" onsubmit="loginAdmin();
-                                    return false;" style='width: 250px; display: none; margin-top: 20px;'>
+                return false;" style='width: 250px; display: none; margin-top: 20px;'>
             <br />
 
         </div>
     <?php } ?>
     <?php if ($_SERVER['PHP_SELF'] === "/home/index.php" || $_SERVER['PHP_SELF'] === "/home/team-profile.php" || $_SERVER['PHP_SELF'] === "/includes/team-profiles/match-list.php" || $_SERVER['PHP_SELF'] === "/includes/team-profiles/pit-scouting.php") { ?>
         <?php if (!$isAdmin) { ?>
-            <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authModal').modal('show'); return false;" class='footer-right'>Authenticate as administrator</a>
+            <span><a href="#" id="optionAuthAsAdmin" onclick="$('#authModal').modal('show');
+                    return false;" class='footer-right'>Authenticate as administrator</a>
             </span>
-        <?php } else { ?>
+    <?php } else { ?>
             <span><a href="#" id="optionDeauthAsAdmin" onclick="logoutAdmin();" class='footer-right'>De-authenticate as administrator</a>
             </span>
             <?php
         }
     }
     ?>
-
     <script type="text/javascript">
 
-                            $("#authModal").on('show.bs.modal'), function() {
-                                $('#adminPassword').focus();
-                            }
+        $("#authModal").on('show.bs.modal'), function() {
+            $('#adminPassword').focus();
+        }
 
 
-                            function loginAdmin() {
-                                $("#authButton").button('loading');
-                                var adminPassword = $("#adminPassword").val();
-                                $.ajax({
-                                    url: '/ajax-handlers/auth-as-admin-ajax-submit.php',
-                                    type: "POST",
-                                    data: {
-                                        'adminPassword': adminPassword
-                                    },
-                                    success: function(response, textStatus, jqXHR) {
-                                        $("#authButton").button('reset');
-                                        if (response.indexOf("Successfully") !== -1) {
-                                            location.reload();
-                                            $('#authModal').modal('dismiss');
-                                        } else {
-                                            $("#authTitle").html("<font style='color: firebrick;'>Incorrect password, please try again.</font>");
-                                        }
-                                    }
-                                });
-                            }
+        function loginAdmin() {
+            $("#authButton").button('loading');
+            var adminPassword = $("#adminPassword").val();
+            $.ajax({
+                url: '/ajax-handlers/auth-as-admin-ajax-submit.php',
+                type: "POST",
+                data: {
+                    'adminPassword': adminPassword
+                },
+                success: function(response, textStatus, jqXHR) {
+                    $("#authButton").button('reset');
+                    if (response.indexOf("Successfully") !== -1) {
+                        location.reload();
+                        $('#authModal').modal('dismiss');
+                    } else {
+                        $("#authTitle").html("<font style='color: firebrick;'>Incorrect password, please try again.</font>");
+                    }
+                }
+            });
+        }
 
-                            function logoutAdmin() {
-                                $.ajax({
-                                    url: '/ajax-handlers/deauth-as-admin-ajax-submit.php',
-                                    type: "POST",
-                                    success: function(response, textStatus, jqXHR) {
-                                        location.reload();
-                                    }
-                                });
-                            }
+        function logoutAdmin() {
+            $.ajax({
+                url: '/ajax-handlers/deauth-as-admin-ajax-submit.php',
+                type: "POST",
+                success: function(response, textStatus, jqXHR) {
+                    location.reload();
+                }
+            });
+        }
     </script>
 </div>

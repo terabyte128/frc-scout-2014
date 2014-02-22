@@ -12,3 +12,4 @@ RewriteRule ^team/([0-9]+)/robot/?$ /includes/team-profiles/pit-scouting.php?tea
 RewriteRule ^teams/?$ /home/view-registered-teams.php [NC,L] #rewrite team profiles to make them prettier
 RewriteRule ^alliances/?$ /home/results/alliance-tools.php [NC,L] #make alliance tools better
 RewriteRule ^alliances/builder/?$ /home/results/alliance-builder.php [NC,L] #make alliance builder better
+RewriteRule ^home/scouting/pit/([0-9]+)/?$ /home/scouting/pit/index.php?team=$1 [NC,L] #for the "pit scout yourself" link

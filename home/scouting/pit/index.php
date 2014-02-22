@@ -18,7 +18,7 @@ if ($teamType === "FTC") {
                 font-style: italic;
                 font-size: 10pt;
             }
-            </style>
+        </style>
     </head>
     <body>
         <div class="wrapper">
@@ -75,8 +75,6 @@ if ($teamType === "FTC") {
     function loadContainer() {
         console.log("called loadContainer()");
 
-
-
         $("#nextPhaseButton").button('loading');
 
         $("#loading").show();
@@ -86,6 +84,13 @@ if ($teamType === "FTC") {
                 function() {
                     $("#loading").hide();
                     pullFromLocalStorage();
+
+                    if (currentPhase === "basic") {
+                        if ("<?= $_GET['team'] ?>" !== "") {
+                            $("#teamNumber").val(<?= $_GET['team'] ?>);
+                            updateTeamNumber(<?= $_GET['team'] ?>);
+                        }
+                    }
 
                     if (currentPhase === "review") {
                         $("#nextPhaseButtonContainer").hide();
