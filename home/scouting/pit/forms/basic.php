@@ -10,6 +10,13 @@
     <label for="teamCoach">Who on&nbsp;<span id="thisText">this&nbsp;</span>team&nbsp;<span id="teamNumberText"></span>did you get this information from?</label>
     <input type="text" class="form-control" placeholder="Information provider" id="infoProvider">
     <br />
+    <div id="warningAlreadyScouted" style="display: none; background: #ffff99; padding: 5px; padding-right:0; border-radius: 5px; position: relative;">
+        <div style="display: inline-block; max-width: 10%; height: 100%; position: absolute; top: 0; left: -5px; bottom: 0; right: 0; margin-top: auto; margin-bottom: auto;">
+            <span class="glyphicon glyphicon-exclamation-sign" style="position: absolute; top: 35%;"></span>
+        </div>
+        <div style="display: inline-block; max-width: 90%; padding-left: 15px;">This team has already been scouted at this location by your team.</div>
+    </div>
+    <br />
 </form>
 
 <script type="text/javascript">
@@ -30,6 +37,21 @@
             $('#teamNumberTitle').text(": " + teamNumber);
             $('#thisText').text("");
             $('#teamNumberText').text(teamNumber + " ");
+            $.ajax({
+                url: 'check-for-already-scouted.php',
+                method: 'POST',
+                data: {
+                    'scoutedTeam': teamNumber
+                },
+                success: function(response, textStatus, jqXHR) {
+                    console.log(response);
+                    if (response !== "") {
+                        $("#warningAlreadyScouted").show();
+                    } else {
+                        $("#warningAlreadyScouted").hide();
+                    }
+                }
+            });
         }
     }
 
