@@ -47,7 +47,7 @@
                         </div>
                     </div>
 
-                    <button onclick='window.location = "/alliances/compare";' class="btn btn-lg btn-info btn-home-selections">Compare Alliances</button>
+                    <button onclick='window.location = "/alliances";' class="btn btn-lg btn-info btn-home-selections">Alliance Tools</button>
                     <button onclick='window.location = "/home/results/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
                 <?php } ?>
 

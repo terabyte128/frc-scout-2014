@@ -115,7 +115,7 @@ $listNum = 0;
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Page Title</title>
+        <title>Alliance Search Results</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/headers.php'; ?>
         <!-- choose a theme file -->
         <link rel="stylesheet" href="/css/theme.default.css">
@@ -178,8 +178,5 @@ $listNum = 0;
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php"; ?>
             </div>
         </div>
-        <script type="text/javascript">
-
-        </script>
     </body>
 </html>
