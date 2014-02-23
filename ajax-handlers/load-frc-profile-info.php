@@ -103,7 +103,7 @@ if ($thingToLoad === "pit") {
 
     if (empty($finalRow)) {
         if ($teamNumber !== $_POST['teamNumber']) {
-            echo "<em>It doesn't look like anyone has pit scouted this team yet. <a href='/home/scouting/pit'>Be the first.</a>";
+            echo "<em>It doesn't look like anyone has pit scouted this team yet. <a href='/home/scouting/pit/" . $_POST['teamNumber'] . "'>Be the first.</a>";
         }
     } else {
         echo '<div style="text-align: center;"><strong><a href="/team/' . $finalRow['scouted_team'] . '/robot">View all pit scouting data for this team'
