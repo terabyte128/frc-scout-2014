@@ -45,12 +45,11 @@
                 },
                 success: function(response, textStatus, jqXHR) {
                     console.log(response);
-                    //if (response !== "") {
+                    if (response !== "") {
                         $("#warningAlreadyScouted").show();
-                        $("#warningAlreadyScouted").text(response);
-                    //} else {
-                    //    $("#warningAlreadyScouted").hide();
-                    //}
+                    } else {
+                        $("#warningAlreadyScouted").hide();
+                    }
                 }
             });
         }
