@@ -8,7 +8,7 @@
         </label>
         <label class="btn btn-danger btn-lg" id="0" onclick='goalValue = 0;
                 updateTotals(); updateMissed(true);'>
-            <input type="radio" name="options" id="missedGoal">Missed
+            <input type="radio" name="options" id="missedGoal">Miss
         </label>
         <label class="btn btn-blue-selection btn-lg" id="6" onclick='goalValue = 6;
                 updateTotals(); updateMissed(false);'>
