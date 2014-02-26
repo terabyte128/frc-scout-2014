@@ -4,22 +4,22 @@
     <div class="btn-group" data-toggle="buttons" id='scoredGoal1'>
         <label class="btn btn-warning btn-lg" id="0-0" onclick='goalValues[0] = 0;
                 updateTotals();
-                updateMissed(false);'>
+                updateMissed(false, 0);'>
             <input type="radio" name="options" id="noGoal1">None
         </label>
         <label class="btn btn-danger btn-lg" id="0-m" onclick='goalValues[0] = 0;
                 updateTotals();
-                updateMissed(true);'>
+                updateMissed(true, 0);'>
             <input type="radio" name="options" id="missedGoal1">Missed
         </label>
         <label class="btn btn-blue-selection btn-lg" id="0-6" onclick='goalValues[0] = 6;
                 updateTotals();
-                updateMissed(false);'>
+                updateMissed(false, 0);'>
             <input type="radio" name="options" id="lowGoal1">Low
         </label>
         <label class="btn btn-success btn-lg" id="0-15" onclick='goalValues[0] = 15;
                 updateTotals();
-                updateMissed(false);'>
+                updateMissed(false, 0);'>
             <input type="radio" name="options" id="highGoal1">High
         </label>
     </div>
