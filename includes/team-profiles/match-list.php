@@ -6,11 +6,11 @@ require_once $docRoot . '/includes/db-connect.php';
 
 $otherTeamNumber = $_GET['team'];
 $queryString = "SELECT *, "
-        . "(auto_goal_value + 5*auto_hot_goal + 5*auto_moved_to_alliance_zone) AS `auto_total_points`, "
+        . "(15*auto_high_goals + 6*auto_low_goals + 5*auto_hot_goals + 5*auto_moved_to_alliance_zone) AS `auto_total_points`, "
         . "(tele_low_goals + 10*tele_high_goals + 10*tele_truss_throws + 10*tele_truss_catches + 10*tele_received_assists) AS `tele_total_points`, "
         . "format((tele_high_goals / (tele_high_goals + tele_missed_goals)) * 100, 1) AS tele_accuracy, "
         . "(tele_high_goals + tele_missed_goals) AS tele_total_shots, "
-        . "(SELECT (auto_goal_value + 5*auto_hot_goal + 5*auto_moved_to_alliance_zone + "
+        . "(SELECT (15*auto_high_goals + 6*auto_low_goals + 5*auto_hot_goals + 5*auto_moved_to_alliance_zone + "
         . "tele_low_goals + 10*tele_high_goals + 10*tele_truss_throws + 10*tele_truss_catches + "
         . "10*tele_received_assists)) AS total_points, "
         . "(SELECT format((total_points / total_match_points) * 100, 0)) AS proportion "
@@ -93,18 +93,28 @@ $listNum = 0;
                                 <span class="comment-commenter"><strong>Autonomous</strong></span><br />
                                 Points scored: <strong><?= $match['auto_total_points'] ?></strong>
                                 <div id="moreAutoData<?= $listNum ?>" style="display:none;">
-                                    Goal scored: <strong><?php
-                                        if ($match['auto_missed_goal'] === "1") {
-                                            echo '<span style="color: #a9302a;">Missed</span>';
-                                        } else if ($match['auto_goal_value'] === "6") {
-                                            echo 'Low';
-                                        } else if ($match['auto_goal_value'] === "15") {
-                                            echo 'High';
-                                        } else {
-                                            echo "Didn't shoot";
-                                        }
-                                        ?></strong><br />
-                                    Shot to hot goal: <strong><?php echo $match['auto_hot_goal'] === "1" ? 'Yes' : 'No'; ?></strong><br />
+                                    <?php if ($match['auto_low_goals'] + $match['auto_high_goals'] + $match['auto_missed_goals'] < 1) { ?>
+                                        Goal scored: <strong><?php
+                                            if ($match['auto_missed_goals'] === "1") {
+                                                echo '<span style="color: #a9302a;">Missed</span>';
+                                            } else if ($match['auto_low_goals'] === "1") {
+                                                echo 'Low';
+                                            } else if ($match['auto_high_goals'] === "1") {
+                                                echo 'High';
+                                            } else {
+                                                echo "Didn't shoot";
+                                            }
+                                            ?></strong><br />
+                                        Shot to hot goal: <strong><?php echo $match['auto_hot_goals'] === "1" ? 'Yes' : 'No'; ?></strong><br />
+                                    <?php } else { ?>
+                                        <strong>Multiple goals scored</strong><br />
+                                        Accuracy: <strong><?= ($match['auto_high_goals'] + $match['auto_low_goals']) /
+                                        ($match['auto_high_goals'] + $match['auto_low_goals'] + $match['auto_missed_goals']) * 100 ?>%</strong><br />
+                                        High goals scored: <strong><?= $match['auto_high_goals'] ?></strong><br />
+                                        Low goals scored: <strong><?= $match['auto_low_goals'] ?></strong><br />
+                                        Hot goals: <strong><?= $match['auto_hot_goals'] ?></strong><br />
+                                        Goals missed: <strong><?= $match['auto_missed_goals'] ?></strong><br />
+                                    <?php } ?>
                                     Moved to alliance zone: <strong><?php echo $match['auto_moved_to_alliance_zone'] === "1" ? 'Yes' : 'No'; ?></strong>
                                 </div>
                                 <hr class="comment-divider-hr" />

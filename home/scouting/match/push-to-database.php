@@ -13,7 +13,7 @@ $params = array(
     //prematch
     $location, $scoutName, $teamNumber, $matchData['teamNumber'], $matchData['matchNumber'], $matchData['allianceColor'] == "red" ? 0 : 1, !$matchData['teamPresent'],
     //autonomous
-    $matchData['autoMissedGoal'] === "true" ? 1 : 0, $matchData['autoHotGoal'] === "true" ? 1 : 0, $matchData['autoGoalValue'], $matchData['autoMovedToAllianceZone'] === "true" ? 1 : 0,
+    $matchData['autoMissedGoals'], $matchData['autoHotGoals'], $matchData['autoHighGoals'], $matchData['autoLowGoals'], $matchData['autoMovedToAllianceZone'] === "true" ? 1 : 0,
     //teleoperated
     $matchData['teleReceivedAssists'], $matchData['telePassedAssists'], $matchData['teleHighGoals'],
     $matchData['teleLowGoals'], $matchData['teleMissedGoals'], $matchData['teleTrussThrows'], $matchData['teleTrussCatches'],
@@ -26,10 +26,10 @@ $params = array(
 try {
     $query = $db->prepare("INSERT INTO frc_match_data ("
             //prematch 
-           . "location, timestamp, `scout_name`, scouting_team, scouted_team, match_number, alliance_color, team_absent, "
+            . "location, timestamp, `scout_name`, scouting_team, scouted_team, match_number, alliance_color, team_absent, "
 
             //autonomous
-            . "auto_missed_goal, auto_hot_goal, auto_goal_value, auto_moved_to_alliance_zone, "
+            . "auto_missed_goals, auto_hot_goals, auto_high_goals, auto_low_goals, auto_moved_to_alliance_zone, "
 
             //teleoperated
             . "tele_received_assists, tele_passed_assists, tele_high_goals, "
@@ -39,8 +39,8 @@ try {
             . "match_outcome, total_match_points, died_during_match, caused_fouls, foul_comments, misc_comments) VALUES ("
 
             //dem values doe
-            . "?, now(), ?, ?, ?, ?, ?, ?, ?, "
-            . " ?, ?, ?,"
+            . "?, now(), ?, ?, ?, ?, ?, ?,"
+            . " ?, ?, ?, ?, ?,"
             . " ?, ?, ?,"
             . " ?, ?, ?, ?,"
             . " ?, ?, ?, ?, ?, ?"

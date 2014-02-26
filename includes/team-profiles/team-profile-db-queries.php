@@ -38,17 +38,23 @@ try {
     format(avg(`tele_truss_catches`), 1) as 'teleTrussCatch',
     format(avg(tele_received_assists), 1) as 'teleRecvdAssists',
     format(avg(tele_passed_assists), 1) as 'telePassedAssists',
-    format(AVG(auto_goal_value + (auto_hot_goal * 5) + (auto_moved_to_alliance_zone * 5)), 1) AS auto_points,
+    
+    format(AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_high_goals * 5)
+    + (auto_moved_to_alliance_zone * 5)), 1) AS auto_points,
+    
     format(AVG((tele_received_assists * 10) + (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10)
     + (tele_truss_catches * 10)), 1) AS tele_points,
-    format(AVG(auto_goal_value + (auto_hot_goal * 5) + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) +
-    (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)), 1) AS total_points,
-    format(((AVG(auto_goal_value + (auto_hot_goal * 5) + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) +
-    (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10))) /
-    (AVG(total_match_points))) * 100, 1) AS alliance_score_percent
+    
+    format(AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_high_goals * 5)
+    + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) + (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10)
+    + (tele_truss_catches * 10)), 1) AS total_points,
+    
+    format((AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_high_goals * 5)
+    + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) + (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10)
+    + (tele_truss_catches * 10)) / (AVG(total_match_points))) * 100, 1) AS alliance_score_percent
     
     FROM frc_match_data WHERE scouted_team=?");
-    
+
     $request->execute(array($otherTeamNumber, $otherTeamNumber,
         $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber,
         $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber));
