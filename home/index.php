@@ -3,13 +3,13 @@
 <html>
     <head>
         <?php include '../includes/headers.php'; ?>
-        <title>FIRST Scout: Home</title>
+        <title>FRC Scout: Home</title>
     </head>
     <body>
         <div class="wrapper">
             <div class="container">
                 <?php include '../includes/messages.php' ?>
-                <h2>FIRST Scout: Home</h2>
+                <h2>FRC Scout: Home</h2>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Scouting Tools</font>
                 <hr style="border-top: 1px solid #bbb">

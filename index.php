@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FIRST Scout: Login</title>
+        <title>FRC Scout: Login</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/headers.php'; ?>
     </head>
     <body>
@@ -12,7 +12,7 @@
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
                 <div class="title">
                     <img style='margin: 20px auto 2px auto; max-width: 275px' src="images/logo_earfuzz_hat.png" alt="header logo" id="main-title-image" />
-                    <h2 style='margin-top: 2px;'>FIRST Scout: Login</h2>
+                    <h2 style='margin-top: 2px;'>FRC Scout: Login</h2>
                 </div>
                 <div class='login-form align-center' style='max-width: 320px;'>
                     <form role="form" onsubmit="login();
@@ -56,7 +56,7 @@
                     </form> 
                     <br />
                     
-                    <p>So far, <?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams have registered on FIRST Scout!</p>
+                    <p>So far, <?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams have registered on FRC Scout!</p>
                     
                     <p>
                         <em>
@@ -69,7 +69,7 @@
                                     echo "<br><br><span style='color:firebrick;'>development </span>";
                                 };
                                 ?>
-                                v1.1.2
+                                v1.1.3
                             </strong>
                         </em>
                     </p>

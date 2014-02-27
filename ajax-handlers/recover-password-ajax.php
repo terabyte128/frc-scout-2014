@@ -33,9 +33,9 @@ $message = <<<MSG
         $resetPage
 MSG;
 
-mail($adminEmail, "Password reset requested on FIRST Scout", $message, 'From: noreply@frcscout.com');
+mail($adminEmail, "Password reset requested on FRC Scout", $message, 'From: noreply@frcscout.com');
 
 echo 'loadPageWithMessage("/", "Request sent successfully, check your email.", "success")';
 
-echo '</script>'
+echo '</script>';
 ?>
