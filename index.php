@@ -64,7 +64,9 @@
 
                                 <?php
                                 if (strpos($_SERVER['HTTP_HOST'], "dev") !== FALSE) {
-                                    echo '<span style="color:firebrick;">development </span>';
+                                    echo '<span style="color:firebrick;"><span class="glyphicon glyphicon-exclamation-sign"></span> Warning: this site is under active development and may not work as expected. ';
+                                    echo '<a href="http://frcscout.com">Click here</a> to go to the release site.</span>';
+                                    echo "<br><br><span style='color:firebrick;'>development </span>";
                                 };
                                 ?>
                                 v1.1.1
