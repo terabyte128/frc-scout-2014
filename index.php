@@ -76,7 +76,7 @@
                     
                     <a href="create-account.php">Create an account</a>
                     <br />
-                    <a href="forgot-password.php">Recover your password</a>
+                    <a href="/recover">Recover your password</a>
                     <br /><br />
                 </div>
             </div>
