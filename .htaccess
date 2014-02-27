@@ -14,3 +14,5 @@ RewriteRule ^alliances/?$ /home/results/alliance-tools.php [NC,L] #make alliance
 RewriteRule ^alliances/builder/?$ /home/results/alliance-builder.php [NC,L] #make alliance builder better
 RewriteRule ^home/scouting/pit/([0-9]+)/?$ /home/scouting/pit/index.php?team=$1 [NC,L] #for the "pit scout yourself" link
 RewriteRule ^alliances/builder/results/?$ /home/results/builder-results.php [NC,L] #for the builder results page
+RewriteRule ^recover/?$ /recover-password.php [NC,L] #for the password reset page
+RewriteRule ^recover/([0-9a-f]+)/?$ /recover-password.php?id=$1 [NC,L] #rewrite password ids to make them prettier
