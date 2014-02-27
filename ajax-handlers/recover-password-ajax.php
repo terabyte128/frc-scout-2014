@@ -31,6 +31,8 @@ $message = <<<MSG
                 
         In order to complete this request, please click the following link:
         $resetPage
+        
+        This page will expire after 20 minutes.
 MSG;
 
 mail($adminEmail, "Password reset requested on FRC Scout", $message, 'From: noreply@frcscout.com');

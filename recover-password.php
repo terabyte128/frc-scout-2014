@@ -8,13 +8,13 @@ if (isset($_GET['id'])) {
         $request = $db->prepare("SELECT password_reset_time, reset_admin_password FROM frc_team_accounts WHERE password_reset_id=?");
         $request->execute(array($resetId));
         $response = $request->fetch(PDO::FETCH_ASSOC);
-
+        
         if ($request->rowCount() < 1) {
             include $_SERVER['DOCUMENT_ROOT'] . "/includes/message-control.php";
             die("<script type='text/javascript'>loadPageWithMessage( '/', 'Invalid reset ID.', 'danger');</script>");
         }
 
-        if ($response['password_reset_time'] - time() > 1200) {
+        if (time() - $response['password_reset_time'] > 1200) {
             include $_SERVER['DOCUMENT_ROOT'] . "/includes/message-control.php";
             die("<script type='text/javascript'>loadPageWithMessage( '/recover', 'Your reset ID has expired, please try again.', 'danger');</script>");
         }
