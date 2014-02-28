@@ -22,10 +22,9 @@ try {
     
     format((1 - (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND team_absent=true) /
     (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=?)) * 100, 1) AS 'attendance',
+    
     format((1 - (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND auto_missed_goal=1 AND team_absent=0) /
     (SELECT matchesPresent)) * 100, 1) as autoAccuracy,
-    format(((SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND auto_hot_goal=1 AND team_absent=0) /
-    (SELECT matchesPresent)) * 100, 1) as autoHotGoalPercent,
     
     format(((SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND auto_moved_to_alliance_zone=1 AND team_absent=0) /
     (SELECT matchesPresent)) * 100, 1) as autoMovedZonePercent,
@@ -39,7 +38,7 @@ try {
     format(avg(tele_received_assists), 1) as 'teleRecvdAssists',
     format(avg(tele_passed_assists), 1) as 'telePassedAssists',
     
-    format(AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_high_goals * 5)
+    format(AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_hot_goals * 5)
     + (auto_moved_to_alliance_zone * 5)), 1) AS auto_points,
     
     format(AVG((tele_received_assists * 10) + (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10)
@@ -56,7 +55,7 @@ try {
     FROM frc_match_data WHERE scouted_team=?");
 
     $request->execute(array($otherTeamNumber, $otherTeamNumber,
-        $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber,
+        $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber,
         $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber));
 
     $stats = $request->fetch(PDO::FETCH_ASSOC);

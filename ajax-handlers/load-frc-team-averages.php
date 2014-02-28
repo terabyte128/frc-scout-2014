@@ -29,12 +29,12 @@ require_once $docRoot . '/includes/setup-session.php';
 require_once $docRoot . '/includes/db-connect.php';
 
 $queryString = ('SELECT scouted_team, '
-        . 'format(AVG(auto_goal_value + (auto_hot_goal * 5) + (auto_moved_to_alliance_zone * 5)), 1) AS auto_points, '
+        . 'format(AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_hot_goals * 5) + (auto_moved_to_alliance_zone * 5)), 1) AS auto_points, '
         . 'format(AVG((tele_received_assists * 10) + (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) '
         . '+ (tele_truss_catches * 10)), 1) AS tele_points, '
-        . 'format(AVG(auto_goal_value + (auto_hot_goal * 5) + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) + '
-        . '(tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)), 1) AS total_points '
-        . 'FROM `frc_match_data`');
+        . 'format(AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_hot_goals * 5) + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) + '
+        . '(tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)), 1) AS total_points'
+        . ' FROM `frc_match_data`');
 
 //if the team wants to filter then do so
 if ($onlyLoggedInTeam) {
