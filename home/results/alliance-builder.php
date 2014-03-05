@@ -16,7 +16,7 @@
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
 
                 <h2><img id="loading" name="loading" src="/images/loading.gif" style="height: 24px; vertical-align: initial; display: none;"> Alliance Builder</h2>
-                <button class="btn btn-default" onclick="window.location = '/alliances'" style="margin-bottom: 10px;">Back to Alliance Tools</button>
+                <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
                 <br />
                 <div style="margin:auto;">
                     <div style="max-width: 600px; margin: auto;" class="form-group">

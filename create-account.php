@@ -60,7 +60,7 @@
                             </select>
                         </div>
                         <button type="submit" id="submitCreateRequest" class="btn btn-default btn-success">Create Account</button>
-			<button type="button" onClick="location.href='index.php'" class="btn btn-default">Go Back</button>
+			<button type="button" onClick="location.href='/'" class="btn btn-default">Go Back</button>
                     </form>
                     <br />
                 </div>
@@ -109,7 +109,7 @@
                                             showMessage(response, 'danger');
                                         } else {
                                             localStorage.newAccount = true;
-                                            loadPageWithMessage("index.php", response, "success");
+                                            loadPageWithMessage("/", response, "success");
                                         }
                                     }
                                 });

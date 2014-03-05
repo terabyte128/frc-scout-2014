@@ -16,3 +16,5 @@ RewriteRule ^home/scouting/pit/([0-9]+)/?$ /home/scouting/pit/index.php?team=$1 
 RewriteRule ^alliances/builder/results/?$ /home/results/builder-results.php [NC,L] #for the builder results page
 RewriteRule ^recover/?$ /recover-password.php [NC,L] #for the password reset page
 RewriteRule ^recover/([0-9a-f]+)/?$ /recover-password.php?id=$1 [NC,L] #rewrite password ids to make them prettier
+RewriteRule ^home/?$ /home/index.php [NC,L] # rewrite homepage to make it prettier
+RewriteRule ^/?$ /index.php [NC,L] # rewrite homepage to make it prettier
