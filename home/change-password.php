@@ -31,7 +31,7 @@ require_once '../includes/admin-required.php';
                         </div>
 
                         <button type="submit" id="submitButton" class="btn btn-default btn-success">Change Password</button>
-                        <button type="button" onclick="document.location = 'index.php'" class ="btn btn-default btn-danger">Return</button>
+                        <button type="button" onclick="document.location = '/'" class ="btn btn-default btn-danger">Return</button>
                     </form>
                     <br />
                 </div>
@@ -43,7 +43,7 @@ require_once '../includes/admin-required.php';
                         if (confirmed) {
                             requestReset();
                         } else {
-                            window.location = "index.php";
+                            window.location = "/";
                         }
                     }
 
@@ -68,7 +68,7 @@ require_once '../includes/admin-required.php';
                             success: function(response, textStatus, jqXHR) {
                                 $("#submitButton").button('reset');
                                 if (response.indexOf("successfully") !== -1) {
-                                    loadPageWithMessage("index.php", response, "success");
+                                    loadPageWithMessage("/", response, "success");
                                 } else {
                                     showMessage(response, 'danger');
                                 }
