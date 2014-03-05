@@ -131,6 +131,6 @@
                     function restore() {
                         alert("This feature will be added soon");
                     }
-        </script>  
+        </script>
     </body>
 </html>

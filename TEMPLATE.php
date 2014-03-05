@@ -17,14 +17,14 @@
                 <h2><img id="loading" src="/images/loading.gif" style="height: 24px; vertical-align: initial; display: none;"> Page Title</h2>
                 <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
                 <br />
-                
+
                 <!-- ~ page content goes here ~ -->
-                
+
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php"; ?>
             </div>
         </div>
         <script type="text/javascript">
-                    
+
         </script>
     </body>
 </html>
