@@ -78,7 +78,7 @@
                         }
                         loadTable(onlyUs, onlyHere);
                         $("#averagesTable").tablesorter({
-                            sortForce: [[1, 1]]
+                            sortList: [[1, 1]]
                         });
                     });
 
