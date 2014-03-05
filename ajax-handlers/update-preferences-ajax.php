@@ -15,7 +15,7 @@ $queryString = "UPDATE " . $teamTable . " SET ";
 $first = true;
 
 if (!empty($newPassword)) {
-    $queryString .= " `team_password`=md5(?) ";
+    $queryString .= " `team_password`=? ";
     array_push($params, $newPassword);
     $first = false;
 }
@@ -24,7 +24,7 @@ if (!empty($newAdminPassword)) {
     if (!$first) {
         $queryString .= ", ";
     }
-    $queryString .= " `admin_password`=md5(?) ";
+    $queryString .= " `admin_password`=? ";
     array_push($params, $newAdminPassword);
     $first = false;
 }
@@ -37,7 +37,7 @@ if (!empty($newEmail)) {
     array_push($params, $newEmail);
 }
 
-$queryString .= " WHERE `team_number`=? AND `admin_password`=md5(?)";
+$queryString .= " WHERE `team_number`=? AND `admin_password`=?";
 
 array_push($params, $teamNumber);
 array_push($params, $currentAdminPassword);

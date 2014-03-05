@@ -5,6 +5,7 @@
     <head>
         <title>FRC Scout: Login</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/headers.php'; ?>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -105,7 +106,7 @@
                     data: {
                         'teamNumber': teamNumber,
                         'scoutName': scoutName,
-                        'teamPassword': teamPassword,
+                        'teamPassword': CryptoJS.MD5(teamPassword).toString(),
                         'teamType': teamType,
                         'location': currentLocation
                     },
