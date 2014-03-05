@@ -9,7 +9,7 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['scoutName']);
     unset($_SESSION['location']);
     unset($_SESSION['isAdmin']);
-    header('location: /index.php');
+    header('location: /');
     exit();
 }
 
