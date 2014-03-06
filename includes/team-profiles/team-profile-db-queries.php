@@ -15,6 +15,7 @@ try {
     //get statistics
     $request = $db->prepare("select
     (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND team_absent=0) as matchesPresent,
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouting_team=?) as contributions,
 
     (SELECT sum(`tele_high_goals`+`tele_missed_goals`) FROM frc_match_data WHERE scouted_team=?) as shotsAttempted,
     (SELECT sum(`tele_high_goals`) FROM frc_match_data WHERE scouted_team=?) as shotsMade,
@@ -56,9 +57,15 @@ try {
 
     $request->execute(array($otherTeamNumber, $otherTeamNumber,
         $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber,
-        $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber));
+        $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber));
 
     $stats = $request->fetch(PDO::FETCH_ASSOC);
+
+    $request = $db->prepare("SELECT COUNT(*) AS contributions FROM frc_pit_scouting_data WHERE scouting_team=? ");
+
+    $request->execute(array($otherTeamNumber));
+
+    $pit = $request->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Unable to get values from database: " . $e->getMessage());
 }

@@ -58,8 +58,9 @@ if (!empty($_POST['shooterType'])) {
 }
 
 if (!empty($_POST['role'])) {
-    array_push($params, $_POST['role']);
-    $queryString .= 'AND role=? ';
+    $container = "%" . $_POST['role'] . "%";
+    array_push($params, $container);
+    $queryString .= 'AND role LIKE ? ';
 }
 
 if (!empty($_POST['startPosition'])) {
@@ -146,7 +147,7 @@ $listNum = 0;
                                  background: <?php if (!empty($info['team_picture'])) { ?>
                                      url('/uploads/<?php echo $info['team_picture']; ?>')
                                  <?php } ?>
-                                 #aaa center; 
+                                 #aaa center;
                                  border-radius: 5px; vertical-align: middle;
                                  <?php if($info['team_picture'] !== 'default_profile_photo.png') { ?>
                                      background-size: auto 100%;
