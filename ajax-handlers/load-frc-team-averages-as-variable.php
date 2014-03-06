@@ -21,7 +21,7 @@ class Averages {
      * @param type $onlyThisLocation
      * @return type
      */
-    static function getAverages($scoutedTeamNumber, $onlyLoggedInTeam, $onlyThisLocation) {
+    static function getAverages($scoutedTeamNumber, $onlyLoggedInTeam, $onlyThisLocation, $orderByTotalPoints) {
         
         $docRoot = $_SERVER['DOCUMENT_ROOT'];
         
@@ -73,6 +73,10 @@ class Averages {
 
         $queryString .= ' GROUP BY `scouted_team`';
 
+        if($orderByTotalPoints) {
+            $queryString .= " ORDER BY `total_points`";
+        }
+        
         try {
             $query = $db->prepare($queryString);
             $query->execute($params);
