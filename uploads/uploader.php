@@ -21,10 +21,10 @@ if (!empty($_FILES["teamPicture"])) {
     }
 
     $fileType = exif_imagetype($myFile["tmp_name"]);
-    $allowed = array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG);
+    $allowed = array(IMAGETYPE_JPEG, IMAGETYPE_PNG);
 
     if (!in_array($fileType, $allowed)) {
-        die("You can only upload image files (gif, jpg, and png).");
+        die("You can only upload image files (jpg, and png).");
     }
 
     // ensure a safe filename
