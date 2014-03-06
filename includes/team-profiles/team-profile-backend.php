@@ -56,6 +56,12 @@
                                 <?php if (!empty($response['website'])) { ?>
                                     <strong>Website: </strong><a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a>
                                 <?php } ?>
+                                <?php if ($stats['contributions'] > 0 || $pit['contributions'] > 0) { ?>
+                                    <br /><?php if (!$isLoggedInTeam) { ?>This<?php } else { ?>Your<?php } ?> team has <?php if ($stats['contributions'] > 0) { ?>scouted <strong><?= $stats['contributions'] ?> match<?php if ($stats['contributions'] > 1) { ?>es<?php } ?></strong><?php if ($pit['contributions'] > 0) { ?>&nbsp;and&nbsp;<?php } } ?><?php if ($pit['contributions'] > 0) { ?>pit scouted <strong><?= $pit['contributions'] ?> team<?php if ($pit['contributions'] > 1) { ?>s<?php } } ?></strong>. Good job,
+                                    team<?php if (!$isLoggedInTeam) { ?>&nbsp;<?= $otherTeamNumber ?><?php } ?>!
+                                <?php } else { ?>
+                                    <br />This team has not scouted any matches, for shame.
+                                <?php } ?>
                             <?php } ?>
                         </div>
                     </div>
@@ -148,35 +154,6 @@
                             <!-- ftc stuff, I don't really know how the game works, whoops -->
                         <?php } ?>
                         <?php if ($teamType === "FRC") { ?>
-                            <!--
-                            <table class="table table-striped table-bordered table-hover tablesorter" id="tablesorter">
-                            <thead>
-                            <th>Event</th>
-                            <th>Match Number</th>
-                            <th>Total Score</th>
-                            <th>Auto Score</th>
-                            <th>Teleop Score</th>
-                            <th>Assists Received</th>
-                            </thead>
-                            <tbody id="averages">
-                            
-                            </tbody>
-                            </table>
-                            -->
-                            <!--<h3>Percentages</h3>
-                            <ul>
-                            <li><strong>Attendance Rate: </strong><?php echo $stats['attendance']; ?>%</li>
-                            <li><strong>Teleop Goal Scoring Rate: </strong><?php echo $stats['percentageOfShotsMade']; ?>%</li>
-                            </ul>
-                            
-                            <h3>Averages</h3>
-                            <ul>
-                            <li><strong>Teleop High Goals: </strong><?php echo $averageGoals['teleAverageHigh']; ?></li>
-                            <li><strong>Teleop Low Goals: </strong><?php echo $averageGoals['teleAverageLow']; ?></li>
-                            <li><strong>Teleop Truss Throws: </strong><?php echo $averageGoals['teleTrussThrow']; ?></li>
-                            <li><strong>Teleop Truss Catches: </strong><?php echo $averageGoals['teleTrussCatch']; ?></li>
-                            </ul>-->
-
                             <div style="text-align:center;">
                                 <strong><a href="/team/<?php echo $otherTeamNumber; ?>/matches/">View individual matches for this team</a></strong>
                                 <?php if ($isAdmin) { ?>
