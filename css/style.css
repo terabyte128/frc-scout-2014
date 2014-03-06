@@ -1,4 +1,4 @@
-/* 
+/*
     Document   : style
     Created on : Oct 25, 2013, 2:42:41 PM
     Author     : Sam
@@ -6,7 +6,7 @@
         Purpose of the stylesheet follows.
 */
 
-root { 
+root {
     display: block;
 }
 
@@ -53,17 +53,17 @@ body.modal-open {
 }
 
 .footer {
-    font-size: 10pt;     
-    color: #868686; 
+    font-size: 10pt;
+    color: #868686;
 }
 
 .footer-left {
-    float: left; 
+    float: left;
     margin-bottom: 5px;
 }
 
 .footer-right {
-    float: right; 
+    float: right;
     font-size: 10pt;
 }
 
@@ -164,7 +164,7 @@ table, thead, th, td, .tablesorter-header-inner {
 }
 
 .btn.btn-blue-selection {
-    background-color: rgb(0, 82, 255); 
+    background-color: rgb(0, 82, 255);
     border-color: rgb(0, 82, 255);
     color: white;
 }
@@ -237,53 +237,53 @@ a.editable-click:hover {
 
 .table-wrapper {
     max-width: 1200px;
-    text-align:left; 
+    text-align:left;
     margin:2px auto 2px auto;
 }
 
-.table-responsive>.table>thead>tr>th, 
-.table-responsive>.table>tbody>tr>th, 
-.table-responsive>.table>tfoot>tr>th, 
-.table-responsive>.table>thead>tr>td, 
-.table-responsive>.table>tbody>tr>td, 
+.table-responsive>.table>thead>tr>th,
+.table-responsive>.table>tbody>tr>th,
+.table-responsive>.table>tfoot>tr>th,
+.table-responsive>.table>thead>tr>td,
+.table-responsive>.table>tbody>tr>td,
 .table-responsive>.table>tfoot>tr>td {
     white-space: normal;
 }
 
 .comment-wrapper {
-    background: #eee; 
-    border-radius: 5px; 
+    background: #eee;
+    border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    padding: 5px 5px 3px 5px; 
-    max-width: 500px; 
-    margin: auto; 
+    padding: 5px 5px 3px 5px;
+    max-width: 500px;
+    margin: auto;
     margin-bottom: 10px;
 }
 
 .comment-wrapper:hover {
-    background: #f8f8f8; 
+    background: #f8f8f8;
 }
 
 .comment-commenter {
-    text-align: left; 
+    text-align: left;
     float: left;
     font-size: 10pt;
 }
 
 .comment-timestamp {
-    color: #999; 
-   // text-align: right;
+    color: #999;
     float: right;
     font-size: 10pt;
+    vertical-align: bottom;
 }
 
 .comment-text {
-    clear: both; 
+    clear: both;
     text-align: left;
 }
 
 .comment-divider-hr {
-    border-top: 1px solid #bbb; 
+    border-top: 1px solid #bbb;
     margin: 3px 0px;
 }
