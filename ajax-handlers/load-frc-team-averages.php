@@ -25,7 +25,7 @@ $docRoot = $_SERVER['DOCUMENT_ROOT'];
 require_once $docRoot . '/includes/setup-session.php';
 require_once $docRoot . '/ajax-handlers/load-frc-team-averages-as-variable.php';
 
-$query = Averages::getAverages($scoutedTeamNumber, $onlyLoggedInTeam, $onlyThisLocation);
+$query = Averages::getAverages($scoutedTeamNumber, $onlyLoggedInTeam, $teamNumber, $onlyThisLocation, $location);
 
 while ($averages = $query->fetch(PDO::FETCH_ASSOC)) {
 //write the table in PHP instead of HTML

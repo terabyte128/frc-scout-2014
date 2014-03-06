@@ -5,7 +5,7 @@ $docRoot = $_SERVER['DOCUMENT_ROOT'];
 require_once $docRoot . '/includes/setup-session.php';
 require_once $docRoot . '/ajax-handlers/load-frc-team-averages-as-variable.php';
 
-$query = Averages::getAverages(null, false, false, true);
+$query = Averages::getAverages(null, false, $teamNumber, true, $location, true);
 
 
 $teamNumber = array();
@@ -15,9 +15,9 @@ $teleopScore = array();
 $bigArray = array();
 
 while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-    array_push($teamNumber, $row['scouted_team']);
-    array_push($autonomousScore, $row['auto_points']);
-    array_push($teleopScore, $row['tele_points']);
+    array_push($teamNumber, doubleval($row['scouted_team']));
+    array_push($autonomousScore, doubleval($row['auto_points']));
+    array_push($teleopScore, doubleval($row['tele_points']));
 }
 
 array_push($bigArray, $teamNumber);

@@ -60,7 +60,7 @@
                         text: 'Average Overall Score'
                     },
                     xAxis: {
-                        categories: [5,5,5,5,5],
+                        categories: teamNumbers,
                         title: {
                             text: "Team Number"
                         }
@@ -81,10 +81,10 @@
                     },
                     series: [{
                             name: 'Autonomous Score',
-                            data: [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
+                            data: autonomousScores
                         }, {
                             name: 'Teleoperated Score',
-                            data: [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
+                            data: teleopScores
                         }]
                 });
             }
