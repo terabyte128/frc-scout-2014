@@ -1,9 +1,12 @@
 <?php
 
+$docRoot = $_SERVER['DOCUMENT_ROOT'];
+
 require_once $docRoot . '/includes/setup-session.php';
 require_once $docRoot . '/ajax-handlers/load-frc-team-averages-as-variable.php';
 
 $query = Averages::getAverages(null, false, false, true);
+
 
 $teamNumber = array();
 $autonomousScore = array();
@@ -21,5 +24,5 @@ array_push($bigArray, $teamNumber);
 array_push($bigArray, $autonomousScore);
 array_push($bigArray, $teleopScore);
 
-print_r($teamNumber);
+print_r(json_encode($bigArray));
 ?>

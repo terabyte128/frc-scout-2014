@@ -35,9 +35,23 @@
              * tele_points
              * total_points
              */
-        
+
+
+             var responseArray;
 
             $(function() {
+
+                $.ajax({
+                    url: '/ajax-handlers/load-frc-averages-for-graphs.php',
+                    success: function(response) {
+                        console.log("done");
+                        responseArray = JSON.parse(response);
+                        loadGraph(responseArray[0], responseArray[1], responseArray[2]);
+                    }
+                })
+            });
+
+            function loadGraph(teamNumbers, autonomousScores, teleopScores) {
                 $('#graph').highcharts({
                     chart: {
                         type: 'bar'
@@ -46,17 +60,12 @@
                         text: 'Average Overall Score'
                     },
                     xAxis: {
-                        categories: [
-                            '4030',
-                            '5481',
-                            '1253'
-                        ],
+                        categories: [5,5,5,5,5],
                         title: {
                             text: "Team Number"
                         }
                     },
                     yAxis: {
-                        min: 0,
                         title: {
                             text: 'Total Score'
                         }
@@ -72,14 +81,14 @@
                     },
                     series: [{
                             name: 'Autonomous Score',
-                            data: [5, 3, 4,]
+                            data: [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
                         }, {
                             name: 'Teleoperated Score',
-                            data: [2, 2, 3]
+                            data: [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
                         }]
                 });
-            });
-            
+            }
+
             function loadTable(onlyLoggedInTeam, onlyThisLocation) {
                 $("#loading").show();
                 $.ajax({
