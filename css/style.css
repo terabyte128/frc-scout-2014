@@ -171,7 +171,7 @@ table, thead, th, td, .tablesorter-header-inner {
 
 .btn.active {
     border-color: black;
-    text-shadow: black 0.1em 0.1em 0.5em;
+    text-shadow: rgb(168, 168, 168) 0.1em 0.1em 0.5em
 }
 
 
