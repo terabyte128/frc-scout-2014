@@ -61,9 +61,9 @@ try {
 
     $stats = $request->fetch(PDO::FETCH_ASSOC);
 
-    $request = $db->prepare("SELECT COUNT(*) AS contributions FROM frc_pit_scouting_data WHERE scouting_team=? ");
+    $request = $db->prepare("SELECT COUNT(*) AS contributions, (SELECT COUNT(*) FROM frc_pit_scouting_data WHERE scouted_team=?) AS narcissism FROM frc_pit_scouting_data WHERE scouting_team=? ");
 
-    $request->execute(array($otherTeamNumber));
+    $request->execute(array($otherTeamNumber, $otherTeamNumber));
 
     $pit = $request->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {

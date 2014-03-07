@@ -54,11 +54,21 @@
                                 <p style="font-size: 20pt; margin-bottom: 0px;"><?php echo $response['team_name']; ?></p>
                                 <p style="white-space: pre-wrap"><?php echo $response['description']; ?></p>
                                 <?php if (!empty($response['website'])) { ?>
-                                    <strong>Website: </strong><a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a>
+                                    <strong>Website: </strong><a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a><br />
                                 <?php } ?>
                                 <?php if ($stats['contributions'] > 0 || $pit['contributions'] > 0) { ?>
-                                    <br /><?php if (!$isLoggedInTeam) { ?>This<?php } else { ?>Your<?php } ?> team has <?php if ($stats['contributions'] > 0) { ?>scouted <strong><?= $stats['contributions'] ?> match<?php if ($stats['contributions'] > 1) { ?>es<?php } ?></strong><?php if ($pit['contributions'] > 0) { ?>&nbsp;and&nbsp;<?php } } ?><?php if ($pit['contributions'] > 0) { ?>pit scouted <strong><?= $pit['contributions'] ?> team<?php if ($pit['contributions'] > 1) { ?>s<?php } } ?></strong>. Good job,
-                                    team<?php if (!$isLoggedInTeam) { ?>&nbsp;<?= $otherTeamNumber ?><?php } ?>!
+                                    <br /><?php if (!$isLoggedInTeam) { ?>This<?php } else { ?>Your<?php } ?> team has
+<?php if ($stats['contributions'] > 0) { ?>scouted <strong><?= $stats['contributions'] ?> match<?php if ($stats['contributions'] > 1) { ?>es<?php } ?></strong><?php if ($pit['contributions'] <= 0) { ?>.
+                                    <?php } else { ?> and <?php } } ?><?php if ($pit['contributions'] > 0) { ?>pit scouted
+                                    <?php if($pit['contributions'] <= $pit['narcissism']) { ?>
+                                        <?php if($isLoggedInTeam) { ?>
+                                            <strong>itself</strong>.
+                                        <?php } else { ?>
+                                            <strong>themselves</strong>.
+                                        <?php } ?>
+                                    <?php } else { ?>
+                                        <strong><?= $pit['contributions'] ?> team<?php if ($pit['contributions'] > 1) { ?>s<?php } ?></strong>.
+                                    <?php } } ?>Good job, team<?php if (!$isLoggedInTeam) { ?>&nbsp;<?= $otherTeamNumber ?><?php } ?>!
                                 <?php } else { ?>
                                     <br />This team has not scouted any matches, for shame.
                                 <?php } ?>
