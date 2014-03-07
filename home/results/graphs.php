@@ -46,7 +46,9 @@
                             success: function(response) {
                                 responseArray = JSON.parse(response);
                                 if (responseArray[0].length > 0) {
-                                    $("#graph").css("height", responseArray[0].length * 30 + "px");
+                                    var height =  (responseArray[0].length * 30) + 100;
+                                    console.log("height=" + height);
+                                    $("#graph").css("height", height + "px");
                                     loadGraph(responseArray[0], responseArray[1], responseArray[2]);
                                 } else {
                                     $("#graph").html("<i>No match scouting data has been entered for this location yet.</i>");
