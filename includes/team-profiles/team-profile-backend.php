@@ -58,7 +58,7 @@
                                 <?php } ?>
                                 <?php if ($stats['contributions'] > 0 || $pit['contributions'] > 0) { ?>
                                     <br /><?php if (!$isLoggedInTeam) { ?>This<?php } else { ?>Your<?php } ?> team has
-                                    <?php if ($stats['contributions'] > 0) { ?>match scouted <strong><?= $stats['contributions'] ?> times<?php if ($stats['contributions'] > 1) { ?>s<?php } ?></strong><?php if ($pit['contributions'] <= 0) { ?>.
+                                    <?php if ($stats['contributions'] > 0) { ?>match scouted <strong><?= $stats['contributions'] ?> time<?php if ($stats['contributions'] > 1) { ?>s<?php } ?></strong><?php if ($pit['contributions'] <= 0) { ?>.
                                         <?php } else { ?> and <?php
                                         }
                                     }
