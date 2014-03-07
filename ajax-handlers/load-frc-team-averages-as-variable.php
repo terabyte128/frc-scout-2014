@@ -75,7 +75,7 @@ class Averages {
         }
 
 
-        $queryString .= ' GROUP BY `scouted_team`';
+        $queryString .= ' GROUP BY `scouted_team`,`match_number`,`location`';
 
         if ($orderByTotalPoints) {
             $queryString .= " ORDER BY `total_points` DESC";
