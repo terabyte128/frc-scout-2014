@@ -30,7 +30,8 @@
             <div class="container" style="border-left: 5px solid #d2322d; border-right: 5px solid rgb(0, 82, 255);">
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php' ?>
                 <h2>Compare Alliances</h2>
-                <button class="btn btn-default" onclick="window.location = '/'">Return Home</button><br /><br />
+                <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
+                <br />
                 <div style="display: inline; padding-left: auto; padding-right: auto;" id="selectAlliances">
                     <label>Select buttons to enter team numbers</label>
                     <br />

@@ -5,6 +5,7 @@ ErrorDocument 200 /error.php?error=200
 RewriteRule ^team/([0-9]+)/?$ /home/other-team-profile.php?team=$1 [NC,L] #rewrite team profiles to make them prettier
 RewriteRule ^team/?$ /home/team-profile.php [NC,L] #make team profile better
 RewriteRule ^home/results/averages/?$ /home/results/team-averages.php [NC,L] #make team profile better
+RewriteRule ^home/results/graphs/?$ /home/results/graphs.php [NC,L] #make team profile better
 RewriteRule ^alliances/compare/?$ /home/results/compare-alliances.php [NC,L] #make team profile better
 RewriteRule ^home/preferences/?$ /home/team-preferences.php [NC,L] #make team profile better
 RewriteRule ^team/([0-9]+)/matches/?$ /includes/team-profiles/match-list.php?team=$1 [NC,L] #make specific matches better
@@ -14,3 +15,7 @@ RewriteRule ^alliances/?$ /home/results/alliance-tools.php [NC,L] #make alliance
 RewriteRule ^alliances/builder/?$ /home/results/alliance-builder.php [NC,L] #make alliance builder better
 RewriteRule ^home/scouting/pit/([0-9]+)/?$ /home/scouting/pit/index.php?team=$1 [NC,L] #for the "pit scout yourself" link
 RewriteRule ^alliances/builder/results/?$ /home/results/builder-results.php [NC,L] #for the builder results page
+RewriteRule ^recover/?$ /recover-password.php [NC,L] #for the password reset page
+RewriteRule ^recover/([0-9a-f]+)/?$ /recover-password.php?id=$1 [NC,L] #rewrite password ids to make them prettier
+RewriteRule ^home/?$ /home/index.php [NC,L] # rewrite homepage to make it prettier
+RewriteRule ^/?$ /index.php [NC,L] # rewrite homepage to make it prettier

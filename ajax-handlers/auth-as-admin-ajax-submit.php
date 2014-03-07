@@ -6,7 +6,7 @@ $adminPassword = $_POST['adminPassword'];
 
 
 try {
-    $authenticate = $db->prepare('SELECT team_number FROM '. $teamTable .' WHERE team_number = ? AND admin_password = md5(?)');
+    $authenticate = $db->prepare('SELECT team_number FROM '. $teamTable .' WHERE team_number = ? AND admin_password = ?');
     $authenticate->execute(array($teamNumber, $adminPassword));
     $teams = $authenticate->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {

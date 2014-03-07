@@ -338,7 +338,7 @@ function printPSData($finalRow, $canDeleteData, $listNum, $teamNumber) {
                                             return false;
                                         }
                                     };
-                                    
+
                                     </script>";
     }
 }

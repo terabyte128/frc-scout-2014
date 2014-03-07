@@ -5,7 +5,7 @@
     <br />
     <label for="role">Robot role:</label>
     <input type="text" class="form-control" placeholder="Robot role" id="role" />
-    <span class="typeahead-hint">shooter | passer | blocker | goalie | thrower | catcher<br />offense | defense | balanced</span><br />
+    <span class="typeahead-hint">Multiple allowed, comma separated:<br />shooter | passer | blocker | goalie | thrower | catcher<br />offense | defense | balanced</span><br />
     <br />
     <label for="canCollect">Robot abilities:</label>
     <button data-toggle="button" class="btn btn-lg btn-warning btn-no-border" id="canCollect" style='margin-top: 10px; width: 250px;'>Can collect ball</button>

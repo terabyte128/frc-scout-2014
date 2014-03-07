@@ -15,7 +15,7 @@
             <input type="radio" name="options">Blue
         </label>
     </div>
-    <br /><br/> 
+    <br /><br/>
     <button id="absentButton" class="btn btn-lg btn-warning next-page-button" type="button" onclick="showAbsentModal();">Team Absent</button>
 </form>
 
@@ -27,7 +27,7 @@
             <div class="modal-content">
                 <div class="modal-body" style="font-size: 16px;">
                     Marking this team as absent will terminate this scouting session. Are you sure?
-                    <br /><br/> 
+                    <br /><br/>
                     <textarea class="form-control" placeholder="Please leave a comment." rows="4" id="absentComments" required></textarea>
                 </div>
                 <div class="modal-footer">
@@ -110,7 +110,11 @@
 
             if (!errors) {
                 localStorage.teamPresent = teamPresent;
-                localStorage.allianceColorId = borderColor;
+                if (borderColor !== "") {
+                    localStorage.allianceColorId = borderColor;
+                } else {
+                    localStorage.allianceColorId = localStorage.allianceColorId;
+                }
                 localStorage.allianceColor = allianceColor;
                 localStorage.teamNumber = $("#teamNumber").val();
                 localStorage.matchNumber = $("#matchNumber").val();

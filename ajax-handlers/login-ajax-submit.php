@@ -26,7 +26,7 @@ if (!in_array($teamTable, $tableWhitelist)) {
 }
 
 try {
-    $authenticate = $db->prepare('SELECT team_number FROM ' . $teamTable . ' WHERE team_number = ? AND team_password = md5(?)');
+    $authenticate = $db->prepare('SELECT team_number FROM ' . $teamTable . ' WHERE team_number = ? AND team_password = ?');
     $authenticate->execute(array($teamNumber, $teamPassword));
     $teams = $authenticate->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {

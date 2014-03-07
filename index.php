@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FIRST Scout: Login</title>
+        <title>FRC Scout: Login</title>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/headers.php'; ?>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -12,7 +13,7 @@
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
                 <div class="title">
                     <img style='margin: 20px auto 2px auto; max-width: 275px' src="images/logo_earfuzz_hat.png" alt="header logo" id="main-title-image" />
-                    <h2 style='margin-top: 2px;'>FIRST Scout: Login</h2>
+                    <h2 style='margin-top: 2px;'>FRC Scout: Login</h2>
                 </div>
                 <div class='login-form align-center' style='max-width: 320px;'>
                     <form role="form" onsubmit="login();
@@ -56,7 +57,7 @@
                     </form> 
                     <br />
                     
-                    <p>So far, <?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams have registered on FIRST Scout!</p>
+                    <p>So far, <?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams have registered on FRC Scout!</p>
                     
                     <p>
                         <em>
@@ -64,17 +65,19 @@
 
                                 <?php
                                 if (strpos($_SERVER['HTTP_HOST'], "dev") !== FALSE) {
-                                    echo '<span style="color:firebrick;">development </span>';
+                                    echo '<span style="color:firebrick;"><span class="glyphicon glyphicon-exclamation-sign"></span> Warning: this site is under active development and may not work as expected. ';
+                                    echo '<a href="http://frcscout.com">Click here</a> to go to the release site.</span>';
+                                    echo "<br><br><span style='color:firebrick;'>development </span>";
                                 };
                                 ?>
-                                v1.1.1
+                                v1.2.0
                             </strong>
                         </em>
                     </p>
                     
                     <a href="create-account.php">Create an account</a>
                     <br />
-                    <a href="forgot-password.php">Recover your password</a>
+                    <a href="/recover">Recover your password</a>
                     <br /><br />
                 </div>
             </div>
@@ -103,7 +106,7 @@
                     data: {
                         'teamNumber': teamNumber,
                         'scoutName': scoutName,
-                        'teamPassword': teamPassword,
+                        'teamPassword': CryptoJS.MD5(teamPassword).toString(),
                         'teamType': teamType,
                         'location': currentLocation
                     },

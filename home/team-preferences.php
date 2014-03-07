@@ -14,6 +14,7 @@ require_once '../includes/admin-required.php';
                 <div class="title">
                     <?php include '../includes/messages.php' ?>
                     <h2>Change Team Preferences</h2>
+                    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
                 </div>
                 <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
                 <form role="form" onsubmit='requestReset();
@@ -53,51 +54,51 @@ require_once '../includes/admin-required.php';
         </div>
         <script type="text/javascript">
 
-                    function requestReset() {
+            function requestReset() {
 
-                        var currentAdminPassword = $("#currentAdminPassword").val();
+                var currentAdminPassword = $("#currentAdminPassword").val();
 
-                        var newPassword = $("#newPassword").val();
-                        var newPasswordRepeat = $("#newPasswordRepeat").val();
+                var newPassword = $("#newPassword").val();
+                var newPasswordRepeat = $("#newPasswordRepeat").val();
 
-                        var newAdminPassword = $("#newAdminPassword").val();
-                        var newAdminPasswordRepeat = $("#newAdminPasswordRepeat").val();
+                var newAdminPassword = $("#newAdminPassword").val();
+                var newAdminPasswordRepeat = $("#newAdminPasswordRepeat").val();
 
-                        var newTeamEmail = $("#newTeamEmail").val();
+                var newTeamEmail = $("#newTeamEmail").val();
 
-                        if (newPassword !== newPasswordRepeat) {
-                            showMessage('Your new team passwords do not match, please try again.', 'danger');
-                            $("#submitButton").button('reset');
-                            return;
+                if (newPassword !== newPasswordRepeat) {
+                    showMessage('Your new team passwords do not match, please try again.', 'danger');
+                    $("#submitButton").button('reset');
+                    return;
+                }
+
+                if (newAdminPassword !== newAdminPasswordRepeat) {
+                    showMessage('Your new admin passwords do not match, please try again.', 'danger');
+                    $("#submitButton").button('reset');
+                    return;
+                }
+
+                $("#submitButton").button('loading');
+
+                $.ajax({
+                    url: '/ajax-handlers/update-preferences-ajax.php',
+                    type: "POST",
+                    data: {
+                        'currentAdminPassword': CryptoJS.MD5(currentAdminPassword).toString(),
+                        'newPassword': CryptoJS.MD5(newPassword).toString(),
+                        'newAdminPassword': CryptoJS.MD5(newAdminPassword).toString(),
+                        'newTeamEmail': newTeamEmail
+                    },
+                    success: function(response, textStatus, jqXHR) {
+                        $("#submitButton").button('reset');
+                        if (response.indexOf("success") !== -1) {
+                            showMessage(response, 'success');
+                        } else {
+                            showMessage(response, 'danger');
                         }
-
-                        if (newAdminPassword !== newAdminPasswordRepeat) {
-                            showMessage('Your new admin passwords do not match, please try again.', 'danger');
-                            $("#submitButton").button('reset');
-                            return;
-                        }
-
-                        $("#submitButton").button('loading');
-
-                        $.ajax({
-                            url: '/ajax-handlers/update-preferences-ajax.php',
-                            type: "POST",
-                            data: {
-                                'currentAdminPassword': currentAdminPassword,
-                                'newPassword': newPassword,
-                                'newAdminPassword': newAdminPassword,
-                                'newTeamEmail': newTeamEmail
-                            },
-                            success: function(response, textStatus, jqXHR) {
-                                $("#submitButton").button('reset');
-                                if (response.indexOf("success") !== -1) {
-                                    showMessage(response, 'success');
-                                } else {
-                                    showMessage(response, 'danger');
-                                }
-                            }
-                        });
                     }
+                });
+            }
         </script>
     </body>
 </html>

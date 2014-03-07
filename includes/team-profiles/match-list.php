@@ -93,7 +93,7 @@ $listNum = 0;
                                 <span class="comment-commenter"><strong>Autonomous</strong></span><br />
                                 Points scored: <strong><?= $match['auto_total_points'] ?></strong>
                                 <div id="moreAutoData<?= $listNum ?>" style="display:none;">
-                                    <?php if ($match['auto_low_goals'] + $match['auto_high_goals'] + $match['auto_missed_goals'] < 1) { ?>
+                                    <?php if ($match['auto_low_goals'] + $match['auto_high_goals'] + $match['auto_missed_goals'] <= 1) { ?>
                                         Goal scored: <strong><?php
                                             if ($match['auto_missed_goals'] === "1") {
                                                 echo '<span style="color: #a9302a;">Missed</span>';
@@ -115,7 +115,7 @@ $listNum = 0;
                                         Hot goals: <strong><?= $match['auto_hot_goals'] ?></strong><br />
                                         Goals missed: <strong><?= $match['auto_missed_goals'] ?></strong><br />
                                     <?php } ?>
-                                    Moved to alliance zone: <strong><?php echo $match['auto_moved_to_alliance_zone'] === "1" ? 'Yes' : 'No'; ?></strong>
+                                    Moved to <?php if($match['alliance_color'] === "1") { ?>blue<?php } else { ?>red<?php } ?> zone: <strong><?php echo $match['auto_moved_to_alliance_zone'] === "1" ? 'Yes' : 'No'; ?></strong>
                                 </div>
                                 <hr class="comment-divider-hr" />
                                 <span class="comment-commenter"><strong>Teleoperated</strong></span><br />

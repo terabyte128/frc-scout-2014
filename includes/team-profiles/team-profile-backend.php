@@ -54,7 +54,23 @@
                                 <p style="font-size: 20pt; margin-bottom: 0px;"><?php echo $response['team_name']; ?></p>
                                 <p style="white-space: pre-wrap"><?php echo $response['description']; ?></p>
                                 <?php if (!empty($response['website'])) { ?>
-                                    <strong>Website: </strong><a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a>
+                                    <strong>Website: </strong><a target='_blank' href="http://<?php echo $response['website']; ?>"><?php echo $response['website']; ?></a><br />
+                                <?php } ?>
+                                <?php if ($stats['contributions'] > 0 || $pit['contributions'] > 0) { ?>
+                                    <br /><?php if (!$isLoggedInTeam) { ?>This<?php } else { ?>Your<?php } ?> team has
+<?php if ($stats['contributions'] > 0) { ?>scouted <strong><?= $stats['contributions'] ?> match<?php if ($stats['contributions'] > 1) { ?>es<?php } ?></strong><?php if ($pit['contributions'] <= 0) { ?>.
+                                    <?php } else { ?> and <?php } } ?><?php if ($pit['contributions'] > 0) { ?>pit scouted
+                                    <?php if($pit['contributions'] <= $pit['narcissism']) { ?>
+                                        <?php if($isLoggedInTeam) { ?>
+                                            <strong>itself</strong>.
+                                        <?php } else { ?>
+                                            <strong>themselves</strong>.
+                                        <?php } ?>
+                                    <?php } else { ?>
+                                        <strong><?= $pit['contributions'] ?> team<?php if ($pit['contributions'] > 1) { ?>s<?php } ?></strong>.
+                                    <?php } } ?>Good job, team<?php if (!$isLoggedInTeam) { ?>&nbsp;<?= $otherTeamNumber ?><?php } ?>!
+                                <?php } else { ?>
+                                    <br />This team has not scouted any matches, for shame.
                                 <?php } ?>
                             <?php } ?>
                         </div>
@@ -68,15 +84,15 @@
                 <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
                     <?php if ($isAdmin && $isLoggedInTeam) { ?>
 
-                    <!--<p id="dimensions"><strong>Dimensions: </strong>
-                    <a href='#' id='robot_length' class="editable"><?php echo $response['robot_length']; ?></a> length x
-                    <a href='#' id='robot_width' class="editable"><?php echo $response['robot_width']; ?></a> width x
-                    <a href='#' id='robot_height' class="editable"><?php echo $response['robot_height']; ?></a> height
-                    </p>
-                    <p id="weight"><strong>Weight: </strong><a href='#' id='robot_weight' class="editable"><?php echo $response['robot_weight']; ?></a></p>
-                    <p id="drivetrain"><strong>Drivetrain: </strong><a href='#' id='robot_drivetrain_type' class="editable"><?php echo $response['robot_drivetrain_type']; ?></a></p>
-                    <p id="wheelType"><strong>Wheel Type: </strong><a href='#' id='robot_wheel_type' class="editable"><?php echo $response['robot_wheel_type']; ?></a></p>
-                    <p id="shifters"><strong>Shifters: </strong><a href='#' id='robot_shifters' data-type="select" class="editable">
+                                    <!--<p id="dimensions"><strong>Dimensions: </strong>
+                                    <a href='#' id='robot_length' class="editable"><?php echo $response['robot_length']; ?></a> length x
+                                    <a href='#' id='robot_width' class="editable"><?php echo $response['robot_width']; ?></a> width x
+                                    <a href='#' id='robot_height' class="editable"><?php echo $response['robot_height']; ?></a> height
+                                    </p>
+                                    <p id="weight"><strong>Weight: </strong><a href='#' id='robot_weight' class="editable"><?php echo $response['robot_weight']; ?></a></p>
+                                    <p id="drivetrain"><strong>Drivetrain: </strong><a href='#' id='robot_drivetrain_type' class="editable"><?php echo $response['robot_drivetrain_type']; ?></a></p>
+                                    <p id="wheelType"><strong>Wheel Type: </strong><a href='#' id='robot_wheel_type' class="editable"><?php echo $response['robot_wheel_type']; ?></a></p>
+                                    <p id="shifters"><strong>Shifters: </strong><a href='#' id='robot_shifters' data-type="select" class="editable">
                         <?php
                         if ($response['robot_shifters'] === "0") {
                             echo "No";
@@ -86,43 +102,43 @@
                             echo "Choose an option";
                         }
                         ?></a></p>
-                    <p id="lowSpeed"><strong>Low Speed: </strong><a href='#' id='robot_low_speed' class="editable"><?php echo $response['robot_low_speed']; ?></a></p>
-                    <p id="highSpeed"><strong><span id='highText' style='display:inline;'><?php if ($response['robot_shifters'] === "1") { ?>High&nbsp;<?php } ?></span>Speed: </strong><a href='#' id='robot_high_speed' class="editable"><?php echo $response['robot_high_speed']; ?></a></p>
-                    <p id="startingPosition"><strong>Starting Position: </strong><a href='#' id='robot_starting_position' class="editable"><?php echo $response['robot_starting_position']; ?></a></p>
-                    <p id="role"><strong>Role: </strong><a href='#' id='robot_role' class="editable"><?php echo $response['robot_role']; ?></a></p>
-                    <p id="comments"><strong>Comments: </strong><a href='#' id='robot_comments' class="editable" data-type="textarea"><?php echo $response['robot_comments']; ?></a></p>-->
+                                    <p id="lowSpeed"><strong>Low Speed: </strong><a href='#' id='robot_low_speed' class="editable"><?php echo $response['robot_low_speed']; ?></a></p>
+                                    <p id="highSpeed"><strong><span id='highText' style='display:inline;'><?php if ($response['robot_shifters'] === "1") { ?>High&nbsp;<?php } ?></span>Speed: </strong><a href='#' id='robot_high_speed' class="editable"><?php echo $response['robot_high_speed']; ?></a></p>
+                                    <p id="startingPosition"><strong>Starting Position: </strong><a href='#' id='robot_starting_position' class="editable"><?php echo $response['robot_starting_position']; ?></a></p>
+                                    <p id="role"><strong>Role: </strong><a href='#' id='robot_role' class="editable"><?php echo $response['robot_role']; ?></a></p>
+                                    <p id="comments"><strong>Comments: </strong><a href='#' id='robot_comments' class="editable" data-type="textarea"><?php echo $response['robot_comments']; ?></a></p>-->
 
                     <?php } else { ?>
                         <!--<div>
                         <?php if (!empty($response['robot_length'])) { ?>
-                                            <p id="dimensions"><strong>Dimensions: </strong><?php echo $response['robot_length']; ?> length x <?php echo $response['robot_width']; ?> width x <?php echo $response['robot_height']; ?> height</p>
+                                                            <p id="dimensions"><strong>Dimensions: </strong><?php echo $response['robot_length']; ?> length x <?php echo $response['robot_width']; ?> width x <?php echo $response['robot_height']; ?> height</p>
                         <?php } ?>
                         <?php if (!empty($response['robot_weight'])) { ?>
-                                            <p id="weight"><strong>Weight: </strong><?php echo $response['robot_weight']; ?></p>
+                                                            <p id="weight"><strong>Weight: </strong><?php echo $response['robot_weight']; ?></p>
                         <?php } ?>
                         <?php if (!empty($response['robot_drivetrain'])) { ?>
-                                            <p id="drivetrain"><strong>Drivetrain: </strong><?php echo $response['robot_drivetrain_type']; ?></p>
+                                                            <p id="drivetrain"><strong>Drivetrain: </strong><?php echo $response['robot_drivetrain_type']; ?></p>
                         <?php } ?>
                         <?php if (!empty($response['robot_wheel_type'])) { ?>
-                                            <p id="wheelType"><strong>Wheel Type: </strong><?php echo $response['robot_wheel_type']; ?></p>
+                                                            <p id="wheelType"><strong>Wheel Type: </strong><?php echo $response['robot_wheel_type']; ?></p>
                         <?php } ?>
                         <?php if ($response['robot_shifters'] !== null) { ?>
-                                            <p id="shifters"><strong>Shifters: </strong><?php echo $response['robot_shifters'] === "1" ? "Yes" : "No"; ?></p>
+                                                            <p id="shifters"><strong>Shifters: </strong><?php echo $response['robot_shifters'] === "1" ? "Yes" : "No"; ?></p>
                         <?php } ?>
                         <?php if (!empty($response['robot_low_speed']) && $response['robot_shifters'] === "1") { ?>
-                                            <p id="lowSpeed"><strong>Low Speed: </strong><?php echo $response['robot_low_speed']; ?></p>
+                                                            <p id="lowSpeed"><strong>Low Speed: </strong><?php echo $response['robot_low_speed']; ?></p>
                         <?php } ?>
                         <?php if (!empty($response['robot_high_speed'])) { ?>
-                                            <p id="highSpeed"><strong><?php if ($response['robot_shifters'] === "1") { ?>High <?php } ?>Speed: </strong><?php echo $response['robot_high_speed']; ?></p>
+                                                            <p id="highSpeed"><strong><?php if ($response['robot_shifters'] === "1") { ?>High <?php } ?>Speed: </strong><?php echo $response['robot_high_speed']; ?></p>
                         <?php } ?>
                         <?php if (!empty($response['robot_starting_position'])) { ?>
-                                            <p id="startingPosition"><strong>Starting Position: </strong><?php echo $response['robot_starting_position']; ?></p>
+                                                            <p id="startingPosition"><strong>Starting Position: </strong><?php echo $response['robot_starting_position']; ?></p>
                         <?php } ?>
                         <?php if (!empty($response['robot_role'])) { ?>
-                                            <p id="role"><strong>Role: </strong><?php echo $response['robot_role']; ?></p>
+                                                            <p id="role"><strong>Role: </strong><?php echo $response['robot_role']; ?></p>
                         <?php } ?>
                         <?php if (!empty($response['robot_comments'])) { ?>
-                                            <p id="comments" style="white-space: pre-wrap;"><strong>Comments: </strong><?php echo $response['robot_comments']; ?></p>
+                                                            <p id="comments" style="white-space: pre-wrap;"><strong>Comments: </strong><?php echo $response['robot_comments']; ?></p>
                         <?php } ?>
                         </div> -->
                     <?php } ?>
@@ -148,35 +164,6 @@
                             <!-- ftc stuff, I don't really know how the game works, whoops -->
                         <?php } ?>
                         <?php if ($teamType === "FRC") { ?>
-                            <!--
-                            <table class="table table-striped table-bordered table-hover tablesorter" id="tablesorter">
-                            <thead>
-                            <th>Event</th>
-                            <th>Match Number</th>
-                            <th>Total Score</th>
-                            <th>Auto Score</th>
-                            <th>Teleop Score</th>
-                            <th>Assists Received</th>
-                            </thead>
-                            <tbody id="averages">
-                            
-                            </tbody>
-                            </table>
-                            -->
-                            <!--<h3>Percentages</h3>
-                            <ul>
-                            <li><strong>Attendance Rate: </strong><?php echo $stats['attendance']; ?>%</li>
-                            <li><strong>Teleop Goal Scoring Rate: </strong><?php echo $stats['percentageOfShotsMade']; ?>%</li>
-                            </ul>
-                            
-                            <h3>Averages</h3>
-                            <ul>
-                            <li><strong>Teleop High Goals: </strong><?php echo $averageGoals['teleAverageHigh']; ?></li>
-                            <li><strong>Teleop Low Goals: </strong><?php echo $averageGoals['teleAverageLow']; ?></li>
-                            <li><strong>Teleop Truss Throws: </strong><?php echo $averageGoals['teleTrussThrow']; ?></li>
-                            <li><strong>Teleop Truss Catches: </strong><?php echo $averageGoals['teleTrussCatch']; ?></li>
-                            </ul>-->
-
                             <div style="text-align:center;">
                                 <strong><a href="/team/<?php echo $otherTeamNumber; ?>/matches/">View individual matches for this team</a></strong>
                                 <?php if ($isAdmin) { ?>
@@ -211,12 +198,14 @@
                                         <?php if (!empty($stats['auto_points'])) { ?>
                                             Average Autonomous Score: <strong><?= $stats['auto_points'] ?></strong><br />
                                         <?php } ?>
+                                        <!--
                                         <?php if (!empty($stats['autoAccuracy'])) { ?>
-                                            Autonomous Accuracy: <strong><?= $stats['autoAccuracy'] ?>%</strong><br />
+                                                Autonomous Accuracy: <strong><?= $stats['autoAccuracy'] ?>%</strong><br />
                                         <?php } ?>
                                         <?php if (!empty($stats['autoHotGoalPercent'])) { ?>
-                                            Hot Goal Shots: <strong><?= $stats['autoHotGoalPercent'] ?>%</strong><br />
+                                                Hot Goal Shots: <strong><?= $stats['autoHotGoalPercent'] ?>%</strong><br />
                                         <?php } ?>
+                                        -->
                                         <?php if (!empty($stats['autoMovedZonePercent'])) { ?>
                                             Moved to Alliance Zone: <strong><?= $stats['autoMovedZonePercent'] ?>%</strong> of the time<br />
                                         <?php } ?>
