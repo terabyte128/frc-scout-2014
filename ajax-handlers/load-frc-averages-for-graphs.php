@@ -15,9 +15,14 @@ $teleopScore = array();
 $bigArray = array();
 
 while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-    array_push($teamNumber, doubleval($row['scouted_team']));
-    array_push($autonomousScore, doubleval($row['auto_points']));
-    array_push($teleopScore, doubleval($row['tele_points']));
+    
+    $thisTeamNumber = intval($row['scouted_team']);
+    $thisAutoScore = doubleval($row['auto_points']);
+    $thisTeleopScore = doubleval($row['tele_points']);
+            
+    array_push($teamNumber, $thisTeamNumber);
+    array_push($autonomousScore, doubleval(number_format($thisAutoScore, 1)));
+    array_push($teleopScore, doubleval(number_format($thisTeleopScore, 1)));
 }
 
 array_push($bigArray, $teamNumber);

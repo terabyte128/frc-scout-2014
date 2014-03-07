@@ -42,6 +42,7 @@
                 </div>
 
                 <button onclick='window.location = "/home/results/averages";' class="btn btn-lg btn-info btn-home-selections">View Team Averages</button>
+                <button onclick='window.location = "/home/results/graphs";' class="btn btn-lg btn-info btn-home-selections">View Graphs</button>
                 
                 <!-- alliance tools -->
                 <br /><br />

@@ -44,8 +44,8 @@
                 $.ajax({
                     url: '/ajax-handlers/load-frc-averages-for-graphs.php',
                     success: function(response) {
-                        console.log("done");
                         responseArray = JSON.parse(response);
+                        $("#graph").css("height", responseArray[0].length * 30 + "px");
                         loadGraph(responseArray[0], responseArray[1], responseArray[2]);
                     }
                 })

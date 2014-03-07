@@ -34,13 +34,13 @@ while ($averages = $query->fetch(PDO::FETCH_ASSOC)) {
     echo $averages['scouted_team'];
     echo "</a></td>";
     echo "<td>";
-    echo $averages['total_points'];
+    echo number_format($averages['total_points'], 1);
     echo "</td>";
     echo "<td>";
-    echo $averages['auto_points'];
+    echo number_format($averages['auto_points'], 1);
     echo "</td>";
     echo "<td>";
-    echo $averages['tele_points'];
+    echo number_format($averages['tele_points'], 1);
     echo "</td>";
     echo "</tr>";
 }
