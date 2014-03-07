@@ -19,3 +19,4 @@ RewriteRule ^recover/?$ /recover-password.php [NC,L] #for the password reset pag
 RewriteRule ^recover/([0-9a-f]+)/?$ /recover-password.php?id=$1 [NC,L] #rewrite password ids to make them prettier
 RewriteRule ^home/?$ /home/index.php [NC,L] # rewrite homepage to make it prettier
 RewriteRule ^/?$ /index.php [NC,L] # rewrite homepage to make it prettier
+RewriteRule ^teams/here/?$ /home/scouted-at-location.php [NC,L] # rewrite homepage to make it prettier

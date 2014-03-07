@@ -18,7 +18,8 @@
                         window.location = "scouting/match";' class="btn btn-lg btn-success btn-home-selections">Scout a Match</button>
                 <button onclick='localStorage.clear();
                         window.location = "scouting/pit";' class="btn btn-lg btn-success btn-home-selections">Pit Scout a Team</button>
-                <button onclick='window.location = "/teams";' class="btn btn-lg btn-success btn-home-selections">View Registered Teams</button>
+                <button onclick='window.location = "/teams";' class="btn btn-lg btn-success btn-home-selections">Registered Teams</button>
+                <button onclick='window.location = "/teams/here";' class="btn btn-lg btn-success btn-home-selections">Teams At Your Location</button>
 
                 <br /><br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Results Tools</font>
