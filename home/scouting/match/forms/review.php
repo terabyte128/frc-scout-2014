@@ -13,10 +13,10 @@
     -->
     <label>Submit data to the database and:</label>
     <div class="form-group">
-        <button class="btn btn-lg btn-info" type="button" style="width: 250px;" onclick="updateDatabase(true);">Go to scouting home</button>
+        <button class="btn btn-lg btn-info submit-data" type="button" style="width: 250px;" onclick="updateDatabase(true);">Go to scouting home</button>
     </div>
     <div class="form-group">
-        <button class="btn btn-lg btn-success" type="button" style="width: 250px;" onclick="updateDatabase(false);">Scout another match</button>
+        <button class="btn btn-lg btn-success submit-data" type="button" style="width: 250px;" onclick="updateDatabase(false);">Scout another match</button>
     </div>
     <br />
     <br />
@@ -56,6 +56,7 @@
     }
 
     function updateDatabase(goHome) {
+        $(".submit-data").button("loading");
         $.ajax({
             url: 'push-to-database.php',
             type: "POST",

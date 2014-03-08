@@ -3,7 +3,7 @@
 <html>
     <head>
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/headers.php'; ?>
-        <title>Compare Alliances</title>
+        <title>Alliance Comparator</title>
     </head>
     <body>
         <style type="text/css">
@@ -29,7 +29,7 @@
         <div class="wrapper">
             <div class="container" style="border-left: 5px solid #d2322d; border-right: 5px solid rgb(0, 82, 255);">
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php' ?>
-                <h2>Compare Alliances</h2>
+                <h2>Alliance Comparator</h2>
                 <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
                 <br />
                 <div style="display: inline; padding-left: auto; padding-right: auto;" id="selectAlliances">
@@ -63,6 +63,7 @@
                     </div>
                     <div>
                         <button data-toggle="button" class="btn btn-lg btn-default" id="onlyHere" style="width: 278px;">Only <?php echo $location ?></button><br /><br />
+                        <button data-toggle="button" class="btn btn-lg btn-warning" id="lastFive" style="width: 278px;">Only Last 5 Matches</button><br /><br />
                         <button id="compareButton" class="btn btn-lg btn-success" style="width: 278px;" onclick="compare()">Compare Alliances</button>
                     </div>
                 </div>
@@ -80,6 +81,7 @@
              });*/
 
             var onlyHere = false;
+            var lastFive = false;
 
             $(".btn-editable").focus(function() {
                 this.select();
@@ -87,6 +89,10 @@
 
             $("#onlyHere").click(function() {
                 onlyHere = !onlyHere;
+            });
+            
+            $("#lastFive").click(function() {
+               lastFive = !lastFive; 
             });
 
             var redAlliance, blueAlliance;
@@ -120,7 +126,8 @@
                         data: {
                             'redAlliance': redAlliance,
                             'blueAlliance': blueAlliance,
-                            'onlyHere': onlyHere
+                            'onlyHere': onlyHere,
+                            'lastFive': lastFive
                         },
                         success: function(response, textStatus, jqXHR) {
                             hideMessage();
