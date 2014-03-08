@@ -73,7 +73,7 @@ $listNum = 0;
                             <hr class="comment-divider-hr" />
                             <?php if ($match['team_absent'] !== "1") { ?>
                                 <span class="comment-commenter"><strong>General</strong></span><br />
-                                Total score: <strong><?= $match['total_points'] ?></strong> (<strong><?= $match['proportion']; ?>%</strong> of alliance score)<br />
+                                Total potential score: <strong><?= $match['total_points'] ?></strong> (<strong><?= $match['proportion']; ?>%</strong> of actual alliance score)<br />
                                 Match outcome: <strong><?php if ($match['match_outcome'] === "0") { ?>
                                         <span style="color: #468847;">Win</span>
                                     <?php } else if ($match['match_outcome'] === "1") { ?>
@@ -91,7 +91,7 @@ $listNum = 0;
                                 </div>
                                 <hr class="comment-divider-hr" />
                                 <span class="comment-commenter"><strong>Autonomous</strong></span><br />
-                                Points scored: <strong><?= $match['auto_total_points'] ?></strong>
+                                Potential score: <strong><?= $match['auto_total_points'] ?></strong>
                                 <div id="moreAutoData<?= $listNum ?>" style="display:none;">
                                     <?php if ($match['auto_low_goals'] + $match['auto_high_goals'] + $match['auto_missed_goals'] <= 1) { ?>
                                         Goal scored: <strong><?php
@@ -119,7 +119,7 @@ $listNum = 0;
                                 </div>
                                 <hr class="comment-divider-hr" />
                                 <span class="comment-commenter"><strong>Teleoperated</strong></span><br />
-                                Points scored: <strong><?= $match['tele_total_points'] ?></strong><br />
+                                Potential score: <strong><?= $match['tele_total_points'] ?></strong><br />
                                 High goal accuracy: 
                                 <?php if ($match['tele_total_shots'] !== "0") { ?><strong><?= $match['tele_accuracy'] ?>%</strong>
                                 <?php } else { ?><em>(no shots attempted)</em><?php } ?>
