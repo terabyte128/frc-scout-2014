@@ -50,7 +50,7 @@
                 <font style="color: #868686; float: right; font-size: 10pt;">Alliance Tools</font>
                 <hr style="border-top: 1px solid #bbb">
                 <button onclick="window.location = '/alliances/builder';" id="allianceBuilder" class="btn btn-lg btn-danger btn-home-selections">Alliance Builder</button>
-                <button onclick="window.location = '/alliances/compare';" id="compareAlliances" class="btn btn-lg btn-danger btn-home-selections">Compare Alliances</button>
+                <button onclick="window.location = '/alliances/compare';" id="compareAlliances" class="btn btn-lg btn-danger btn-home-selections">Alliance Comparator</button>
 
 
                 <br /><br />

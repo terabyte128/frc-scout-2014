@@ -6,6 +6,9 @@ require_once '../includes/db-connect.php';
 $redAlliance = $_POST['redAlliance'];
 $blueAlliance = $_POST['blueAlliance'];
 $onlyHere = $_POST['onlyHere'];
+$lastFive = $_POST['lastFive'];
+
+$lastFive = $lastFive === "true" ? true : false;
 
 $redAllianceResults = array();
 $blueAllianceResults = array();
@@ -18,7 +21,7 @@ $queryString = ('SELECT scouted_team, '
         . '(tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)), 1) AS total_points '
         #  . 'STDDEV POP(auto_goal_value + (auto_hot_goal * 5) + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) + '
         #  . '(tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)) AS total_points_stdev '
-        . 'FROM `frc_match_data` WHERE `scouted_team`=?');
+        . 'FROM `frc_match_data` WHERE `scouted_team`=? ORDER BY `uid` DESC');
 
 
 if ($onlyHere === "true") {
@@ -29,10 +32,16 @@ if ($onlyHere === "true") {
 # red
 echo '<strong>Alliances:</strong><br /><div style="vertical-align:middle; display:table; margin: auto;"><div style="display:table-row">'
  . '<div style="display:table-cell; width:100px; text-align:right;" class="red"><strong>';
+
+$loop = 0;
 foreach ($redAlliance as $value) {
+    $loop++;
+    if ($loop > 5 && $lastFive) {
+        break;
+    }
     echo '<a href="/team/' . $value . '" class="red">' . $value . '</a><br />';
     $params = array($value);
-    if($onlyHere === "true") {
+    if ($onlyHere === "true") {
         array_push($params, $location);
     }
     try {
@@ -50,10 +59,16 @@ echo '</strong></div>';
 echo '<div style="display:table-cell; width:50px; text-align:center; vertical-align:middle;"><strong>VS</strong></div>';
 # blue
 echo '<div style="display:table-cell; width:100px; text-align:left;" class="blue"><strong>';
+
+$loop = 0;
 foreach ($blueAlliance as $value) {
+    $loop++;
+    if ($loop > 5 && $lastFive) {
+        break;
+    }
     echo '<a href="/team/' . $value . '" class="blue">' . $value . '</a><br />';
     $params = array($value);
-    if($onlyHere === "true") {
+    if ($onlyHere === "true") {
         array_push($params, $location);
     }
     try {
