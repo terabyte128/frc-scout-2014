@@ -11,7 +11,7 @@ $teamData = json_decode($_POST['teamData'], true);
 
 $params = array(
     //stuff
-    $location, $scoutName, $teamNumber,
+    $teamData['teamName'], $location, $scoutName, $teamNumber,
     //basic
     $teamData['teamNumber'], $teamData['teamCoach'], $teamData['infoProvider'],
     //physical
@@ -28,7 +28,7 @@ $params = array(
 try {
     $query = $db->prepare("INSERT INTO frc_pit_scouting_data ("
             //stuff 
-            . "location, timestamp, `scout_name`, scouting_team, "
+            . "team_name, location, timestamp, `scout_name`, scouting_team, "
 
             //basic
             . "scouted_team, team_coach, info_provider, "
@@ -45,7 +45,7 @@ try {
             . "strength, problems, comments) VALUES ("
 
             //dem values doe
-            . "?, now(), ?, ?,"
+            . "?, ?, now(), ?, ?,"
             . " ?, ?, ?,"
             . " ?, ?, ?, ?, ?, ?, ?,"
             . " ?, ?, ?, ?, ?, ?, ?, ?,"

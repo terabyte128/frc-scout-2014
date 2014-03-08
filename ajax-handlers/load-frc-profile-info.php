@@ -65,10 +65,10 @@ if ($thingToLoad === "pit") {
     } else {
         if ($teamNumber === $_POST['teamNumber']) {
             if ($isAdmin) {
-            echo '<em>You can set up this section of your team profile to provide your own information about your team to other teams, through the '
-            . '<a href="/home/scouting/pit/'. $teamNumber . '">Pit Scouting</a> page.</em>';
+                echo '<em>You can set up this section of your team profile to provide your own information about your team to other teams, through the '
+                . '<a href="/home/scouting/pit/' . $teamNumber . '">Pit Scouting</a> page.</em>';
             } else {
-                echo '<em>No one has pit scouted your team yet! Perhaps you\'d like to <a href="/home/scouting/pit/'. $teamNumber . '">do it yourself?</a></em>';
+                echo '<em>No one has pit scouted your team yet! Perhaps you\'d like to <a href="/home/scouting/pit/' . $teamNumber . '">do it yourself?</a></em>';
             }
         }
         $params2 = array($_POST['teamNumber'], $_POST['teamNumber']);
@@ -200,9 +200,14 @@ function printPSData($finalRow, $canDeleteData, $listNum, $teamNumber) {
         }
     }
     echo '</em>';
-    if (!empty($finalRow['team_coach'])) {
+    if (!empty($finalRow['team_coach']) || !empty($finalRow['teamName'])) {
         echo '<hr class="comment-divider-hr" />';
-        echo 'Team coach: <strong>' . $finalRow['team_coach'] . '</strong><br />';
+        if (!empty($finalRow['team_name'])) {
+            echo 'Team name: <strong>' . $finalRow['team_name'] . '</strong><br />';
+        }
+        if (!empty($finalRow['team_coach'])) {
+            echo 'Team coach: <strong>' . $finalRow['team_coach'] . '</strong><br />';
+        }
     }
     if (!empty($finalRow['shooter_type']) || !empty($finalRow['robot_weight']) || !empty($finalRow['robot_weight']) || $finalRow['can_extend'] === "1" || !empty($finalRow['wheel_type']) || !empty($finalRow['wheel_num'])) {
         echo '<hr class="comment-divider-hr" /><div class="comment-commenter"><strong>Physical information</strong></div><br />';
