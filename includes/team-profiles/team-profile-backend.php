@@ -181,17 +181,17 @@
                                 <div class="comment-text">
                                     <hr class="comment-divider-hr" />
                                     <?php if (!empty($stats['attendance'])) { ?>
-                                        Attendance rate: <strong><?php echo $stats['attendance']; ?>%</strong><br />
+                                        Attendance Rate: <strong><?php echo $stats['attendance']; ?>%</strong><br />
                                     <?php } ?>
                                     <?php if ($stats['attendance'] > 0) { ?>
                                         <?php if (!empty($stats['winRate'])) { ?>
-                                            Win rate: <strong><?php echo $stats['winRate']; ?>%</strong><br />
+                                            Win Rate: <strong><?php echo $stats['winRate']; ?>%</strong><br />
                                         <?php } ?>
                                         <?php if (!empty($stats['total_points'])) { ?>
-                                            Average match score: <strong><?= $stats['total_points'] ?></strong>
+                                            Average Potential Match Score: <strong><?= $stats['total_points'] ?></strong>
                                         <?php } ?>
                                         <?php if (!empty($stats['alliance_score_percent'])) { ?>
-                                            (<strong><?= $stats['alliance_score_percent'] ?>%</strong> of alliance score)<br />
+                                            (<strong><?= $stats['alliance_score_percent'] ?>%</strong> of actual alliance score)<br />
                                         <?php } ?>
                                     <?php } ?>
                                 </div>
@@ -202,7 +202,7 @@
                                     <div class="comment-text">
                                         <hr class="comment-divider-hr" />
                                         <?php if (!empty($stats['auto_points'])) { ?>
-                                            Average Autonomous Score: <strong><?= $stats['auto_points'] ?></strong><br />
+                                            Average Potential Autonomous Score: <strong><?= $stats['auto_points'] ?></strong><br />
                                         <?php } ?>
                                         <!--
                                         <?php if (!empty($stats['autoAccuracy'])) { ?>
@@ -222,7 +222,7 @@
                                     <div class="comment-text">
                                         <hr class="comment-divider-hr" />
                                         <?php if (!empty($stats['tele_points'])) { ?>
-                                            Average Teleop Score: <strong><?= $stats['tele_points'] ?></strong><br />
+                                            Average Potential Teleop Score: <strong><?= $stats['tele_points'] ?></strong><br />
                                         <?php } ?>
                                         <?php if (!empty($stats['percentageOfShotsMade'])) { ?>
                                             High Goal Accuracy: <strong><?php echo $stats['percentageOfShotsMade']; ?>%</strong><br />

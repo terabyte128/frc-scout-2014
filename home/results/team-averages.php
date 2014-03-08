@@ -16,7 +16,7 @@
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
                 <h2><img id="loading" src="/images/loading.gif" style="height: 24px; vertical-align: initial; display: none;"> Team Averages</h2>
                 <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
-                <br />
+                <p><i>This displays <strong>potential scores</strong> based on assists being worth 10 points apiece. For more detailed statistics, click a team number.</i></p>
                 <a href="#" onclick="$('#filterOptions').slideToggle(200);
                         return false;">Filter these results</a>
                 <div id="filterOptions" style="display:none;">
@@ -56,7 +56,6 @@
                         </tbody>
                     </table>
                 </div>
-                * Note: for scoring purposes, all assists are counted as being worth 10 points.
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php"; ?>
             </div>
         </div>
