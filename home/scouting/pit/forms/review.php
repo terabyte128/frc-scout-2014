@@ -28,48 +28,49 @@
 
 <script type="text/javascript">
 
-    $('#pageNameTitle').text("Finish Scouting")
-    //document.location.hash = "review";
+            $('#pageNameTitle').text("Finish Scouting")
+            //document.location.hash = "review";
 
-    $("#discardData").click(function() {
-        if (confirm("This will discard all the data for this scouting session! Are you sure you wish to continue?")) {
-            localStorage.discardedMatch = JSON.stringify(localStorage);
-            localStorage.clear();
-            loadPageWithMessage("/home", "Scouting data discarded.", "danger");
-        }
-    });
-
-    function pushToLocalStorage() {
-        changePhase("basic");
-    }
-
-    function pullFromLocalStorage() {
-        //dummy function
-    }
-
-    function updateDatabase(goHome) {
-        $(".submit-data").button('loading');
-        $.ajax({
-            url: 'push-to-database.php',
-            type: "POST",
-            data: {
-                'teamData': JSON.stringify(localStorage)
-            },
-            success: function(response) {
-                if(response === "200 Success") {
-                    localStorage.teamNumber = "";
+            $("#discardData").click(function() {
+                if (confirm("This will discard all the data for this scouting session! Are you sure you wish to continue?")) {
+                    localStorage.discardedMatch = JSON.stringify(localStorage);
                     localStorage.clear();
-                    if(goHome) {
-                        loadPageWithMessage("/", "Scouting data submitted.", "success");
-                    } else {
-                        window.location = "#basic";
-                        loadPageWithMessage("#basic", "Scouting data submitted.", "success");
-                    }
-                } else {
-                    //showMessage(response, "danger");
-                    showMessage("You must start scouting from the beginning. <a href='#basic' onclick='hideMessage();'>Go there.</a>", "danger");
+                    loadPageWithMessage("/home", "Scouting data discarded.", "danger");
                 }
+            });
+
+            function pushToLocalStorage() {
+                changePhase("basic");
             }
-        })
-    }
+
+            function pullFromLocalStorage() {
+                //dummy function
+            }
+
+            function updateDatabase(goHome) {
+                $(".submit-data").button('loading');
+                $.ajax({
+                    url: 'push-to-database.php',
+                    type: "POST",
+                    data: {
+                        'teamData': JSON.stringify(localStorage)
+                    },
+                    success: function(response) {
+                        if (response === "200 Success") {
+                            localStorage.teamNumber = "";
+                            localStorage.clear();
+                            if (goHome) {
+                                loadPageWithMessage("/", "Scouting data submitted.", "success");
+                            } else {
+                                $("#teamNumberTitle").text("");
+                                window.location = "#basic";
+                                loadPageWithMessage("#basic", "Scouting data submitted.", "success");
+                            }
+                        } else {
+                            //showMessage(response, "danger");
+                            showMessage("You must start scouting from the beginning. <a href='#basic' onclick='hideMessage();'>Go there.</a>", "danger");
+                        }
+                    }
+                })
+            }
 </script>

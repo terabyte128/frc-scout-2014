@@ -69,6 +69,7 @@
                     if(goHome) {
                         loadPageWithMessage("/", "Match data submitted.", "success");
                     } else {
+                        $("#teamNumberTitle").text("");
                         window.location = "#prematch";
                         loadPageWithMessage("#prematch", "Match data submitted.", "success");
                     }
