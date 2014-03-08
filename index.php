@@ -70,7 +70,7 @@
                                     echo "<br><br><span style='color:firebrick;'>development </span>";
                                 };
                                 ?>
-                                v1.2.5
+                                v1.2.6
                             </strong>
                         </em>
                     </p>

@@ -8,8 +8,6 @@ $blueAlliance = $_POST['blueAlliance'];
 $onlyHere = $_POST['onlyHere'];
 $lastFive = $_POST['lastFive'];
 
-$lastFive = $lastFive === "true" ? true : false;
-
 $redAllianceResults = array();
 $blueAllianceResults = array();
 
@@ -18,15 +16,17 @@ $queryString = ('SELECT scouted_team, '
         . 'format(AVG((tele_received_assists * 10) + (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) '
         . '+ (tele_truss_catches * 10)), 1) AS tele_points, '
         . 'format(AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_hot_goals * 5) + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) + '
-        . '(tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)), 1) AS total_points '
+        . '(tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)), 1) AS total_points, `team_absent` '
         #  . 'STDDEV POP(auto_goal_value + (auto_hot_goal * 5) + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) + '
         #  . '(tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)) AS total_points_stdev '
-        . 'FROM `frc_match_data` WHERE `scouted_team`=? ORDER BY `uid` DESC');
+        . 'FROM `frc_match_data` WHERE `scouted_team`=?');
 
 
 if ($onlyHere === "true") {
     $queryString .= ' AND location=?';
 }
+
+$queryString .= '  ORDER BY `uid` DESC';
 
 # print out the alliances and also grab their data in one fell swoop
 # red
@@ -36,7 +36,7 @@ echo '<strong>Alliances:</strong><br /><div style="vertical-align:middle; displa
 $loop = 0;
 foreach ($redAlliance as $value) {
     $loop++;
-    if ($loop > 5 && $lastFive) {
+    if ($loop > 5 && $lastFive === "true") {
         break;
     }
     echo '<a href="/team/' . $value . '" class="red">' . $value . '</a><br />';
@@ -63,7 +63,7 @@ echo '<div style="display:table-cell; width:100px; text-align:left;" class="blue
 $loop = 0;
 foreach ($blueAlliance as $value) {
     $loop++;
-    if ($loop > 5 && $lastFive) {
+    if ($loop > 5 && $lastFive === "true") {
         break;
     }
     echo '<a href="/team/' . $value . '" class="blue">' . $value . '</a><br />';
