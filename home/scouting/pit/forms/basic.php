@@ -1,6 +1,9 @@
 <form class="scouting-form">
     <span class="glyphicon glyphicon-info-sign"></span> When pit scouting, all fields are optional except for the team number. If you can't get a certain piece of information, you can just leave it blank.
     <br /><br />
+    <label for='teamName'>Team name:</label>
+    <input type='text' class='form-control' placeholder='Team name' id='teamName'>
+    <br />
     <label for="teamNumber">Team number:</label>
     <input type="number" class="form-control" placeholder="Team number" id="teamNumber" onblur="updateTeamNumber($('#teamNumber').val());">
     <br />
@@ -26,6 +29,7 @@
     });
 
     function pullFromLocalStorage() {
+        $("#teamName").val(localStorage.teamName);
         $("#teamNumber").val(localStorage.teamNumber);
         $("#teamCoach").val(localStorage.teamCoach);
         $("#infoProvider").val(localStorage.infoProvider);
@@ -67,6 +71,7 @@
 
         if (!errors) {
             localStorage.teamNumber = $("#teamNumber").val();
+            localStorage.teamName = $("#teamName").val();
             localStorage.teamCoach = $("#teamCoach").val();
             localStorage.infoProvider = $("#infoProvider").val();
             hideMessage();
