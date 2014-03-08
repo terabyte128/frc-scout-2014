@@ -18,12 +18,21 @@
         <div class="wrapper">
             <div class="container">
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
-                <h2><img id="loading" src="/images/loading.gif" style="height: 24px; vertical-align: initial; display: none;">Team Average Graphs</h2>
+                <h2><img id="loading" src="/images/loading.gif" style="height: 24px; vertical-align: initial; display: none;"> Team Average Graphs</h2>
                 <button class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
-                <br />
+                <p><i>This displays <strong>potential scores</strong> based on assists being worth 10 points apiece. For more detailed statistics, enter a team number:</i></p>
 
+                <form class='form-inline' onsubmit="window.location = '/team/' + $('#teamNumberInput').val();
+                        return false;">
+                    <div class='form-group'>
+                        <input type="number" id="teamNumberInput" class='form-control' required>
+                    </div>
+                    <div class='form-group'>
+                        <button class="btn btn-default" type='submit'>Go</button>
+                    </div>
+                </form>
                 <!-- ~ page content goes here ~ -->
-
+                <br />
                 <div id="graph"></div>
 
                 <?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php"; ?>
@@ -40,21 +49,21 @@
                     var responseArray;
 
                     $(function() {
-
+                        $("#loading").show();
                         $.ajax({
                             url: '/ajax-handlers/load-frc-averages-for-graphs.php',
                             success: function(response) {
                                 responseArray = JSON.parse(response);
                                 if (responseArray[0].length > 0) {
-                                    var height =  (responseArray[0].length * 30) + 100;
-                                    console.log("height=" + height);
+                                    var height = (responseArray[0].length * 30) + 100;
                                     $("#graph").css("height", height + "px");
                                     loadGraph(responseArray[0], responseArray[1], responseArray[2]);
                                 } else {
                                     $("#graph").html("<i>No match scouting data has been entered for this location yet.</i>");
                                 }
+                                $("#loading").hide();
                             }
-                        })
+                        });
                     });
 
                     function loadGraph(teamNumbers, autonomousScores, teleopScores) {
