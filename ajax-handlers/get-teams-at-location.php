@@ -12,7 +12,7 @@ class Teams {
         require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/db-connect.php';
 
         try {
-            $query = $db->prepare("SELECT `scouted_team` FROM `frc_pit_scouting_data` WHERE `location`=? GROUP BY `scouted_team` ORDER BY `scouted_team`");
+            $query = $db->prepare("SELECT `scouted_team`, `team_name` FROM `frc_pit_scouting_data` WHERE `location`=? GROUP BY `scouted_team` ORDER BY `scouted_team`");
             $query->execute(array($location));
             return $query;
         } catch (Exception $e) {

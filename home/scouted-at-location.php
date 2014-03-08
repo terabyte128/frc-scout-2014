@@ -32,6 +32,7 @@ $query = Teams::getPitScoutedAtLocation($location);
                         <thead>
                             <tr>
                                 <th>Team Number</th>
+                                <th>Name</th>
                             </tr>
                         </thead>
                         <tbody id="tableBody">
@@ -41,6 +42,11 @@ $query = Teams::getPitScoutedAtLocation($location);
                                 echo "<td>";
                                 echo "<a href=\"/team/" . $row['scouted_team'] . "\">";
                                 echo $row['scouted_team'];
+                                echo "</a>";
+                                echo "</td>";
+                                echo "<td>";
+                                echo "<a href=\"/team/" . $row['team_name'] . "\">";
+                                echo $row['team_name'];
                                 echo "</a>";
                                 echo "</td>";
                                 echo "</tr>";
