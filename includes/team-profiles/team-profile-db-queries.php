@@ -66,6 +66,13 @@ try {
     $request->execute(array($otherTeamNumber, $otherTeamNumber));
 
     $pit = $request->fetch(PDO::FETCH_ASSOC);
+    
+    #get values for driver data
+    $request = $db->prepare("SELECT * FROM frc_driver_data WHERE scouting_team=? AND scouted_team=?");
+    
+    $request->execute(array($teamNumber, $otherTeamNumber));
+    
+    $driverData = $request->fetch(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Unable to get values from database: " . $e->getMessage());
 }

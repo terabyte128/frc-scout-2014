@@ -1,5 +1,4 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/redirect-if-session-exists.php'; ?>
-<?php include 'pwd-include.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -70,7 +69,7 @@
                                     echo "<br><br><span style='color:firebrick;'>development </span>";
                                 };
                                 ?>
-                                v1.2.7
+                                v1.3.0
                             </strong>
                         </em>
                     </p>
