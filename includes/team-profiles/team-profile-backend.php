@@ -17,7 +17,7 @@
     <body>
         <div class="wrapper">
             <div class="container">
-                <?php include '../messages.php' ?>
+                <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php' ?>
                 <?php if ($isLoggedInTeam) { ?>
                     <h2>Your Team Profile & Statistics</h2>
                 <?php } else { ?>
@@ -44,12 +44,12 @@
                         <br />
                         <div>
                             <?php if ($isLoggedInTeam && $isAdmin) { ?>
-                                <a href="#" class="editable" style="font-size: 20pt; margin-bottom: 0px;" id="team_name" data-emptytext="Click to edit team name"><?php echo $response['team_name']; ?></a>
+                                <a href="#" class="editable editable-team-info" style="font-size: 20pt; margin-bottom: 0px;" id="team_name" data-emptytext="Click to edit team name"><?php echo $response['team_name']; ?></a>
                                 <br />
-                                <a href="#" class="editable" style="white-space: pre-wrap" data-type="textarea" id="description" data-emptytext="Click to edit team description"><?php echo $response['description']; ?></a>
+                                <a href="#" class="editable editable-team-info" style="white-space: pre-wrap" data-type="textarea" id="description" data-emptytext="Click to edit team description"><?php echo $response['description']; ?></a>
                                 <br />
                                 <br />
-                                <strong>Website: </strong><a href="#" class="editable" id="website" data-emptytext="Click to add (don't enter http://)"><?php echo $response['website']; ?></a>
+                                <strong>Website: </strong><a href="#" class="editable editable-team-info" id="website" data-emptytext="Click to add (don't enter http://)"><?php echo $response['website']; ?></a>
                             <?php } else { ?>
                                 <p style="font-size: 20pt; margin-bottom: 0px;"><?php echo $response['team_name']; ?></p>
                                 <p style="white-space: pre-wrap"><?php echo $response['description']; ?></p>
@@ -88,66 +88,6 @@
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>
                 <hr style="border-top: 1px solid #bbb">
                 <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
-                    <?php if ($isAdmin && $isLoggedInTeam) { ?>
-
-                                                        <!--<p id="dimensions"><strong>Dimensions: </strong>
-                                                        <a href='#' id='robot_length' class="editable"><?php echo $response['robot_length']; ?></a> length x
-                                                        <a href='#' id='robot_width' class="editable"><?php echo $response['robot_width']; ?></a> width x
-                                                        <a href='#' id='robot_height' class="editable"><?php echo $response['robot_height']; ?></a> height
-                                                        </p>
-                                                        <p id="weight"><strong>Weight: </strong><a href='#' id='robot_weight' class="editable"><?php echo $response['robot_weight']; ?></a></p>
-                                                        <p id="drivetrain"><strong>Drivetrain: </strong><a href='#' id='robot_drivetrain_type' class="editable"><?php echo $response['robot_drivetrain_type']; ?></a></p>
-                                                        <p id="wheelType"><strong>Wheel Type: </strong><a href='#' id='robot_wheel_type' class="editable"><?php echo $response['robot_wheel_type']; ?></a></p>
-                                                        <p id="shifters"><strong>Shifters: </strong><a href='#' id='robot_shifters' data-type="select" class="editable">
-                        <?php
-                        if ($response['robot_shifters'] === "0") {
-                            echo "No";
-                        } else if ($response['robot_shifters'] === "1") {
-                            echo "Yes";
-                        } else {
-                            echo "Choose an option";
-                        }
-                        ?></a></p>
-                                                        <p id="lowSpeed"><strong>Low Speed: </strong><a href='#' id='robot_low_speed' class="editable"><?php echo $response['robot_low_speed']; ?></a></p>
-                                                        <p id="highSpeed"><strong><span id='highText' style='display:inline;'><?php if ($response['robot_shifters'] === "1") { ?>High&nbsp;<?php } ?></span>Speed: </strong><a href='#' id='robot_high_speed' class="editable"><?php echo $response['robot_high_speed']; ?></a></p>
-                                                        <p id="startingPosition"><strong>Starting Position: </strong><a href='#' id='robot_starting_position' class="editable"><?php echo $response['robot_starting_position']; ?></a></p>
-                                                        <p id="role"><strong>Role: </strong><a href='#' id='robot_role' class="editable"><?php echo $response['robot_role']; ?></a></p>
-                                                        <p id="comments"><strong>Comments: </strong><a href='#' id='robot_comments' class="editable" data-type="textarea"><?php echo $response['robot_comments']; ?></a></p>-->
-
-                    <?php } else { ?>
-                        <!--<div>
-                        <?php if (!empty($response['robot_length'])) { ?>
-                                                                                <p id="dimensions"><strong>Dimensions: </strong><?php echo $response['robot_length']; ?> length x <?php echo $response['robot_width']; ?> width x <?php echo $response['robot_height']; ?> height</p>
-                        <?php } ?>
-                        <?php if (!empty($response['robot_weight'])) { ?>
-                                                                                <p id="weight"><strong>Weight: </strong><?php echo $response['robot_weight']; ?></p>
-                        <?php } ?>
-                        <?php if (!empty($response['robot_drivetrain'])) { ?>
-                                                                                <p id="drivetrain"><strong>Drivetrain: </strong><?php echo $response['robot_drivetrain_type']; ?></p>
-                        <?php } ?>
-                        <?php if (!empty($response['robot_wheel_type'])) { ?>
-                                                                                <p id="wheelType"><strong>Wheel Type: </strong><?php echo $response['robot_wheel_type']; ?></p>
-                        <?php } ?>
-                        <?php if ($response['robot_shifters'] !== null) { ?>
-                                                                                <p id="shifters"><strong>Shifters: </strong><?php echo $response['robot_shifters'] === "1" ? "Yes" : "No"; ?></p>
-                        <?php } ?>
-                        <?php if (!empty($response['robot_low_speed']) && $response['robot_shifters'] === "1") { ?>
-                                                                                <p id="lowSpeed"><strong>Low Speed: </strong><?php echo $response['robot_low_speed']; ?></p>
-                        <?php } ?>
-                        <?php if (!empty($response['robot_high_speed'])) { ?>
-                                                                                <p id="highSpeed"><strong><?php if ($response['robot_shifters'] === "1") { ?>High <?php } ?>Speed: </strong><?php echo $response['robot_high_speed']; ?></p>
-                        <?php } ?>
-                        <?php if (!empty($response['robot_starting_position'])) { ?>
-                                                                                <p id="startingPosition"><strong>Starting Position: </strong><?php echo $response['robot_starting_position']; ?></p>
-                        <?php } ?>
-                        <?php if (!empty($response['robot_role'])) { ?>
-                                                                                <p id="role"><strong>Role: </strong><?php echo $response['robot_role']; ?></p>
-                        <?php } ?>
-                        <?php if (!empty($response['robot_comments'])) { ?>
-                                                                                <p id="comments" style="white-space: pre-wrap;"><strong>Comments: </strong><?php echo $response['robot_comments']; ?></p>
-                        <?php } ?>
-                        </div> -->
-                    <?php } ?>
                     <div id="pitScouting">
                         <em>loading...</em>
                     </div>
@@ -206,10 +146,10 @@
                                         <?php } ?>
                                         <!--
                                         <?php if (!empty($stats['autoAccuracy'])) { ?>
-                                                                    Autonomous Accuracy: <strong><?= $stats['autoAccuracy'] ?>%</strong><br />
+                                                                                                                                Autonomous Accuracy: <strong><?= $stats['autoAccuracy'] ?>%</strong><br />
                                         <?php } ?>
                                         <?php if (!empty($stats['autoHotGoalPercent'])) { ?>
-                                                                    Hot Goal Shots: <strong><?= $stats['autoHotGoalPercent'] ?>%</strong><br />
+                                                                                                                                Hot Goal Shots: <strong><?= $stats['autoHotGoalPercent'] ?>%</strong><br />
                                         <?php } ?>
                                         -->
                                         <?php if (!empty($stats['autoMovedZonePercent'])) { ?>
@@ -270,16 +210,54 @@
                     <font style="color: #868686; float: right; font-size: 10pt;">Match Comments</font>
                     <hr style="border-top: 1px solid #bbb">
                 </span>
+
+                <!-- match comments -->
                 <div id="matchComments">
 
+                </div>
+
+                <!-- driver comments -->
+                <br />
+                <font style="color: #868686; float: right; font-size: 10pt;">Driver and Coach Comments</font>
+                <hr style="border-top: 1px solid #bbb">
+                <div class="comment-wrapper">
+                    <div class="comment-commenter"><strong>Driver 1</strong></div>
+                    <div class="comment-text">
+                        <hr class="comment-divider-hr" />
+                        <span>Name: <a href="#" onclick="return false;" class="editable editable-drive-team" id="driver_1_name"><?php echo $driverData['driver_1_name']; ?></a></span>
+                        <br />
+                        <span>Comments: <a href="#" onclick="return false;" class="editable editable-drive-team" id="driver_1_description" data-type="text"><?php echo $driverData['driver_1_description']; ?></a></span>
+                    </div>
+                </div>
+                <div class="comment-wrapper">
+                    <div class="comment-commenter"><strong>Driver 2</strong></div>
+                    <div class="comment-text">
+                        <hr class="comment-divider-hr" />
+                        <span>Name: <a href="#" onclick="return false;" class="editable editable-drive-team" id="driver_2_name"><?php echo $driverData['driver_2_name']; ?></a></span>
+                        <br />
+                        <span>Comments: <a href="#" onclick="return false;" class="editable editable-drive-team" id="driver_2_description" data-type="text"><?php echo $driverData['driver_2_description']; ?></a></span>
+                    </div>
+                </div>
+                <div class="comment-wrapper">
+                    <div class="comment-commenter"><strong>Coach</strong></div>
+                    <div class="comment-text">
+                        <hr class="comment-divider-hr" />
+                        <span>Name: <a href="#" onclick="return false;" class="editable editable-drive-team" id="coach_name"><?php echo $driverData['coach_name']; ?></a></span>
+                        <br />
+                        <span>Comments: <a href="#" onclick="return false;" class="editable editable-drive-team" id="coach_description" data-type="text"><?php echo $driverData['coach_description']; ?></a></span>
+                    </div>
                 </div>
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php' ?>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 
-    <?php if ($isAdmin && $isLoggedInTeam) { ?>
-        <script type="text/javascript">
+
+
+<?php if ($isAdmin && $isLoggedInTeam) { ?>
+
+    <script type="text/javascript">
 
                         $(function() {
                             if ("<?php echo $response['robot_shifters']; ?>" === "1") {
@@ -311,8 +289,8 @@
                                 }
                             });
 
-                            $(".editable").editable({
-                                pk: '<?php echo $teamNumber ?>',
+                            $(".editable-team-info").editable({
+                                pk: '<?php echo $otherTeamNumber ?>',
                                 url: "/ajax-handlers/change-profile-ajax-submit.php",
                                 success: function(response, newVal) {
                                     if (response.indexOf("success") === -1) {
@@ -321,6 +299,8 @@
                                     console.log(newVal);
                                 }
                             });
+
+
                             var options = {
                                 beforeSend: function()
                                 {
@@ -360,66 +340,79 @@
                             $("#submitTeamPicture").ajaxForm(options);
                         });
 
-        </script>
-    <?php } ?>
-
-    <script type="text/javascript">
-
-        $(function() {
-            loadAverages();
-            loadComments();
-            loadPitScouting();
-        });
-
-        function loadComments() {
-            $.ajax({
-                url: '../../ajax-handlers/load-frc-profile-info.php',
-                type: "POST",
-                data: {
-                    'teamNumber': '<?php echo $otherTeamNumber ?>',
-                    'thingToLoad': 'comments'
-                },
-                success: function(response, textStatus, jqXHR) {
-                    $("#matchComments").html(response);
-
-                    if (response !== "") {
-                        $("#matchCommentsTitle").show();
-                    }
-                    //$("#commentsTable").tablesorter();
-                }
-            });
-        }
-        ;
-
-        function loadAverages() {
-            $.ajax({
-                url: '../../ajax-handlers/load-frc-team-averages-ajax-handler.php',
-                type: "POST",
-                data: {
-                    'teamNumber': '<?php echo $otherTeamNumber ?>'
-                },
-                success: function(response, textStatus, jqXHR) {
-                    $("#averages").html(response);
-                    $("#tablesorter").tablesorter();
-                }
-            });
-        }
-        ;
-
-        function loadPitScouting() {
-            $.ajax({
-                url: '../../ajax-handlers/load-frc-profile-info.php',
-                type: 'POST',
-                data: {
-                    'teamNumber': '<?= $otherTeamNumber ?>',
-                    'thingToLoad': 'pit'
-                },
-                success: function(response, textStatus, jqXHR) {
-                    $("#pitScouting").html(response);
-                }
-            });
-        }
-
     </script>
+<?php } ?>
+
+<script type="text/javascript">
+
+    $(function() {
+        loadAverages();
+        loadComments();
+        loadPitScouting();
+    });
+
+    $(".editable-drive-team").editable({
+        pk: '<?php echo $otherTeamNumber ?>',
+        mode: 'inline',
+        url: "/ajax-handlers/change-drive-team-info.php",
+        success: function(response, newVal) {
+            if (response.indexOf("success") === -1) {
+                showMessage(response, 'warning');
+            }
+            console.log(newVal);
+        }
+    });
+
+
+    function loadComments() {
+        $.ajax({
+            url: '/ajax-handlers/load-frc-profile-info.php',
+            type: "POST",
+            data: {
+                'teamNumber': '<?php echo $otherTeamNumber ?>',
+                'thingToLoad': 'comments'
+            },
+            success: function(response, textStatus, jqXHR) {
+                $("#matchComments").html(response);
+
+                if (response !== "") {
+                    $("#matchCommentsTitle").show();
+                }
+                //$("#commentsTable").tablesorter();
+            }
+        });
+    }
+    ;
+
+    function loadAverages() {
+        $.ajax({
+            url: '/ajax-handlers/load-frc-team-averages.php',
+            type: "POST",
+            data: {
+                'teamNumber': '<?php echo $otherTeamNumber ?>'
+            },
+            success: function(response, textStatus, jqXHR) {
+                $("#averages").html(response);
+                $("#tablesorter").tablesorter();
+            }
+        });
+    }
+    ;
+
+    function loadPitScouting() {
+        $.ajax({
+            url: '../../ajax-handlers/load-frc-profile-info.php',
+            type: 'POST',
+            data: {
+                'teamNumber': '<?= $otherTeamNumber ?>',
+                'thingToLoad': 'pit'
+            },
+            success: function(response, textStatus, jqXHR) {
+                $("#pitScouting").html(response);
+            }
+        });
+    }
+
+</script>
 </body>
 </html>

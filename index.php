@@ -1,5 +1,4 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/redirect-if-session-exists.php'; ?>
-<?php include 'pwd-include.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
