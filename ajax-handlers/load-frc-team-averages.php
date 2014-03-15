@@ -23,9 +23,10 @@ if (isset($_REQUEST['scoutedTeam'])) {
 $docRoot = $_SERVER['DOCUMENT_ROOT'];
 
 require_once $docRoot . '/includes/setup-session.php';
+require_once $docRoot . '/includes/db-connect.php';
 require_once $docRoot . '/ajax-handlers/load-frc-team-averages-as-variable.php';
 
-$query = Averages::getAverages($scoutedTeamNumber, $onlyLoggedInTeam, $teamNumber, $onlyThisLocation, $location);
+$query = Averages::getAverages($db, $scoutedTeamNumber, $onlyLoggedInTeam, $teamNumber, $onlyThisLocation, $location);
 
 while ($averages = $query->fetch(PDO::FETCH_ASSOC)) {
 //write the table in PHP instead of HTML
@@ -34,13 +35,13 @@ while ($averages = $query->fetch(PDO::FETCH_ASSOC)) {
     echo $averages['scouted_team'];
     echo "</a></td>";
     echo "<td>";
-    echo number_format($averages['total_points'], 1);
+    echo number_format($averages['total_average'], 1);
     echo "</td>";
     echo "<td>";
-    echo number_format($averages['auto_points'], 1);
+    echo number_format($averages['auto_average'], 1);
     echo "</td>";
     echo "<td>";
-    echo number_format($averages['tele_points'], 1);
+    echo number_format($averages['teleop_average'], 1);
     echo "</td>";
     echo "</tr>";
 }
