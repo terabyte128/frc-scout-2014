@@ -45,9 +45,7 @@ $query = Teams::getPitScoutedAtLocation($location);
                                 echo "</a>";
                                 echo "</td>";
                                 echo "<td>";
-                                echo "<a href=\"/team/" . $row['team_name'] . "\">";
                                 echo $row['team_name'];
-                                echo "</a>";
                                 echo "</td>";
                                 echo "</tr>";
                             }

@@ -95,7 +95,7 @@
                 <br />
                 <?php
                 $statsAvailable = false;
-                if (!empty($stats['attendance']) || !empty($stats['teleAverageHigh']) ||
+                if (!empty($stats['attendance']) || !empty($stats['tele_average_high_goals']) ||
                         !empty($stats['percentageOfShotsMade'])) {
                     $statsAvailable = true;
                 }
@@ -127,11 +127,11 @@
                                         <?php if (!empty($stats['winRate'])) { ?>
                                             Win Rate: <strong><?php echo $stats['winRate']; ?>%</strong><br />
                                         <?php } ?>
-                                        <?php if (!empty($stats['total_points'])) { ?>
-                                            Average Potential Match Score: <strong><?= $stats['total_points'] ?></strong>
+                                        <?php if (!empty($averages['total_average'])) { ?>
+                                            Average Potential Match Score: <strong><?= number_format($averages['total_average'], 1) ?></strong>
                                         <?php } ?>
-                                        <?php if (!empty($stats['alliance_score_percent'])) { ?>
-                                            (<strong><?= $stats['alliance_score_percent'] ?>%</strong> of actual alliance score)<br />
+                                        <?php if (!empty($averages['average_total_match_points'])) { ?>
+                                            (<strong><?= number_format(($averages['total_average'] / $averages['average_total_match_points']) * 100, 1) ?>%</strong> of actual alliance score)<br />
                                         <?php } ?>
                                     <?php } ?>
                                 </div>
@@ -141,17 +141,9 @@
                                     <div class="comment-commenter"><strong>Autonomous</strong></div>
                                     <div class="comment-text">
                                         <hr class="comment-divider-hr" />
-                                        <?php if (!empty($stats['auto_points'])) { ?>
-                                            Average Potential Autonomous Score: <strong><?= $stats['auto_points'] ?></strong><br />
-                                        <?php } ?>
-                                        <!--
-                                        <?php if (!empty($stats['autoAccuracy'])) { ?>
-                                                                                                                                Autonomous Accuracy: <strong><?= $stats['autoAccuracy'] ?>%</strong><br />
-                                        <?php } ?>
-                                        <?php if (!empty($stats['autoHotGoalPercent'])) { ?>
-                                                                                                                                Hot Goal Shots: <strong><?= $stats['autoHotGoalPercent'] ?>%</strong><br />
-                                        <?php } ?>
-                                        -->
+                                        <?php if (!empty($averages['auto_average'])) { ?>
+                                            Average Potential Autonomous Score: <strong><?= number_format($averages['auto_average'], 1) ?></strong><br />
+                                        <?php } ?>                                                                            
                                         <?php if (!empty($stats['autoMovedZonePercent'])) { ?>
                                             Moved to Alliance Zone: <strong><?= $stats['autoMovedZonePercent'] ?>%</strong> of the time<br />
                                         <?php } ?>
@@ -161,38 +153,38 @@
                                     <div class="comment-commenter"><strong>Teleoperated</strong></div>
                                     <div class="comment-text">
                                         <hr class="comment-divider-hr" />
-                                        <?php if (!empty($stats['tele_points'])) { ?>
-                                            Average Potential Teleop Score: <strong><?= $stats['tele_points'] ?></strong><br />
+                                        <?php if (!empty($averages['teleop_average'])) { ?>
+                                            Average Potential Teleop Score: <strong><?= number_format($averages['teleop_average'], 1) ?></strong><br />
                                         <?php } ?>
                                         <?php if (!empty($stats['percentageOfShotsMade'])) { ?>
                                             High Goal Accuracy: <strong><?php echo $stats['percentageOfShotsMade']; ?>%</strong><br />
                                         <?php } ?>
-                                        <?php if (!empty($stats['teleAverageHigh']) || !empty($stats['teleAverageLow'])) { ?>
+                                        <?php if (!empty($averages['tele_average_high_goals']) || !empty($averages['tele_average_low_goals'])) { ?>
                                             <hr class="comment-divider-hr" />
                                         <?php } ?>
-                                        <?php if (!empty($stats['teleAverageHigh'])) { ?>
-                                            Average High Goals: <strong><?php echo $stats['teleAverageHigh']; ?></strong> per match<br />
+                                        <?php if (!empty($averages['tele_average_high_goals'])) { ?>
+                                            Average High Goals: <strong><?php echo number_format($averages['tele_average_high_goals'], 1); ?></strong> per match<br />
                                         <?php } ?>
-                                        <?php if (!empty($stats['teleAverageLow'])) { ?>
-                                            Average Low Goals: <strong><?php echo $stats['teleAverageLow']; ?></strong> per match<br />
+                                        <?php if (!empty($averages['tele_average_low_goals'])) { ?>
+                                            Average Low Goals: <strong><?php echo number_format($averages['tele_average_low_goals'], 1); ?></strong> per match<br />
                                         <?php } ?>
-                                        <?php if (!empty($stats['teleRecvdAssists']) || !empty($stats['telePassedAssists'])) { ?>
+                                        <?php if (!empty($averages['tele_average_received_assists']) || !empty($averages['tele_average_passed_assists'])) { ?>
                                             <hr class="comment-divider-hr" />
                                         <?php } ?>
-                                        <?php if (!empty($stats['teleRecvdAssists'])) { ?>
-                                            Average Balls Possessed: <strong><?php echo $stats['teleRecvdAssists']; ?></strong> per match<br />
+                                        <?php if (!empty($averages['tele_average_received_assists'])) { ?>
+                                            Average Balls Possessed: <strong><?php echo number_format($averages['tele_average_received_assists'], 1); ?></strong> per match<br />
                                         <?php } ?>
-                                        <?php if (!empty($stats['telePassedAssists'])) { ?>
-                                            Average Balls Passed: <strong><?php echo $stats['telePassedAssists']; ?></strong> per match<br />
+                                        <?php if (!empty($averages['tele_average_passed_assists'])) { ?>
+                                            Average Balls Passed: <strong><?php echo number_format($averages['tele_average_passed_assists'], 1); ?></strong> per match<br />
                                         <?php } ?>
-                                        <?php if (!empty($stats['teleTrussThrow']) || !empty($stats['teleTrussCatch'])) { ?>
+                                        <?php if (!empty($averages['tele_average_truss_throws']) || !empty($averages['tele_average_truss_catches'])) { ?>
                                             <hr class="comment-divider-hr" />
                                         <?php } ?>
-                                        <?php if (!empty($stats['teleTrussThrow'])) { ?>
-                                            Average Truss Throws: <strong><?php echo $stats['teleTrussThrow']; ?></strong> per match<br />
+                                        <?php if (!empty($averages['tele_average_truss_throws'])) { ?>
+                                            Average Truss Throws: <strong><?php echo number_format($averages['tele_average_truss_throws'], 1); ?></strong> per match<br />
                                         <?php } ?>
-                                        <?php if (!empty($stats['teleTrussCatch'])) { ?>
-                                            Average Truss Catches: <strong><?php echo $stats['teleTrussCatch']; ?></strong> per match<br />
+                                        <?php if (!empty($averages['tele_average_truss_catches'])) { ?>
+                                            Average Truss Catches: <strong><?php echo number_format($averages['tele_average_truss_catches'], 1); ?></strong> per match<br />
                                         <?php } ?>
                                     </div>
                                 </div>
@@ -259,86 +251,86 @@
 
     <script type="text/javascript">
 
-                        $(function() {
-                            if ("<?php echo $response['robot_shifters']; ?>" === "1") {
-                                $("#lowSpeed").show(100);
-                            } else {
-                                $("#lowSpeed").hide();
+                    $(function() {
+                        if ("<?php echo $response['robot_shifters']; ?>" === "1") {
+                            $("#lowSpeed").show(100);
+                        } else {
+                            $("#lowSpeed").hide();
+                        }
+
+                        $("#robot_shifters").editable({
+                            value: null,
+                            source: [
+                                {value: 0, text: 'No'},
+                                {value: 1, text: 'Yes'}
+                            ],
+                            showbuttons: false,
+                            pk: '<?php echo $teamNumber ?>',
+                            url: "/ajax-handlers/change-profile-ajax-submit.php",
+                            success: function(response, newVal) {
+                                if (response.indexOf("success") === -1) {
+                                    showMessage(response, 'warning');
+                                }
+                                if (newVal === "1") {
+                                    $("#lowSpeed").show(100);
+                                    $("#highText").show(100);
+                                } else {
+                                    $("#lowSpeed").hide(100);
+                                    $("#highText").hide(100);
+                                }
+                            }
+                        });
+
+                        $(".editable-team-info").editable({
+                            pk: '<?php echo $otherTeamNumber ?>',
+                            url: "/ajax-handlers/change-profile-ajax-submit.php",
+                            success: function(response, newVal) {
+                                if (response.indexOf("success") === -1) {
+                                    showMessage(response, 'warning');
+                                }
+                                console.log(newVal);
+                            }
+                        });
+
+
+                        var options = {
+                            beforeSend: function()
+                            {
+                                $("#progress").show();
+                                //clear everything
+                                $("#bar").width('0%');
+                                $("#message").html("");
+                                $("#percent").html("0%");
+                            },
+                            uploadProgress: function(event, position, total, percentComplete)
+                            {
+                                $("#percent").html('Uploading ' + percentComplete + '%');
+
+                            },
+                            success: function(response)
+                            {
+                                $("#percent").html('Upload complete!');
+                                console.log("got a response: " + response);
+                                if (response === "Success") {
+                                    location.reload();
+                                } else {
+                                    showMessage(response, "danger");
+                                }
+
+                            },
+                            complete: function(response)
+                            {
+
+                            },
+                            error: function()
+                            {
+
                             }
 
-                            $("#robot_shifters").editable({
-                                value: null,
-                                source: [
-                                    {value: 0, text: 'No'},
-                                    {value: 1, text: 'Yes'}
-                                ],
-                                showbuttons: false,
-                                pk: '<?php echo $teamNumber ?>',
-                                url: "/ajax-handlers/change-profile-ajax-submit.php",
-                                success: function(response, newVal) {
-                                    if (response.indexOf("success") === -1) {
-                                        showMessage(response, 'warning');
-                                    }
-                                    if (newVal === "1") {
-                                        $("#lowSpeed").show(100);
-                                        $("#highText").show(100);
-                                    } else {
-                                        $("#lowSpeed").hide(100);
-                                        $("#highText").hide(100);
-                                    }
-                                }
-                            });
+                        };
 
-                            $(".editable-team-info").editable({
-                                pk: '<?php echo $otherTeamNumber ?>',
-                                url: "/ajax-handlers/change-profile-ajax-submit.php",
-                                success: function(response, newVal) {
-                                    if (response.indexOf("success") === -1) {
-                                        showMessage(response, 'warning');
-                                    }
-                                    console.log(newVal);
-                                }
-                            });
-
-
-                            var options = {
-                                beforeSend: function()
-                                {
-                                    $("#progress").show();
-                                    //clear everything
-                                    $("#bar").width('0%');
-                                    $("#message").html("");
-                                    $("#percent").html("0%");
-                                },
-                                uploadProgress: function(event, position, total, percentComplete)
-                                {
-                                    $("#percent").html('Uploading ' + percentComplete + '%');
-
-                                },
-                                success: function(response)
-                                {
-                                    $("#percent").html('Upload complete!');
-                                    console.log("got a response: " + response);
-                                    if (response === "Success") {
-                                        location.reload();
-                                    } else {
-                                        showMessage(response, "danger");
-                                    }
-
-                                },
-                                complete: function(response)
-                                {
-
-                                },
-                                error: function()
-                                {
-
-                                }
-
-                            };
-
-                            $("#submitTeamPicture").ajaxForm(options);
-                        });
+                        $("#submitTeamPicture").ajaxForm(options);
+                    });
 
     </script>
 <?php } ?>
