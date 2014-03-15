@@ -247,6 +247,9 @@ function printPSData($finalRow, $canDeleteData, $listNum, $teamNumber) {
             echo 'Has <strong>swerve drive</strong><br />';
         }
     }
+    if(!empty($finalRow['number_of_drive_motors'])) {
+        echo 'Drive motors: <strong>' . $finalRow['number_of_drive_motors'] . '</strong><br />';
+    }
 
     if (!empty($finalRow['shooter_type'])) {
         echo 'Shooter type: <strong>' . $finalRow ['shooter_type'] . '</strong><br />';

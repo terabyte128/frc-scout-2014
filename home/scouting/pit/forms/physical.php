@@ -26,7 +26,10 @@
     <br /><br />
     <label for="wheelType">Number of wheels:</label>
     <input type="number" class="form-control" placeholder="Number of wheels" id="wheelNum">
-
+    <br /><br />
+    <label for="driveMotors">Number of drive motors:</label>
+    <input type="number" class="form-control" placeholder="Number of drive motors" id="driveMotors">
+    
     <br /><br />
 </form>
 
@@ -56,6 +59,7 @@
     }
 
     function pullFromLocalStorage() {
+        $("#driveMotors").val(localStorage.driveMotors);
         $("#robotWeight").val(localStorage.robotWeight);
         $("#robotHeight").val(localStorage.robotHeight);
         $("#shooterType").val(localStorage.shooterType);
@@ -80,6 +84,7 @@
     }
 
     function pushToLocalStorage() {
+        localStorage.driveMotors = $("#driveMotors").val();
         localStorage.robotWeight = $("#robotWeight").val();
         localStorage.robotHeight = $("#robotHeight").val();
         localStorage.canExtend = canExtend;
