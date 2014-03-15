@@ -124,11 +124,11 @@ class Averages {
                             # these averages are by match number
                             GROUP BY `match_number`
                         # then THOSE averages are averaged by team
-                        ) as `not_sure_why_this_has_to_exist` GROUP BY `scouted_team`;
+                        ) as `not_sure_why_this_has_to_exist` GROUP BY `scouted_team`
         ';
 
         if ($orderByTotalPoints) {
-            $queryString .= " ORDER BY `total_points` DESC";
+            $queryString .= " ORDER BY `total_average` DESC;";
         }
 
         try {
