@@ -42,11 +42,19 @@ try {
 
     $stats = $request->fetch(PDO::FETCH_ASSOC);
 
-    $request = $db->prepare("SELECT COUNT(*) AS contributions, (SELECT COUNT(*) FROM frc_pit_scouting_data WHERE scouted_team=?) AS narcissism FROM frc_pit_scouting_data WHERE scouting_team=? ");
+    $request = $db->prepare("SELECT (SELECT COUNT(*) FROM frc_pit_scouting_data WHERE scouting_team=?) AS contributions, 
+        (SELECT COUNT(*) FROM frc_pit_scouting_data WHERE scouted_team=? AND scouting_team=?) AS narcissism
+        FROM frc_pit_scouting_data ");
 
-    $request->execute(array($otherTeamNumber, $otherTeamNumber));
+    $request->execute(array($otherTeamNumber, $otherTeamNumber, $otherTeamNumber));
 
     $pit = $request->fetch(PDO::FETCH_ASSOC);
+    
+    $request = $db->prepare("SELECT `team_name` FROM frc_pit_scouting_data WHERE scouted_team=? GROUP BY scouted_team");
+    
+    $request->execute(array($otherTeamNumber));
+    
+    $name = $request->fetch(PDO::FETCH_ASSOC);
 
     # get averages all nice and packaged
 

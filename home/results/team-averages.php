@@ -45,6 +45,7 @@
                     <table id="averagesTable" class="table table-striped table-bordered table-hover tablesorter">
                         <thead>
                             <tr>
+                                <th style="width: 20px;">#</th>
                                 <th>Team Number</th>
                                 <th>Total Points</th>
                                 <th>Autonomous Points</th>
@@ -77,7 +78,7 @@
                         }
                         loadTable(onlyUs, onlyHere);
                         $("#averagesTable").tablesorter({
-                            sortList: [[1, 1]]
+                            sortList: [[2, 1]]
                         });
                     });
 
@@ -120,7 +121,7 @@
                                 $("#loading").hide();
                                 $("#tableBody").html(response);
                                 $("#averagesTable").trigger("update");
-                                var sorting = [[1, 1]];
+                                var sorting = [[2, 1]];
                                 $("#averagesTable").trigger("sorton", [sorting]);
                             }
                         });

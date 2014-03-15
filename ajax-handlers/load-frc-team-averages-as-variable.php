@@ -122,7 +122,7 @@ class Averages {
         # now finish it off with a bang!
         $queryString .= '    
                             # these averages are by match number
-                            GROUP BY `match_number`
+                            GROUP BY `scouted_team`, `match_number`, `location`
                         # then THOSE averages are averaged by team
                         ) as `not_sure_why_this_has_to_exist` GROUP BY `scouted_team`
         ';
@@ -137,7 +137,6 @@ class Averages {
         } catch (PDOException $e) {
             print_r($e->getMessage());
         }
-
         return $query;
     }
 
