@@ -16,7 +16,7 @@
         <button class="btn btn-lg btn-info submit-data" type="button" style="width: 250px;" onclick="updateDatabase(true);">Go to scouting home</button>
     </div>
     <div class="form-group">
-        <button class="btn btn-lg btn-succes submit-data" type="button" style="width: 250px;" onclick="updateDatabase(false);">Scout another team</button>
+        <button class="btn btn-lg btn-success submit-data" type="button" style="width: 250px;" onclick="updateDatabase(false);">Scout another team</button>
     </div>
     <br />
     <br />

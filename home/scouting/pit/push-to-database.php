@@ -22,7 +22,7 @@ $params = array(
     $teamData['canThrow'] === "true" ? 1 : 0, $teamData['canCatch'] === "true" ? 1 : 0, $teamData['canHighGoal'] === "true" ? 1 : 0,
     $teamData['canBlock'] === "true" ? 1 : 0,
     //comments
-    $teamData['strength'], $teamData['problems'], $teamData['comments']
+    $teamData['strength'], $teamData['problems'], $teamData['comments'], $teamData['driveMotors']
 );
 
 try {
@@ -42,14 +42,14 @@ try {
             . "can_throw, can_catch, can_high_goal, can_block, "
 
             // comments
-            . "strength, problems, comments) VALUES ("
+            . "strength, problems, comments, number_of_drive_motors) VALUES ("
 
             //dem values doe
             . "?, ?, now(), ?, ?,"
             . " ?, ?, ?,"
             . " ?, ?, ?, ?, ?, ?, ?,"
             . " ?, ?, ?, ?, ?, ?, ?, ?,"
-            . " ?, ?, ?"
+            . " ?, ?, ?, ?"
             . ")");
 
     $query->execute($params);
