@@ -82,7 +82,14 @@
                         </div>
                     </div>
                 <?php } else { ?>
-                    <p style="margin: 10px 0 0 0;"><i>This team is not currently registered with FIRST Scout.</i></p>
+                    <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
+                        <?php if (isset($name['team_name'])) { ?>
+                            <br /><p style="font-size: 20pt; margin-bottom: 0px;">
+                                <?= $name['team_name'] ?>
+                            </p>
+                        <?php } ?>
+                        <p style="margin: 5px 0 0 0;"><i>This team is not currently registered with FIRST Scout.</i></p>
+                    </div>
                 <?php } ?>
                 <br />
                 <font style="color: #868686; float: right; font-size: 10pt;">Robot Statistics</font>

@@ -2,6 +2,7 @@
 
 require_once '../includes/setup-session.php';
 require_once '../includes/db-connect.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/load-frc-team-averages-as-variable.php';
 
 $redAlliance = $_POST['redAlliance'];
 $blueAlliance = $_POST['blueAlliance'];
@@ -10,16 +11,6 @@ $lastFive = $_POST['lastFive'];
 
 $redAllianceResults = array();
 $blueAllianceResults = array();
-
-$queryString = ('SELECT scouted_team, '
-        . 'format(AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_hot_goals * 5) + (auto_moved_to_alliance_zone * 5)), 1) AS auto_points, '
-        . 'format(AVG((tele_received_assists * 10) + (tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) '
-        . '+ (tele_truss_catches * 10)), 1) AS tele_points, '
-        . 'format(AVG((auto_high_goals * 15) + (auto_low_goals * 6) + (auto_hot_goals * 5) + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) + '
-        . '(tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)), 1) AS total_points, `team_absent` '
-        #  . 'STDDEV POP(auto_goal_value + (auto_hot_goal * 5) + (auto_moved_to_alliance_zone * 5) + (tele_received_assists * 10) + '
-        #  . '(tele_high_goals * 10) + tele_low_goals + (tele_truss_throws * 10) + (tele_truss_catches * 10)) AS total_points_stdev '
-        . 'FROM `frc_match_data` WHERE `scouted_team`=?');
 
 
 if ($onlyHere === "true") {
@@ -40,19 +31,13 @@ foreach ($redAlliance as $value) {
         break;
     }
     echo '<a href="/team/' . $value . '" class="red">' . $value . '</a><br />';
-    $params = array($value);
     if ($onlyHere === "true") {
-        array_push($params, $location);
+        $query = Averages::getAverages($db, $value, false, $teamNumber, true, $location, false);
+    } else {
+        $query = Averages::getAverages($db, $value, false, $teamNumber, false, $location, false);
     }
-    try {
-        $query = $db->prepare($queryString);
-        $query->execute($params);
-    } catch (PDOException $e) {
-        print_r($e->getMessage());
-    }
-    while ($results = $query->fetch(PDO::FETCH_ASSOC)) {
-        array_push($redAllianceResults, $results);
-    }
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+    array_push($redAllianceResults, $row);
 }
 echo '</strong></div>';
 # vs
@@ -67,39 +52,33 @@ foreach ($blueAlliance as $value) {
         break;
     }
     echo '<a href="/team/' . $value . '" class="blue">' . $value . '</a><br />';
-    $params = array($value);
     if ($onlyHere === "true") {
-        array_push($params, $location);
+        $query = Averages::getAverages($db, $value, false, $teamNumber, true, $location, false);
+    } else {
+        $query = Averages::getAverages($db, $value, false, $teamNumber, false, $location, false);
     }
-    try {
-        $query = $db->prepare($queryString);
-        $query->execute($params);
-    } catch (PDOException $e) {
-        print_r($e->getMessage());
-    }
-    while ($results = $query->fetch(PDO::FETCH_ASSOC)) {
-        array_push($blueAllianceResults, $results);
-    }
+    $row = $query->fetch(PDO::FETCH_ASSOC);
+    array_push($blueAllianceResults, $row);
 }
 echo '</strong></div></div></div>';
 
 # calculate total scores
 $redTotal = 0;
 foreach ($redAllianceResults as $value) {
-    $redTotal += $value['total_points'];
+    $redTotal += $value['total_average'];
 }
 $blueTotal = 0;
 foreach ($blueAllianceResults as $value) {
-    $blueTotal += $value['total_points'];
+    $blueTotal += $value['total_average'];
 }
 
 # print out the scores
 echo '<div style="padding:0px;"><br /><strong>Projected Score:</strong></div>';
 echo '<div style="display:inline-block; padding: 0px 10px 10px 10px; font-size:20pt;">';
 echo '<span class="red"><strong><em>'
- . $redTotal . '</em></strong></span> &mdash; ';
+ . number_format($redTotal, 1) . '</em></strong></span> &mdash; ';
 echo '<span class="blue" font-size:20pt;"><strong><em>'
- . $blueTotal . '</em></strong></span></div><br />';
+ . number_format($blueTotal, 1) . '</em></strong></span></div><br />';
 
 # print out the winner
 echo '<div style="font-size:16pt;">';
@@ -131,31 +110,31 @@ foreach ($blueAllianceResults as $value) {
 # auto points
 echo '</thead><tbody><tr>';
 foreach ($redAllianceResults as $value) {
-    echo '<td>' . $value['auto_points'] . '</td>';
+    echo '<td>' . number_format($value['auto_average'], 1) . '</td>';
 }
 echo '<td style="text-align: center;">Auto Points</td>';
 foreach ($blueAllianceResults as $value) {
-    echo '<td>' . $value['auto_points'] . '</td>';
+    echo '<td>' . number_format($value['auto_average'], 1) . '</td>';
 }
 echo '</tr>';
 # tele points
 echo '<tr>';
 foreach ($redAllianceResults as $value) {
-    echo '<td>' . $value['tele_points'] . '</td>';
+    echo '<td>' . number_format($value['teleop_average'], 1) . '</td>';
 }
 echo '<td style="text-align: center;">Tele Points</td>';
 foreach ($blueAllianceResults as $value) {
-    echo '<td>' . $value['tele_points'] . '</td>';
+    echo '<td>' . number_format($value['teleop_average'], 1) . '</td>';
 }
 echo '</tr>';
 # total points
 echo '<tr>';
 foreach ($redAllianceResults as $value) {
-    echo '<td>' . $value['total_points'] . '</td>';
+    echo '<td>' . number_format($value['total_average'], 1) . '</td>';
 }
 echo '<td style="text-align: center;"><strong>Total Points</strong></td>';
 foreach ($blueAllianceResults as $value) {
-    echo '<td>' . $value['total_points'] . '</td>';
+    echo '<td>' . number_format($value['total_average'], 1) . '</td>';
 }
 echo '</tr>';
 echo '</tbody></table></div>';
