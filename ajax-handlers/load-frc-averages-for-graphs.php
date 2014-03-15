@@ -3,9 +3,10 @@
 $docRoot = $_SERVER['DOCUMENT_ROOT'];
 
 require_once $docRoot . '/includes/setup-session.php';
+require_once $docRoot . '/includes/db-connect.php';
 require_once $docRoot . '/ajax-handlers/load-frc-team-averages-as-variable.php';
 
-$query = Averages::getAverages(null, false, $teamNumber, true, $location, true);
+$query = Averages::getAverages($db, null, false, $teamNumber, true, $location, true);
 
 
 $teamNumber = array();
