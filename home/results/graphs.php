@@ -53,6 +53,7 @@
                         $.ajax({
                             url: '/ajax-handlers/load-frc-averages-for-graphs.php',
                             success: function(response) {
+                                console.log(response);
                                 responseArray = JSON.parse(response);
                                 if (responseArray[0].length > 0) {
                                     var height = (responseArray[0].length * 30) + 100;
