@@ -2,6 +2,8 @@
     <label for="teamNumber">Team number:</label>
     <input type="number" class="form-control" placeholder="Team number" id="teamNumber" onblur="updateTeamNumber($('#teamNumber').val());">
     <br />
+    <div id="scoutedCount" style="font-style: italic;"></div>
+    <br />
     <label for="matchNumber">Match number:</label>
     <input type="number" class="form-control" placeholder="Match number" id="matchNumber">
     <br />
@@ -152,6 +154,22 @@
 
         function updateTeamNumber(teamNumber) {
             $('#teamNumberTitle').text(": " + teamNumber);
+            $.ajax({
+                url: 'check-for-already-scouted.php',
+                method: 'POST',
+                data: {
+                    'scoutedTeam': teamNumber
+                },
+                success: function(response, textStatus, jqXHR) {
+                    console.log(response);
+                    if (response !== "") {
+                        $("#scoutedCount").text(response);
+                        $("#scoutedCount").show();
+                    } else {
+                        $("#scoutedCount").hide();
+                    }
+                }
+            });
         }
 
         function cancel() {
