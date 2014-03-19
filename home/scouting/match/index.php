@@ -19,6 +19,7 @@ if ($teamType === "FTC") {
             <div class="container">
                 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/messages.php'; ?>
                 <h1><img id="loading" src="/images/loading.gif" style="height: 24px; vertical-align: initial;"> <span id="pageNameTitle">Scouting</span><span id="teamNumberTitle"></span></h1>
+                <button id="homeButton" class="btn btn-default" onclick="window.location = '/'" style="margin-bottom: 10px;">Return Home</button>
                 <div id="content-holder">
                 </div>
                 <div id="nextPhaseButtonContainer">
@@ -101,6 +102,9 @@ if ($teamType === "FTC") {
 
         if (currentPhase !== "prematch") {
             $("#absentButton").hide();
+            $("#homeButton").hide();
+        } else {
+            $("#homeButton").show();
         }
     }
 
