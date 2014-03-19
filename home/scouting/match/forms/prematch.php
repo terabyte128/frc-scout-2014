@@ -1,7 +1,6 @@
 <form class="scouting-form">
     <label for="teamNumber">Team number:</label>
     <input type="number" class="form-control" placeholder="Team number" id="teamNumber" onblur="updateTeamNumber($('#teamNumber').val());">
-    <br />
     <div id="scoutedCount" style="font-style: italic;"></div>
     <br />
     <label for="matchNumber">Match number:</label>

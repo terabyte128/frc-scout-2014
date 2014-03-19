@@ -10,7 +10,7 @@ $scoutedTeam = $_POST['scoutedTeam'];
 
 $params = array($scoutedTeam, $teamNumber, $location);
 
-$queryString = "SELECT COUNT(*) WHERE scouted_team=? AND scouting_team=? AND location=? as times FROM frc_pit_scouting_data";
+$queryString = "SELECT uid FROM frc_match_data WHERE scouted_team=? AND scouting_team=? AND location=?";
 
 try {
     $response = $db->prepare($queryString);
@@ -19,8 +19,6 @@ try {
     echo 'something went wrong: ' . $e->getMessage();
 }
 
-$row = $response->fetch(PDO::FETCH_ASSOC);
-
-if ($row['times'] !== "0") {
-    echo "Scouted here " . $row['times'] . " times";
+if ($response->rowCount() > 0) {
+    echo "Scouted at " . $location . " " . $response->rowCount() . " times.";
 }
