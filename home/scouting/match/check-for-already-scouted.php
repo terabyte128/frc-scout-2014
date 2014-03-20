@@ -20,5 +20,9 @@ try {
 }
 
 if ($response->rowCount() > 0) {
-    echo "Scouted at " . $location . " " . $response->rowCount() . " times.";
+    $s = "s";
+    if ($response->rowCount() === 1) {
+        $s = "";
+    }
+    echo "Scouted at " . $location . " " . $response->rowCount() . " time" . $s . ".";
 }
