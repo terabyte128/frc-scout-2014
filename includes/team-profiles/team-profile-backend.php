@@ -127,6 +127,14 @@
                                 <div class="comment-commenter"><strong>General</strong></div>
                                 <div class="comment-text">
                                     <hr class="comment-divider-hr" />
+                                    <div class='comment-text'><strong>Match Outcomes (Win-Lose-Draw)</strong></div>
+                                    <?php if (!empty($stats['matchesWonAtLocation'])) { ?>
+                                         <?= $location ?>: <strong><?php echo $stats['matchesWonAtLocation']; ?>-<?php echo $stats['matchesLostAtLocation']; ?>-<?php echo $stats['matchesTiedAtLocation']; ?></strong><br />
+                                    <?php } ?>
+                                    <?php if (!empty($stats['matchesWon'])) { ?>
+                                        Overall: <strong><?php echo $stats['matchesWon']; ?>-<?php echo $stats['matchesLost']; ?>-<?php echo $stats['matchesTied']; ?></strong><br />
+                                    <?php } ?>
+                                    <hr class="comment-divider-hr" />
                                     <?php if (!empty($stats['attendance'])) { ?>
                                         Attendance Rate: <strong><?php echo $stats['attendance']; ?>%</strong><br />
                                     <?php } ?>
