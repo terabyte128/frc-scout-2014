@@ -287,3 +287,15 @@ a.editable-click:hover {
     border-top: 1px solid #bbb;
     margin: 3px 0px;
 }
+
+a.editable-click.editable-disabled {
+    color: black;  
+    border-bottom: none;
+}
+a.editable-empty {
+    color: gray;
+    font-style: italic;
+}
+a.editable-empty:hover{
+    color: #3e3e3e;
+}

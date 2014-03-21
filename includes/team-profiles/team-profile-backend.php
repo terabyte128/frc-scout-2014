@@ -351,6 +351,7 @@
     });
 
     $(".editable-drive-team").editable({
+        emptytext: "Empty - click to edit",
         pk: '<?php echo $otherTeamNumber ?>',
         mode: 'inline',
         url: "/ajax-handlers/change-drive-team-info.php",
