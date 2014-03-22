@@ -30,15 +30,25 @@ try {
     format(((SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND auto_moved_to_alliance_zone=1 AND team_absent=0) /
     (SELECT matchesPresent)) * 100, 1) as autoMovedZonePercent,
     format(((SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=0) /
-    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=?))* 100, 1) as winRate
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=?))* 100, 1) as winRate,
     
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=0 AND location=?) as matchesWonAtLocation,
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=1 AND location=?) as matchesLostAtLocation,
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=2 AND location=?) as matchesTiedAtLocation,
+    
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=0) as matchesWon,
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=1) as matchesLost,
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=2) as matchesTied
+
     # averages are no longer done here :)
 
     FROM frc_match_data WHERE scouted_team=?");
 
     $request->execute(array($otherTeamNumber, $otherTeamNumber,
         $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber,
-        $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber));
+        $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, 
+        $otherTeamNumber, $location, $otherTeamNumber, $location, $otherTeamNumber, 
+        $location, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber));
 
     $stats = $request->fetch(PDO::FETCH_ASSOC);
 

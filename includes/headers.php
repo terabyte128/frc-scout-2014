@@ -1,5 +1,6 @@
 <!-- declare character encoding -->
 <meta charset="UTF-8">
+<meta name="mobile-web-app-capable" content="yes" />
 
 <!-- ensure mobile-friendliness -->
 <meta name="mobileoptimized" content="0" />
@@ -27,3 +28,4 @@
 <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cabin' type='text/css' />
 <link rel="stylesheet" href="/bootstrap3-editable/css/bootstrap-editable.css" />
 <link rel="stylesheet" href="/css/style.css" type='text/css' />
+<link rel="stylesheet" href="/css/datepicker.css" type='text/css' />
