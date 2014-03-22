@@ -17,6 +17,7 @@
 
 <!-- js stuff to run on page load -->
 <script type="text/javascript" src="/includes/run-on-page-load.js"></script>
+<script type="text/javascript" src="/includes/jquery-file-upload.js"></script>
 <script type="text/javascript" src="/includes/jquery.form.js"></script>
 <script type="text/javascript" src="/includes/typeahead.js"></script>
 
