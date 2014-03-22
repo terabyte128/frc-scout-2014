@@ -10,7 +10,7 @@
         <label class="btn btn-danger btn-lg" id="0-m" onclick='goalValues[0] = 0;
                 updateTotals();
                 updateMissed(true, 0);'>
-            <input type="radio" name="options" id="missedGoal1">Missed
+            <input type="radio" name="options" id="missedGoal1">Miss
         </label>
         <label class="btn btn-blue-selection btn-lg" id="0-6" onclick='goalValues[0] = 6;
                 updateTotals();
@@ -37,7 +37,7 @@
             <label class="btn btn-danger btn-lg" id="1-m" onclick='goalValues[1] = 0;
                     updateTotals();
                     updateMissed(true, 1);'>
-                <input type="radio" name="options" id="missedGoal2">Missed
+                <input type="radio" name="options" id="missedGoal2">Miss
             </label>
             <label class="btn btn-blue-selection btn-lg" id="1-6" onclick='goalValues[1] = 6;
                     updateTotals();
@@ -63,7 +63,7 @@
             <label class="btn btn-danger btn-lg" id="2-m" onclick='goalValues[2] = 0;
                     updateTotals();
                     updateMissed(true, 2);'>
-                <input type="radio" name="options" id="missedGoal3">Missed
+                <input type="radio" name="options" id="missedGoal3">Miss
             </label>
             <label class="btn btn-blue-selection btn-lg" id="2-6" onclick='goalValues[2] = 6;
                     updateTotals();
