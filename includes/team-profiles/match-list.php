@@ -13,7 +13,8 @@ $queryString = "SELECT *, "
         . "(SELECT (15*auto_high_goals + 6*auto_low_goals + 5*auto_hot_goals + 5*auto_moved_to_alliance_zone + "
         . "tele_low_goals + 10*tele_high_goals + 10*tele_truss_throws + 10*tele_truss_catches + "
         . "10*tele_received_assists)) AS total_points, "
-        . "(SELECT format((total_points / total_match_points) * 100, 0)) AS proportion "
+        . "(SELECT format((total_points / total_match_points) * 100, 0)) AS proportion, "
+        . "died_during_match "
         . "FROM frc_match_data WHERE scouted_team=? "
         . "ORDER BY timestamp, match_number";
 $params = array($otherTeamNumber);
@@ -120,7 +121,7 @@ $listNum = 0;
                                 <hr class="comment-divider-hr" />
                                 <span class="comment-commenter"><strong>Teleoperated</strong></span><br />
                                 Potential score: <strong><?= $match['tele_total_points'] ?></strong><br />
-                                High goal accuracy: 
+                                High goal accuracy:
                                 <?php if ($match['tele_total_shots'] !== "0") { ?><strong><?= $match['tele_accuracy'] ?>%</strong>
                                 <?php } else { ?><em>(no shots attempted)</em><?php } ?>
                                 <div id="moreTeleData<?= $listNum ?>" style="display:none;">
@@ -144,15 +145,21 @@ $listNum = 0;
 
                             <?php if (!empty($match['misc_comments'])) { ?>
                                 <hr class="comment-divider-hr" />
-                                <div<?php if ($canDeleteData && $match['caused_fouls'] !== "1") { ?> style="float:left;"<?php } ?>>
+                                <div<?php if ($canDeleteData && $match['caused_fouls'] !== "1" && $match['died_during_match'] !== "1") { ?> style="float:left;"<?php } ?>>
                                     <?= nl2br($match['misc_comments'], true) ?><br />
                                 </div>
                             <?php } ?>
 
                             <?php if ($match['caused_fouls'] === "1") { ?>
-                                <div<?php if ($canDeleteData) { ?> style="float:left;"<?php } ?>>
+                                <div<?php if ($canDeleteData && $match['died_during_match'] !== "1") { ?> style="float:left;"<?php } ?>>
                                     <strong>Caused fouls<?php if ($match['foul_comments'] === "") { ?>.<?php } else { ?>:
                                         <?php } ?> </strong><?= nl2br($match['foul_comments'], true) ?><br />
+                                </div>
+                            <?php } ?>
+
+                            <?php if ($match['died_during_match'] === "1") { ?>
+                                <div<?php if ($canDeleteData) { ?> style="float:left;"<?php } ?>>
+                                    <em>Died during match.</em><br />
                                 </div>
                             <?php } ?>
 
