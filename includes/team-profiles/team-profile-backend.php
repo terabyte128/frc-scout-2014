@@ -148,6 +148,9 @@
                                         <?php if (!empty($averages['average_total_match_points'])) { ?>
                                             (<strong><?= number_format(($averages['total_average'] / $averages['average_total_match_points']) * 100, 1) ?>%</strong> of actual alliance score)<br />
                                         <?php } ?>
+                                        <?php if ($stats['dieRate'] > 0) { ?>
+                                            Die Rate: <strong><?= $stats['dieRate'] ?>%</strong><br />
+                                        <?php } ?>
                                     <?php } ?>
                                 </div>
                             </div>

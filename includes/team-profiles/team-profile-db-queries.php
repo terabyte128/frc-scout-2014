@@ -38,7 +38,10 @@ try {
     
     (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=0) as matchesWon,
     (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=1) as matchesLost,
-    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=2) as matchesTied
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND match_outcome=2) as matchesTied,
+
+    format(((SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=? AND died_during_match=true) /
+    (SELECT COUNT(*) FROM frc_match_data WHERE scouted_team=?)) * 100, 0) AS dieRate
 
     # averages are no longer done here :)
 
@@ -48,7 +51,8 @@ try {
         $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber,
         $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, 
         $otherTeamNumber, $location, $otherTeamNumber, $location, $otherTeamNumber, 
-        $location, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber));
+        $location, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber, $otherTeamNumber,
+        $otherTeamNumber, $otherTeamNumber));
 
     $stats = $request->fetch(PDO::FETCH_ASSOC);
 
