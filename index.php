@@ -1,4 +1,5 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/redirect-if-session-exists.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-scouting-stats.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -56,7 +57,7 @@
                     </form> 
                     <br />
                     
-                    <p>So far, <?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams have registered on FRC Scout!</p>
+                    <p>So far, <strong><?php include $_SERVER['DOCUMENT_ROOT'] . '/ajax-handlers/get-registered-teams.php'; ?> teams</strong> have match scouted <strong><?= $scoutCount['matchScouted'] ?> times</strong> and pit scouted <strong><?= $scoutCount['pitScouted'] ?> times</strong>!</p>
                     
                     <p>
                         <em>
