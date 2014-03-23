@@ -215,7 +215,7 @@ function printPSData($finalRow, $canDeleteData, $listNum, $teamNumber) {
     if (!empty($finalRow['robot_weight'])) {
         echo 'Robot weight: <strong>' . $finalRow ['robot_weight'] . ' lbs.</strong><br />';
     }
-    if (!empty($finalRow ['robot_weight'])) {
+    if (!empty($finalRow ['robot_height'])) {
         echo 'Robot height: <strong>' . $finalRow['robot_height'] . ' in.</strong>';
         if ($finalRow['can_extend'] === "1") {
             echo ' &mdash; can extend<br />';
@@ -224,7 +224,7 @@ function printPSData($finalRow, $canDeleteData, $listNum, $teamNumber) {
         }
     } else {
         if ($finalRow['can_extend'] === "1") {
-            echo 'Can extend<br />';
+            echo '<strong>Can extend</strong><br />';
         }
     }
     if (!empty($finalRow['wheel_type'])) {
