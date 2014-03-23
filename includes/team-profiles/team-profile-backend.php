@@ -112,13 +112,9 @@
                     <hr style="border-top: 1px solid #bbb">
                     <!--<div class="table-wrapper table-responsive">-->
                     <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
-                        <!-- other stats will go here once they exist -->
-                        <?php if ($teamType === "FTC") { ?>
-                            <!-- ftc stuff, I don't really know how the game works, whoops -->
-                        <?php } ?>
                         <?php if ($teamType === "FRC") { ?>
                             <div style="text-align:center;">
-                                <strong><a href="/team/<?php echo $otherTeamNumber; ?>/matches/">View individual matches for this team</a></strong>
+                                <strong><a href="/team/<?php echo $otherTeamNumber; ?>/matches/">View individual matches for this team</a></strong> (<?= $stats['totalMatches'] ?>)
                                 <?php if ($isAdmin) { ?>
                                     <br />As an administrator, use this page to manage data on this team's matches that your team has scouted.
                                 <?php } ?>

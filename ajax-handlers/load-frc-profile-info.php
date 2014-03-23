@@ -104,13 +104,22 @@ if ($thingToLoad === "pit") {
         }
     }
 
+    $query = "SELECT COUNT(*) FROM frc_pit_scouting_data AS totalPit WHERE scouted_team=?";
+    try {
+        $countResponse = $db->prepare($query);
+        $countResponse->execute(array($_POST['teamNumber']));
+    } catch (PDOException $e) {
+        echo 'something went wrong: ' . $e->getMessage();
+    }
+    $count = $response->fetch(PDO::FETCH_ASSOC);
+
     if (empty($finalRow)) {
         if ($teamNumber !== $_POST['teamNumber']) {
             echo "<em>It doesn't look like anyone has pit scouted this team yet. <a href='/home/scouting/pit/" . $_POST['teamNumber'] . "'>Be the first.</a>";
         }
     } else {
         echo '<div style="text-align: center;"><strong><a href="/team/' . $finalRow['scouted_team'] . '/robot">View all pit scouting data for this team'
-        . '</a></strong>';
+        . '</a></strong>'; # (' . $count['totalPit'] . ')';
         if ($isAdmin) {
             echo "<br />As an administrator, use this page to manage ";
             if ($teamNumber === $finalRow['scouted_team']) {
