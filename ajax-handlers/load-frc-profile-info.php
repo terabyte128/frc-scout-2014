@@ -8,7 +8,7 @@ $thingToLoad = $_POST['thingToLoad'];
 if ($thingToLoad === "comments") {
     $params = array($_POST['teamNumber']);
 
-    $query = 'SELECT `team_absent`, `scout_name`, `scouting_team`, `timestamp`, `match_number`, `misc_comments`, `location` FROM `frc_match_data` WHERE `scouted_team`=?';
+    $query = 'SELECT `team_absent`, `died_during_match`, `scout_name`, `scouting_team`, `timestamp`, `match_number`, `misc_comments`, `location` FROM `frc_match_data` WHERE `scouted_team`=?';
 
     try {
         $response = $db->prepare($query);
@@ -40,6 +40,9 @@ if ($thingToLoad === "comments") {
             echo '</div>';
             if ($row['team_absent'] === "1") {
                 echo '<div style="text-align:left;"><strong><em>Team was absent for this match.</em></strong></div>';
+            }
+            if ($row['died_during_match'] === "1") {
+                echo '<div style="text-align:left;"><strong><em>Died during match.</em></strong></div>';
             }
             echo '</div>';
         }
