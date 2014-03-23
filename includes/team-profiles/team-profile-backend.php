@@ -126,9 +126,9 @@
                             <div class="comment-wrapper">
                                 <div class="comment-commenter"><strong>General</strong></div>
                                 <div class="comment-text">
-                                    <hr class="comment-divider-hr" />
-                                    <div class='comment-text'><strong>Match Outcomes (Win-Lose-Draw)</strong></div>
                                     <?php if (!empty($stats['matchesWonAtLocation'])) { ?>
+                                    <hr class="comment-divider-hr" />
+                                    <div class='comment-text'><strong>Match Outcomes (Win-Lose-Tie)</strong></div>
                                          <?= $location ?>: <strong><?php echo $stats['matchesWonAtLocation']; ?>-<?php echo $stats['matchesLostAtLocation']; ?>-<?php echo $stats['matchesTiedAtLocation']; ?></strong><br />
                                     <?php } ?>
                                     <?php if (!empty($stats['matchesWon'])) { ?>
@@ -161,7 +161,7 @@
                                         <hr class="comment-divider-hr" />
                                         <?php if (!empty($averages['auto_average'])) { ?>
                                             Average Potential Autonomous Score: <strong><?= number_format($averages['auto_average'], 1) ?></strong><br />
-                                        <?php } ?>                                                                            
+                                        <?php } ?>
                                         <?php if (!empty($stats['autoMovedZonePercent'])) { ?>
                                             Moved to Alliance Zone: <strong><?= $stats['autoMovedZonePercent'] ?>%</strong> of the time<br />
                                         <?php } ?>
