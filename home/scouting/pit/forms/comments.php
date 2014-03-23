@@ -8,10 +8,22 @@
     <label for="comments">General comments:</label>
     <textarea class="form-control" placeholder="General comments" rows="6" id="comments"></textarea>
     <br />
+    <!--
+    <a href="#" onclick="$('#photoUpload').slideToggle(200); return false;"><strong>Upload a photo</strong></a>
+    -->
 </form>
+<!--
+<div style="display: none; margin-top: 5px;" id="photoUpload">
+    <form class="scouting-form" action="/uploads/uploader.php" method="post" enctype="multipart/form-data">
+        <input class="btn btn-info" type="file" id="robotPhoto">
+        <br />
+        <button type="submit" class="btn btn-default" style="width: 75%;">Submit</button>
+    </form>
+</div>
+-->
 
 <script type="text/javascript">
-    
+
     $(function() {
         $('#pageNameTitle').text("Comments");
         //document.location.hash = "prematch";

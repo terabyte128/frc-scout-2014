@@ -34,8 +34,8 @@ input::-webkit-outer-spin-butter {
     margin: 0;
 }
 
-*, h1, h2, h3, h4, h5, h6 {
-    /*font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+*, h1, h2, h3, h4, h5, h6, p {
+    /*font-family: 'Open Ss', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
 }
 
 .btn-home-selections {
@@ -149,7 +149,7 @@ body.modal-open {
 }
 
 table, thead, th, td, .tablesorter-header-inner {
-    font-family: "Helvetica";
+    /*font-family: "Open Sans";*/
 }
 
 .scouting-form {
