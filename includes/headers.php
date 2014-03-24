@@ -32,5 +32,5 @@
 <link rel="stylesheet" href="/bootstrap3-editable/css/bootstrap-editable.css" />
 <link rel="stylesheet" href="/css/style.css" type='text/css' />
 <link rel="stylesheet" href="/css/datepicker.css" type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
