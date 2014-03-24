@@ -70,7 +70,7 @@
                                     echo "<br><br><span style='color:firebrick;'>development </span>";
                                 };
                                 ?>
-                                v1.3.8
+                                v1.3.9
                             </strong>
                         </em>
                     </p>
@@ -78,6 +78,8 @@
                     <a href="create-account.php">Create an account</a>
                     <br />
                     <a href="/recover">Recover your password</a>
+                    <hr>
+                    FRC Scout is open-source! <a href="https://github.com/terabyte128/frc-scout-2014" target="_blank">Find us on GitHub.</a>
                     <br /><br />
                 </div>
             </div>
