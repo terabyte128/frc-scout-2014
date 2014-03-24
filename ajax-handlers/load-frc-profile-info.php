@@ -8,7 +8,7 @@ $thingToLoad = $_POST['thingToLoad'];
 if ($thingToLoad === "comments") {
     $params = array($_POST['teamNumber']);
 
-    $query = 'SELECT `team_absent`, `scout_name`, `scouting_team`, `timestamp`, `match_number`, `misc_comments`, `location` FROM `frc_match_data` WHERE `scouted_team`=?';
+    $query = 'SELECT `team_absent`, `died_during_match`, `scout_name`, `scouting_team`, `timestamp`, `match_number`, `misc_comments`, `location` FROM `frc_match_data` WHERE `scouted_team`=?';
 
     try {
         $response = $db->prepare($query);
@@ -40,6 +40,9 @@ if ($thingToLoad === "comments") {
             echo '</div>';
             if ($row['team_absent'] === "1") {
                 echo '<div style="text-align:left;"><strong><em>Team was absent for this match.</em></strong></div>';
+            }
+            if ($row['died_during_match'] === "1") {
+                echo '<div style="text-align:left;"><strong><em>Died during match.</em></strong></div>';
             }
             echo '</div>';
         }
@@ -101,13 +104,22 @@ if ($thingToLoad === "pit") {
         }
     }
 
+    $query = "SELECT COUNT(*) FROM frc_pit_scouting_data AS totalPit WHERE scouted_team=?";
+    try {
+        $countResponse = $db->prepare($query);
+        $countResponse->execute(array($_POST['teamNumber']));
+    } catch (PDOException $e) {
+        echo 'something went wrong: ' . $e->getMessage();
+    }
+    $count = $response->fetch(PDO::FETCH_ASSOC);
+
     if (empty($finalRow)) {
         if ($teamNumber !== $_POST['teamNumber']) {
             echo "<em>It doesn't look like anyone has pit scouted this team yet. <a href='/home/scouting/pit/" . $_POST['teamNumber'] . "'>Be the first.</a>";
         }
     } else {
         echo '<div style="text-align: center;"><strong><a href="/team/' . $finalRow['scouted_team'] . '/robot">View all pit scouting data for this team'
-        . '</a></strong>';
+        . '</a></strong>'; # (' . $count['totalPit'] . ')';
         if ($isAdmin) {
             echo "<br />As an administrator, use this page to manage ";
             if ($teamNumber === $finalRow['scouted_team']) {
@@ -215,7 +227,7 @@ function printPSData($finalRow, $canDeleteData, $listNum, $teamNumber) {
     if (!empty($finalRow['robot_weight'])) {
         echo 'Robot weight: <strong>' . $finalRow ['robot_weight'] . ' lbs.</strong><br />';
     }
-    if (!empty($finalRow ['robot_weight'])) {
+    if (!empty($finalRow ['robot_height'])) {
         echo 'Robot height: <strong>' . $finalRow['robot_height'] . ' in.</strong>';
         if ($finalRow['can_extend'] === "1") {
             echo ' &mdash; can extend<br />';
@@ -224,7 +236,7 @@ function printPSData($finalRow, $canDeleteData, $listNum, $teamNumber) {
         }
     } else {
         if ($finalRow['can_extend'] === "1") {
-            echo 'Can extend<br />';
+            echo '<strong>Can extend</strong><br />';
         }
     }
     if (!empty($finalRow['wheel_type'])) {

@@ -112,13 +112,9 @@
                     <hr style="border-top: 1px solid #bbb">
                     <!--<div class="table-wrapper table-responsive">-->
                     <div style="max-width: 500px; text-align: left; margin: 2px auto 2px auto">
-                        <!-- other stats will go here once they exist -->
-                        <?php if ($teamType === "FTC") { ?>
-                            <!-- ftc stuff, I don't really know how the game works, whoops -->
-                        <?php } ?>
                         <?php if ($teamType === "FRC") { ?>
                             <div style="text-align:center;">
-                                <strong><a href="/team/<?php echo $otherTeamNumber; ?>/matches/">View individual matches for this team</a></strong>
+                                <strong><a href="/team/<?php echo $otherTeamNumber; ?>/matches/">View individual matches for this team</a></strong> (<?= $stats['totalMatches'] ?>)
                                 <?php if ($isAdmin) { ?>
                                     <br />As an administrator, use this page to manage data on this team's matches that your team has scouted.
                                 <?php } ?>
@@ -126,9 +122,9 @@
                             <div class="comment-wrapper">
                                 <div class="comment-commenter"><strong>General</strong></div>
                                 <div class="comment-text">
-                                    <hr class="comment-divider-hr" />
-                                    <div class='comment-text'><strong>Match Outcomes (Win-Lose-Draw)</strong></div>
                                     <?php if (!empty($stats['matchesWonAtLocation'])) { ?>
+                                    <hr class="comment-divider-hr" />
+                                    <div class='comment-text'><strong>Match Outcomes (Win-Lose-Tie)</strong></div>
                                          <?= $location ?>: <strong><?php echo $stats['matchesWonAtLocation']; ?>-<?php echo $stats['matchesLostAtLocation']; ?>-<?php echo $stats['matchesTiedAtLocation']; ?></strong><br />
                                     <?php } ?>
                                     <?php if (!empty($stats['matchesWon'])) { ?>
@@ -161,7 +157,7 @@
                                         <hr class="comment-divider-hr" />
                                         <?php if (!empty($averages['auto_average'])) { ?>
                                             Average Potential Autonomous Score: <strong><?= number_format($averages['auto_average'], 1) ?></strong><br />
-                                        <?php } ?>                                                                            
+                                        <?php } ?>
                                         <?php if (!empty($stats['autoMovedZonePercent'])) { ?>
                                             Moved to Alliance Zone: <strong><?= $stats['autoMovedZonePercent'] ?>%</strong> of the time<br />
                                         <?php } ?>
